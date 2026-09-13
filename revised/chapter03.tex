@@ -15,6 +15,16 @@ URLs und kombiniert mehrere selbstüberwachte Vortrainingsziele; ergänzend wird
 Sensitivität gegenüber reduziertem gelabeltem Trainingsumfang untersucht
 (vgl. [Li et al. (2025), S. 1--2 und 12]).
 
+Die Arbeiten zeigen damit die Nutzbarkeit domänennäherer Repräsentationen für
+URL-basierte Sicherheitsaufgaben, adressieren jedoch unterschiedliche Ausschnitte der
+hier untersuchten Fragestellung. URLTran und PhishBERT fokussieren die
+Repräsentationsbildung auf der URL-Ebene; urlBERT erweitert diese Perspektive um die
+Sensitivität gegenüber reduziertem gelabeltem Trainingsumfang. Aus diesen Ergebnissen
+lässt sich jedoch nicht ableiten, wie sich eine getrennte und gemeinsame task-adaptive
+Anpassung von URL- und HTML-Text-Encodern unter identischen Downstream-Bedingungen
+verhält. Ebenso bleibt offen, wie sich ein solcher Repräsentationsvorteil in ein
+multimodales Gesamtsystem überführen lässt.
+
 Neben der domänennäheren Repräsentationsbildung rückt damit die verfügbare gelabelte
 Downstream-Supervision in den Fokus. Gui et al. führen den Aufwand der Erhebung und
 Annotation großer gelabelter Datenbestände als eine Motivation für Self-Supervised Learning
@@ -47,9 +57,13 @@ Informationsquellen derselben Webseite für die Klassifikation nutzbar gemacht.
 Über den textuellen HTML-Inhalt hinaus kann auch die Dokumentstruktur berücksichtigt
 werden. Yoon et al. kombinieren URL-Repräsentationen mit einem graphbasierten
 HTML-DOM und untersuchen den zusätzlichen Beitrag der strukturellen Information anhand
-von Ablationen (vgl. [Yoon et al. (2024), S. 2, 13 und 15]). Die bestehende Forschung
-liefert damit eine Grundlage dafür, adressbezogene, textuelle und strukturelle
-Informationen innerhalb eines gemeinsamen Klassifikationssystems zu berücksichtigen.
+von Ablationen (vgl. [Yoon et al. (2024), S. 2, 13 und 15]). Die Befunde dieser Arbeiten
+sind aufgrund unterschiedlicher Repräsentationen, Klassifikatoren und
+Evaluationsprotokolle jedoch nicht unmittelbar als inkrementelle Komponentenbeiträge
+vergleichbar. Insbesondere lässt sich aus einem studienübergreifenden Vergleich nicht
+bestimmen, welchen zusätzlichen Beitrag HTML-Text, DOM-Struktur und eine lernbare
+Fusion bei konstanter Repräsentationsbasis jeweils leisten. Diese Trennung motiviert die
+sequenzielle Komponentenablation der vorliegenden Arbeit.
 
 Die vorliegende Arbeit trennt dabei Repräsentations- und Systemebene. Zunächst wird die
 task-adaptive URL- und HTML-Text-Repräsentation unter konstant gehaltenen
@@ -64,9 +78,14 @@ Systementwurfs sein. Liu et al. beschreiben ein mehrstufiges
 Phishing-Erkennungsverfahren und berichten eine Verkürzung der Ausführungszeit
 bei zugleich verbesserter Erkennung
 (vgl. [Liu et al. (2021), Abstract, o.\,S.]). Dieses Prinzip bildet den konzeptionellen
-Bezug für die URL-first-Kaskade der vorliegenden Arbeit. Die URL-Stufe dient dabei
-als vorgelagerter Entscheidungspfad, während für unsichere Fälle weiterhin das
-vollständige multimodale System ausgeführt wird.
+Bezug für die URL-first-Kaskade der vorliegenden Arbeit. Der Bezug beschränkt sich auf
+das Grundprinzip einer mehrstufigen Verarbeitung. Die konkrete Ausgestaltung ist Teil der
+eigenen Systemkonzeption: Ein URL-Frontend erzeugt über einen Auxiliary Head den ersten
+Klassifikationsscore, zwei auf Development-Daten bestimmte Schwellen definieren einen
+Unsicherheitsbereich und nur die dort liegenden Fälle werden an das vollständige
+multimodale TRI-System weitergeleitet. Ergänzend wird untersucht, ob die task-adaptierte
+URL-Repräsentation bei unveränderter Routinglogik den erforderlichen Anteil dieser
+Vollpfad-Ausführungen reduziert.
 
 \section{Generalisierung und betriebliche Evaluationsbedingungen}
 
@@ -104,21 +123,23 @@ Eskalationsrate betrachtet.
 
 \section{Forschungslücke und Einordnung der Arbeit}
 
-Die betrachteten Forschungsarbeiten adressieren die für diese Arbeit relevanten
-Aspekte überwiegend auf einzelnen Ebenen. Spezialisierte selbstüberwachte
-URL-Repräsentationen zeigen die Nutzbarkeit domänennäherer Repräsentationsbildung;
-Untersuchungen reduzierter Labelmengen betrachten die Downstream-Leistung bei
-begrenzter Supervision. Weitere Arbeiten kombinieren mehrere Webseiteninformationen
-oder verwenden mehrstufige Klassifikationsarchitekturen.
+Die Forschungslücke liegt damit nicht im Fehlen einzelner technischer Bausteine.
+Spezialisierte selbstüberwachte URL-Repräsentationen, Untersuchungen reduzierter
+Labelmengen, mehrquellenbasierte Webseitenklassifikation und mehrstufige
+Erkennungsarchitekturen sind jeweils bereits Gegenstand bestehender Arbeiten. Offen
+bleibt jedoch ihre kontrollierte Verbindung innerhalb eines gemeinsamen
+Untersuchungsdesigns, in dem Repräsentationsanpassung, Label-Effizienz und
+Systembeitrag voneinander getrennt bewertet werden.
 
-Aus dieser Ausgangslage ergibt sich für die vorliegende Arbeit die Verbindung dreier
-Untersuchungsebenen. Zunächst wird der zusätzliche Effekt einer task-adaptiven
-Weiteranpassung bereits vortrainierter URL- und HTML-Text-Repräsentationen isoliert.
-Darauf aufbauend wird untersucht, wie sich dieser Effekt über unterschiedliche
-Labelbudgets entwickelt und ab welchem reduzierten Budget das festgelegte
-Leistungsniveau vollständig trainierter Referenzen erreicht wird. Die ausgewählte
-Repräsentationsbasis wird anschließend in ein multimodales Gesamtsystem überführt,
-dessen zusätzliche Komponenten und gestufte Verarbeitung getrennt evaluiert werden.
+Die vorliegende Arbeit adressiert diese Lücke auf drei aufeinander aufbauenden Ebenen.
+Zunächst wird der zusätzliche Effekt einer task-adaptiven Weiteranpassung bereits
+vortrainierter URL- und HTML-Text-Repräsentationen unter konstanten
+Downstream-Bedingungen untersucht. Darauf aufbauend wird geprüft, wie sich dieser
+Effekt über unterschiedliche Labelbudgets entwickelt und ab welchem reduzierten
+Budget das festgelegte Leistungsniveau vollständig trainierter Referenzen erreicht wird.
+Die ausgewählte Repräsentationsbasis wird anschließend in ein multimodales System
+überführt, dessen zusätzliche Informations- und Fusionskomponenten sowie die gestufte
+Verarbeitung getrennt evaluiert werden.
 
 Tabelle~\ref{tab:forschungsableitung} fasst die für das Untersuchungsdesign
 maßgeblichen Forschungsbezüge zusammen.
@@ -136,7 +157,7 @@ maßgeblichen Forschungsbezüge zusammen.
 \toprule
 \textbf{Forschungsbereich}
 &
-\textbf{Bezug zur vorliegenden Arbeit}
+\textbf{Offene Frage / Abgrenzung}
 &
 \textbf{Umsetzung}
 \\
@@ -145,8 +166,8 @@ maßgeblichen Forschungsbezüge zusammen.
 Selbstüberwachte URL-Repräsentationen
 (vgl. [Maneriker et al. (2021), PDF-S. 1--2]; [Wang et al. (2023), Abstract, o.\,S.]; [Li et al. (2025), S. 1--2 und 12])
 &
-Zusätzliche task-adaptive Anpassung bereits vortrainierter URL- und
-HTML-Text-Repräsentationen.
+URL-fokussierte Repräsentationsverfahren beantworten nicht den getrennten und gemeinsamen
+Adaptationseffekt von URL und HTML-Text unter identischen Downstream-Bedingungen.
 &
 Vergleich von R0, RU, RT und RUT bei konstanten Downstream-Probes.
 \\[1mm]
@@ -154,8 +175,9 @@ Vergleich von R0, RU, RT und RUT bei konstanten Downstream-Probes.
 Nutzung ungelabelter Daten und reduzierte Labelbudgets
 (vgl. [Gui et al. (2024), S. 1]; [Li et al. (2025), S. 1--2 und 12])
 &
-Verhalten der Repräsentationsvarianten bei unterschiedlicher gelabelter
-Downstream-Supervision.
+Reduzierte Trainingsmengen werden untersucht; offen bleibt die explizite
+Suffizienzentscheidung gegenüber vollständig trainierten Referenzen innerhalb eines
+gemeinsamen Protokolls.
 &
 Sieben Labelbudgets sowie Bestimmung der kleinsten ausreichenden
 RUT-Stufe gegenüber vollständig mit 200.000 Labels trainierten Referenzen.
@@ -164,8 +186,9 @@ RUT-Stufe gegenüber vollständig mit 200.000 Labels trainierten Referenzen.
 Mehrquellenbasierte Webseitenklassifikation
 (vgl. [Aljofey et al. (2022), S. 1--2 und 13]; [Opara et al. (2024), S. 2]; [Yoon et al. (2024), S. 2 und 13--15])
 &
-Überführung der ausgewählten Repräsentationsbasis in ein multimodales
-Klassifikationssystem.
+Unterschiedliche Architekturen und Evaluationsprotokolle erlauben keinen direkten
+inkrementellen Vergleich von HTML-Text, DOM und Fusion bei konstanter
+Repräsentationsbasis.
 &
 Sequenzielle Erweiterung um HTML-Text, DOM und lernbare Gating-Fusion.
 \\[1mm]
@@ -173,8 +196,9 @@ Sequenzielle Erweiterung um HTML-Text, DOM und lernbare Gating-Fusion.
 Low-FPR- und gestufte Verarbeitung
 (vgl. [Maneriker et al. (2021), PDF-S. 1--2]; [Liu et al. (2021), Abstract, o.\,S.]; [ENISA (2020), S. 7]; [Reddi et al. (2020), S. 5--6])
 &
-Bewertung des Gesamtsystems bei festgelegtem Betriebspunkt und
-unterschiedlicher Verarbeitungstiefe.
+Mehrstufige Verarbeitung ist etabliert; offen bleibt der Einfluss einer task-adaptierten
+URL-Repräsentation auf die erforderliche Vollpfad-Ausführung eines multimodalen
+Fallback-Systems.
 &
 CAL-basierter Low-FPR-Betriebspunkt, URL-first-Kaskade sowie
 Effizienz- und Eskalationsmetriken.
