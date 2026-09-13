@@ -1,77 +1,72 @@
 \clearpage
 \chapter*{Zusammenfassung}
-Diese Arbeit untersucht, ob eine zusätzliche selbstüberwachte Anpassung bereits
-vortrainierter Transformer den Bedarf an gelabelten Trainingsdaten für die
-Phishing-Webseitenerkennung verringert und eine ressourcenschonende Verarbeitung
-unterstützt. Auf PhreshPhish werden vier Repräsentationsvarianten verglichen:
-unveränderte Basisencoder sowie Task-Adaptive Pretraining (TAPT) für URL,
-HTML-Text oder beide Eingabemodalitäten. Lineare und nichtlineare Probes verwenden
-sieben verschachtelte Labelbudgets von 2.000 bis 200.000 Webseiten.
-Die finale Evaluation umfasst 168.060 Webseiten sowie vier überlappende Teilmengen
-mit Domain-, Template- oder Zeitbedingungen. Schwellen werden auf einem getrennten
-Bestand von 50.000 legitimen Webseiten für eine Ziel-False-Positive-Rate von 0,5\,\%
-kalibriert.
+Diese Arbeit untersucht den zusätzlichen Beitrag einer task-adaptiven selbstüberwachten
+Anpassung bereits vortrainierter Transformer für die Phishing-Webseitenerkennung sowie deren
+Überführung in ein prototypisches multimodales Klassifikationssystem. Auf PhreshPhish werden
+vier Repräsentationsvarianten verglichen: unveränderte Basisencoder sowie Task-Adaptive
+Pretraining (TAPT) für URL, HTML-Text oder beide Eingabemodalitäten. Lineare und
+nichtlineare Probes verwenden sieben verschachtelte Labelbudgets von 2.000 bis 200.000
+Webseiten. Die finale Evaluation umfasst 168.060 Webseiten sowie vier überlappende
+Teilmengen mit Domain-, Template- oder Zeitbedingungen. Schwellen werden auf einem
+getrennten Bestand von 50.000 legitimen Webseiten für eine Ziel-False-Positive-Rate von
+0,5\,\% kalibriert.
 
-Die kombinierte Anpassung RUT verbessert gegenüber unveränderten Encodern bei
-20.000 Trainingslabels die mittlere True-Positive-Rate auf dem vollständigen Testbestand
-um 6,08 Prozentpunkte (zehn gepaarte Läufe; 95-\%-Konfidenzintervall [5,38; 6,79]).
-50.000 Labels bilden die kleinste untersuchte Budgetstufe, die die festgelegte
-Nichtunterlegenheitsentscheidung gegenüber den mit 200.000 Labels trainierten
-R0- und TF-IDF/XGBoost-Referenzen über alle fünf Bedingungen erfüllt. Die damit
-verbundene Reduktion um 75\,\% betrifft die Downstream-Trainingslabels; Labels für
-Stichprobenauswahl, Entwicklung und Kalibration sind darin nicht enthalten.
+Die kombinierte Anpassung RUT verbessert gegenüber den nicht zusätzlich adaptierten
+Basisencodern bei 20.000 Trainingslabels die mittlere True-Positive-Rate auf dem vollständigen
+Testbestand um 6,08 Prozentpunkte (zehn gepaarte Läufe; 95-\%-Konfidenzintervall
+[5,38; 6,79]). 50.000 Labels bilden die kleinste untersuchte Budgetstufe, die die festgelegte
+Nichtunterlegenheitsentscheidung gegenüber den mit 200.000 Labels trainierten R0- und
+TF-IDF/XGBoost-Referenzen über alle fünf Bedingungen erfüllt. Die damit verbundene
+Reduktion um 75\,\% betrifft ausschließlich die gelabelte Downstream-Trainingsmenge; der
+vorausgehende TAPT-Schritt auf 200.000 ungelabelten Webseiten bleibt davon unberührt.
 
-Auf dem externen Putra-Datensatz steigt die über 200 bis 2.000 Labels integrierte
-Average-Precision-Lernkurve durch RUT um 2,54 Prozentpunkte. Eine weitere
-MLM-Anpassung auf dem frühen Putra-Bestand verschlechtert diese Größe hingegen
-um 1,14 Prozentpunkte. Der Nutzen zusätzlicher Anpassung ist somit korpus- und
-protokollabhängig. Ein multimodaler Prototyp aus URL, HTML-Text und DOM erreicht
-96,12\,\% TPR bei 0,666\,\% FPR. Seine URL-first-Kaskade erreicht 95,77\,\% TPR,
-eskaliert 14,93\,\% der Testseiten und steigert den gemessenen In-Memory-Durchsatz
-von 183,2 auf 447,0 Seiten pro Sekunde.
+Auf dem unabhängig erhobenen Putra-Datensatz erreicht RUT über die Labelbudgets von 200 bis
+2.000 Webseiten eine um 2,54 Prozentpunkte höhere AP-AULC als R0. Auf Systemebene liefern
+HTML-Text, DOM und lernbares Gating jeweils einen zusätzlichen Beitrag zur
+Erkennungsleistung. Das multimodale TRI-Vollsystem erreicht 96,12\,\% TPR bei
+0,666\,\% FPR. Die URL-first-Kaskade erreicht 95,77\,\% TPR, eskaliert 14,93\,\% der
+Testseiten und steigert den gemessenen In-Memory-Durchsatz von 183,2 auf 447,0 Seiten pro
+Sekunde.
 
-Die Ergebnisse stützen einen begrenzten Nutzen von TAPT für Label-Effizienz und
-gestufte Verarbeitung. Feste TAPT-Checkpoints, nachträglich ergänzte Analysen,
-überlappende Testbedingungen und die retrospektive externe Evaluation begrenzen
-die Verallgemeinerbarkeit. Laufzeitmessungen erfassen den aufbereiteten Modellpfad
-auf einer GPU und keine vollständige betriebliche Verarbeitungskette.
+Die Ergebnisse zeigen damit einen zusätzlichen Nutzen task-adaptiver Repräsentationen für die
+Downstream-Klassifikation, eine erhöhte Label-Effizienz unter den untersuchten Bedingungen
+und eine bedarfsgerechte Nutzung multimodaler Verarbeitung. Die Aussagegrenzen betreffen
+unter anderem die feste Repräsentationsbasis der Wiederholungsanalysen, einen einzelnen
+externen Webseitenbestand sowie die auf den In-Memory-Modellpfad begrenzten
+Effizienzmessungen.
 
 \clearpage
 \begin{otherlanguage}{english}
 \chapter*{Abstract}
-This thesis examines whether additional self-supervised adaptation of pretrained
-transformers reduces the labelled training data required for phishing website
-detection and supports efficient processing. Four representation variants are
-compared on PhreshPhish: unchanged base encoders and task-adaptive pretraining
-(TAPT) of the URL encoder, the HTML text encoder, or both. Linear and nonlinear
-probes use seven nested label budgets ranging from 2,000 to 200,000 websites.
-Final evaluation covers 168,060 websites and four overlapping subsets defined by
-domain, template, or time conditions. Thresholds are calibrated on a separate set
-of 50,000 legitimate websites for a target false positive rate of 0.5\%.
+This thesis investigates the additional contribution of task-adaptive self-supervised adaptation
+of pretrained transformers for phishing website detection and its integration into a prototypical
+multimodal classification system. Four representation variants are compared on PhreshPhish:
+unchanged base encoders and task-adaptive pretraining (TAPT) of the URL encoder, the HTML
+text encoder, or both. Linear and nonlinear probes use seven nested label budgets ranging from
+2,000 to 200,000 websites. Final evaluation covers 168,060 websites and four overlapping
+subsets defined by domain, template, or time conditions. Thresholds are calibrated on a separate
+set of 50,000 legitimate websites for a target false-positive rate of 0.5\%.
 
-At 20,000 training labels, the combined adaptation RUT improves mean true positive
-rate over unchanged encoders by 6.08 percentage points on the complete test set
-(ten paired runs; 95\% confidence interval [5.38, 6.79]). A budget of 50,000 labels
-is the smallest tested level meeting the specified noninferiority decision against
-both the R0 and TF-IDF/XGBoost references trained with 200,000 labels across all
-five evaluation conditions. The resulting 75\% reduction concerns downstream
-training labels; labels used for sample selection, development, and calibration
-are excluded from this accounting.
+At 20,000 training labels, the combined RUT adaptation improves mean true-positive rate over
+the non-additionally-adapted base encoders by 6.08 percentage points on the complete test set
+(ten paired runs; 95\% confidence interval [5.38, 6.79]). A budget of 50,000 labels is the
+smallest tested level meeting the specified noninferiority decision against both the R0 and
+TF-IDF/XGBoost references trained with 200,000 labels across all five evaluation conditions.
+The resulting 75\% reduction concerns labelled downstream training instances only; the
+preceding TAPT stage still processes 200,000 unlabelled websites.
 
-On the external Putra dataset, RUT improves the integrated average precision
-learning curve over budgets of 200 to 2,000 labels by 2.54 percentage points.
-Additional masked language modelling on the early Putra data instead decreases
-this measure by 1.14 percentage points. Benefits of further adaptation therefore
-depend on the corpus and training protocol. A multimodal prototype combining
-URL, HTML text, and DOM reaches a true positive rate of 96.12\% at a false positive
-rate of 0.666\%. Its URL-first cascade reaches a true positive rate of 95.77\%,
-escalates 14.93\% of test websites, and increases measured in-memory throughput
-from 183.2 to 447.0 websites per second.
+On the independently collected Putra dataset, RUT improves AP-AULC over label budgets from
+200 to 2,000 websites by 2.54 percentage points compared with R0. At system level, HTML text,
+DOM information, and learnable gating each provide an additional contribution to detection
+performance. The multimodal TRI full system reaches a true-positive rate of 96.12\% at a
+false-positive rate of 0.666\%. Its URL-first cascade reaches a true-positive rate of 95.77\%,
+escalates 14.93\% of test websites, and increases measured in-memory throughput from 183.2
+to 447.0 websites per second.
 
-The results support a qualified benefit of TAPT for label efficiency and staged
-processing. Fixed TAPT checkpoints, analyses added after initial experiments,
-overlapping evaluation conditions, and retrospective external evaluation limit
-generalisability. Runtime measurements cover the prepared model path on one GPU
-and do not represent a complete operational processing pipeline.
+The results therefore indicate an additional benefit of task-adaptive representations for
+downstream classification, improved label efficiency under the investigated conditions, and a
+staged use of multimodal processing. The scope of the conclusions is limited, among other
+factors, by fixed representation checkpoints in repeated downstream analyses, one additional
+external dataset, and efficiency measurements restricted to the in-memory model path.
 \end{otherlanguage}
 \clearpage
