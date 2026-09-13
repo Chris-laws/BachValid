@@ -1,0 +1,42 @@
+[
+  {
+    "file": "Aenderungsprotokoll.md",
+    "bytes": 2853,
+    "sha256": "5e5dabc54cd41c052de76233a994c6411a093ef2f1172951965fa7c8dbdf6b95"
+  },
+  {
+    "file": "Bachelorarbeit_Kaufmann.pdf",
+    "bytes": 6747764,
+    "sha256": "57807004f59616669405a391d3eb14ba76732c674dc8ebc23b86ee274d5567f3"
+  },
+  {
+    "file": "Bachelorarbeit_LaTeX.zip",
+    "bytes": 13195755,
+    "sha256": "36d409525b0499ca3dc91ff5f57b84254199d2439363107aa65e0bcbc58daea5"
+  },
+  {
+    "file": "Kernpruefung.md",
+    "bytes": 16887,
+    "sha256": "99cbba005a70527e2cc4ecbd4c51cf5080f402b3b436e1c9c680ef9ecbc89863"
+  },
+  {
+    "file": "Pruefbericht.md",
+    "bytes": 11543,
+    "sha256": "974e6181988bb93db0a700727914b65bcfbfd0c8100bbe928380ef967d0ce3c4"
+  },
+  {
+    "file": "Quellenarchiv.zip",
+    "bytes": 82243254,
+    "sha256": "3de6e02bcde01374d8fbfb83f1fd8959f0121dd0b598200d33231d77825be81b"
+  },
+  {
+    "file": "README.md",
+    "bytes": 2429,
+    "sha256": "6f390b316d04520ba7dc0c4a11a0c77096d522e01eec086caec852446573d722"
+  },
+  {
+    "file": "Reproduktion.zip",
+    "bytes": 378473504,
+    "sha256": "b2dc1a163062cb2dfcd1d6da349335ec124599d298ed7d3e7ad753abbb66ac8a"
+  }
+]

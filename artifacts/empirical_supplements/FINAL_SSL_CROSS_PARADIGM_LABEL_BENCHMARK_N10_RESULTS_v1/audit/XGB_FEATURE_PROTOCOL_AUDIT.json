@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "origin": "REBUILT_EXACT_V8_4_PROTOCOL",
+  "source": "/kaggle/working/final_ssl_cross_paradigm_label_benchmark_n10_v1/xgb_feature_cache",
+  "tfidf_labels_used": false,
+  "url_vocab_size": 25000,
+  "text_vocab_size": 50000,
+  "shapes": {
+    "SSL": [
+      200000,
+      75000
+    ],
+    "CAL": [
+      50000,
+      75000
+    ],
+    "FINAL": [
+      168060,
+      75000
+    ]
+  }
+}

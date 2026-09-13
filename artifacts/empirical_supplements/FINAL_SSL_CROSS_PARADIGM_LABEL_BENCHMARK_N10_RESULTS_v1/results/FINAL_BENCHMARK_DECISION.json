@@ -1,0 +1,32 @@
+{
+  "version": "FINAL_SSL_CROSS_PARADIGM_LABEL_BENCHMARK_N10_v1_FULL_GRID_XGB200K",
+  "scientific_status": "POST_HOC_CROSS_PARADIGM_EXTENSION_WITH_FULL_PREDEFINED_BUDGET_GRID",
+  "no_budget_preselected": true,
+  "full_budget_grid": [
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000,
+    200000
+  ],
+  "internal_mechanistic_reference": {
+    "reference": "R0@200k + Linear",
+    "minimum_holm_supported_budget": 50000,
+    "causal_role": "supports representation-adaptation attribution because architecture/probe are matched"
+  },
+  "cross_paradigm_reference": {
+    "reference": "TF-IDF/XGB@200k",
+    "minimum_strict_all_scenario_mean_dominance_budget": 20000,
+    "minimum_supportive_welch_ni_holm_budget": 50000,
+    "causal_role": "none; system-level benchmark only"
+  },
+  "interpretation_limits": [
+    "Do not state that the cross-paradigm gap is caused solely by TAPT/SSL.",
+    "Do not describe this notebook as a prospective or independent replication.",
+    "Do not convert label-count reduction into monetary savings without a cost model.",
+    "Do not include TAPT pretraining compute in a label-efficiency claim unless it is measured separately.",
+    "Report realized FPR beside TPR; CAL target 0.5% does not imply identical realized FINAL FPR."
+  ]
+}

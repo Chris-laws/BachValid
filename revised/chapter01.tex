@@ -1,0 +1,144 @@
+\chapter{Einleitung}
+
+\section{Problemstellung und Motivation}
+
+Phishing zählt zu den dauerhaft relevanten Bedrohungen der digitalen Wirtschaft. Allein im ersten
+Quartal 2025 erfasste die Anti-Phishing Working Group mehr als eine Million Phishing-Angriffe;
+die im selben Bericht wiedergegebene Branchenanalyse von OpSec Security ordnet
+Online-Payment-Diensten sowie Finanz- und Bankdienstleistungen zusammen 30,9~\%
+der von OpSec erfassten Angriffe zu (vgl. [APWG (2025), S. 3--4]).
+
+Im Zentrum vieler Angriffe stehen manipulierte Webseiten, die vertrauenswürdige Dienste imitieren
+und Nutzer zur Preisgabe schützenswerter Informationen verleiten (vgl. [APWG (2025), S. 2]).
+Für ihre automatisierte Erkennung bilden insbesondere URL und HTML-Inhalt relevante
+Informationsquellen. Während die URL Domain-, Pfad- und Parameterinformationen enthält, stellt
+das HTML-Dokument textuelle, verlinkungsbezogene und strukturelle Eigenschaften der Webseite
+bereit (vgl. [Dalton et al. (2026), S. 2--3]).
+
+Die Erkennung wird dadurch erschwert, dass sich Phishing-Kampagnen und Webseiten fortlaufend
+verändern. Generative Künstliche Intelligenz kann Angreifer zusätzlich bei der Erstellung
+maßgeschneiderter Kampagnen unterstützen (vgl. [ENISA (2024), S. 67]). Gleichzeitig entstehen
+regelmäßig neue Webseiten und Angriffsvarianten. Während Sperrlisten insbesondere bekannte
+Phishing-Webseiten erfassen, können lernbasierte Verfahren URL- und HTML-Eigenschaften zur
+Klassifikation bislang nicht beobachteter Webseiten nutzen (vgl. [Dalton et al. (2026), S. 1--3]). Eine hohe Leistung auf datensatznahen Testdaten erlaubt dabei noch keine belastbare Aussage über
+bislang unbekannte Webseiten. Ähnliche Seiten oder gemeinsame Phishing-Kits können in Trainings-
+und Testdaten auftreten und dadurch die Wiedererkennung bereits bekannter Strukturen begünstigen
+(vgl. [Dalton et al. (2026), S. 3]).
+
+Für einen betrieblichen Einsatz ist die Klassifikationsleistung nicht losgelöst von den hierfür
+eingesetzten Ressourcen zu betrachten. Erstens ist relevant, welcher Anteil tatsächlicher
+Phishing-Webseiten bei einer niedrigen False-Positive-Rate weiterhin erkannt wird, da Fehlalarme
+legitime Webseiten betreffen und nachgelagerte Sicherheitsprozesse belasten können. Die
+False-Positive-Rate wird entsprechend auch als Qualitätskennzahl von Security Operations Centers
+gemeinsam mit Größen wie Eskalationen und Bearbeitungsaufwand betrachtet
+(vgl. [ENISA (2020), S. 7]).
+
+Zweitens stellt die Verfügbarkeit gelabelter Trainingsdaten eine Ressourcengrenze dar. Die
+Beschaffung und zuverlässige Annotation hochwertiger Trainingsdaten verursacht zusätzlichen
+Aufwand und gilt als wesentlicher Engpass datengetriebener Systeme
+(vgl. [Roh et al. (2021), S. 1]). Drittens stellt sich bei einem leistungsstarken multimodalen
+Klassifikationssystem die Frage, wie der zusätzliche Informationsumfang technisch effizient
+genutzt werden kann. Für den Systementwurf ist damit relevant, ob eindeutige Fälle bereits auf
+Basis der URL-Repräsentation abgeschlossen werden können, während unsichere Fälle weiterhin
+die vollständige multimodale Verarbeitung durchlaufen. Vor dem Hintergrund begrenzter Budgets
+und fehlender IT-Sicherheitsspezialisten, wie sie insbesondere für kleine und mittlere Unternehmen
+berichtet werden, sind damit neben der maximalen Klassifikationsleistung auch der Bedarf an
+gelabelter Supervision und die bedarfsgerechte Nutzung der verfügbaren Modellkomponenten
+relevant (vgl. [ENISA (2021), S. 14]).
+
+Self-Supervised Representation Learning (SSLR) setzt an dieser Ausgangslage auf Ebene der
+Repräsentationsbildung an. Transformerbasierte Encoder können anhand ungelabelter Daten
+selbstüberwacht vortrainiert und anschließend für eine gelabelte Downstream-Aufgabe genutzt
+werden (vgl. [Devlin et al. (2019), S. 4171 und 4173--4175]). Darauf aufbauend kann das
+Vortraining gezielt auf den ungelabelten Trainingsdaten einer konkreten Zielaufgabe fortgesetzt
+werden. Gururangan et al. bezeichnen diese Weiteranpassung als Task-Adaptive Pretraining
+(TAPT) und zeigen über mehrere Aufgaben hinweg Verbesserungen gegenüber ausschließlich
+allgemein vortrainierten Modellen (vgl. [Gururangan et al. (2020), S. 8346--8347]). Für die Phishing-Webseitenerkennung ist damit zu untersuchen, welchen zusätzlichen Beitrag
+TAPT gegenüber bereits allgemein vortrainierten Repräsentationen leistet, wie sich dieser Beitrag
+bei unterschiedlicher Verfügbarkeit gelabelter Trainingsdaten verändert und wie die daraus
+entstehende Repräsentationsbasis in ein leistungsstarkes multimodales Klassifikationssystem
+überführt werden kann.
+
+\section{Zielsetzung und Forschungsfragen}
+
+Ziel der Arbeit ist die Konzeption, prototypische Entwicklung und empirische Evaluation eines
+lernbasierten Klassifikationssystems zur Erkennung von Phishing-Webseiten anhand von URL-
+und HTML-Daten. Neben der Klassifikationsleistung werden dabei der Umfang gelabelter
+Downstream-Supervision und die Verarbeitungstiefe des resultierenden Systems betrachtet.
+
+Zunächst wird untersucht, welchen zusätzlichen Beitrag eine task-adaptive selbstüberwachte
+Anpassung gegenüber bereits allgemein vortrainierten Encodern leistet und wie sich dieser
+Beitrag mit der verfügbaren gelabelten Supervision verändert. Darauf aufbauend wird geprüft,
+ab welchem reduzierten Labelbudget das Leistungsniveau vollständig mit 200.000 Labels
+trainierter Referenzverfahren erreicht wird. Eine klassische TF-IDF/XGBoost-Pipeline dient
+ergänzend als Vergleichsverfahren; da sich dabei sowohl Repräsentation als auch Klassifikator
+ändern, können Leistungsunterschiede nicht allein der task-adaptiven Anpassung zugeschrieben
+werden.
+
+Die Bewertung erfolgt auf dem vollständigen Testbestand sowie auf separat gebildeten domain-,
+template- und zeitbezogenen Teilmengen an einem auf einer getrennten Kalibrationsmenge
+bestimmten Low-FPR-Betriebspunkt. Anschließend wird die ausgewählte
+Repräsentationskonfiguration um eine strukturelle DOM-Repräsentation und multimodale Fusion
+zum TRI-Vollsystem erweitert. Darauf aufbauend wird untersucht, wie sich dieses System über
+eine URL-first-Kaskade gestuft einsetzen lässt, wobei unsichere Fälle weiterhin vollständig
+multimodal verarbeitet werden.
+
+Aus dieser Zielsetzung ergibt sich folgende zentrale Forschungsfrage:
+
+\begin{quote}
+\textbf{Welchen Beitrag leistet Self-Supervised Representation Learning für ein lernbasiertes
+Klassifikationssystem zur Erkennung bislang ungesehener Phishing-Webseiten und wie lässt sich
+dieser Ansatz durch task-adaptive Repräsentationsanpassung sowie multimodale
+Systemkomponenten weiterentwickeln?}
+\end{quote}
+
+Zur differenzierten Beantwortung werden vier Unterfragen formuliert:
+
+\begin{description}
+\item[FF1:] Wie verändert die task-adaptive Anpassung der URL- und HTML-Text-Repräsentationen
+deren Downstream-Nutzbarkeit gegenüber nicht zusätzlich adaptierten vortrainierten Encodern?
+
+\item[FF2:] Wie verändert sich der Zusatznutzen der task-adaptiven Repräsentationsanpassung bei
+unterschiedlicher Verfügbarkeit gelabelter Trainingsdaten und unterschiedlichen
+Downstream-Klassifikationsmechanismen?
+
+\item[FF3:] Ab welchem reduzierten Labelbudget erreicht die task-adaptive RUT-Repräsentation
+über die untersuchten Evaluationsbedingungen hinweg ein mindestens gleichwertiges
+Leistungsniveau wie vollständig mit 200.000 Labels trainierte Referenzverfahren?
+
+\item[FF4:] Wie verändern eine strukturelle DOM-Repräsentation, multimodale Fusion und eine
+kaskadierte URL-first-Verarbeitung die Erkennungsleistung und den Inferenzaufwand des
+prototypischen Klassifikationssystems?
+\end{description}
+
+
+\section{Vorgehensweise und Methodik der Arbeit}
+
+Zur Beantwortung der Forschungsfragen wird ein empirisch-vergleichendes mit einem
+konstruktionsorientierten Vorgehen verbunden. Als Datengrundlage dient der öffentlich verfügbare
+PhreshPhish-Datensatz mit zeitlich verorteten URLs, gespeicherten HTML-Inhalten und
+Klassenlabels für legitime und phishingbezogene Webseiten (vgl. [Dalton et al. (2026), S. 1--4]).
+
+Zunächst werden allgemein vortrainierte Basisencoder mit Varianten verglichen, bei denen die
+URL-Repräsentation, die HTML-Text-Repräsentation oder beide Informationszweige mittels TAPT
+auf ungelabelten Webseitendaten weiter angepasst werden. Ihre Downstream-Nutzbarkeit wird mit
+logistischer Regression und einem kleinen Mehrschicht-Perzeptron über sieben Labelbudgets
+untersucht. Kontrastives Repräsentationslernen wird ergänzend anhand eines vorgelagerten
+explorativen Versuchs eingeordnet.
+
+FF3 vergleicht RUT über das gesamte Budgetraster mit R0@200k und TF-IDF/XGBoost@200k.
+Für diese N10-Vergleiche werden Konfidenzintervalle, exakte Tests und korrigierte
+Nichtunterlegenheitsentscheidungen berichtet. Modell- und Systementwicklung nutzen DEV,
+die Schwellenbestimmung CAL und die Leistungsbewertung FINAL. Nachträglich ergänzte
+Analysen werden gesondert gekennzeichnet. Eine externe Putra-Auswertung ergänzt die
+Labelbudgetanalyse.
+
+Anschließend wird die RUT-Basis schrittweise um HTML-Text, DOM und Gating erweitert.
+Eine sequenzielle Komponentenablation prüft deren inkrementellen Beitrag. Das TRI-System
+wird durch eine URL-first-Kaskade ergänzt, die nur unsichere Fälle vollständig multimodal
+verarbeitet. Ein Frontend-Vergleich variiert die URL-Repräsentation zwischen Basis und TAPT.
+Neben Klassifikationsmetriken werden Latenz, Durchsatz, GPU-Speicherbedarf und
+Eskalationsrate erfasst.
+
+Kapitel 2 und 3 begründen den Untersuchungsansatz; Kapitel 4 und 5 erläutern Methodik und
+Umsetzung, Kapitel 6 die Ergebnisse und Kapitel 7 deren Einordnung.

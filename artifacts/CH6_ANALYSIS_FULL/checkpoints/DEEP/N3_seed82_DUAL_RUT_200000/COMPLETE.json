@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "tag": "N3_seed82_DUAL_RUT_200000",
+  "rep": "RUT",
+  "budget": 200000,
+  "use_dom": false,
+  "seed": 82,
+  "batch_size": 16,
+  "mean_loss": 0.10721365505447611,
+  "elapsed_min": 41.67067841688792
+}

@@ -1,0 +1,19 @@
+{
+  "version": "FINAL_MODALITY_INFORMATION_AUDIT_v1",
+  "scientific_role": "DIAGNOSTIC_MODALITY_PIPELINE_AUDIT",
+  "not_confirmatory": true,
+  "train_budget": 20000,
+  "rank_seed": 20260813,
+  "probe": "identical logistic regression",
+  "target_fpr": 0.005,
+  "evaluation": [
+    "full DEV",
+    "fixed 10k+10k FINAL audit subset"
+  ],
+  "questions": [
+    "text emptiness/length/truncation",
+    "URL vs TEXT vs URL+TEXT representation quality",
+    "incremental complementarity of TEXT given URL",
+    "raw text and html_struct separability"
+  ]
+}

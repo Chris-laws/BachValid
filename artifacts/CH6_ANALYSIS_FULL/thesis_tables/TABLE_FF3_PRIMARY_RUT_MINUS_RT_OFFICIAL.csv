@@ -1,0 +1,2 @@
+scenario,contrast,n_pairs,mean_delta_tpr_pp,ci95_lo_pp,ci95_hi_pp,positive_pairs,negative_pairs,exact_signflip_p,holm_ood_p,primary_extension_test,primary_extension_ood_family
+OFFICIAL_TEST,RUT-RT,10,7.0035156249999995,3.119103537922786,10.887927712077214,10,0,0.001953125,,True,False

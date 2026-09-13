@@ -1,0 +1,3 @@
+scenario,sealed_rows,same_identifier_seen_in_SSL,pct_of_sealed_seen_in_SSL,missing_identifier_inside_sealed
+DOMAIN_OOD_EXACT,115917,0,0.0,1552
+TEMPLATE_OOD_EXACT,161223,0,0.0,0

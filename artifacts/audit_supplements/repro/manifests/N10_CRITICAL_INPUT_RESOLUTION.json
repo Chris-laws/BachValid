@@ -1,0 +1,22 @@
+{
+  "freeze_id": "PHRESHPHISH_FINAL_DATA_FREEZE_v3_HF_SHARDED_DOM",
+  "data_root": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+  "meta_root": "/kaggle/input/datasets/cristinakaufalt/freezeresume",
+  "manifest_root": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests",
+  "private_manifest": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests/train_role_manifest_PRIVATE_WITH_LABELS.parquet",
+  "ood_flags": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests/final_test_exact_ood_flags_SEALED.parquet",
+  "final_manifest": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests/final_test_manifest_SEALED.parquet",
+  "role_dirs": {
+    "SSL": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3/roles/ssl_pool_200k",
+    "CAL": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3/roles/fpr_calibration_benign",
+    "FINAL": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3/roles/final_test"
+  },
+  "counts": {
+    "SSL": 200000,
+    "CAL": 50000,
+    "FINAL": 168060
+  },
+  "text_base_src": "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base",
+  "text_dapt_src": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT",
+  "url_src": "bert-base-uncased"
+}

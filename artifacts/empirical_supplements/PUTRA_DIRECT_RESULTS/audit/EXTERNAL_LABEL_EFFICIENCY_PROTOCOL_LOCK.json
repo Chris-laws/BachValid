@@ -1,0 +1,49 @@
+{
+  "version": "PUTRA_EXTERNAL_LABEL_EFFICIENCY_R0_VS_RUT_N10_v1_1",
+  "scientific_status": "POST_HOC_EXTERNAL_LABEL_EFFICIENCY_ANALYSIS",
+  "prior_putra_analyses_seen": true,
+  "no_optional_stopping": true,
+  "all_planned_replicates_reported": true,
+  "temporal_design": "global scan_date cutoff at empirical 0.75 quantile",
+  "variants": {
+    "R0": "generic pretrained BERT URL + RoBERTa text encoders; no additional PhreshPhish TAPT",
+    "RUT": "same encoder families after PhreshPhish URL- and text-TAPT"
+  },
+  "label_budgets": [
+    200,
+    500,
+    1000,
+    2000
+  ],
+  "model_seeds": [
+    142,
+    162,
+    182,
+    202,
+    222,
+    242,
+    262,
+    282,
+    302,
+    322
+  ],
+  "label_rank_seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "paired_same_labeled_rows_R0_RUT": true,
+  "nested_budgets_within_seed": true,
+  "primary_endpoint": "normalized area under AP learning curve over log10(label budget)",
+  "primary_test": "two-sided exact paired sign-flip test over N10 AULC differences",
+  "secondary_AP_family": "four paired AP tests, Holm-corrected across label budgets",
+  "test_used_for_training": false,
+  "putra_target_MLM_in_this_experiment": false
+}

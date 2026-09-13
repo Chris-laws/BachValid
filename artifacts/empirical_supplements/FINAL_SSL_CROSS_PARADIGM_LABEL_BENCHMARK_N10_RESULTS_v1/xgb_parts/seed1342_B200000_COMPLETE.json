@@ -1,0 +1,30 @@
+{
+  "status": "COMPLETE",
+  "spec": {
+    "seed": 1342,
+    "budget": 200000,
+    "xgboost_version": "3.2.0",
+    "params": {
+      "objective": "binary:logistic",
+      "eval_metric": "logloss",
+      "n_estimators": 400,
+      "max_depth": 6,
+      "learning_rate": 0.08,
+      "min_child_weight": 2,
+      "subsample": 0.9,
+      "colsample_bytree": 0.65,
+      "reg_lambda": 2.0,
+      "reg_alpha": 0.0,
+      "max_bin": 128,
+      "random_state": 1342,
+      "n_jobs": -1,
+      "tree_method": "hist",
+      "device": "cpu"
+    },
+    "feature_protocol": "canonical_v8_4_tfidf_url25k_text50k",
+    "target_fpr": 0.005
+  },
+  "train_seconds": 1374.5460103549995,
+  "score_seconds": 5.167554456000289,
+  "completed_utc": "2026-09-02T12:44:42.925688+00:00"
+}

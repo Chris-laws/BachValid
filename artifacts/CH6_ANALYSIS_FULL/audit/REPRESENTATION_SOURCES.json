@@ -1,0 +1,18 @@
+{
+  "R0": [
+    "bert-base-uncased",
+    "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base"
+  ],
+  "RU": [
+    "/kaggle/working/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+    "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base"
+  ],
+  "RT": [
+    "bert-base-uncased",
+    "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT"
+  ],
+  "RUT": [
+    "/kaggle/working/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+    "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT"
+  ]
+}

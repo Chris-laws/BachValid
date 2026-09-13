@@ -1,0 +1,10 @@
+severity,check,message
+PASS,SHA_LEAKAGE,Keine SHA-Überlappung von FINAL zu SSL/DEV/CAL.
+PASS,OOD_EXPOSURE_DOMAIN_OOD_EXACT,Kein versiegelter Fall hat denselben Identifier im SSL-Pool.
+PASS,OOD_EXPOSURE_TEMPLATE_OOD_EXACT,Kein versiegelter Fall hat denselben Identifier im SSL-Pool.
+WARNING,FLAG_RECON_domain_ood_exact,"Bester Match: ALL_ACCESSIBLE, 99.02773%."
+WARNING,FLAG_RECON_domain_template_ood_exact,"Bester Match: ALL_ACCESSIBLE, 99.04498%."
+PASS,FLAG_RECON_template_ood_exact,"Bester Match: ALL_ACCESSIBLE, 99.99940%."
+INFO,SUBSET_SIZE_DOMAIN_OOD_EXACT,68.97% von FINAL liegen in diesem OOD-Subset; das ist kein automatisch härterer Stress-Holdout.
+INFO,SUBSET_SIZE_TEMPLATE_OOD_EXACT,95.93% von FINAL liegen in diesem OOD-Subset; das ist kein automatisch härterer Stress-Holdout.
+INFO,SUBSET_SIZE_DOMAIN_TEMPLATE_OOD_EXACT,65.51% von FINAL liegen in diesem OOD-Subset; das ist kein automatisch härterer Stress-Holdout.

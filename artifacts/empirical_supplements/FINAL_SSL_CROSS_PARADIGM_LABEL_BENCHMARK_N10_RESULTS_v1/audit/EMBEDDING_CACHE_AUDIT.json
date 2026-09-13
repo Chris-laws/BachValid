@@ -1,0 +1,98 @@
+{
+  "URL_BASE_SSL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/URL_BASE_SSL.npy",
+    "shape": [
+      200000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "URL_BASE_CAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/URL_BASE_CAL.npy",
+    "shape": [
+      50000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "URL_BASE_FINAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/URL_BASE_FINAL.npy",
+    "shape": [
+      168060,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "URL_DAPT_SSL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/URL_DAPT_SSL.npy",
+    "shape": [
+      200000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "URL_DAPT_CAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/URL_DAPT_CAL.npy",
+    "shape": [
+      50000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "URL_DAPT_FINAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/URL_DAPT_FINAL.npy",
+    "shape": [
+      168060,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "TEXT_BASE_SSL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/TEXT_BASE_SSL.npy",
+    "shape": [
+      200000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "TEXT_BASE_CAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/TEXT_BASE_CAL.npy",
+    "shape": [
+      50000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "TEXT_BASE_FINAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/TEXT_BASE_FINAL.npy",
+    "shape": [
+      168060,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "TEXT_DAPT_SSL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/TEXT_DAPT_SSL.npy",
+    "shape": [
+      200000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "TEXT_DAPT_CAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/TEXT_DAPT_CAL.npy",
+    "shape": [
+      50000,
+      768
+    ],
+    "dtype": "float32"
+  },
+  "TEXT_DAPT_FINAL": {
+    "path": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings/TEXT_DAPT_FINAL.npy",
+    "shape": [
+      168060,
+      768
+    ],
+    "dtype": "float32"
+  }
+}

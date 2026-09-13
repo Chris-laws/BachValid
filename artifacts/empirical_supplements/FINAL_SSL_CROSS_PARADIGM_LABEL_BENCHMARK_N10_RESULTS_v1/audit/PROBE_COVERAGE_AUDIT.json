@@ -1,0 +1,25 @@
+{
+  "runs": 10,
+  "rut_budgets": [
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000,
+    200000
+  ],
+  "r0_reference_budget": 200000,
+  "scenarios": [
+    "OFFICIAL_TEST",
+    "DOMAIN_OOD_EXACT",
+    "TEMPLATE_OOD_EXACT",
+    "DOMAIN_TEMPLATE_OOD_EXACT",
+    "LATE_TEST_Q4"
+  ],
+  "rows_expected": 400,
+  "rows_observed": 400,
+  "conditions_reused": 40,
+  "conditions_recomputed": 40,
+  "complete": true
+}

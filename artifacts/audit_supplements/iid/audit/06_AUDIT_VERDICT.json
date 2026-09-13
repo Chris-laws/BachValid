@@ -1,0 +1,19 @@
+{
+  "run_id": "FF3_HISTORICAL_IID_CURRENT_EXPOSURE_AUDIT_v1",
+  "completed_utc": "2026-08-29T11:30:30.115502+00:00",
+  "historical_iid_n": 3051,
+  "sha_overlap_SSL": 1182,
+  "sha_overlap_DEV": 109,
+  "sha_overlap_CAL": 379,
+  "sha_overlap_FINAL": 0,
+  "exact_content_failures": [
+    "SSL:url=1182",
+    "DEV:url=109",
+    "CAL:url=379"
+  ],
+  "exact_identity_unknown": [],
+  "mapped_to_current_FINAL": 0,
+  "label_mismatch_n": null,
+  "reusable_for_current_R0_RUT_FF3": false,
+  "verdict": "RED_EXPOSED_SHA"
+}

@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "tag": "ENG_TRI_RUT_20000",
+  "rep": "RUT",
+  "budget": 20000,
+  "use_dom": true,
+  "seed": 82,
+  "batch_size": 8,
+  "mean_loss": 0.22488156026676298,
+  "elapsed_min": 5.975554434458415
+}

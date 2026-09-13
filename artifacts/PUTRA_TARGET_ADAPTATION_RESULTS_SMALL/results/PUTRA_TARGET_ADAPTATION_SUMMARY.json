@@ -1,0 +1,157 @@
+{
+  "status": "COMPLETE",
+  "version": "PUTRA_TARGET_ADAPTATION_LABEL_EFFICIENCY_N10_v1",
+  "scientific_status": "POST_HOC_EXTERNAL_TARGET_ADAPTATION_ANALYSIS",
+  "putra_split": {
+    "putra_doi": "10.5281/zenodo.8041387",
+    "complete_rows": 10391,
+    "cutoff_utc": "2023-04-07 03:33:03.372000+00:00",
+    "early_rows": 7793,
+    "late_rows_before_overlap_filter": 2598,
+    "late_rows_after_overlap_filter": 2598,
+    "late_exact_url_overlaps_removed": 0,
+    "early_date_range": [
+      "2018-12-08 00:22:51.482000+00:00",
+      "2023-04-07 03:33:03.372000+00:00"
+    ],
+    "late_date_range": [
+      "2023-04-07 03:51:02.445000+00:00",
+      "2023-05-08 08:06:20.214000+00:00"
+    ],
+    "early_class_counts": {
+      "0": 3554,
+      "1": 4239
+    },
+    "late_class_counts": {
+      "0": 1686,
+      "1": 912
+    },
+    "features_text_used": true,
+    "features_html_used_as_raw_html": false,
+    "inputs": {
+      "phishing.csv": {
+        "path": "/kaggle/working/putra_target_adaptation_v1/data/phishing.csv",
+        "rows": 5151,
+        "md5": "513962464c413fc30b2030547a12868a"
+      },
+      "not-phishing.csv": {
+        "path": "/kaggle/working/putra_target_adaptation_v1/data/not-phishing.csv",
+        "rows": 5244,
+        "md5": "f5d218eb67f5d7bd0571e8089a8fc392"
+      }
+    }
+  },
+  "variants": {
+    "E0_SOURCE_RUT": "existing PhreshPhish RUT URL+Text encoders, frozen",
+    "E1_TARGET_RUT": "same RUT encoders plus one MLM epoch on unlabeled early Putra target pool"
+  },
+  "target_ssl": {
+    "epochs": 1,
+    "batch_candidates": [
+      16,
+      8,
+      4
+    ],
+    "lr": 5e-05,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.06,
+    "mlm_probability": 0.15,
+    "labels_used": false
+  },
+  "label_budgets": [
+    200,
+    500,
+    1000,
+    2000
+  ],
+  "n_pairs": 10,
+  "primary": {
+    "endpoint": "AP_AULC_log_budget",
+    "n_pairs": 10,
+    "E0_mean": 0.9198361691712982,
+    "E1_mean": 0.9084469009047804,
+    "mean_delta": -0.011389268266517816,
+    "ci95_lo": -0.014993797517717065,
+    "ci95_hi": -0.0077847390153185664,
+    "positive_pairs": 0,
+    "negative_pairs": 10,
+    "exact_signflip_p": 0.001953125
+  },
+  "secondary_AP_by_budget": [
+    {
+      "budget": 200,
+      "E0_AP_mean": 0.8651461740503226,
+      "E1_AP_mean": 0.8423412395365816,
+      "delta_AP": -0.022804934513740983,
+      "delta_AP_pp": -2.2804934513740984,
+      "ci95_lo": -0.03376286868571451,
+      "ci95_hi": -0.01184700034176746,
+      "ci95_lo_pp": -3.3762868685714507,
+      "ci95_hi_pp": -1.184700034176746,
+      "positive_pairs": 1,
+      "negative_pairs": 9,
+      "p_raw": 0.00390625,
+      "p_holm": 0.01171875
+    },
+    {
+      "budget": 500,
+      "E0_AP_mean": 0.9175671370477747,
+      "E1_AP_mean": 0.9044212706527466,
+      "delta_AP": -0.013145866395028016,
+      "delta_AP_pp": -1.3145866395028016,
+      "ci95_lo": -0.01896913355562445,
+      "ci95_hi": -0.0073225992344315835,
+      "ci95_lo_pp": -1.896913355562445,
+      "ci95_hi_pp": -0.7322599234431584,
+      "positive_pairs": 0,
+      "negative_pairs": 10,
+      "p_raw": 0.001953125,
+      "p_holm": 0.0078125
+    },
+    {
+      "budget": 1000,
+      "E0_AP_mean": 0.9404951456733238,
+      "E1_AP_mean": 0.9355468920668892,
+      "delta_AP": -0.004948253606434727,
+      "delta_AP_pp": -0.49482536064347266,
+      "ci95_lo": -0.007513911512859654,
+      "ci95_hi": -0.0023825957000097996,
+      "ci95_lo_pp": -0.7513911512859653,
+      "ci95_hi_pp": -0.23825957000097997,
+      "positive_pairs": 1,
+      "negative_pairs": 9,
+      "p_raw": 0.005859375,
+      "p_holm": 0.01171875
+    },
+    {
+      "budget": 2000,
+      "E0_AP_mean": 0.9560829866627287,
+      "E1_AP_mean": 0.950981073556121,
+      "delta_AP": -0.005101913106607825,
+      "delta_AP_pp": -0.5101913106607825,
+      "ci95_lo": -0.007506349818367984,
+      "ci95_hi": -0.002697476394847665,
+      "ci95_lo_pp": -0.7506349818367984,
+      "ci95_hi_pp": -0.2697476394847665,
+      "positive_pairs": 1,
+      "negative_pairs": 9,
+      "p_raw": 0.005859375,
+      "p_holm": 0.01171875
+    }
+  ],
+  "label_equivalence_descriptive": {
+    "reference": "E0_SOURCE_RUT at 2000 labels",
+    "reference_mean_AP": 0.9560829866627287,
+    "smallest_E1_budget_with_mean_AP_at_least_reference": null,
+    "inferential_status": "DESCRIPTIVE_ONLY_NO_NONINFERIORITY_CLAIM"
+  },
+  "guardrails": [
+    "A prior direct Putra transfer screen was known before this experiment.",
+    "The temporal late Putra test is not used for target MLM or probe fitting.",
+    "Target MLM uses early Putra URL/text without labels.",
+    "E0 and E1 receive identical labeled target rows within each run/budget.",
+    "N10 quantifies labeled-sample/probe variation at fixed target-adapted checkpoints.",
+    "Putra features.text is provider-preprocessed text, not raw HTML processed by the PhreshPhish pipeline.",
+    "The label-equivalence calculation is descriptive and not a formal noninferiority result."
+  ]
+}

@@ -1,0 +1,2 @@
+pages,full_minutes,cascade_minutes,minutes_saved,final_escalation_rate,full_path_executions_avoided,scope
+1000000,90.9869345718739,37.28399697822468,53.702937593649224,0.14933357134356778,850666,illustrative extrapolation from measured in-memory throughput; not production load

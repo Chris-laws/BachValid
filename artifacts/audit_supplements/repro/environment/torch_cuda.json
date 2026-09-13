@@ -1,0 +1,11 @@
+{
+  "torch_version": "2.10.0+cu128",
+  "cuda_available": true,
+  "torch_cuda_version": "12.8",
+  "cudnn_version": 91002,
+  "gpu_count": 2,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ]
+}

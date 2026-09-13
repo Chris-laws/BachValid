@@ -1,0 +1,2 @@
+system,hardware,measurement_scope,batch_throughput,n_b1,n_throughput,repeats,latency_b1_median_ms,latency_b1_p95_ms,throughput_pages_s_mean,throughput_pages_s_std,model_state_bytes,url_vocab_size,text_vocab_size
+TFIDF_XGB_200K,CPU,in-memory URL/text -> TF-IDF -> XGB margin; excludes disk/network/browser/raw HTML parsing,32,300,5000,3,3.485419499980935,10.712966100007293,482.2265309373968,7.913795203449402,946318,25000,50000

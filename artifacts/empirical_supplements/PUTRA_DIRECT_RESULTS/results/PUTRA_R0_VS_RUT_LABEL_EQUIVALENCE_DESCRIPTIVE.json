@@ -1,0 +1,6 @@
+{
+  "reference": "R0 at 2000 labeled Putra target instances",
+  "reference_mean_AP": 0.9340084404544653,
+  "smallest_RUT_budget_with_mean_AP_at_least_reference": 1000,
+  "inferential_status": "DESCRIPTIVE_ONLY_NO_NONINFERIORITY_CLAIM"
+}

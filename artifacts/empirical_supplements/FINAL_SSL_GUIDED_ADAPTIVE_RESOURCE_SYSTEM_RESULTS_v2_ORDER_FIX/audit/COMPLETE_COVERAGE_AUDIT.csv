@@ -1,0 +1,12 @@
+check,pass
+N5 compute contrast,True
+same frozen TRI fallback,True
+five final scenarios,True
+active selection has no label argument,True
+R0/RUT random+active all budgets,True
+review is not retrieval classification,True
+closed-loop active->URL->TRI evaluated when available,True
+URL front benchmark,True
+policy frozen before final,True
+final access audit,True
+all primary tables present,True

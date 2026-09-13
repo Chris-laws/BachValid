@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "name": "TEXT_TARGET_MLM",
+  "source_model": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT",
+  "tokenizer_source": "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base",
+  "target_rows": 7793,
+  "epochs": 1,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.06,
+  "mlm_probability": 0.15,
+  "labels_used": false,
+  "loss_mean": 5.156417905307207,
+  "loss_last100": 3.5446290040016173,
+  "elapsed_minutes": 2.9449719111124675
+}

@@ -1,0 +1,5 @@
+scenario_check,identity,reference,scenario_rows,nonempty_rows,overlap_rows,overlap_rate,unique_scenario_values,unique_overlapping_values,missing_n,missing_pct
+DOMAIN_OOD_EXACT,domain,SSL,115917,114365,0,0.0,96201,0,1552,1.3388890326699276
+DOMAIN_TEMPLATE_OOD_EXACT/domain,domain,SSL,110095,108572,0,0.0,92150,0,1523,1.3833507425405331
+DOMAIN_TEMPLATE_OOD_EXACT/template,template_hash,SSL,110095,110095,0,0.0,61797,0,0,0.0
+TEMPLATE_OOD_EXACT,template_hash,SSL,161223,161223,0,0.0,111655,0,0,0.0

@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "ssl_rows": 200000,
+  "dev_rows": 20000,
+  "ssl_physical_has_label": false,
+  "ssl_dev_sha_disjoint": true,
+  "rep_dev_split": {
+    "threshold": 10000,
+    "eval": 10000
+  },
+  "engineering_split": {
+    "tune": 5000,
+    "meta": 5000
+  },
+  "cal_final_content_accessed": false
+}

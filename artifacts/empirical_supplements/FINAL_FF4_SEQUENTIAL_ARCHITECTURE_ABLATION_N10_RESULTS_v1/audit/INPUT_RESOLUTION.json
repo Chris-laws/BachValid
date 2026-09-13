@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "data_root": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+  "role_counts": {
+    "SSL": 200000,
+    "DEV": 20000
+  },
+  "private_manifest": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3/manifests/train_role_manifest_PRIVATE_WITH_LABELS.parquet",
+  "url_dapt_src": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+  "text_dapt_src": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT",
+  "dom_encoder": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/DOM_MASKED_SSL/encoder.pt",
+  "dom_vocab": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/audit/DOM_VOCAB.json",
+  "url_dapt_weight_file": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K/model.safetensors",
+  "url_dapt_weight_sha256": "98832bfda532d0cee956a18647dc8f307702f08263d708ad5febd67e42fd0931",
+  "text_dapt_weight_file": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT/model.safetensors",
+  "text_dapt_weight_sha256": "4c61d45fc2aef3961922a08d8550ff6f917e2c5487effeaae18ffd8b23173ac2",
+  "dom_encoder_sha256": "a377ab40b59fc212a7e551fdf1b892a9245f68d02a2b2de352641d22f6017adb",
+  "dom_vocab_sha256": "454ec696aa2060a7e53d246a921243470195199b28fef6f3b7b40f2217258506",
+  "network_fallback": false,
+  "cal_resolved": false,
+  "final_resolved": false
+}

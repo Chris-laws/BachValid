@@ -1,0 +1,17 @@
+{
+  "status": "COMPLETE",
+  "name": "URL_TARGET_MLM",
+  "source_model": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+  "tokenizer_source": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+  "target_rows": 7793,
+  "epochs": 1,
+  "batch_size": 16,
+  "lr": 5e-05,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.06,
+  "mlm_probability": 0.15,
+  "labels_used": false,
+  "loss_mean": 3.901049363808554,
+  "loss_last100": 3.5062843012809752,
+  "elapsed_minutes": 1.0781245271364848
+}

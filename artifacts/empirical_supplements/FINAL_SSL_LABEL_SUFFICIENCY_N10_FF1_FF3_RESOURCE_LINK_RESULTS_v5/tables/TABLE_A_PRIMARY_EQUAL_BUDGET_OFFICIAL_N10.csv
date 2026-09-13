@@ -1,0 +1,2 @@
+scenario,contrast,n_pairs,RUT_tpr_mean,R0_tpr_mean,mean_delta_tpr_pp,ci95_lo_pp,ci95_hi_pp,positive_pairs,negative_pairs,exact_signflip_p_two_sided,mean_delta_fpr_pp,mean_delta_AP_pp,holm_p_shift_family,primary_official
+OFFICIAL_TEST,RUT_20k - R0_20k,10,0.7751145833333334,0.7142773437499998,6.0837239583333345,5.380999309596069,6.786448607070601,10,0,0.001953125,-0.047337278106512996,0.5823418018033855,,True

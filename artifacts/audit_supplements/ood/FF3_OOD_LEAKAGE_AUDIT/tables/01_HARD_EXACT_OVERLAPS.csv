@@ -1,0 +1,19 @@
+pair,kind,overlap
+SSL vs DEV,sha256,0
+SSL vs DEV,exact_url,0
+SSL vs DEV,exact_text,2458
+SSL vs CAL,sha256,0
+SSL vs CAL,exact_url,0
+SSL vs CAL,exact_text,914
+SSL vs FINAL,sha256,0
+SSL vs FINAL,exact_url,0
+SSL vs FINAL,exact_text,53
+DEV vs CAL,sha256,0
+DEV vs CAL,exact_url,0
+DEV vs CAL,exact_text,205
+DEV vs FINAL,sha256,0
+DEV vs FINAL,exact_url,0
+DEV vs FINAL,exact_text,15
+CAL vs FINAL,sha256,0
+CAL vs FINAL,exact_url,0
+CAL vs FINAL,exact_text,20

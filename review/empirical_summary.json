@@ -1,0 +1,11 @@
+{
+  "checks": 364,
+  "passed": 364,
+  "failed": [],
+  "limitations": [
+    "This aggregate audit is supplemented by raw_score_audit.py, which uses recovered FINAL labels to reconstruct scores, ROC/AP and bootstrap intervals.",
+    "Raw per-page latency samples and per-repeat timing durations were not exported. Runtime level values are table claims; ratio/reduction arithmetic is independently reproduced.",
+    "This script reconstructs Putra AP-AULC and inference from historical per-run metrics. Additional CPU refits from recovered embeddings are documented in closure_summary.json.",
+    "N10 replication measures downstream variation at fixed TAPT checkpoints and fixed evaluation population; not independent pretraining, temporal or deployment replications."
+  ]
+}

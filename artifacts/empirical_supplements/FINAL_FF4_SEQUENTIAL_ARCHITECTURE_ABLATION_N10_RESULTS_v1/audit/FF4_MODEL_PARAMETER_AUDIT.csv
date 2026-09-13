@@ -1,0 +1,5 @@
+variant,modalities,fusion,head_input_dim,total_parameters,trainable_parameters
+P0_URL,url,none,256,109876738,29336578
+P1_DUAL_EQUAL,url+text,equal,768,234981635,58737923
+P2_TRI_EQUAL,url+text+dom,equal,1024,235361797,59118085
+P3_TRI_GATED,url+text+dom,gated,1024,235378310,59134598

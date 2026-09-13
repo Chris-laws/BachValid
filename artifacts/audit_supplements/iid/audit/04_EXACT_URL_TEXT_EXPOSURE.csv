@@ -1,0 +1,9 @@
+role,identity,mode,overlap_n_unique,comparable
+SSL,url,raw_exact,1182,True
+SSL,text,raw_exact,0,True
+DEV,url,raw_exact,109,True
+DEV,text,raw_exact,0,True
+CAL,url,raw_exact,379,True
+CAL,text,raw_exact,0,True
+FINAL,url,raw_exact,0,True
+FINAL,text,raw_exact,0,True

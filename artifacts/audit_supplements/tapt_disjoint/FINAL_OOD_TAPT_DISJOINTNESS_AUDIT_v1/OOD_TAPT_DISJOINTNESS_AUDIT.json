@@ -1,0 +1,27 @@
+{
+  "audit_version": "FINAL_OOD_TAPT_DISJOINTNESS_AUDIT_v1",
+  "freeze_root": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+  "flags_path": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests/final_test_exact_ood_flags_SEALED.parquet",
+  "expected_counts": {
+    "FINAL": 168060,
+    "DOMAIN_OOD_EXACT": 115917,
+    "TEMPLATE_OOD_EXACT": 161223,
+    "DOMAIN_TEMPLATE_OOD_EXACT": 110095
+  },
+  "actual_counts": {
+    "DOMAIN_OOD_EXACT": 115917,
+    "TEMPLATE_OOD_EXACT": 161223,
+    "DOMAIN_TEMPLATE_OOD_EXACT": 110095
+  },
+  "status": "STRONG_EXACT_LEARNING_PIPELINE_DISJOINTNESS",
+  "key_overlap_rows": {
+    "DOMAIN_OOD_vs_SSL": 0,
+    "TEMPLATE_OOD_vs_SSL": 0,
+    "DOMAIN_OOD_vs_SUP_DEV_SSL": 0,
+    "TEMPLATE_OOD_vs_SUP_DEV_SSL": 0,
+    "DOMAIN_OOD_vs_SUP_DEV_SSL_CAL": 0,
+    "TEMPLATE_OOD_vs_SUP_DEV_SSL_CAL": 0
+  },
+  "claim_boundary": "Exact domain/template-hash disjointness does not establish semantic, near-duplicate, or approximate structural novelty.",
+  "recommended_thesis_wording": "Die als Domain-OOD beziehungsweise Template-OOD markierten FINAL-Instanzen weisen hinsichtlich der jeweils geprüften exakten Identität keine Überschneidung mit dem 200k-SSL/TAPT-Pool oder den übrigen Lernrollen SUP und DEV auf. Die Szenarien sind damit auf Ebene exakter Domains beziehungsweise exakter Template-Hashes auch gegenüber der Repräsentationslern-Pipeline disjunkt. Dies belegt jedoch keine semantische oder approximative Struktur-Neuheit."
+}

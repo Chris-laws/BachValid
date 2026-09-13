@@ -1,0 +1,27 @@
+[
+  {
+    "file": "chapter05.tex",
+    "before": "Für die beiden Modalitäten werden aufgrund ihrer unterschiedlichen Sequenzcharakteristik\nverschiedene Kontextgrenzen verwendet. Der URL-Zweig verarbeitet maximal 128 Tokens. Zur\nnachträglichen Einordnung dieser festgelegten Grenze wurde im Rahmen der vorliegenden Arbeit\nauf dem vollständigen SSL-Pool eine Tokenlängenanalyse mit demselben BERT-Tokenizer\ndurchgeführt, der auch für das URL-TAPT verwendet wird. Von den 200.000 URLs liegen\n99,618\\,\\% vollständig innerhalb der 128-Token-Grenze; lediglich 0,382\\,\\% werden bei der\nTokenisierung trunkiert. Die gewählte Eingabegrenze bildet den URL-Bestand damit nahezu\nvollständig ab.",
+    "after": "Für die Modalitäten gelten unterschiedliche Kontextgrenzen: Der URL-Zweig verarbeitet\nmaximal 128 BERT-Token einschließlich Spezialtoken. Längere Eingaben werden abgeschnitten.\nEine vollständige Abdeckung des URL-Bestands durch diese Grenze ist damit nicht belegt."
+  },
+  {
+    "file": "chapter04.tex",
+    "before": "Variation der Labelauswahl und des Downstream-Trainings bei festen Repräsentationen erfasst.",
+    "after": "Variation der Labelauswahl und des Downstream-Trainings bei festen Repräsentationen erfasst.\nDie Budgets unter 200.000 enthalten je zur Hälfte beide Klassen und sind innerhalb einer\nWiederholung ineinander verschachtelt. Bei 200.000 wird dagegen der vollständige SSL-Bestand\nmit 101.578 benignen und 98.422 Phishing-Instanzen verwendet. Die Auswahl benötigt somit\nKlasseninformationen, obwohl diese beim vorgelagerten TAPT nicht eingelesen werden."
+  },
+  {
+    "file": "chapter04.tex",
+    "before": "Downstream-Variation bei festen Vortrainingszuständen und fester Testpopulation.",
+    "after": "Downstream-Variation bei festen Vortrainingszuständen und fester Testpopulation.\nDie t-Intervalle setzen unabhängige, näherungsweise normalverteilte Paardifferenzen voraus;\ndie Sign-Flip-Tests benötigen unter der jeweiligen Nullhypothese Vorzeichensymmetrie.\nDie vollständige Enumeration allein macht einen Test nicht voraussetzungsfrei."
+  },
+  {
+    "file": "chapter04.tex",
+    "before": "Damit ist ausgeschlossen, dass die evaluierten exakten\nDomains oder Templates bereits in der vorgelagerten task-adaptiven Repräsentationslern-Pipeline\nenthalten waren.",
+    "after": "Für die vorhandenen Identitätswerte weist der Audit somit keine Exposition gegenüber den\ngeprüften Lernrollen nach; dies bezieht sich auf exakte Identitäten und den archivierten Freeze."
+  },
+  {
+    "file": "chapter06.tex",
+    "before": "dient dieser Wert keinem direkten Leistungsvergleich, sondern dient der externen",
+    "after": "dient dieser Wert ausschließlich der externen"
+  }
+]

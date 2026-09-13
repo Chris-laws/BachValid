@@ -1,0 +1,13 @@
+% KI-unterstuetzte eigene schematische Darstellung; keine gemessenen Tokenfolgen.
+\begin{tikzpicture}[font=\small,>=stealth,
+  box/.style={draw,rounded corners=2pt,align=center,minimum height=.8cm,text width=11cm}]
+\node[box] (input) {Bereinigter HTML-Text: \texttt{Secure Login -- Verify your account}};
+\node[box,above=0.5cm of input] (masked) {Maskierte Eingabe: \texttt{<mask> Login -- Verify your <mask>}};
+\node[box,above=0.5cm of masked] (encoder) {RoBERTa-Encoder: kontextabhängige Tokenrepräsentationen};
+\node[box,above=0.5cm of encoder] (head) {MLM-Head: Vorhersage der ursprünglichen ausgewählten Token};
+\node[above=0.35cm of head,align=center] (target) {Schematische Vorhersageziele: \texttt{Secure}, \texttt{account}};
+\draw[->] (input)--(masked);
+\draw[->] (masked)--(encoder);
+\draw[->] (encoder)--(head);
+\draw[->] (head)--(target);
+\end{tikzpicture}

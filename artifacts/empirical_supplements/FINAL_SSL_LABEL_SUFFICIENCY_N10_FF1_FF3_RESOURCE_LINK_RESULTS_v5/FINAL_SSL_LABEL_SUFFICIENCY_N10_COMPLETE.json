@@ -1,0 +1,7 @@
+{
+  "status": "COMPLETE",
+  "version": "FINAL_SSL_LABEL_SUFFICIENCY_N10_FF1_FF3_RESOURCE_LINK_v5_DIRECT_CACHE_RESOLVER",
+  "completed_utc": "2026-09-02T01:12:18.743745+00:00",
+  "coverage_pass": true,
+  "minimal_statistically_sufficient_budget": 50000
+}

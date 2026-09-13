@@ -1,0 +1,6 @@
+{
+  "reference": "E0_SOURCE_RUT at 2000 labels",
+  "reference_mean_AP": 0.9560829866627287,
+  "smallest_E1_budget_with_mean_AP_at_least_reference": null,
+  "inferential_status": "DESCRIPTIVE_ONLY_NO_NONINFERIORITY_CLAIM"
+}

@@ -1,0 +1,368 @@
+\chapter{Diskussion und Schlussbetrachtung}
+
+Die Ergebnisse werden im Folgenden entlang der vier Forschungsfragen interpretiert. Im
+Mittelpunkt stehen der zusätzliche Nutzen der task-adaptiven Repräsentationsanpassung, dessen
+Verhalten bei unterschiedlicher gelabelter Supervision sowie die Überführung der ausgewählten
+Repräsentationsbasis in das multimodale Gesamtsystem. Ergänzend wird eingeordnet, inwieweit
+sich die beobachtete Label-Effizienz auf einen unabhängig erhobenen Webseitenbestand
+übertragen lässt. Anschließend werden die Aussagegrenzen der Untersuchung und die daraus
+ableitbare betriebliche Einordnung diskutiert.
+
+
+\section{Interpretation und Beantwortung der Forschungsfragen}
+
+\textbf{FF1 -- task-adaptive Repräsentationsanpassung.}
+R0 bildet bereits einen allgemein selbstüberwacht vortrainierten Ausgangspunkt. Der in dieser
+Arbeit gemessene Effekt beschreibt daher den zusätzlichen Nutzen der task-adaptiven
+Weiteranpassung. RU und RT verbessern die Downstream-Leistung gegenüber R0, während
+RUT mit beiden Probes die höchste mittlere TPR erreicht. Der N10-Vergleich bestätigt diesen
+Vorteil auf FINAL: Auf \nolinkurl{OFFICIAL_TEST} liegt RUT bei 20.000 Labels um
++6,08 Prozentpunkte über R0; in den vier zusätzlichen Evaluationsbedingungen beträgt der
+Unterschied +5,51 bis +6,26 Prozentpunkte und bleibt nach Holm-Korrektur signifikant.
+
+Damit zeigt sich ein zusätzlicher Repräsentationsnutzen der Anpassung auf dem ungelabelten
+Webseitenpool, obwohl die Ausgangsencoder bereits selbstüberwacht vortrainiert sind.
+Die in Kapitel 3 dargestellten spezialisierten URL-Repräsentationsverfahren verdeutlichen
+die Relevanz einer domänennäheren Repräsentationsbildung für URL-basierte
+Sicherheitsaufgaben (vgl. [Maneriker et al. (2021), PDF-S. 1--2]; [Wang et al. (2023), Abstract, o.\,S.]; [Li et al. (2025), S. 1--2 und 12]).
+Die vorliegende Untersuchung betrachtet diesen Zusammenhang für die zusätzliche
+task-adaptive Anpassung zweier Informationszweige innerhalb desselben Versuchsprotokolls.
+
+Die faktorielle Betrachtung zeigt zugleich, dass sich die einzelnen Adaptationsgewinne nicht
+vollständig addieren. Die Interaktion beträgt $-5{,}10$ Prozentpunkte für die lineare und
+$-2{,}83$ Prozentpunkte für die MLP-Probe. URL- und HTML-Text-TAPT liefern damit jeweils
+einen positiven Beitrag, weisen bei gemeinsamer Anpassung jedoch eine teilweise Überlappung
+ihrer Effekte auf. RUT bleibt dennoch die Variante mit der höchsten absoluten
+Downstream-Leistung.
+
+Der vorgelagerte kontrastive Versuchsblock ist davon getrennt zu interpretieren. Die
+getesteten kontrastiven Varianten lagen unter der damaligen Basis- und MLM-Konfiguration,
+wurden jedoch nicht unter dem finalen R0/RU/RT/RUT-Protokoll erneut trainiert. Daraus
+lässt sich keine allgemeine Aussage über kontrastives Lernen gegenüber MLM-basiertem
+TAPT ableiten.
+
+
+\textbf{FF2 -- Einfluss der Labelverfügbarkeit.}
+Der RUT-Vorteil bleibt über alle untersuchten internen Labelbudgets von 2.000 bis
+200.000 Instanzen bestehen. Bei kleineren Trainingsmengen ist der Abstand zu R0 besonders
+ausgeprägt; mit zunehmender gelabelter Supervision verringert er sich, ohne vollständig zu
+verschwinden. Die task-adaptive Repräsentationsanpassung verbessert damit nicht nur einen
+einzelnen Betriebspunkt, sondern den Verlauf der gesamten Lernkurve.
+
+Für die Einordnung ist die Trennung der beiden Lernphasen relevant. Der TAPT-Schritt
+verwendet den 200.000 Instanzen umfassenden SSL-Pool ohne Downstream-Labels. Erst im
+anschließenden Klassifikationstraining wird der Umfang der verfügbaren gelabelten Supervision
+variiert. Die Sensitivität gegenüber reduziertem gelabeltem Trainingsumfang wird auch für
+spezialisierte URL-Repräsentationen als relevante Evaluationsdimension betrachtet
+(vgl. [Li et al. (2025), S. 12]). Die B95-Auswertung weist ausschließlich auf DEV auf eine frühere relative Sättigung von RUT hin; auf FINAL erreichen R0 und RUT das jeweilige relative Ziel bei denselben geprüften Budgets.
+Da sich B95 jeweils auf das eigene 200k-Endniveau einer Variante bezieht, beantwortet diese
+Kennzahl jedoch nicht, ob ein reduziertes RUT-Budget auch das absolute Niveau einer
+vollständig trainierten Referenz erreicht. Diese Frage wird durch FF3 gesondert geprüft.
+
+Die externe Evaluation auf dem Phishing Website Dataset von Putra (2023) erweitert diese
+Einordnung über den PhreshPhish-Datenbestand hinaus. Bei identischen gelabelten
+Zielinstanzen erreicht RUT über die vier Budgets von 200 bis 2.000 Webseiten eine um
+2,54 Prozentpunkte höhere AP-AULC als R0 (95\,\%-KI [2,16; 2,91], 10/10 positive
+Paare, $p=0{,}001953$). Auch die vier einzelnen Budgetvergleiche fallen mit
+AP-Vorteilen zwischen +2,21 und +2,79 Prozentpunkten zugunsten von RUT aus und bleiben
+nach Holm-Korrektur signifikant. Der Nutzen der task-adaptierten Repräsentation zeigt sich damit nicht ausschließlich innerhalb
+der ursprünglichen PhreshPhish-Lernkurve. Im untersuchten externen Datenbestand bildet RUT
+auch bei begrenzter neuer gelabelter Supervision die günstigere Ausgangsbasis für die
+Downstream-Klassifikation. Der Befund stützt damit die Annahme, dass eine zuvor auf
+ungelabelten Webseitendaten angepasste Repräsentation die spätere Anpassung an eine neue
+Zielumgebung erleichtern kann.
+
+
+Die ergänzende Putra-Zielanpassung verschlechtert dagegen die AP-AULC um
+1,14 Prozentpunkte. Mehr selbstüberwachtes Vortraining führt folglich in diesem
+Protokoll nicht zwangsläufig zu besseren Repräsentationen. Der Versuch isoliert
+weder die Ursache der Verschlechterung noch eine optimale Adaptationsstärke;
+insbesondere Lernrate, Trainingsdauer und Korpusgröße wurden hier nicht systematisch variiert.
+
+\textbf{FF3 -- Erreichen des Referenzniveaus bei reduziertem Labelbudget.}
+Die formale Budgetanalyse zeigt, dass 50.000 Labels die kleinste untersuchte RUT-Stufe
+sind, die das festgelegte Vergleichsniveau gegenüber R0@200k über alle fünf
+Evaluationsbedingungen einschließlich Holm-Korrektur erreicht. Die mittlere TPR von
+RUT50k liegt dabei um +3,24 bis +3,62 Prozentpunkte über R0@200k; zugleich fällt die
+realisierte FPR niedriger aus.
+
+Auch gegenüber TF-IDF/XGBoost@200k ist 50.000 die kleinste statistisch gestützte
+Budgetstufe. RUT20k liegt zwar bereits in allen fünf Bedingungen mindestens auf der
+mittleren XGBoost-TPR und weist gleichzeitig eine niedrigere mittlere FPR auf, besteht
+jedoch die Korrektur über das vollständige Budgetraster nicht. Mit RUT50k beträgt der
+TPR-Abstand zu XGBoost je nach Evaluationsbedingung +4,59 bis +5,58 Prozentpunkte.
+Da sich bei diesem Vergleich sowohl Repräsentation als auch Klassifikator ändern, dient
+XGBoost als zusätzliche Referenz für das erreichbare Leistungsniveau und nicht als isolierter
+Nachweis eines TAPT-Effekts.
+
+Im untersuchten Linear-Probe-Protokoll reichen damit 50.000 gelabelte Instanzen aus, um
+das festgelegte Leistungsniveau beider mit 200.000 Labels trainierten Referenzen zu erreichen.
+Bezogen auf die Downstream-Supervision entspricht dies einer Reduktion um 75\,\%. Der
+vorausgehende TAPT-Schritt auf dem vollständigen ungelabelten Webseitenpool bleibt davon
+unberührt. Die Margensensitivität bestätigt die 50k-Entscheidung zusätzlich über den
+untersuchten Bereich von 0 bis 2 Prozentpunkten. Die zusätzlichen internen Evaluationsbedingungen zeigen, dass diese Relation nicht auf den
+vollständigen Finalbestand beschränkt ist. Dies ist insbesondere vor dem in Kapitel 3
+diskutierten Problem datensatzabhängiger Evaluationsresultate relevant
+(vgl. [Rashid et al. (2024), Abstract, o.\,S.]; [Dalton et al. (2026), S. 5--6]). Die Domain-,
+Template- und Zeitbedingungen sind jedoch nicht als kausale Einzeltests verschiedener Formen
+von Distribution Shift zu verstehen. Sie prüfen, ob die in FF1 und FF2 identifizierten
+Leistungsrelationen unter veränderter Zusammensetzung der Testdaten erhalten bleiben.
+
+Die realisierte FPR liegt insbesondere auf den domainbezogenen Teilmengen teilweise oberhalb
+des auf CAL angestrebten Betriebspunkts. Eine stabile Rangfolge der Modelle bedeutet daher
+nicht, dass ein einmal kalibrierter Schwellenwert unter jeder Datenverteilung dieselbe FPR
+erzeugt. Repräsentationsrobustheit und Betriebspunktkalibration sind entsprechend als getrennte
+Fragestellungen zu behandeln. Auch die ergänzende Prävalenzanalyse aus Abschnitt 6.6 betrifft eine andere Eigenschaft der
+Evaluation. Unter konstant gehaltenem klassenspezifischem Fehlerverhalten sinkt
+$P_{\geq 90}$ bei einer rechnerischen Phishing-Base-Rate von 1\,\% auf 80,74\,\%
+für TRI Full beziehungsweise 84,27\,\% für die Kaskade. Die Analyse verdeutlicht damit
+die Abhängigkeit precision-basierter Kennzahlen von der Klassenprävalenz.
+
+
+\textbf{FF4 -- multimodale Systemkomponenten und URL-first-Verarbeitung.}
+Die sequenzielle Komponentenablation zeigt positive zusätzliche Beiträge aller drei
+Erweiterungsschritte. Den größten Zuwachs liefert HTML-Text mit +5,184 Prozentpunkten
+TPR gegenüber URL-only. Der DOM-Zweig erhöht die TPR anschließend um weitere
++0,728 Prozentpunkte und das lernbare Gating um +0,576 Prozentpunkte. Alle drei
+benachbarten Vergleiche bleiben nach Holm-Korrektur signifikant.
+
+Die Ergebnisse zeigen damit für das implementierte System, dass die in Kapitel 3 diskutierten
+textuellen und strukturellen Webseiteninformationen über die URL hinaus zusätzliche
+Klassifikationsinformation bereitstellen können (vgl. [Aljofey et al. (2022), S. 1--2 und 13]; [Yoon et al. (2024), S. 13 und 15]). Gleichzeitig unterscheiden sich ihre marginalen Beiträge:
+Der HTML-Text erzeugt den größten zusätzlichen Effekt, während DOM und Gating kleinere,
+aber statistisch gestützte Verbesserungen liefern. TRI Full erreicht auf \nolinkurl{OFFICIAL_TEST} 96,12\,\% TPR bei 0,666\,\% FPR und
+bildet die leistungsstärkste Variante des implementierten Gesamtsystems. Die
+URL-first-Kaskade ergänzt diese Architektur um eine gestufte Verarbeitung. In der
+eingefrorenen Routingkonfiguration werden 14,93\,\% der Webseiten an den vollständigen
+TRI-Pfad eskaliert; die TPR beträgt 95,77\,\%. Gleichzeitig sinkt die Median-Latenz von
+30,18 auf 11,95\,ms und der gemessene In-Memory-Durchsatz steigt von 183,2 auf
+447,0 Seiten pro Sekunde. Die Kaskade realisiert damit das in Kapitel 3 aufgegriffene
+Prinzip einer mehrstufigen Verarbeitung, ohne den multimodalen Pfad für unsichere Fälle
+aufzugeben (vgl. [Liu et al. (2021), Abstract, o.\,S.]). Der Frontend-Vergleich verbindet schließlich Repräsentations- und Systemebene. Bei derselben
+auf Development festgelegten TPR-Toleranz von einem Prozentpunkt sinkt die mittlere
+Eskalationsrate auf \nolinkurl{OFFICIAL_TEST} von 35,746\,\% mit URL\_BASE
+auf 23,514\,\% mit URL\_TAPT (fünf Läufe).
+Die task-adaptierte URL-Repräsentation ermöglicht innerhalb dieses Routingprotokolls damit
+häufiger eine Entscheidung in der ersten Verarbeitungsstufe. Der Repräsentationsvorteil wirkt
+sich folglich nicht nur auf die Klassifikationsleistung eines einzelnen Modells, sondern auch
+auf die Verarbeitungstiefe des Gesamtsystems aus.
+
+Zusammenfassend beantwortet die Arbeit die zentrale Forschungsfrage auf drei
+aufeinander aufbauenden Ebenen. Die task-adaptive Anpassung verbessert zunächst die
+Downstream-Nutzbarkeit der bereits vortrainierten URL- und HTML-Text-Repräsentationen.
+Dieser Vorteil bleibt bei reduzierter gelabelter Supervision bestehen und zeigt sich ergänzend
+auch auf einem unabhängig erhobenen Webseitenbestand. Im internen Suffizienzprotokoll wird
+das 200k-Referenzniveau mit 50.000 Labels erreicht. Die ausgewählte Repräsentationsbasis
+lässt sich anschließend in ein multimodales Vollsystem überführen, dessen Verarbeitungstiefe
+über die URL-first-Kaskade instanzabhängig gesteuert werden kann.
+
+
+\section{Limitationen und Aussagegrenzen}
+
+Die internen Generalisierungsanalysen beruhen auf demselben PhreshPhish-Data-Freeze.
+Der ergänzende Integritätsaudit schließt für die prüfbaren OOD-Instanzen exakte
+Überschneidungen der Domains beziehungsweise Template-Hashes mit SUP, DEV, CAL und
+dem SSL/TAPT-Pool aus. Semantisch ähnliche Webseiten, Near-Duplicates und fehlende
+Domainwerte werden dadurch jedoch nicht vollständig erfasst. Die zusätzliche Evaluation auf dem unabhängig erhobenen Putra-Datensatz erweitert die
+Untersuchung um eine externe Datenquelle. Sie bestätigt den RUT--R0-Vorteil für die
+Label-Effizienz mit einer linearen Downstream-Probe, umfasst jedoch nur einen einzelnen
+zusätzlichen Webseitenbestand. Die Übertragbarkeit auf weitere Erhebungszeiträume,
+Datenquellen und Zielumgebungen bleibt daher offen. Zudem adressiert diese externe
+Prüfung die Repräsentations- und Label-Effizienz und nicht das vollständige multimodale
+TRI-System oder die URL-first-Kaskade. N5 und N10 variieren die Auswahl der gelabelten Trainingsinstanzen und das
+Downstream-Training, während die zugrunde liegenden TAPT-Checkpoints unverändert bleiben.
+Die berichteten Unsicherheiten erfassen damit nicht die Variation vollständig neu ausgeführter
+selbstüberwachter Vortrainingsläufe.
+
+Die Reduktion von 200.000 auf 50.000 Instanzen betrifft ausschließlich die gelabelte
+Downstream-Supervision. Für TAPT werden weiterhin 200.000 Webseiten verarbeitet. Der
+PhreshPhish-Bestand stellt grundsätzlich Klasseninformationen bereit; diese werden im
+SSL-Pool für das selbstüberwachte Training technisch nicht verwendet und erst für die
+späteren Downstream-Experimente wieder zugeordnet. Die Untersuchung quantifiziert damit
+den methodischen Nutzen einer ohne Downstream-Labels durchgeführten
+Repräsentationsanpassung, nicht den betrieblichen Prozess der erstmaligen Erhebung und
+Annotation der Daten. Die verwendete 1-pp-Nichtunterlegenheitsmarge ist eine analytische Entscheidungsschwelle
+und keine betrieblich validierte Servicegrenze. Die ergänzende Margensensitivität reduziert
+die Abhängigkeit der zentralen FF3-Entscheidung von dieser konkreten Festlegung, ersetzt
+jedoch keine anwendungsspezifische Festlegung zulässiger Qualitätsverluste.
+
+Die Klassenbalance der Budgetstichproben wird anhand bereits vorhandener Poollabels
+hergestellt. Die Budgetanalyse simuliert daher begrenzte gelabelte Trainingsmengen,
+aber keinen vollständig budgetierten Annotationsprozess. Labels für Development,
+Kalibration und Evaluation sowie die Information zur klassenweisen Auswahl sind in
+den 50.000 Trainingslabels nicht enthalten. Eine betriebliche Einsparung von 75\,\%
+des gesamten Annotationsaufwands lässt sich daraus nicht ableiten.
+
+Die fünf internen Testszenarien überlappen; ihre Ergebnisse sind keine fünf
+unabhängigen Replikationen. Exakte Sign-Flip-p-Werte beziehen sich auf die vollständige
+Enumeration der Vorzeichen, setzen für ihre inferenzielle Interpretation aber eine
+entsprechende Symmetrie beziehungsweise Austauschbarkeit der Paardifferenzen voraus.
+Mit zehn Replikationen ist diese Annahme nur eingeschränkt prüfbar. Die nachträglichen
+Welch-Vergleiche mit XGBoost sind ergänzende Evidenz auf derselben Testpopulation,
+keine unabhängige Bestätigung. Ein gespeicherter Analyseplan nach früherem FINAL-Zugriff
+ersetzt keine prospektive Vorregistrierung auf einem unberührten Testset.
+
+Die Putra-Erhebungen enden 2023 und liegen damit vor dem verwendeten PhreshPhish-Bestand
+aus 2025. Der interne frühe/späte Putra-Schnitt schützt vor direkter Nutzung seiner
+Testinstanzen im Zieltraining; die Gesamtauswertung ist jedoch kein prospektiver
+Nachweis für zukünftige Angriffe. Eine mögliche Überschneidung mit den ursprünglichen
+allgemeinen BERT-/RoBERTa-Vortrainingskorpora wurde nicht überprüft.
+
+Weitere Grenzen betreffen die Eingabeverarbeitung. Der HTML-Textencoder verarbeitet maximal
+256 Tokens und erfasst daher nicht notwendigerweise den vollständigen HTML-Inhalt. Der
+DOM-Zweig basiert auf einer statischen Rekonstruktion des gespeicherten HTML und nicht auf
+einem browsergerenderten Laufzeit-DOM. Die gemessenen Latenz-, Durchsatz- und
+Peak-VRAM-Werte gelten ausschließlich für den In-Memory-Modellpfad ohne Netzwerkzugriffe,
+Rendering, Datenträger-I/O und vorgelagertes HTML-Parsing.
+
+
+\section{Betriebliche Einordnung und Handlungsempfehlung}
+
+Für einen betrieblichen Einsatz lassen sich die Ergebnisse entlang dreier
+Entscheidungsdimensionen einordnen: verfügbare gelabelte Trainingsdaten, angestrebte
+Detektionsleistung und zulässiger Inferenzaufwand.
+
+Bei begrenzter gelabelter Downstream-Supervision ist das Verhältnis zwischen ungelabelten
+Adaptationsdaten und gelabeltem Klassifikationstraining relevant. Im internen
+Suffizienzprotokoll sind 50.000 Labels die kleinste RUT-Stufe, die das festgelegte
+Vergleichsniveau gegenüber beiden 200k-Referenzen über alle fünf Evaluationsbedingungen
+erreicht. Die externe Putra-Evaluation ergänzt diesen Befund: Auch bei lediglich 200 bis
+2.000 neu gelabelten Zielinstanzen erzielt RUT über die gesamte Lernkurve eine höhere AP
+als R0. Eine task-adaptierte Repräsentationsbasis kann damit insbesondere dann relevant sein,
+wenn für eine neue Zielumgebung zunächst nur ein begrenzter gelabelter Datenbestand
+vorliegt.
+
+
+\begin{table}[H]
+\centering
+\caption{Betriebliche Einordnung zentraler Leistungs- und Ressourcendimensionen.}
+\label{tab:business_summary}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{6.0cm}}
+\toprule
+Dimension & Ergebnisbasis & Einordnung \\
+\midrule
+Gelabelte Supervision
+& RUT50k vs. R0@200k und XGBoost@200k
+& 50.000 statt 200.000 gelabelter Downstream-Instanzen im internen
+Suffizienzprotokoll; TAPT nutzt weiterhin den vollständigen ungelabelten SSL-Pool. \\
+
+Externe Label-Effizienz
+& RUT vs. R0 auf Putra
+& +2,54 pp AP-AULC über 200 bis 2.000 Ziel-Labels; alle vier
+budgetweisen AP-Vergleiche bleiben nach Holm-Korrektur signifikant. \\
+
+Detektionsleistung
+& TRI Full
+& 96,12\,\% TPR bei 0,666\,\% FPR auf \nolinkurl{OFFICIAL_TEST};
+vollständiger multimodaler Pfad. \\
+
+Gestufte Verarbeitung
+& TRI-Kaskade
+& 95,77\,\% TPR; 11,95\,ms Median-Latenz, 447,0 Seiten/s und
+14,93\,\% Eskalation. \\
+
+URL-Frontend
+& URL\_TAPT vs. URL\_BASE
+& 23,514\,\% statt 35,746\,\% mittlere Eskalation auf Official bei
+derselben Development-basierten 1-pp-Toleranz; $-0{,}940$ pp TPR gegenüber Vollsystem. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Liegen nicht annotierte URL- und Webseitendaten bereits vor, können diese für die
+task-adaptive Repräsentationsanpassung genutzt werden, während der kuratierte Labelbestand
+auf das nachgelagerte überwachte Training konzentriert wird. Die wirtschaftliche Wirkung
+dieses Vorgehens wurde nicht monetär bewertet. Datenerhebung, Speicherung, Aufbereitung
+und zusätzlicher TAPT-Rechenaufwand bleiben neben der Annotation als eigene
+Aufwandspositionen bestehen. Steht die maximale Erkennungsleistung im Vordergrund, bildet TRI Full mit 96,12\,\% TPR
+bei 0,666\,\% FPR die leistungsstärkste Betriebsform des Prototyps. Die
+URL-first-Kaskade ergänzt dieses System um eine bedarfsgerechte Verarbeitungstiefe.
+Eindeutigere Instanzen können auf der URL-Stufe abgeschlossen werden, während unsichere
+Fälle weiterhin die vollständige multimodale Verarbeitung durchlaufen.
+
+
+Zur Einordnung der Größenordnung werden die gemessenen Betriebsraten linear auf
+Referenzvolumina übertragen. Die ungerundete Eskalationsrate entspricht rund
+14.933 vollständigen TRI-Pfaden je 100.000 Webseiten. Aus den gemessenen
+In-Memory-Durchsätzen ergeben sich für 100.000 Seiten rund 9,10 Minuten für TRI Full
+und 3,73 Minuten für die Kaskade. Bei unveränderten Official-Raten entsprächen die
+FPR-Werte 666 gegenüber 680 Fehlalarmen je 100.000 benignen Seiten und die TPR-Werte
+96.118 gegenüber 95.770 erkannten Fällen je 100.000 Phishing-Seiten.
+
+\begin{table}[H]
+\centering
+\caption{Lineare Hochrechnung aus ungerundeten Kennzahlen; Fallzahlen und Differenzen jeweils separat gerundet.}
+\label{tab:business_projection}
+\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{3.2cm}}
+\toprule
+Bezugsgröße & Ausgangspunkt & Variante & Differenz \\
+\midrule
+100.000 verarbeitete Seiten
+& TRI Full: 100.000 Vollpfade
+& Kaskade: ca. 14.933 Vollpfade
+& ca. 85.067 weniger Vollpfade \\
+
+100.000 Seiten, In-Memory
+& TRI Full: 9,10 min
+& Kaskade: 3,73 min
+& 5,37 min geringer \\
+
+100.000 benigne Seiten
+& TRI Full: 666 FP
+& Kaskade: 680 FP
+& +14 FP \\
+
+100.000 Phishing-Seiten
+& TRI Full: ca. 96.118 erkannt
+& Kaskade: 95.770 erkannt
+& ca. $-349$ erkannt \\
+
+100.000 Seiten, 1-pp-Toleranz
+& URL\_BASE: ca. 35.746 Eskalationen
+& URL\_TAPT: ca. 23.514 Eskalationen
+& ca. 12.232 weniger Eskalationen \\
+
+Gelabeltes Training
+& 200.000 Labels
+& RUT: 50.000 Labels
+& 150.000 Labels weniger \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Für eine produktionsnahe Weiterentwicklung sollten Betriebspunkt, Datenverteilung und
+Eskalationsrate überwacht werden. Veränderungen der realisierten Fehlalarmrate können eine
+erneute Kalibration erforderlich machen. Bei neu verfügbaren Webseitenbeständen kann
+davon getrennt geprüft werden, ob eine erneute Repräsentationsanpassung oder eine begrenzte
+Nachannotation für das Downstream-Training erforderlich ist. Kalibration,
+Repräsentationsanpassung und gelabelte Nachanpassung adressieren dabei unterschiedliche
+Ebenen des Systems.
+
+
+\section{Fazit und Ausblick}
+
+Die zusätzliche task-adaptive Anpassung bereits vortrainierter URL- und HTML-Text-Encoder
+verbessert im untersuchten Protokoll die Phishing-Erkennung. RUT erreicht bei 20.000 Labels
+auf dem vollständigen FINAL-Bestand eine um 6,08 Prozentpunkte höhere mittlere TPR als R0.
+Die Adaptationseffekte überlagern sich teilweise.
+
+50.000 Labels bilden die kleinste geprüfte RUT-Stufe, welche die festgelegte
+Nichtunterlegenheitsentscheidung gegenüber R0@200k und TF-IDF/XGBoost@200k in allen fünf
+Evaluationsbedingungen erfüllt. Die Reduktion um 75\,\% betrifft ausschließlich die gelabelte
+Downstream-Trainingsmenge. Auf dem externen Putra-Bestand verbessert Quell-RUT die AP-AULC
+gegenüber R0 um 2,54 Prozentpunkte; die zusätzliche Putra-Anpassung verschlechtert sie
+hingegen um 1,14 Prozentpunkte. Weitere selbstüberwachte Anpassung ist damit kein
+allgemeines Verbesserungsversprechen.
+
+HTML-Text, DOM und Gating liefern im sequenziellen DEV-Vergleich jeweils einen zusätzlichen
+Beitrag. TRI Full erreicht auf FINAL 96,12\,\% TPR bei 0,666\,\% FPR. Die URL-first-Kaskade
+eskaliert 14,93\,\% der Fälle und erreicht 95,77\,\% TPR. Im DEV-In-Memory-Benchmark sinkt
+die Median-Latenz von 30,18 auf 11,95\,ms, während der Durchsatz von 183,2 auf 447,0 Seiten/s
+steigt. Diese Messung umfasst nicht die vollständige betriebliche Verarbeitungskette.
+
+Feste TAPT-Checkpoints, nachträgliche Analysen und der retrospektive externe Test begrenzen
+die Verallgemeinerung. Ausstehend sind unabhängige Vortrainingswiederholungen, zukünftige
+externe Systemtests, Kostenmessungen sowie die betriebliche Prüfung von Rekalibration
+und Drift-Erkennung.

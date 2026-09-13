@@ -1,0 +1,6 @@
+{
+  "domain_ood_exact": 115917,
+  "template_ood_exact": 161223,
+  "domain_template_ood_exact": 110095,
+  "near_duplicate_filter": "NOT YET APPLIED; algorithm+threshold must be frozen before score inspection"
+}

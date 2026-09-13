@@ -1,0 +1,85 @@
+{
+  "refit_inference": [
+    {
+      "contrast": "RUT-R0",
+      "n": 10,
+      "mean_delta_pp": 2.5350730517707865,
+      "ci95_lo_pp": 2.161151825447728,
+      "ci95_hi_pp": 2.9089942780938447,
+      "p_exact": 0.001953125,
+      "positive": 10,
+      "negative": 0
+    },
+    {
+      "contrast": "E1_TARGET_RUT-RUT",
+      "n": 10,
+      "mean_delta_pp": -1.1387772360547033,
+      "ci95_lo_pp": -1.49928214660065,
+      "ci95_hi_pp": -0.7782723255087565,
+      "p_exact": 0.001953125,
+      "positive": 0,
+      "negative": 10
+    }
+  ],
+  "refit_errors": [
+    {
+      "metric": "AP",
+      "checks": 120,
+      "different_at_1e8": 58,
+      "max_abs_error": 5.491126339862706e-05,
+      "max_abs_error_pp": 0.0054911263398627055
+    },
+    {
+      "metric": "AUC",
+      "checks": 120,
+      "different_at_1e8": 49,
+      "max_abs_error": 1.6909117396157747e-05,
+      "max_abs_error_pp": 0.0016909117396157747
+    },
+    {
+      "metric": "FPR_at_TPR90",
+      "checks": 120,
+      "different_at_1e8": 2,
+      "max_abs_error": 0.0005931198102017,
+      "max_abs_error_pp": 0.059311981020170004
+    },
+    {
+      "metric": "P_at_R90",
+      "checks": 120,
+      "different_at_1e8": 4,
+      "max_abs_error": 0.0008633730056796,
+      "max_abs_error_pp": 0.08633730056796
+    }
+  ],
+  "raw_metric_checks": 544,
+  "raw_metric_passes": 431,
+  "raw_non_putra_checks": 64,
+  "raw_non_putra_all_pass": true,
+  "ood_missing": [
+    {
+      "scenario_check": "DOMAIN_OOD_EXACT",
+      "missing_n": 1552,
+      "missing_pct": 1.3388890326699276
+    },
+    {
+      "scenario_check": "DOMAIN_TEMPLATE_OOD_EXACT/domain",
+      "missing_n": 1523,
+      "missing_pct": 1.3833507425405331
+    },
+    {
+      "scenario_check": "DOMAIN_TEMPLATE_OOD_EXACT/template",
+      "missing_n": 0,
+      "missing_pct": 0.0
+    },
+    {
+      "scenario_check": "TEMPLATE_OOD_EXACT",
+      "missing_n": 0,
+      "missing_pct": 0.0
+    }
+  ],
+  "ood_scope": "Rechenkontrolle der exportierten Audit-Zählungen; Identitätsüberschneidungen mangels sämtlicher Rohrollen nicht neu berechnet.",
+  "unsupported_claim_removed": "99.618% vollständige URLs bei 128 Token: kein zuordenbarer 200k-Roh- oder Zählexport gefunden.",
+  "historical_iid_excluded": "3051er-Historienbestand überschneidet sich mit SSL/DEV/CAL, wird nicht als aktueller FF3-Test verwendet.",
+  "gpu_scope": "Kein erneutes Encoder-/T4-Training; Zeitquantile und absolute Durchsätze nur gegen Code und Aggregate geprüft.",
+  "independent_role_scope": "CAL, DEV, SSL und FINAL: sämtliche Labels/Counts, SHA-Duplikate, sechs paarweise SHA-Schnittmengen und FINAL-Zeitquantil unabhängig aus Metadaten geprüft. SUP und exakte Domain-/Template-Identitäten nur gegen archivierte Audits geprüft."
+}

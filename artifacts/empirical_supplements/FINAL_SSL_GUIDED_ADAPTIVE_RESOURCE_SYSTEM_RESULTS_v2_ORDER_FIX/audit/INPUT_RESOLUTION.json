@@ -1,0 +1,19 @@
+{
+  "data_root": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+  "meta_root": "/kaggle/input/datasets/cristinakaufalt/freezeresume",
+  "url_base": "bert-base-uncased",
+  "url_dapt": "/kaggle/input/datasets/cristinakaufalt/newdataset/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+  "text_base": "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base",
+  "text_dapt": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT",
+  "dom_encoder": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/DOM_MASKED_SSL/encoder.pt",
+  "dom_vocab": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/audit/DOM_VOCAB.json",
+  "tri_dir": "/kaggle/input/datasets/cristinakaufalt/newdataset/final_url_ssl_integrated_v2/checkpoints/DEEP/ENG_TRI_RUT_200000",
+  "operational_benchmark": null,
+  "counts": {
+    "SUP": 4000,
+    "DEV": 20000,
+    "CAL": 50000,
+    "SSL": 200000,
+    "FINAL": 168060
+  }
+}

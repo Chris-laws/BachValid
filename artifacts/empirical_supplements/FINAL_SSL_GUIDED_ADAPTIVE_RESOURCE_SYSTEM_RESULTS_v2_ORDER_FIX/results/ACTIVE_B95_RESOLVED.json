@@ -1,0 +1,8 @@
+{
+  "RUT_ACTIVE_B95": 2000,
+  "R0_ACTIVE_B95": null,
+  "RUT_RANDOM_B95": 5000,
+  "R0_RANDOM_B95": null,
+  "reference": "95% of RUT_RANDOM_20k mean DEV TPR",
+  "target_tpr": 0.8630559999999999
+}

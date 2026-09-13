@@ -1,0 +1,58 @@
+{
+  "version": "FINAL_SSL_GUIDED_ADAPTIVE_RESOURCE_SYSTEM_N5_v2_ORDER_FIX",
+  "scientific_status": "POST_HOC_SSL_GUIDED_ADAPTIVE_RESOURCE_ALLOCATION",
+  "core_principle": "SSL representation as resource-allocation signal",
+  "blocks": {
+    "compute": {
+      "causal_contrast": "URL_BASE vs URL_DAPT",
+      "same_frontend": "LogisticRegression",
+      "same_labels": 20000,
+      "same_fallback": "frozen TRI_RUT_200k",
+      "primary_allowed_tpr_loss_pp": 1.0,
+      "max_dev_fpr_increase": 0.001
+    },
+    "labels": {
+      "methods": [
+        "R0_RANDOM",
+        "RUT_RANDOM",
+        "R0_ACTIVE",
+        "RUT_ACTIVE"
+      ],
+      "budgets": [
+        500,
+        1000,
+        2000,
+        5000,
+        10000,
+        20000
+      ],
+      "active_uses_hidden_labels_for_selection": false,
+      "transformer_retrained_in_loop": false
+    },
+    "review": {
+      "classification_by_neighbors": false,
+      "signal": "representation support / novelty only",
+      "review_rates": [
+        0.01,
+        0.02,
+        0.05
+      ],
+      "primary_review_rate": 0.02
+    }
+  },
+  "final_scenarios": [
+    "OFFICIAL_TEST",
+    "DOMAIN_OOD_EXACT",
+    "TEMPLATE_OOD_EXACT",
+    "DOMAIN_TEMPLATE_OOD_EXACT",
+    "LATE_TEST_Q4"
+  ],
+  "target_fpr": 0.005,
+  "high_upside_rule": {
+    "compute": "URL_DAPT escalation reduction >=10pp in >=4/5 scenarios",
+    "labels": "RUT_ACTIVE B95 <=5000 labels",
+    "review": "RUT error enrichment >=2x in >=4/5 scenarios at primary review rate",
+    "integrated": "at least 2 of 3 conditions true"
+  },
+  "access_rule": "SSL/DEV policies first; CAL thresholding and FINAL evaluation only after policy freeze"
+}

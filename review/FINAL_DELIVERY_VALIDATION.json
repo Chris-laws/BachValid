@@ -1,0 +1,374 @@
+[
+  {
+    "check": "LaTeX FF1 LINEAR R0",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 LINEAR RT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 LINEAR RU",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 LINEAR RUT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 MLP R0",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 MLP RT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 MLP RU",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF1 MLP RUT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 2000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 5000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 10000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 20000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 50000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 100000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 LINEAR 200000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 2000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 5000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 10000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 20000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 50000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 100000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF2 MLP 200000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra AP 200",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra delta/CI 200",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra AP 500",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra delta/CI 500",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra AP 1000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra delta/CI 1000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra AP 2000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Putra delta/CI 2000",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF3 XGB OFFICIAL_TEST",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF3 XGB DOMAIN_OOD_EXACT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF3 XGB TEMPLATE_OOD_EXACT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF3 XGB DOMAIN_TEMPLATE_OOD_EXACT",
+    "passed": true
+  },
+  {
+    "check": "LaTeX FF3 XGB LATE_TEST_Q4",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Base Rate 0.4569796501249554",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Base Rate 0.05",
+    "passed": true
+  },
+  {
+    "check": "LaTeX Base Rate 0.01",
+    "passed": true
+  },
+  {
+    "check": "PDF 79 pages",
+    "passed": true
+  },
+  {
+    "check": "54 main-text pages",
+    "passed": true
+  },
+  {
+    "check": "No text margin overflow",
+    "passed": true
+  },
+  {
+    "check": "No unresolved references in PDF",
+    "passed": true
+  },
+  {
+    "check": "No fatal/overfull/missing-character/reference errors",
+    "passed": true
+  },
+  {
+    "check": "Final PDF copy byte-identical",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged Gutachtenformular_PA-BA_09.01.2023.dotx",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged Gliederung (1).tex",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged Phishing_Detektion__Copy_ (42).pdf",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged CH6_ANALYSIS_FULL.zip",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged PUTRA_TARGET_ADAPTATION_RESULTS_SMALL.zip",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks.zip",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged Unterlagen_Bachelorarbeit_WI23 (1).zip",
+    "passed": true
+  },
+  {
+    "check": "Original unchanged 2026-02-11 - DHBW MOS - SG W-WI - Arbeiten - Hinweise und Richtlinien - 2S.pdf",
+    "passed": true
+  },
+  {
+    "check": "Bachelorarbeit_LaTeX.zip no duplicate names",
+    "passed": true
+  },
+  {
+    "check": "Bachelorarbeit_LaTeX.zip CRC integrity",
+    "passed": true
+  },
+  {
+    "check": "PDF inside LaTeX ZIP byte-identical",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final abbreviations.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final abstracts.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final bibliography.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter01.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter02.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter03.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter04.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter05.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter06.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter07.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final chapter08.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final eigenstaendigkeit.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final fig_mlm.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final ki_erklaerung.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final main.tex",
+    "passed": true
+  },
+  {
+    "check": "LaTeX ZIP final title.tex",
+    "passed": true
+  },
+  {
+    "check": "Quellenarchiv.zip no duplicate names",
+    "passed": true
+  },
+  {
+    "check": "Quellenarchiv.zip CRC integrity",
+    "passed": true
+  },
+  {
+    "check": "Reproduktion.zip no duplicate names",
+    "passed": true
+  },
+  {
+    "check": "Reproduktion.zip CRC integrity",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final empirical_audit.py",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final raw_score_audit.py",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final closure_audit.py",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final core_report.py",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final core report",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N01",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N02",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N03",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N04",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N05",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N06",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N07",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N08",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N09",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N10",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N11",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N12",
+    "passed": true
+  },
+  {
+    "check": "Original notebook unchanged N13",
+    "passed": true
+  }
+]

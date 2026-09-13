@@ -1,0 +1,2 @@
+endpoint,n_pairs,E0_mean,E1_mean,mean_delta,ci95_lo,ci95_hi,positive_pairs,negative_pairs,exact_signflip_p
+AP_AULC_log_budget,10,0.9198361691712982,0.9084469009047804,-0.011389268266517816,-0.014993797517717065,-0.0077847390153185664,0,10,0.001953125

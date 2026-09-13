@@ -1,0 +1,106 @@
+[
+  {
+    "id": "N01",
+    "original_name": "FINAL_FF4_SEQUENTIAL_ARCHITECTURE_ABLATION_N10_v1.ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\Downloads\\FINAL_FF4_SEQUENTIAL_ARCHITECTURE_ABLATION_N10_v1.ipynb",
+    "sha256_original": "e9dbe632cdebb38e149cdf50e79c326cfc9bd43bc60a8e0c2cebbab3f2c2044d",
+    "copy": "N01.ipynb",
+    "code_lines": 1900
+  },
+  {
+    "id": "N02",
+    "original_name": "FINAL_SSL_CROSS_PARADIGM_LABEL_BENCHMARK_N10_v1_FULL_GRID_XGB200K.ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\Downloads\\FINAL_SSL_CROSS_PARADIGM_LABEL_BENCHMARK_N10_v1_FULL_GRID_XGB200K.ipynb",
+    "sha256_original": "aa343cb33576c014e98be777e27e4897d8729ab07f77d59e0473dca9ac51c43b",
+    "copy": "N02.ipynb",
+    "code_lines": 1806
+  },
+  {
+    "id": "N03",
+    "original_name": "FINAL_SSL_GUIDED_ADAPTIVE_RESOURCE_SYSTEM_N5_v2_ORDER_FIX.ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\Downloads\\FINAL_SSL_GUIDED_ADAPTIVE_RESOURCE_SYSTEM_N5_v2_ORDER_FIX.ipynb",
+    "sha256_original": "9865bfac994558a31736c766818718d5ee9707569beb52d3c408c37e54615f21",
+    "copy": "N03.ipynb",
+    "code_lines": 2817
+  },
+  {
+    "id": "N04",
+    "original_name": "FINAL_SSL_LABEL_SUFFICIENCY_N10_FF1_FF3_RESOURCE_LINK_v5_DIRECT_CACHE_RESOLVER.ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\Downloads\\FINAL_SSL_LABEL_SUFFICIENCY_N10_FF1_FF3_RESOURCE_LINK_v5_DIRECT_CACHE_RESOLVER.ipynb",
+    "sha256_original": "b6106704e88661324a5237ed75f3be9e496754c2467c5cb8102c9d74a2fb682e",
+    "copy": "N04.ipynb",
+    "code_lines": 1610
+  },
+  {
+    "id": "N05",
+    "original_name": "FINAL_URL_SSL_INTEGRATED_RESEARCH_ALL_IN_ONE_v2_COMPLETE_COVERAGE(1).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\FINAL_URL_SSL_INTEGRATED_RESEARCH_ALL_IN_ONE_v2_COMPLETE_COVERAGE(1).ipynb",
+    "sha256_original": "a4904998b2943d0412e1bff5835f769fcf9c499b09ccfafcf120805853d68530",
+    "copy": "N05.ipynb",
+    "code_lines": 2457
+  },
+  {
+    "id": "N06",
+    "original_name": "phreshphish_FINAL_DATA_FREEZE_BUILDER_v3_2_SCHEMA_FIX_RESUME(2).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\phreshphish_FINAL_DATA_FREEZE_BUILDER_v3_2_SCHEMA_FIX_RESUME(2).ipynb",
+    "sha256_original": "d3e8f5f61cf23e1f30048dc401c0848d4b9aacc2bee93235cd22bc0d01edf14f",
+    "copy": "N06.ipynb",
+    "code_lines": 1103
+  },
+  {
+    "id": "N07",
+    "original_name": "phreshphish_FINAL_DEEP_TRIMODAL_SSL_SYSTEM_v4_3_LABELSET_ALIGNMENT_FIX(1).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\phreshphish_FINAL_DEEP_TRIMODAL_SSL_SYSTEM_v4_3_LABELSET_ALIGNMENT_FIX(1).ipynb",
+    "sha256_original": "f5255cfa15e255d1a2019095d9f6ab2a253ba9b539c1b9ff534636db13f94acf",
+    "copy": "N07.ipynb",
+    "code_lines": 1239
+  },
+  {
+    "id": "N08",
+    "original_name": "phreshphish_FINAL_DEEP_TRIMODAL_SSL_SYSTEM_v5_1_STABILITY_AUDITED(2).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\phreshphish_FINAL_DEEP_TRIMODAL_SSL_SYSTEM_v5_1_STABILITY_AUDITED(2).ipynb",
+    "sha256_original": "7457a3f5fb0789acfc7b3890dcf0f00c85749a02e43dacc2087184a8700f6c03",
+    "copy": "N08.ipynb",
+    "code_lines": 1985
+  },
+  {
+    "id": "N09",
+    "original_name": "phreshphish_FINAL_RQ_CLOSURE_20K_200K_SSL_DOM_FUSION_v7_2_FINAL(3).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\phreshphish_FINAL_RQ_CLOSURE_20K_200K_SSL_DOM_FUSION_v7_2_FINAL(3).ipynb",
+    "sha256_original": "f31e41886ae0e8fdee78fe1e91c5dd309cddcb5bbe40871ad9d560e155b0d1b6",
+    "copy": "N09.ipynb",
+    "code_lines": 1529
+  },
+  {
+    "id": "N10",
+    "original_name": "phreshphish_N10_CONFIRMATORY_20K_OOD(2).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\phreshphish_N10_CONFIRMATORY_20K_OOD(2).ipynb",
+    "sha256_original": "a39b5aeed9409ea6a498e85356656eecda8689f4489d4effffb7617f90227dcc",
+    "copy": "N10.ipynb",
+    "code_lines": 953
+  },
+  {
+    "id": "N11",
+    "original_name": "phreshphish_v8_4_RESUME_FINAL_DOMFIX_OOMFIX(2).ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks\\notebooks\\phreshphish_v8_4_RESUME_FINAL_DOMFIX_OOMFIX(2).ipynb",
+    "sha256_original": "0de015b960a6d6cc3014ee52f00aeb1ddc1bcc719c5cb4e53fec9f4483395927",
+    "copy": "N11.ipynb",
+    "code_lines": 2421
+  },
+  {
+    "id": "N12",
+    "original_name": "PUTRA_EXTERNAL_LABEL_EFFICIENCY_R0_VS_RUT_N10_v1_1.ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\BachelorValidation\\artifacts\\empirical_supplements\\PUTRA_EXTERNAL_LABEL_EFFICIENCY_FINAL_PACKAGE\\PUTRA_EXTERNAL_LABEL_EFFICIENCY_FINAL_PACKAGE\\Notebook\\PUTRA_EXTERNAL_LABEL_EFFICIENCY_R0_VS_RUT_N10_v1_1.ipynb",
+    "sha256_original": "1a30133db3c3c09487185c93349255ea275a52663724d2f267d64caa475aa698",
+    "copy": "N12.ipynb",
+    "code_lines": 762
+  },
+  {
+    "id": "N13",
+    "original_name": "PUTRA_TARGET_ADAPTATION_LABEL_EFFICIENCY_N10_v1.ipynb",
+    "original_path": "C:\\Users\\IT-Admin\\Downloads\\PUTRA_TARGET_ADAPTATION_LABEL_EFFICIENCY_N10_v1.ipynb",
+    "sha256_original": "2666bdb4949d807473eeb0bd7c9225b28e64c5a567abfc515917cec7506a6f96",
+    "copy": "N13.ipynb",
+    "code_lines": 773
+  }
+]

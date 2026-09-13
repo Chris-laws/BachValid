@@ -1,0 +1,20 @@
+{
+  "ssl_rows": 200000,
+  "ssl_positive_rate": 0.49211,
+  "cal_rows": 50000,
+  "cal_phish": 0,
+  "final_rows": 168060,
+  "final_class_counts": [
+    91260,
+    76800
+  ],
+  "scenario_counts": {
+    "OFFICIAL_TEST": 168060,
+    "DOMAIN_OOD_EXACT": 115917,
+    "TEMPLATE_OOD_EXACT": 161223,
+    "DOMAIN_TEMPLATE_OOD_EXACT": 110095,
+    "LATE_TEST_Q4": 46784
+  },
+  "late_q4_cutoff": "2025-10-28 00:00:00",
+  "role_sha_disjoint": true
+}

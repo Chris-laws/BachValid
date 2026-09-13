@@ -1,0 +1,2 @@
+run_id,completed_utc,historical_iid_n,sha_overlap_SSL,sha_overlap_DEV,sha_overlap_CAL,sha_overlap_FINAL,mapped_to_current_FINAL,label_mismatch_n,reusable_for_current_R0_RUT_FF3,verdict,exact_content_failures,exact_identity_unknown
+FF3_HISTORICAL_IID_CURRENT_EXPOSURE_AUDIT_v1,2026-08-29T11:30:30.115502+00:00,3051,1182,109,379,0,0,,False,RED_EXPOSED_SHA,SSL:url=1182;DEV:url=109;CAL:url=379,

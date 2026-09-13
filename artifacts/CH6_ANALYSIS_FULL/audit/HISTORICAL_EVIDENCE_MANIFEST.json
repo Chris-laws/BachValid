@@ -1,0 +1,42 @@
+{
+  "HIST_N10_ALL.csv": {
+    "sha256": "1cda3ef91bf9c602c25259e595f9c05261fea4d7dfda53645675736aab832f3e",
+    "bytes": 20264
+  },
+  "HIST_N10_PROTOCOL.json": {
+    "sha256": "b12f7404fc6546e04d20bc14eab3a9ca04373d7c7cff0e354f62bc742673478c",
+    "bytes": 1610
+  },
+  "HIST_DEEP_N3_ALL.csv": {
+    "sha256": "276b646805820f014b6321a056f1dc133ad6bb893377e8656e09d40f55800a2c",
+    "bytes": 102424
+  },
+  "HIST_DEEP_N3_DELTA.csv": {
+    "sha256": "687bd400462419b505aa4b57b7426d6d539c29532d6a4bba0c84af6332c9504d",
+    "bytes": 12651
+  },
+  "HIST_FF1_PRIMARY.csv": {
+    "sha256": "1c14c567739323cc86da628a78d95a71782dbb76f65e3156820f8978a684c5d2",
+    "bytes": 1129
+  },
+  "HIST_FF1_PAIRED_STATS.csv": {
+    "sha256": "38926ff712a208cd497a4064b38d9f30d8607bcb71dc63883de7834306f06104",
+    "bytes": 5026
+  },
+  "HIST_XGB_N3_ALL_BUDGETS_AGG.csv": {
+    "sha256": "57a3e6296145d776f80ea3625760325e8215033cab1c2551e05336d5adb24f28",
+    "bytes": 51296
+  },
+  "HIST_XGB_LABEL_CURVE_SEED82_PRIMARY.csv": {
+    "sha256": "791ea65adc53d4b9b12b785d6142e4fce074a1c2186cd48633d85ae5346063b8",
+    "bytes": 1656
+  },
+  "HIST_XGB_OPERATIONAL_BENCHMARK.csv": {
+    "sha256": "9e3c7e208fb4b012ac585a9a3cf93bed918083089a1399ec97674edb01a301d6",
+    "bytes": 429
+  },
+  "HIST_SYSTEM_REFERENCE_XGB_VS_DEEP_N3_PRIMARY.csv": {
+    "sha256": "6e218e7d91bad37f47aa07826c5860899984016d99c0c8ae557e02f053a37d4c",
+    "bytes": 1911
+  }
+}

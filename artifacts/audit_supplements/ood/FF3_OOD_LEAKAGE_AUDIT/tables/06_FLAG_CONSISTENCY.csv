@@ -1,0 +1,5 @@
+check,pass,mismatch_rows,observed,expected
+combined_equals_domain_AND_template,True,0.0,,
+DOMAIN_OOD_EXACT_count,True,,115917.0,115917.0
+TEMPLATE_OOD_EXACT_count,True,,161223.0,161223.0
+DOMAIN_TEMPLATE_OOD_EXACT_count,True,,110095.0,110095.0

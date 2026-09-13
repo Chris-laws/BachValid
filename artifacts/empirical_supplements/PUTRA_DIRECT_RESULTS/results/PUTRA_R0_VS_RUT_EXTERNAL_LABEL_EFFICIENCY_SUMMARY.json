@@ -1,0 +1,233 @@
+{
+  "status": "COMPLETE",
+  "version": "PUTRA_EXTERNAL_LABEL_EFFICIENCY_R0_VS_RUT_N10_v1_1",
+  "scientific_status": "POST_HOC_EXTERNAL_LABEL_EFFICIENCY_ANALYSIS",
+  "putra_split": {
+    "putra_doi": "10.5281/zenodo.8041387",
+    "complete_rows": 10391,
+    "cutoff_utc": "2023-04-07 03:33:03.372000+00:00",
+    "early_rows": 7793,
+    "late_rows_before_overlap_filter": 2598,
+    "late_rows_after_overlap_filter": 2598,
+    "late_exact_url_overlaps_removed": 0,
+    "early_date_range": [
+      "2018-12-08 00:22:51.482000+00:00",
+      "2023-04-07 03:33:03.372000+00:00"
+    ],
+    "late_date_range": [
+      "2023-04-07 03:51:02.445000+00:00",
+      "2023-05-08 08:06:20.214000+00:00"
+    ],
+    "early_class_counts": {
+      "0": 3554,
+      "1": 4239
+    },
+    "late_class_counts": {
+      "0": 1686,
+      "1": 912
+    },
+    "features_text_used": true,
+    "features_html_used_as_raw_html": false,
+    "inputs": {
+      "phishing.csv": {
+        "path": "/kaggle/working/putra_r0_vs_rut_label_efficiency/data/phishing.csv",
+        "rows": 5151,
+        "md5": "513962464c413fc30b2030547a12868a"
+      },
+      "not-phishing.csv": {
+        "path": "/kaggle/working/putra_r0_vs_rut_label_efficiency/data/not-phishing.csv",
+        "rows": 5244,
+        "md5": "f5d218eb67f5d7bd0571e8089a8fc392"
+      }
+    }
+  },
+  "representation_sources": {
+    "R0": {
+      "URL": "bert-base-uncased",
+      "TEXT": "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base"
+    },
+    "RUT": {
+      "URL": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/checkpoints/URL_DAPT_BERT_200K",
+      "TEXT": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT"
+    },
+    "text_tokenizer": "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base"
+  },
+  "label_budgets": [
+    200,
+    500,
+    1000,
+    2000
+  ],
+  "n_pairs": 10,
+  "primary": {
+    "endpoint": "AP_AULC_log_budget",
+    "n_pairs": 10,
+    "R0_mean": 0.8944854740603978,
+    "RUT_mean": 0.9198361691712982,
+    "mean_delta": 0.025350695110900646,
+    "mean_delta_pp": 2.5350695110900645,
+    "ci95_lo": 0.021609023283204784,
+    "ci95_hi": 0.029092366938596508,
+    "ci95_lo_pp": 2.1609023283204785,
+    "ci95_hi_pp": 2.9092366938596506,
+    "positive_pairs": 10,
+    "negative_pairs": 0,
+    "zero_pairs": 0,
+    "exact_signflip_p": 0.001953125
+  },
+  "secondary_AP_by_budget": [
+    {
+      "budget": 200,
+      "R0_AP_mean": 0.8391172987745161,
+      "RUT_AP_mean": 0.8651461740503226,
+      "delta_AP": 0.026028875275806364,
+      "delta_AP_pp": 2.6028875275806365,
+      "ci95_lo": 0.01700321888168972,
+      "ci95_hi": 0.035054531669923006,
+      "ci95_lo_pp": 1.7003218881689721,
+      "ci95_hi_pp": 3.5054531669923006,
+      "positive_pairs": 10,
+      "negative_pairs": 0,
+      "p_raw": 0.001953125,
+      "p_holm": 0.0078125
+    },
+    {
+      "budget": 500,
+      "R0_AP_mean": 0.889623584788709,
+      "RUT_AP_mean": 0.9175671370477747,
+      "delta_AP": 0.02794355225906566,
+      "delta_AP_pp": 2.7943552259065663,
+      "ci95_lo": 0.022245869807620514,
+      "ci95_hi": 0.03364123471051081,
+      "ci95_lo_pp": 2.2245869807620515,
+      "ci95_hi_pp": 3.364123471051081,
+      "positive_pairs": 10,
+      "negative_pairs": 0,
+      "p_raw": 0.001953125,
+      "p_holm": 0.0078125
+    },
+    {
+      "budget": 1000,
+      "R0_AP_mean": 0.9169648427469739,
+      "RUT_AP_mean": 0.9404951456733238,
+      "delta_AP": 0.023530302926350187,
+      "delta_AP_pp": 2.353030292635019,
+      "ci95_lo": 0.020207768183069474,
+      "ci95_hi": 0.0268528376696309,
+      "ci95_lo_pp": 2.020776818306947,
+      "ci95_hi_pp": 2.68528376696309,
+      "positive_pairs": 10,
+      "negative_pairs": 0,
+      "p_raw": 0.001953125,
+      "p_holm": 0.0078125
+    },
+    {
+      "budget": 2000,
+      "R0_AP_mean": 0.9340084404544653,
+      "RUT_AP_mean": 0.9560829866627287,
+      "delta_AP": 0.02207454620826348,
+      "delta_AP_pp": 2.207454620826348,
+      "ci95_lo": 0.018515684229096652,
+      "ci95_hi": 0.025633408187430307,
+      "ci95_lo_pp": 1.8515684229096652,
+      "ci95_hi_pp": 2.563340818743031,
+      "positive_pairs": 10,
+      "negative_pairs": 0,
+      "p_raw": 0.001953125,
+      "p_holm": 0.0078125
+    }
+  ],
+  "learning_curves": [
+    {
+      "budget": 200,
+      "variant": "R0",
+      "AP_mean": 0.8391172987745161,
+      "AP_sd": 0.013344405219763947,
+      "AUC_mean": 0.9042541388316581,
+      "P_at_R90_mean": 0.6377907548708969,
+      "FPR_at_TPR90_mean": 0.2787069988137604
+    },
+    {
+      "budget": 200,
+      "variant": "RUT",
+      "AP_mean": 0.8651461740503226,
+      "AP_sd": 0.011747527313588784,
+      "AUC_mean": 0.9185269947555723,
+      "P_at_R90_mean": 0.670941615122938,
+      "FPR_at_TPR90_mean": 0.24205219454329777
+    },
+    {
+      "budget": 500,
+      "variant": "R0",
+      "AP_mean": 0.889623584788709,
+      "AP_sd": 0.0072192043767177515,
+      "AUC_mean": 0.9381372786206323,
+      "P_at_R90_mean": 0.7446285794692259,
+      "FPR_at_TPR90_mean": 0.16785290628707
+    },
+    {
+      "budget": 500,
+      "variant": "RUT",
+      "AP_mean": 0.9175671370477747,
+      "AP_sd": 0.005866615376593181,
+      "AUC_mean": 0.9527236035670434,
+      "P_at_R90_mean": 0.7831499382057465,
+      "FPR_at_TPR90_mean": 0.13534994068801898
+    },
+    {
+      "budget": 1000,
+      "variant": "R0",
+      "AP_mean": 0.9169648427469737,
+      "AP_sd": 0.008550435661025728,
+      "AUC_mean": 0.9546058484734969,
+      "P_at_R90_mean": 0.8061516043174276,
+      "FPR_at_TPR90_mean": 0.11767497034400949
+    },
+    {
+      "budget": 1000,
+      "variant": "RUT",
+      "AP_mean": 0.9404951456733238,
+      "AP_sd": 0.008169226525394863,
+      "AUC_mean": 0.9666749261201639,
+      "P_at_R90_mean": 0.8450056119713636,
+      "FPR_at_TPR90_mean": 0.08967971530249111
+    },
+    {
+      "budget": 2000,
+      "variant": "R0",
+      "AP_mean": 0.9340084404544653,
+      "AP_sd": 0.0050132486771659835,
+      "AUC_mean": 0.964230583130424,
+      "P_at_R90_mean": 0.847080589888375,
+      "FPR_at_TPR90_mean": 0.08807829181494661
+    },
+    {
+      "budget": 2000,
+      "variant": "RUT",
+      "AP_mean": 0.9560829866627287,
+      "AP_sd": 0.0041960018069448655,
+      "AUC_mean": 0.9755867463736447,
+      "P_at_R90_mean": 0.8913258954520279,
+      "FPR_at_TPR90_mean": 0.05954922894424673
+    }
+  ],
+  "label_equivalence_descriptive": {
+    "reference": "R0 at 2000 labeled Putra target instances",
+    "reference_mean_AP": 0.9340084404544653,
+    "smallest_RUT_budget_with_mean_AP_at_least_reference": 1000,
+    "inferential_status": "DESCRIPTIVE_ONLY_NO_NONINFERIORITY_CLAIM"
+  },
+  "rut_reproduction_audit": {
+    "prior_result_found": false
+  },
+  "guardrails": [
+    "R0 is generically self-supervised pretrained; contrast is additional PhreshPhish task-adaptive representation learning.",
+    "Putra late test is never used for probe fitting.",
+    "R0 and RUT receive identical labeled target rows within each run and budget.",
+    "N10 quantifies target label-sample/probe variation at fixed encoder checkpoints.",
+    "No Putra target MLM is performed in this experiment.",
+    "Putra features.text is provider-preprocessed text, not raw HTML processed by the PhreshPhish pipeline.",
+    "Label equivalence is descriptive only.",
+    "Prior Putra analyses were known before this experiment; interpret as post-hoc external validation."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "source": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/results/FF2_LABEL_CURVE_FINAL_ALL.csv",
+  "rows_loaded_for_analysis": 250,
+  "runs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "seed_pairs_match_canonical": true,
+  "historical_results_recomputed": false
+}

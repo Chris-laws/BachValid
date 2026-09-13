@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "audit_version": "PHRESHPHISH_REPRO_AUDIT_CAPTURE_v1",
+  "source_experiment": "N10_CONFIRMATORY_20K_OOD_v1",
+  "completed_utc": "2026-08-16T15:49:23.558135+00:00",
+  "checks": {
+    "input_root_exists": true,
+    "all_input_manifest_exists": true,
+    "input_root_digest_exists": true,
+    "critical_resolution_exists": true,
+    "critical_digest_exists": true,
+    "parquet_audit_exists": true,
+    "environment_lock_exists": true,
+    "freeze_counts_exact": true,
+    "historical_hashes_recorded": true,
+    "n10_contract_recorded": true
+  },
+  "input_root_digest_sha256": "aacc78117a00d5010bef9a67441ba40d3a3ea41238bc482bffb08ee897a2d4b8",
+  "n10_result_capture_status": "NOT_FOUND",
+  "important_scope_note": "This audit fingerprints the actual attached inputs and runtime. It does not turn the historical experiments into a preregistered study."
+}

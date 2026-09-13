@@ -1,0 +1,12 @@
+{
+  "ssl_rows": 200000,
+  "dev_rows": 20000,
+  "ssl_physical_has_labels": false,
+  "active_selection_contract": "selection functions receive embeddings/scores/cluster ids, never y",
+  "dev_partitions": {
+    "REP_CAL": 10000,
+    "REP_EVAL": 10000,
+    "ENG_TUNE": 5000,
+    "ENG_META": 5000
+  }
+}

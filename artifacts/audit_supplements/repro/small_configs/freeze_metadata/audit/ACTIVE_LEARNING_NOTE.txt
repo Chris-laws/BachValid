@@ -1,0 +1,1 @@
+B25AL wird nicht vom Data Freeze Builder erzeugt. Active Learning ist ein separates Verfahren. Legacy AL25 darf nur bei exakt wiederverwendetem Legacy-Supervised-Pool übernommen werden.

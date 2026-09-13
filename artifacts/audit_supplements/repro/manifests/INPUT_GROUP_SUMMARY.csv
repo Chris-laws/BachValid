@@ -1,0 +1,16 @@
+dataset_group,file_count,total_bytes,total_GiB
+datasets/cristinakaufalt/bigresults,76,14908299854,13.884436203166842
+datasets/cristinakaufalt/carmengeiss,29,2815198683,2.6218580855056643
+datasets/cristinakaufalt/daptseeds,10,2481215145,2.310811677016318
+datasets/cristinakaufalt/daptseeds242-282,15,2481219490,2.3108157236129045
+datasets/cristinakaufalt/dataset,2,81911498,0.07628602720797062
+datasets/cristinakaufalt/finaldatafreeze,1064,2755919681,2.5666502127423882
+datasets/cristinakaufalt/freezeresume,48,94958793,0.08843726757913828
+datasets/cristinakaufalt/geileresultsvorseeds,340,9189476307,8.55836673360318
+datasets/cristinakaufalt/jajidiad,299,5316354,0.004951240494847298
+datasets/cristinakaufalt/kleineergebnisse,28,1320463,0.0012297770008444786
+datasets/cristinakaufalt/mulitmodaldeep,45,10144524,0.009447824209928513
+datasets/cristinakaufalt/newdataset,572,5733361843,5.339609312824905
+datasets/cristinakaufalt/r2cr3c,67,3118526694,2.9043543096631765
+datasets/cristinakaufalt/supervision,12,24268,2.2601336240768433e-05
+datasets/cristinakaufalt/wowfusion,81,1462904,0.001362435519695282

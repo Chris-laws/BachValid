@@ -1,0 +1,185 @@
+\chapter{Stand der Forschung und Forschungslücke}
+
+\section{Task-adaptive Repräsentationen und Label-Effizienz}
+
+Ein Forschungsstrang der Phishing-Erkennung untersucht, wie transformerbasierte
+Repräsentationen bereits vor der gelabelten Zielklassifikation an Web- und insbesondere
+URL-Daten angepasst werden können. URLTran vergleicht zwei Ansätze: ausschließlich
+auf URLs vortrainierte und anschließend feinabgestimmte Transformer sowie die direkte
+Feinabstimmung öffentlich vortrainierter BERT- und RoBERTa-Modelle. Die Evaluation
+berücksichtigt gezielt Betriebspunkte mit sehr niedrigen False-Positive-Raten
+(vgl. [Maneriker et al. (2021), PDF-S. 1--2]). PhishBERT wird auf mehr als drei Milliarden
+ungelabelten URLs vortrainiert und anschließend für die Phishing-Klassifikation
+weiterverwendet (vgl. [Wang et al. (2023), Abstract, o.\,S.]). Auch urlBERT nutzt mehrere Milliarden
+URLs und kombiniert mehrere selbstüberwachte Vortrainingsziele; ergänzend wird die
+Sensitivität gegenüber reduziertem gelabeltem Trainingsumfang untersucht
+(vgl. [Li et al. (2025), S. 1--2 und 12]).
+
+Neben der domänennäheren Repräsentationsbildung rückt damit die verfügbare gelabelte
+Downstream-Supervision in den Fokus. Gui et al. führen den Aufwand der Erhebung und
+Annotation großer gelabelter Datenbestände als eine Motivation für Self-Supervised Learning
+an (vgl. [Gui et al. (2024), S. 1]). Für spezialisierte URL-Repräsentationen untersuchen
+Li et al. ergänzend, wie sich die Downstream-Leistung bei reduziertem gelabeltem
+Trainingsumfang verändert (vgl. [Li et al. (2025), S. 12]).
+
+Für die vorliegende Arbeit sind daraus zwei Aspekte relevant. Erstens wird untersucht,
+welchen zusätzlichen Nutzen die in Abschnitt 2.3.3 eingeführte task-adaptive
+Weiteranpassung bereits vortrainierter URL- und HTML-Text-Encoder für die
+Phishing-Klassifikation erzeugt. Durch die getrennte und gemeinsame Anpassung beider
+Informationszweige wird zugleich betrachtet, wie sich dieser Effekt zwischen URL und
+HTML-Text verteilt. Zweitens wird die gelabelte Downstream-Supervision systematisch
+über mehrere Labelbudgets variiert, um zu bestimmen, wie sich der
+Repräsentationsvorteil mit wachsendem Trainingsumfang entwickelt und ab welchem
+reduzierten Labelbudget das festgelegte Leistungsniveau vollständig trainierter
+Referenzen erreicht wird.
+
+\section{Informationsgrundlage und Systemarchitektur}
+
+Neben der Repräsentationsbildung unterscheiden sich bestehende Verfahren hinsichtlich
+der für die Klassifikation verwendeten Webseiteninformationen. Aljofey et al. kombinieren
+URL-Zeichenfolgen, Hyperlinkinformationen und textuelle HTML-Merkmale und führen diese
+einem XGBoost-Klassifikator zu
+(vgl. [Aljofey et al. (2022), S. 1--2 und 13]). Opara et al. verarbeiten URL- und
+HTML-Informationen dagegen in einem gemeinsamen neuronalen Verfahren
+(vgl. [Opara et al. (2024), S. 2]). Damit werden URL und HTML-Inhalt als unterschiedliche
+Informationsquellen derselben Webseite für die Klassifikation nutzbar gemacht.
+
+Über den textuellen HTML-Inhalt hinaus kann auch die Dokumentstruktur berücksichtigt
+werden. Yoon et al. kombinieren URL-Repräsentationen mit einem graphbasierten
+HTML-DOM und untersuchen den zusätzlichen Beitrag der strukturellen Information anhand
+von Ablationen (vgl. [Yoon et al. (2024), S. 2, 13 und 15]). Die bestehende Forschung
+liefert damit eine Grundlage dafür, adressbezogene, textuelle und strukturelle
+Informationen innerhalb eines gemeinsamen Klassifikationssystems zu berücksichtigen.
+
+Die vorliegende Arbeit trennt dabei Repräsentations- und Systemebene. Zunächst wird die
+task-adaptive URL- und HTML-Text-Repräsentation unter konstant gehaltenen
+Downstream-Bedingungen untersucht. Die daraus ausgewählte Repräsentationsbasis wird
+anschließend schrittweise um weitere Systemkomponenten erweitert. Eine sequenzielle
+Ablation von URL über HTML-Text und DOM bis zur lernbaren Gating-Fusion bestimmt
+hierbei den inkrementellen Beitrag der zusätzlichen Informations- und
+Fusionskomponenten.
+
+Neben dem Informationsumfang kann auch die Verarbeitungstiefe Bestandteil des
+Systementwurfs sein. Liu et al. beschreiben ein mehrstufiges
+Phishing-Erkennungsverfahren und berichten eine Verkürzung der Ausführungszeit
+bei zugleich verbesserter Erkennung
+(vgl. [Liu et al. (2021), Abstract, o.\,S.]). Dieses Prinzip bildet den konzeptionellen
+Bezug für die URL-first-Kaskade der vorliegenden Arbeit. Die URL-Stufe dient dabei
+als vorgelagerter Entscheidungspfad, während für unsichere Fälle weiterhin das
+vollständige multimodale System ausgeführt wird.
+
+\section{Generalisierung und betriebliche Evaluationsbedingungen}
+
+Die Aussagekraft eines Phishing-Klassifikators hängt neben der Modellarchitektur auch
+von der Zusammensetzung der Evaluationsdaten ab. Rashid et al. untersuchen
+URL-Klassifikatoren über unterschiedliche Datensätze hinweg und berichten deutliche
+Leistungsunterschiede zwischen datensatzinternen und datensatzübergreifenden
+Evaluationen (vgl. [Rashid et al. (2024), Abstract, o.\,S.]). Dalton et al. adressieren im
+PhreshPhish-Benchmark eine verwandte Problematik durch zeitlich getrennte Trainings-
+und Testdaten sowie eine zusätzliche Reduktion stark ähnlicher Instanzen
+(vgl. [Dalton et al. (2026), S. 5--6]).
+
+Für die vorliegende Untersuchung wird die Leistungsrelation zwischen den
+Repräsentationsvarianten und Labelbudgets deshalb nicht ausschließlich auf dem
+vollständigen Testbestand betrachtet. Ergänzende domain-, template- und zeitbezogene
+Teilmengen bilden zusätzliche Evaluationsbedingungen. Sie dienen der Prüfung, ob die
+zuvor beobachteten Repräsentations- und Budgetrelationen auch unter veränderter
+Zusammensetzung der Testdaten bestehen bleiben.
+
+Eine weitere Evaluationsdimension bildet der Klassifikationsbetriebspunkt. URLTran
+untersucht seine Modelle gezielt bei niedrigen False-Positive-Raten
+(vgl. [Maneriker et al. (2021), PDF-S. 1--2]). Auch im operativen Sicherheitsbetrieb
+werden False-Positive-Raten gemeinsam mit Größen wie Eskalationen und
+Bearbeitungsaufwand als Qualitätskennzahlen betrachtet
+(vgl. [ENISA (2020), S. 7]). Die vorliegende Arbeit verwendet daher einen auf einer
+getrennten Kalibrationsmenge bestimmten Low-FPR-Betriebspunkt, der anschließend
+unverändert auf die finalen Evaluationsbedingungen übertragen wird.
+
+Für die technische Bewertung des Gesamtsystems kommen Ressourcenkennzahlen der
+Inferenz hinzu. Reddi et al. unterscheiden insbesondere latenz- und
+durchsatzorientierte Inferenzszenarien
+(vgl. [Reddi et al. (2020), S. 5--6]). Entsprechend werden neben der
+Klassifikationsleistung auch Latenz, Durchsatz, GPU-Speicherbedarf und
+Eskalationsrate betrachtet.
+
+\section{Forschungslücke und Einordnung der Arbeit}
+
+Die betrachteten Forschungsarbeiten adressieren die für diese Arbeit relevanten
+Aspekte überwiegend auf einzelnen Ebenen. Spezialisierte selbstüberwachte
+URL-Repräsentationen zeigen die Nutzbarkeit domänennäherer Repräsentationsbildung;
+Untersuchungen reduzierter Labelmengen betrachten die Downstream-Leistung bei
+begrenzter Supervision. Weitere Arbeiten kombinieren mehrere Webseiteninformationen
+oder verwenden mehrstufige Klassifikationsarchitekturen.
+
+Aus dieser Ausgangslage ergibt sich für die vorliegende Arbeit die Verbindung dreier
+Untersuchungsebenen. Zunächst wird der zusätzliche Effekt einer task-adaptiven
+Weiteranpassung bereits vortrainierter URL- und HTML-Text-Repräsentationen isoliert.
+Darauf aufbauend wird untersucht, wie sich dieser Effekt über unterschiedliche
+Labelbudgets entwickelt und ab welchem reduzierten Budget das festgelegte
+Leistungsniveau vollständig trainierter Referenzen erreicht wird. Die ausgewählte
+Repräsentationsbasis wird anschließend in ein multimodales Gesamtsystem überführt,
+dessen zusätzliche Komponenten und gestufte Verarbeitung getrennt evaluiert werden.
+
+Tabelle~\ref{tab:forschungsableitung} fasst die für das Untersuchungsdesign
+maßgeblichen Forschungsbezüge zusammen.
+
+\begin{table}[!ht]
+\centering
+\caption{Einordnung des Untersuchungsdesigns in den Stand der Forschung.}
+\label{tab:forschungsableitung}
+
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.08}
+
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}p{5.0cm}@{}}
+\toprule
+\textbf{Forschungsbereich}
+&
+\textbf{Bezug zur vorliegenden Arbeit}
+&
+\textbf{Umsetzung}
+\\
+\midrule
+
+Selbstüberwachte URL-Repräsentationen
+(vgl. [Maneriker et al. (2021), PDF-S. 1--2]; [Wang et al. (2023), Abstract, o.\,S.]; [Li et al. (2025), S. 1--2 und 12])
+&
+Zusätzliche task-adaptive Anpassung bereits vortrainierter URL- und
+HTML-Text-Repräsentationen.
+&
+Vergleich von R0, RU, RT und RUT bei konstanten Downstream-Probes.
+\\[1mm]
+
+Nutzung ungelabelter Daten und reduzierte Labelbudgets
+(vgl. [Gui et al. (2024), S. 1]; [Li et al. (2025), S. 1--2 und 12])
+&
+Verhalten der Repräsentationsvarianten bei unterschiedlicher gelabelter
+Downstream-Supervision.
+&
+Sieben Labelbudgets sowie Bestimmung der kleinsten ausreichenden
+RUT-Stufe gegenüber vollständig mit 200.000 Labels trainierten Referenzen.
+\\[1mm]
+
+Mehrquellenbasierte Webseitenklassifikation
+(vgl. [Aljofey et al. (2022), S. 1--2 und 13]; [Opara et al. (2024), S. 2]; [Yoon et al. (2024), S. 2 und 13--15])
+&
+Überführung der ausgewählten Repräsentationsbasis in ein multimodales
+Klassifikationssystem.
+&
+Sequenzielle Erweiterung um HTML-Text, DOM und lernbare Gating-Fusion.
+\\[1mm]
+
+Low-FPR- und gestufte Verarbeitung
+(vgl. [Maneriker et al. (2021), PDF-S. 1--2]; [Liu et al. (2021), Abstract, o.\,S.]; [ENISA (2020), S. 7]; [Reddi et al. (2020), S. 5--6])
+&
+Bewertung des Gesamtsystems bei festgelegtem Betriebspunkt und
+unterschiedlicher Verarbeitungstiefe.
+&
+CAL-basierter Low-FPR-Betriebspunkt, URL-first-Kaskade sowie
+Effizienz- und Eskalationsmetriken.
+\\
+
+\bottomrule
+\end{tabular}
+\end{table}

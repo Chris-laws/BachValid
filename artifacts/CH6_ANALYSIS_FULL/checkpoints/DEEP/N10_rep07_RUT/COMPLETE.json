@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "tag": "N10_rep07_RUT",
+  "rep": "RUT",
+  "budget": 20000,
+  "use_dom": false,
+  "seed": 282,
+  "batch_size": 16,
+  "mean_loss": 0.24259002092778684,
+  "elapsed_min": 4.080508557955424
+}

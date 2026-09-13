@@ -1,0 +1,15 @@
+{
+  "status": "TRAINED_AWAITING_OR_FINISHED_SCORING",
+  "version": "FINAL_FF4_SEQUENTIAL_ARCHITECTURE_ABLATION_N10_v1",
+  "replicate": 3,
+  "variant": "P2_TRI_EQUAL",
+  "model_seed": 502,
+  "label_rank_seed": 9404,
+  "selection_sha256": "5f3db3f999f6e59e54ae0223aa5c225e5dc65abff4cff75c4513981923841605",
+  "budget": 20000,
+  "batch_size": 8,
+  "optimizer_steps": 2500,
+  "mean_train_loss": 0.21856322993934155,
+  "last100_train_loss": 0.14078308627009392,
+  "train_minutes": 6.441425625483195
+}

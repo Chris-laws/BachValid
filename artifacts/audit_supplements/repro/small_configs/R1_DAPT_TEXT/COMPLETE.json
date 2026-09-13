@@ -1,0 +1,8 @@
+{
+  "status": "COMPLETE",
+  "seed": 20260812,
+  "rows": 200000,
+  "epochs": 1,
+  "batch": 16,
+  "loss": 1.4880125018787385
+}

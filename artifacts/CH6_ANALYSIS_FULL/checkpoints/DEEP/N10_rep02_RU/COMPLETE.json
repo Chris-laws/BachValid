@@ -1,0 +1,11 @@
+{
+  "status": "COMPLETE",
+  "tag": "N10_rep02_RU",
+  "rep": "RU",
+  "budget": 20000,
+  "use_dom": false,
+  "seed": 182,
+  "batch_size": 16,
+  "mean_loss": 0.2588232776284218,
+  "elapsed_min": 4.109069677193959
+}

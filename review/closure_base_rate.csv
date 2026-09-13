@@ -1,0 +1,7 @@
+system,prevalence,precision,source_precision,interpretation,precision_bayes
+FULL,0.4569796501249554,0.9971442170395052,0.997144217039505,prior_shift_at_selected_PR_operating_point,0.997144217039505
+FULL,0.05,0.9562119363884743,0.997144217039505,prior_shift_at_selected_PR_operating_point,0.9562119363884743
+FULL,0.01,0.8073585916745504,0.997144217039505,prior_shift_at_selected_PR_operating_point,0.8073585916745504
+CASCADE,0.4569796501249554,0.997763928561124,0.997763928561124,prior_shift_at_selected_PR_operating_point,0.997763928561124
+CASCADE,0.05,0.9654058889260856,0.997763928561124,prior_shift_at_selected_PR_operating_point,0.9654058889260857
+CASCADE,0.01,0.8426639507742245,0.997763928561124,prior_shift_at_selected_PR_operating_point,0.8426639507742246

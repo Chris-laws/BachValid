@@ -1,0 +1,273 @@
+\chapter{Ergänzende Implementierungs- und Prüfdetails}
+\label{app:repro}
+\section{Implementierungsauszüge}
+Die folgenden Auszüge gehören zu den in Kapitel~5 erläuterten Implementierungsschritten.
+Die vollständigen Notebooks und die nachvollziehbaren Prüfskripte liegen in den digitalen
+Artefakten. Kürzungen innerhalb der Ausschnitte sind keine lauffähigen Ersatzprogramme.
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Zentraler Trainingsaufbau des URL-TAPT -- gekürzter Originalausschnitt},label={lst:url_tapt}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+def train_url_tapt(batch_size):
+    seed_all(MASTER_SEED)
+    urls = read_ssl_urls()  # labels are never read here
+
+    enc = url_tok(
+        urls,
+        truncation=True,
+        max_length=URL_MAX_LEN,
+        padding=False
+    )
+    model = AutoModelForMaskedLM.from_pretrained(
+        URL_BASE_SRC, token=HF_TOKEN, **url_kwargs
+    ).to(DEVICE)
+
+    coll = DataCollatorForLanguageModeling(
+        tokenizer=url_tok,
+        mlm_probability=URL_MLM_PROB
+    )
+    opt = torch.optim.AdamW(
+        model.parameters(),
+        lr=URL_TAPT_LR,
+        weight_decay=URL_TAPT_WEIGHT_DECAY
+    )
+
+    total = len(dl) * URL_TAPT_EPOCHS
+    sched = get_linear_schedule_with_warmup(
+        opt, int(URL_TAPT_WARMUP_FRAC * total), total
+    )
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Bestimmung der Development-basierten Kaskadenschwellen},label={lst:cascade_thresholds}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+url_high = thr_fpr(
+    ET["url"][yt == 0],
+    .001
+)
+
+pos = np.sort(ET["url"][yt == 1])
+k = max(1, int(math.floor(.01 * len(pos))))
+url_low = float(
+    np.nextafter(pos[k - 1], -np.inf)
+)
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Routingentscheidung der URL-first-Kaskade -- gekürzter zusammenhängender Originalauszug},label={lst:cascade_route}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+hi = us >= url_high
+lo = us <= url_low
+esc = ~(hi | lo)
+
+out[hi] = 1e9
+out[lo] = -1e9
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Deterministische Rangbildung für die Datenpartitionierung},label={lst:stable_rank}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+def stable_rank(series, salt):
+    return np.fromiter(
+        (
+            int(
+                hashlib.sha256(
+                    (salt + "|" + x).encode()
+                ).hexdigest()[:16],
+                16
+            )
+            for x in series.astype(str)
+        ),
+        dtype=np.uint64,
+        count=len(series)
+    )
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Aufbereitung von HTML-Text und strukturellen Webseiteninformationen -- gekürzter Originalausschnitt},label={lst:process_row}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+def process_row(row, include_label=True):
+    s, _ = clipped_html(row.get("html"))
+    no_comments = COMMENT_RE.sub(" ", s)
+
+    toks = []
+    for slash, tag in TAG_RE.findall(no_comments):
+        toks.append(("/" if slash else "") + normalize_tag(tag))
+        if len(toks) >= STRUCT_MAX_TOKENS:
+            break
+    struct = " ".join(toks)
+
+    txt = SCRIPT_STYLE_RE.sub(" ", no_comments)
+    txt = TAG_STRIP_RE.sub(" ", txt)
+    txt = html_std.unescape(txt)
+    txt = WS_RE.sub(" ", txt).strip()[:TEXT_MAX_CHARS]
+
+    tags, parents, depths, attrs, children, _ = parse_dom(s)
+    out = {
+        "text": txt,
+        "html_struct": struct,
+        "template_hash": hashlib.sha256(
+            struct.encode("utf-8", "ignore")
+        ).hexdigest(),
+        "dom_tag": tags,
+        "dom_parent_idx": parents,
+        "dom_depth": depths,
+        "dom_attr_count": attrs,
+        "dom_child_count": children,
+    }
+    return out
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Physische Entfernung der Klassenlabels aus dem SSL-Pool},label={lst:remove_label}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+for role, outdir in ROLE_DIRS.items():
+    x = df[df._role.eq(role)].copy()
+    if not len(x):
+        continue
+
+    if role == "SSL_POOL":
+        x["ssl_rank"] = x["_ssl_rank"].astype(int)
+        x = x.drop(columns=["label"], errors="ignore")
+
+    x = x.drop(columns=["_role", "_ssl_rank"], errors="ignore")
+    x.to_parquet(
+        outdir / f"part-{counters[role]:05d}.parquet",
+        index=False,
+        compression="zstd"
+    )
+    counters[role] += 1
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Partielle Freigabe der Transformerencoder},label={lst:freeze_last}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+def freeze_last(model, n):
+    for p in model.parameters():
+        p.requires_grad = False
+
+    layers = getattr(
+        getattr(model, "encoder", None),
+        "layer",
+        None
+    )
+    if layers is None:
+        layers = getattr(
+            getattr(model, "transformer", None),
+            "layer",
+            None
+        )
+    if layers is None:
+        raise RuntimeError(type(model))
+
+    for layer in layers[-n:]:
+        for p in layer.parameters():
+            p.requires_grad = True
+
+    if getattr(model, "pooler", None) is not None:
+        for p in model.pooler.parameters():
+            p.requires_grad = True
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={GCN-basierte Repräsentation des statischen DOM -- gekürzter Originalausschnitt},label={lst:dom_encoder}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+class DOMEncoder(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.tag = nn.Embedding(len(DOM_VOCAB), 96, padding_idx=PAD)
+        self.depth = nn.Embedding(32, 16)
+        self.attr = nn.Embedding(32, 8)
+        self.child = nn.Embedding(32, 8)
+        self.inp = nn.Linear(128, DOM_DIM)
+        self.layers = nn.ModuleList(
+            [GCNLayer(DOM_DIM) for _ in range(DOM_LAYERS)]
+        )
+        self.att = nn.Linear(DOM_DIM, 1)
+
+    def nodes(self, g):
+        x = self.inp(torch.cat([
+            self.tag(g["tag"]), self.depth(g["depth"]),
+            self.attr(g["attr"]), self.child(g["child"])
+        ], 1))
+
+        for layer in self.layers:
+            x = layer(x, g["edge"])
+        return x
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Rekonstruktionsverlust des DOM-SSL -- gekürzter Originalausschnitt aus dem Trainingsloop},label={lst:dom_ssl}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+logits = m(g)
+mask = g["mask"]
+if mask.any():
+    loss = F.cross_entropy(
+        logits[mask],
+        g["orig"][mask]
+    )
+    opt.zero_grad(set_to_none=True)
+    loss.backward()
+    torch.nn.utils.clip_grad_norm_(
+        m.parameters(), 1
+    )
+    opt.step()
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\par\medskip\noindent\begin{minipage}{\dimexpr\linewidth-1em\relax}
+\begin{lstlisting}[language=Python,caption={Kern der multimodalen DUAL-/TRI-Fusion -- gekürzter Architekturausschnitt},label={lst:deep_fusion}]
+# KI-Unterstuetzung: siehe KI-Erklaerung der Arbeit.
+class DeepFusion(nn.Module):
+    def __init__(self, use_dom):
+        super().__init__()
+        self.gate = nn.Sequential(
+            nn.Linear(PROJ_DIM, 64),
+            nn.GELU(),
+            nn.Linear(64, 1)
+        )
+
+        nm = 3 if use_dom else 2
+        self.head = nn.Sequential(
+            nn.Linear(PROJ_DIM * (nm + 1), 512),
+            nn.GELU(),
+            nn.Dropout(.2),
+            nn.Linear(512, 128),
+            nn.GELU(),
+            nn.Linear(128, 1)
+        )
+
+    def forward(self, u, t, g=None):
+        zs = self.encode(u, t, g)
+        st = torch.stack(zs, 1)
+        gw = torch.softmax(self.gate(st).squeeze(-1), 1)
+        weighted = (st * gw[:, :, None]).sum(1)
+        main = self.head(
+            torch.cat(zs + [weighted], 1)
+        ).squeeze(-1)
+        return main, gw
+\end{lstlisting}
+\end{minipage}\par\medskip
+
+\section{Reproduktionsumfang}
+Die digitale Fassung enthält die Ergebnisdateien der Primäranalysen, getrennte ergänzende
+Versuchsblöcke und die beim abschließenden Review verwendeten Prüfskripte.
+\nolinkurl{empirical_audit.py} rekonstruiert die aggregierten Kennzahlen und statistischen
+Entscheidungen; \nolinkurl{raw_score_audit.py} prüft Vorhersagescores gegen wiedergewonnene
+Testlabels, reproduziert die stratifizierten Bootstrap-Intervalle und trainiert die
+externen Linear-Probes auf den gespeicherten Repräsentationen neu.
+
+Die Neutrainings verwenden unveränderte Auswahlhashes und Modellvorgaben. Sie ersetzen
+keine Wiederholung des selbstüberwachten Encodertrainings. Einzelne Rangmetriken können
+bei einer erneuten Optimierung numerisch abweichen; die Differenzen zu den historischen
+Exporten werden im beigefügten Prüfbericht ausgewiesen. Die Latenz- und Durchsatzprüfung
+kann nur die exportierten Messaggregate, deren Rechenbeziehungen und den Messcode
+nachvollziehen, da die einzelnen Zeitmessungen nicht exportiert wurden.

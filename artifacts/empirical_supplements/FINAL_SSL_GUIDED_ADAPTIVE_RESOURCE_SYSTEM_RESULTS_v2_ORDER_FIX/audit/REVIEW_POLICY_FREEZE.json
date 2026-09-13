@@ -1,0 +1,241 @@
+{
+  "status": "FROZEN_FROM_SOURCE_LABEL_SUPPORT_AND_DEV_SCORE_DISTRIBUTIONS",
+  "classification_by_neighbors": false,
+  "review_rates": [
+    0.01,
+    0.02,
+    0.05
+  ],
+  "policies": {
+    "run0_R0": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run0_R0_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.25669917464256287,
+          "iqr": 0.07029305398464203
+        },
+        "uncertainty": {
+          "median": -5.628100872039795,
+          "iqr": 3.8117507696151733
+        },
+        "impurity": {
+          "median": 0.05594405594405594,
+          "iqr": 0.1832156747092326
+        },
+        "thresholds": {
+          "0.01": 4.33002967330187,
+          "0.02": 3.902803540211147,
+          "0.05": 3.341947921505465
+        }
+      }
+    },
+    "run0_RUT": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run0_RUT_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.2863733768463135,
+          "iqr": 0.10099099203944206
+        },
+        "uncertainty": {
+          "median": -6.869004249572754,
+          "iqr": 4.06540322303772
+        },
+        "impurity": {
+          "median": 0.014184397163120588,
+          "iqr": 0.15174129353233834
+        },
+        "thresholds": {
+          "0.01": 4.758642442152967,
+          "0.02": 4.3511010842436555,
+          "0.05": 3.824724983365152
+        }
+      }
+    },
+    "run1_R0": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run1_R0_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.25669917464256287,
+          "iqr": 0.07029305398464203
+        },
+        "uncertainty": {
+          "median": -5.413459777832031,
+          "iqr": 3.7387773990631104
+        },
+        "impurity": {
+          "median": 0.07048458149779735,
+          "iqr": 0.1816331919785017
+        },
+        "thresholds": {
+          "0.01": 4.2809624657770735,
+          "0.02": 3.8994969656145404,
+          "0.05": 3.215548121203023
+        }
+      }
+    },
+    "run1_RUT": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run1_RUT_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.2863733768463135,
+          "iqr": 0.10099099203944206
+        },
+        "uncertainty": {
+          "median": -6.827558517456055,
+          "iqr": 4.529546022415161
+        },
+        "impurity": {
+          "median": 0.020134228187919434,
+          "iqr": 0.15159574468085113
+        },
+        "thresholds": {
+          "0.01": 4.739723759292663,
+          "0.02": 4.471457919078248,
+          "0.05": 3.8619197034290287
+        }
+      }
+    },
+    "run2_R0": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run2_R0_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.25669917464256287,
+          "iqr": 0.07029305398464203
+        },
+        "uncertainty": {
+          "median": -5.4242634773254395,
+          "iqr": 3.6675721406936646
+        },
+        "impurity": {
+          "median": 0.07407407407407407,
+          "iqr": 0.20313825275657338
+        },
+        "thresholds": {
+          "0.01": 4.0190399506475005,
+          "0.02": 3.5844303188740336,
+          "0.05": 2.9665935572468976
+        }
+      }
+    },
+    "run2_RUT": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run2_RUT_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.2863733768463135,
+          "iqr": 0.10099099203944206
+        },
+        "uncertainty": {
+          "median": -6.728307723999023,
+          "iqr": 4.222496271133423
+        },
+        "impurity": {
+          "median": 0.009615384615384581,
+          "iqr": 0.14910025706940877
+        },
+        "thresholds": {
+          "0.01": 4.781059004367075,
+          "0.02": 4.463100556308465,
+          "0.05": 3.933651358163552
+        }
+      }
+    },
+    "run3_R0": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run3_R0_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.25669917464256287,
+          "iqr": 0.07029305398464203
+        },
+        "uncertainty": {
+          "median": -5.489233016967773,
+          "iqr": 3.7319135069847107
+        },
+        "impurity": {
+          "median": 0.07179487179487176,
+          "iqr": 0.18889218889218884
+        },
+        "thresholds": {
+          "0.01": 4.13850665273894,
+          "0.02": 3.7506617253594445,
+          "0.05": 3.123757581164578
+        }
+      }
+    },
+    "run3_RUT": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run3_RUT_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.2863733768463135,
+          "iqr": 0.10099099203944206
+        },
+        "uncertainty": {
+          "median": -6.906542778015137,
+          "iqr": 4.256330966949463
+        },
+        "impurity": {
+          "median": 0.014925373134328401,
+          "iqr": 0.1656976744186046
+        },
+        "thresholds": {
+          "0.01": 4.466080649283844,
+          "0.02": 4.188032706302388,
+          "0.05": 3.6152598779698355
+        }
+      }
+    },
+    "run4_R0": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run4_R0_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.25669917464256287,
+          "iqr": 0.07029305398464203
+        },
+        "uncertainty": {
+          "median": -5.47077751159668,
+          "iqr": 3.6340742111206055
+        },
+        "impurity": {
+          "median": 0.07042253521126762,
+          "iqr": 0.17956228134407282
+        },
+        "thresholds": {
+          "0.01": 4.29296398782956,
+          "0.02": 3.9281052869116193,
+          "0.05": 3.2430819213508966
+        }
+      }
+    },
+    "run4_RUT": {
+      "model_path": "/kaggle/working/final_ssl_guided_adaptive_resource_system_n5_v1/linear_models/REVIEW_run4_RUT_20K.npz",
+      "selected_idx_path": null,
+      "params": {
+        "novelty": {
+          "median": 0.2863733768463135,
+          "iqr": 0.10099099203944206
+        },
+        "uncertainty": {
+          "median": -6.864620208740234,
+          "iqr": 4.301004767417908
+        },
+        "impurity": {
+          "median": 0.012096774193548376,
+          "iqr": 0.16890080428954424
+        },
+        "thresholds": {
+          "0.01": 4.456441252997028,
+          "0.02": 4.1169228115364955,
+          "0.05": 3.573466265860716
+        }
+      }
+    }
+  }
+}

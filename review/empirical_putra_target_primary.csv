@@ -1,0 +1,2 @@
+baseline,adapted,baseline_mean,adapted_mean,n,mean_delta,ci95_lo,ci95_hi,positive_pairs,negative_pairs,p_raw
+E0_SOURCE_RUT,E1_TARGET_RUT,0.9198361691712982,0.9084469009047804,10,-0.011389268266517849,-0.014993797517717077,-0.007784739015318621,0,10,0.001953125

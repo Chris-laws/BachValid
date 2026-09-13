@@ -1,0 +1,3 @@
+mode,threshold,cal_fp,cal_fpr
+gated,1.4550781250000002,249,0.00498
+cascade,1.1298828125000002,249,0.00498

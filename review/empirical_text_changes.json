@@ -1,0 +1,116 @@
+[
+  {
+    "file": "chapter06.tex",
+    "reason": "B95 belongs to DEV, not preceding FINAL curves",
+    "old": "Als\nergänzende Sättigungsperspektive erreicht RUT",
+    "new": "Auf DEV erreicht RUT als\nergänzende Sättigungsperspektive"
+  },
+  {
+    "file": "chapter06.tex",
+    "reason": "Recalculate both DEV and FINAL B95",
+    "old": "Labels. Da B95 jeweils auf das eigene Endniveau einer Variante bezogen ist, wird die",
+    "new": "Labels. Auf FINAL liegt B95 dagegen für R0 und RUT jeweils bei 50.000 Labels\nmit der linearen Probe und bei 100.000 Labels mit dem MLP. Die frühere relative\nSättigung von RUT auf DEV überträgt sich somit nicht auf diese FINAL-Kennzahl.\nDa B95 jeweils auf das eigene Endniveau einer Variante bezogen ist, wird die"
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Limit saturation conclusion to supporting data",
+    "old": "Die ergänzende B95-Auswertung weist auf eine frühere relative Sättigung von RUT hin.",
+    "new": "Die B95-Auswertung weist ausschließlich auf DEV auf eine frühere relative Sättigung von RUT hin; auf FINAL erreichen R0 und RUT das jeweilige relative Ziel bei denselben geprüften Budgets."
+  },
+  {
+    "file": "chapter04.tex",
+    "reason": "Disclose full external protocol and negative target-adaptation comparison",
+    "old": "Ein früherer explorativer Versuchsblock untersucht ergänzend kontrastive Repräsentationen.",
+    "new": "Für Putra werden 10.391 vollständige Datensätze nach Erfassungszeitpunkt geordnet.\nDer Schnitt am empirischen 75-\\%-Quantil (7. April 2023, 03:33:03,372 UTC) ergibt\n7.793 frühere Instanzen (3.554 benign, 4.239 Phishing) und 2.598 spätere Instanzen\n(1.686 benign, 912 Phishing); exakte URL-Überschneidungen zwischen beiden Teilen\nwurden nicht gefunden. Verarbeitet werden die URL und das bereitgestellte Textmerkmal,\nkein neu gerendertes HTML. Die externen Auswertungen sind nachträgliche Transferanalysen.\nIn einem zusätzlichen Vergleich werden beide Quell-RUT-Encoder über eine MLM-Epoche\nauf dem ungelabelten frühen Putra-Pool angepasst (E1); E0 behält die Quell-RUT-Encoder bei.\nBeide verwenden dieselben zehn Labelauswahlen und das unveränderte externe Testset.\nDer zusätzliche MLM-Schritt verwendet 15\\,\\% Maskierung, Lernrate $5\\cdot10^{-5}$,\nWeight Decay 0,01 und 6\\,\\% Warmup. Das spätere Putra-Testset wird hierfür nicht verwendet.\n\nEin früherer explorativer Versuchsblock untersucht ergänzend kontrastive Repräsentationen."
+  },
+  {
+    "file": "chapter06.tex",
+    "reason": "Independently recomputed target AP-AULC, CI, sign flip and Holm",
+    "old": "RUT erreicht damit an allen vier externen Labelbudgets eine höhere mittlere AP.",
+    "new": "Die zusätzliche Zielanpassung von Quell-RUT auf dem frühen Putra-Pool verbessert\ndieses Ergebnis nicht. Ihre mittlere AP-AULC fällt von 91,98\\,\\% auf 90,84\\,\\%;\ndie gepaarte Differenz beträgt $-1{,}14$ Prozentpunkte\n(95-\\%-KI [$-1{,}50$; $-0{,}78$], zehn negative Paare, $p=0{,}001953125$).\nDie budgetweisen AP-Differenzen betragen bei 200, 500, 1.000 und 2.000 Labels\n$-2{,}28$, $-1{,}31$, $-0{,}49$ und $-0{,}51$ Prozentpunkte.\nAuch diese vier Unterschiede bleiben nach Holm-Korrektur signifikant\n($p_{\\mathrm{Holm}}\\leq0{,}01171875$). Der Vorteil von Quell-RUT gegenüber R0\nund die Verschlechterung durch eine weitere Zielanpassung betreffen verschiedene\nInterventionen; der zweite Befund begrenzt eine pauschale Empfehlung wiederholten TAPT.\n\nRUT erreicht damit an allen vier externen Labelbudgets eine höhere mittlere AP."
+  },
+  {
+    "file": "chapter06.tex",
+    "reason": "Overlapping scenario macro mean is not a population rate",
+    "old": "Bei der primären Toleranz von einem Prozentpunkt sinkt die mittlere Eskalationsrate mit dem\ntask-adaptierten URL-Frontend von 41,125\\,\\% auf 28,728\\,\\%.",
+    "new": "Bei der primären Toleranz von einem Prozentpunkt sinkt der ungewichtete\nSzenariomittelwert der Eskalationsrate mit dem task-adaptierten URL-Frontend\nvon 41,125\\,\\% auf 28,728\\,\\%. Die fünf Szenarien überlappen; dieser Makromittelwert\nbeschreibt deshalb keine disjunkte Gesamtpopulation."
+  },
+  {
+    "file": "chapter06.tex",
+    "reason": "Use population-specific frontend results",
+    "old": "\\section{Ergänzende Unsicherheits- und Prävalenzeinordnung}",
+    "new": "Auf dem vollständigen \\texttt{OFFICIAL\\_TEST} beträgt die mittlere Eskalationsrate\n35,746\\,\\% für URL\\_BASE und 23,514\\,\\% für URL\\_TAPT\n(Differenz $-12{,}232$ Prozentpunkte, fünf Läufe). URL\\_TAPT schließt dort\n76,486\\,\\% der Webseiten im URL-Pfad ab. Gegenüber dem Vollsystem beträgt die\nTPR-Differenz $-0{,}940$ und die FPR-Differenz $+0{,}016$ Prozentpunkte.\nDie niedrigere Eskalation geht somit mit einem kleinen Qualitätsverlust gegenüber\ndem Vollsystem einher; die auf DEV gewählte Toleranz garantiert keine identische Test-TPR.\n\n\\section{Ergänzende Unsicherheits- und Prävalenzeinordnung}"
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Discussion must use same population as operational interpretation",
+    "old": "Eskalationsrate von 41,125\\,\\% mit URL\\_BASE auf 28,728\\,\\% mit URL\\_TAPT.",
+    "new": "Eskalationsrate auf \\texttt{OFFICIAL\\_TEST} von 35,746\\,\\% mit URL\\_BASE\nauf 23,514\\,\\% mit URL\\_TAPT (fünf Läufe)."
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Correct management table population",
+    "old": "& 28,728\\,\\% statt 41,125\\,\\% mittlere Eskalation bei derselben\nDevelopment-basierten 1-pp-Toleranz.",
+    "new": "& 23,514\\,\\% statt 35,746\\,\\% mittlere Eskalation auf Official bei\nderselben Development-basierten 1-pp-Toleranz; $-0{,}940$ pp TPR gegenüber Vollsystem."
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Correct per-100000 extrapolation from Official mean",
+    "old": "& URL\\_BASE: 41.125 Eskalationen\n& URL\\_TAPT: 28.728 Eskalationen\n& 12.397 weniger Eskalationen",
+    "new": "& URL\\_BASE: ca. 35.746 Eskalationen\n& URL\\_TAPT: ca. 23.514 Eskalationen\n& ca. 12.232 weniger Eskalationen"
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Interpret negative result without inventing causal explanation",
+    "old": "\\textbf{FF3 -- Erreichen des Referenzniveaus bei reduziertem Labelbudget.}",
+    "new": "Die ergänzende Putra-Zielanpassung verschlechtert dagegen die AP-AULC um\n1,14 Prozentpunkte. Mehr selbstüberwachtes Vortraining führt folglich in diesem\nProtokoll nicht zwangsläufig zu besseren Repräsentationen. Der Versuch isoliert\nweder die Ursache der Verschlechterung noch eine optimale Adaptationsstärke;\ninsbesondere Lernrate, Trainingsdauer und Korpusgröße wurden hier nicht systematisch variiert.\n\n\\textbf{FF3 -- Erreichen des Referenzniveaus bei reduziertem Labelbudget.}"
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Bound label-cost, independence, post-hoc and temporal claims",
+    "old": "Weitere Grenzen betreffen die Eingabeverarbeitung.",
+    "new": "Die Klassenbalance der Budgetstichproben wird anhand bereits vorhandener Poollabels\nhergestellt. Die Budgetanalyse simuliert daher begrenzte gelabelte Trainingsmengen,\naber keinen vollständig budgetierten Annotationsprozess. Labels für Development,\nKalibration und Evaluation sowie die Information zur klassenweisen Auswahl sind in\nden 50.000 Trainingslabels nicht enthalten. Eine betriebliche Einsparung von 75\\,\\%\ndes gesamten Annotationsaufwands lässt sich daraus nicht ableiten.\n\nDie fünf internen Testszenarien überlappen; ihre Ergebnisse sind keine fünf\nunabhängigen Replikationen. Exakte Sign-Flip-p-Werte beziehen sich auf die vollständige\nEnumeration der Vorzeichen, setzen für ihre inferenzielle Interpretation aber eine\nentsprechende Symmetrie beziehungsweise Austauschbarkeit der Paardifferenzen voraus.\nMit zehn Replikationen ist diese Annahme nur eingeschränkt prüfbar. Die nachträglichen\nWelch-Vergleiche mit XGBoost sind ergänzende Evidenz auf derselben Testpopulation,\nkeine unabhängige Bestätigung. Ein gespeicherter Analyseplan nach früherem FINAL-Zugriff\nersetzt keine prospektive Vorregistrierung auf einem unberührten Testset.\n\nDie Putra-Erhebungen enden 2023 und liegen damit vor dem verwendeten PhreshPhish-Bestand\naus 2025. Der interne frühe/späte Putra-Schnitt schützt vor direkter Nutzung seiner\nTestinstanzen im Zieltraining; die Gesamtauswertung ist jedoch kein prospektiver\nNachweis für zukünftige Angriffe. Eine mögliche Überschneidung mit den ursprünglichen\nallgemeinen BERT-/RoBERTa-Vortrainingskorpora wurde nicht überprüft.\n\nWeitere Grenzen betreffen die Eingabeverarbeitung."
+  },
+  {
+    "file": "chapter07.tex",
+    "reason": "Negative target result included in conclusion",
+    "old": "Auf Systemebene leisten HTML-Text, DOM und lernbares Gating jeweils einen zusätzlichen",
+    "new": "Die zusätzliche MLM-Anpassung auf dem frühen Putra-Zielbestand verschlechtert\ndie AP-AULC hingegen um 1,14 Prozentpunkte. Der Nutzen einer weiteren Anpassung\nmuss deshalb für den jeweiligen Korpus und das gewählte Trainingsprotokoll geprüft werden.\n\nAuf Systemebene leisten HTML-Text, DOM und lernbares Gating jeweils einen zusätzlichen"
+  },
+  {
+    "file": "chapter04.tex",
+    "reason": "Match supportive status in cross-paradigm notebook",
+    "old": "Deshalb werden die Beobachtungen nicht nachträglich einander\nzugeordnet.",
+    "new": "Deshalb werden die Beobachtungen nicht nachträglich einander\nzugeordnet. Dieser nachträgliche Welch-Vergleich wird als ergänzende, verfahrensübergreifende\nEvidenz interpretiert."
+  },
+  {
+    "file": "chapter04.tex",
+    "reason": "State actual CI estimator and statistical unit",
+    "old": "Ergänzend werden 95-\\%-Konfidenzintervalle und die Anzahl der",
+    "new": "Für mittlere Paardifferenzen wird das zweiseitige t-Intervall\n$\\bar d\\pm t_{0{,}975;n-1}s_d/\\sqrt n$ verwendet; es beschreibt die\nDownstream-Variation bei festen Vortrainingszuständen und fester Testpopulation.\nErgänzend werden die Anzahl der"
+  },
+  {
+    "file": "chapter04.tex",
+    "reason": "Make global NI decision explicit",
+    "old": "in allen fünf Bedingungen\ngleichzeitig erreicht wird. Anschließend",
+    "new": "in allen fünf Bedingungen\ngleichzeitig erreicht wird. Der gemeinsame p-Wert ist das Maximum der fünf\nKomponenten-p-Werte (Intersection-Union-Prinzip). Anschließend"
+  },
+  {
+    "file": "chapter05.tex",
+    "reason": "Distinguish fixed starting checkpoints from frozen training parameters",
+    "old": "RUT-URL- und Textcheckpoints sowie der DOM-SSL-Encoder bleiben fest. Pro Replikation",
+    "new": "Die initialen RUT-URL- und Textcheckpoints sowie der DOM-SSL-Encoder sind über die\nReplikationen identisch; die im Deep-Training freigegebenen Parameter werden weiterhin\nüberwacht optimiert. Pro Replikation"
+  },
+  {
+    "file": "chapter04.tex",
+    "reason": "Clarify checkpoint vs trainability",
+    "old": "RUT-URL- und Textcheckpoints sowie der DOM-SSL-Encoder bleiben\nfest; für alle Varianten",
+    "new": "Die initialen RUT-URL- und Textcheckpoints sowie der DOM-SSL-Encoder bleiben\nidentisch; die freigegebenen Modellparameter werden überwacht trainiert. Für alle Varianten"
+  },
+  {
+    "file": "chapter05.tex",
+    "reason": "Reconstruct actual dtype-dependent threshold tie behavior",
+    "old": "Die Kaskadenkonfiguration wird auf Development-Daten festgelegt;",
+    "new": "Bei der Reproduktion sind Datentyp und Grenzwertbehandlung Teil des Protokolls:\ndie gespeicherten Kaskadenscores beruhen auf Float32-Logits und der damaligen\nNumPy-Skalarumwandlung. Eine nachträgliche Umstellung des Routingvergleichs auf Float64\nändert bei gebundenen Scores die Eskalationsmenge. Das digitale Prüfskript setzt die\nRoutinggrenzen deshalb explizit auf Float32, während der abschließende\nCAL-Klassifikationsvergleich wie im Originalcode in Float64 erfolgt.\n\nDie Kaskadenkonfiguration wird auf Development-Daten festgelegt;"
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "status": "COMPLETE",
+  "fresh_from_base": true,
+  "source": "bert-base-uncased",
+  "rows": 200000,
+  "epochs": 1,
+  "batch": 16,
+  "lr": 5e-05,
+  "mlm_probability": 0.15,
+  "mean_train_loss": 2.287497024502754,
+  "last100_train_loss": 2.1528899842500686,
+  "wall_minutes": 24.46210649808248,
+  "uses_labels": false
+}

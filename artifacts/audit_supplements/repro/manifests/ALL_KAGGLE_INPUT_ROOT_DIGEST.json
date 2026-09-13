@@ -1,0 +1,8 @@
+{
+  "algorithm": "SHA256(sorted(relative_path|size_bytes|file_sha256))",
+  "root": "/kaggle/input",
+  "file_count": 2688,
+  "total_bytes": 43678356501,
+  "root_digest_sha256": "aacc78117a00d5010bef9a67441ba40d3a3ea41238bc482bffb08ee897a2d4b8",
+  "completed_utc": "2026-08-16T15:49:16.102386+00:00"
+}

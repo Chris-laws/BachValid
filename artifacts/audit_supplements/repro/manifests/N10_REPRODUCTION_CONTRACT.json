@@ -1,0 +1,63 @@
+{
+  "version": "N10_CONFIRMATORY_20K_OOD_v1",
+  "scientific_role": "additional post-hoc replication/robustness extension after earlier FINAL results were known",
+  "historical_final_known": true,
+  "no_optional_stopping": true,
+  "all_planned_replicates_must_be_reported": true,
+  "budget": 20000,
+  "model_seeds": [
+    142,
+    162,
+    182,
+    202,
+    222,
+    242,
+    262,
+    282,
+    302,
+    322
+  ],
+  "label_rank_seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "paired_R0_R1_same_rows_within_replicate": true,
+  "architecture": "DUAL URL+HTML-text; same frozen v8.4/v7.2 hyperparameters",
+  "url_max_len": 128,
+  "text_max_len": 256,
+  "proj_dim": 256,
+  "deep_last_n": 4,
+  "deep_epochs": 1,
+  "deep_batch": 16,
+  "deep_encoder_lr": 1e-05,
+  "deep_head_lr": 0.0002,
+  "deep_weight_decay": 0.01,
+  "deep_warmup_frac": 0.05,
+  "deep_aux_total": 0.3,
+  "primary_endpoint": {
+    "scenario": "OFFICIAL_TEST",
+    "metric": "TPR",
+    "target_fpr": 0.005,
+    "threshold_source": "benign CAL",
+    "test": "two-sided exact paired sign-flip permutation test",
+    "multiplicity": "none; single predeclared primary comparison"
+  },
+  "ff3_secondary_family": {
+    "scenarios": [
+      "DOMAIN_OOD_EXACT",
+      "TEMPLATE_OOD_EXACT",
+      "DOMAIN_TEMPLATE_OOD_EXACT",
+      "LATE_TEST_Q4"
+    ],
+    "test": "two-sided exact paired sign-flip permutation test",
+    "multiplicity": "Holm correction across exactly four scenario tests"
+  }
+}

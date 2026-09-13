@@ -1,0 +1,14 @@
+{
+  "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "packages": {
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.15.3",
+    "scikit-learn": "1.6.1",
+    "pyarrow": "22.0.0",
+    "threadpoolctl": "3.6.0",
+    "matplotlib": "3.10.7",
+    "PyMuPDF": "1.28.2",
+    "Pillow": "10.3.0"
+  }
+}

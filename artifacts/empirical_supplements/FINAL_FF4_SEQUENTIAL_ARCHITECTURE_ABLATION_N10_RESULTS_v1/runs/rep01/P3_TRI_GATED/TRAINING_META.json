@@ -1,0 +1,15 @@
+{
+  "status": "TRAINED_AWAITING_OR_FINISHED_SCORING",
+  "version": "FINAL_FF4_SEQUENTIAL_ARCHITECTURE_ABLATION_N10_v1",
+  "replicate": 1,
+  "variant": "P3_TRI_GATED",
+  "model_seed": 462,
+  "label_rank_seed": 9402,
+  "selection_sha256": "d0cdc3f422016240e9a1aebe2087717c0c690167bc6bf66d743482b5e2b427c8",
+  "budget": 20000,
+  "batch_size": 8,
+  "optimizer_steps": 2500,
+  "mean_train_loss": 0.22479671849161387,
+  "last100_train_loss": 0.16176621783524753,
+  "train_minutes": 6.541221670309702
+}

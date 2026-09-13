@@ -1,0 +1,32 @@
+{
+  "freeze_id": "PHRESHPHISH_FINAL_DATA_FREEZE_v3_HF_SHARDED_DOM",
+  "dataset_id": "phreshphish/phreshphish",
+  "revision": "eabec4b7a66324b79cc8a0ad856d1731dc26fe1a",
+  "expected": {
+    "train_rows": 498255,
+    "test_rows": 168060,
+    "train_benign": 276729,
+    "train_phish": 221526,
+    "test_benign": 91260,
+    "test_phish": 76800
+  },
+  "roles": {
+    "supervised": 4000,
+    "development": 20000,
+    "calibration_benign": 50000,
+    "ssl": 200000,
+    "final_test": "official complete test"
+  },
+  "ssl_nested": [
+    40000,
+    100000,
+    200000
+  ],
+  "network": "one download per official raw shard; process locally then delete raw shard",
+  "static_dom": {
+    "parser": "lxml.html.HTMLParser(recover=True, remove_comments=True)",
+    "max_nodes": 4096,
+    "order": "preorder",
+    "tags": "normalized strings; later vocab fitted without FINAL_TEST"
+  }
+}

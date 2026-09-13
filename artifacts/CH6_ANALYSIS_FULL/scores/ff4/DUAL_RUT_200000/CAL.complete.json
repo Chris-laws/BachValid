@@ -1,0 +1,6 @@
+{
+  "status": "COMPLETE",
+  "rows": 50000,
+  "raw_fp32_logits": true,
+  "chunk_resume": "v2.2"
+}

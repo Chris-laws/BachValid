@@ -1,0 +1,402 @@
+[
+  {
+    "key": "Aljofey et al. (2022)",
+    "file": "aljofey2022.pdf",
+    "assessment": "URL, Hyperlinks und HTML-Text; XGBoost; S. 1–2, 13.",
+    "sha256": "b53a1347ebc7c20dc284ba52dfd0163a745ea8533df65463e2fbe94b9ee64773",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "APWG (2025)",
+    "file": "apwg2025.pdf",
+    "assessment": "Q1 2025: 1.003.924 Angriffe S. 3; Branchenanteile S. 4 stammen aus OpSec-Auswertung. Nenner im Text getrennt.",
+    "sha256": "ce6fa109ef5745d778856b91f6379e78ff71b5852024d1c4f55e5052e50fd03b",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Arevalo et al. (2017)",
+    "file": "arevalo2017.pdf",
+    "assessment": "S. 5: sigmoid-gesteuerte GMU; kein Beleg für identische Softmax-Architektur. Text entsprechend getrennt.",
+    "sha256": "86a32379bc86f4ffb63e121473fc65c9b9878dd420b372bae8e4946a6708bc17",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Baltrušaitis et al. (2019)",
+    "file": "baltrusaitis2019.pdf",
+    "assessment": "Autorenfassung S. 12: Feature-/Entscheidungsfusion. Unzutreffende Verlagsseite 434 ersetzt.",
+    "sha256": "457d686fc02d361be4a43a63d9e979d838ab7972d31a241930adc8ea31d00cfd",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Bengio (2009)",
+    "file": "bengio2009.pdf",
+    "assessment": "Gedruckte S. 4–6: nichtlineare Hierarchien und Merkmalslernen. Früherer Verweis 1–2 präzisiert.",
+    "sha256": "cfe226c83130e41de748c9c9e76b528db8ef903fc3d5df76210bb915e19d2bc6",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Botsch (2023)",
+    "file": "botsch2023.pdf",
+    "assessment": "Gedruckte S. 15 (PDF 23): Konfidenzintervalle; bibliografische Daten bei Springer geprüft.",
+    "sha256": "2911f48d47e6896438cfa4a3cf0af25f15c7337bfdc3c97e1cbba39bda935bed",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Chen et al. (2020)",
+    "file": "chen2020.pdf",
+    "assessment": "PDF-S. 3, Evaluation Protocol: Linear Evaluation auf eingefrorenem Encoder. Physische Zählung kenntlich gemacht.",
+    "sha256": "cc620e511bafe8b4b11ca3415f6d7bcf127a05818087bfa49905de3a2e50bc2d",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Collobert et al. (2011)",
+    "file": "collobert2011.pdf",
+    "assessment": "S. 2501 (PDF 9): trainierbare Lookup-Tabelle und numerische Eingaberepräsentation.",
+    "sha256": "518065636dc37f6883abaf4bd34b96cdc0ae6ac900867b65c2491345336a4520",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Cybenko (1989)",
+    "file": "cybenko1989.pdf",
+    "assessment": "S. 303: Approximation mit geeigneten sigmoiden Funktionen. Keine pauschale Garantie für das empirische MLP behauptet.",
+    "sha256": "f19cb480e959e80370f164a0026bf286b90e7694fa54394188b9c1e830376de3",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Dalton et al. (2026)",
+    "file": "dalton2026v2.pdf",
+    "assessment": "Verbindlich arXiv v2 vom 11.02.2026; URL/HTML und Ähnlichkeiten S. 1–3, Trennverfahren S. 5–6, Prävalenz/Metriken S. 6–8. Kein direkter Benchmark-Sieg aus umgerechneter Prävalenz.",
+    "sha256": "815aadcf076c43e27947f14bdca52b7dc9262a9efa9ecfc7770347859d568490",
+    "citations": 11,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Devlin et al. (2019)",
+    "file": "devlin2019.pdf",
+    "assessment": "S. 4171–4175: BERT, bidirektionales MLM und Maskierungsanteile; S. 4179: eingefrorene Merkmale. CLS ist keine Beschreibung des eigenen Mean-Poolings.",
+    "sha256": "987545ffb087f1ece898142c403a516baeabeb70ce19089397fac6f7db12c3d4",
+    "citations": 7,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Dhamija et al. (2006)",
+    "file": "dhamija2006.pdf",
+    "assessment": "PDF-S. 1: 22 Teilnehmende, 20 Seiten, 23 % ignorieren Indikatoren, überzeugendste Seite täuscht 90 %. Historischer, kleiner Versuch explizit begrenzt.",
+    "sha256": "9bb5ad18e13d0a4fc2b681b24f8cb656bbadd609e479630e6da6b5d74fa3cfa0",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Dror et al. (2017)",
+    "file": "dror2017.pdf",
+    "assessment": "S. 471, 474: Multiplikität bei Modellvergleichen; DOI und Metadaten über ACL bestätigt.",
+    "sha256": "76b1716f85b816a578f92cb2da7546e0a72a99b75f5c7c5db45ae68da8684825",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Ericsson et al. (2022)",
+    "file": "ericsson2022published.pdf",
+    "assessment": "Veröffentlichte S. 42–46: Pretext Task, Transfer, feste Merkmale/Feinabstimmung. Seiten 44–45 für Weiterverwendung korrigiert.",
+    "sha256": "8525ab08c6847407fa1916e34e0ac8d5f75511ab9fdb092eee677cfbf38c8880",
+    "citations": 4,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "ENISA (2020)",
+    "file": "enisa2020soc.pdf",
+    "assessment": "How to set up CSIRT and SOC, gedruckte S. 7: FPR, Eskalationen und Aufwand als KPIs. Falschen Bericht im Verzeichnis ersetzt.",
+    "sha256": "78015fe97d954b60c4f3245effa9a0c61369c3c969ca6ee067ba7884445ba3a5",
+    "citations": 4,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "ENISA (2021)",
+    "file": "enisa2021sme.pdf",
+    "assessment": "Cybersecurity for SMEs, gedruckte S. 14: Budgets und Fachkräftemangel. Falschen Bericht im Verzeichnis ersetzt.",
+    "sha256": "418b0e81534bdd1cab1b45be4b6ae41a5ffa40c34c83fdbd15a1515d9af576d4",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "ENISA (2024)",
+    "file": "enisa2024.pdf",
+    "assessment": "S. 67: generative KI und maßgeschneiderte Phishing-Kampagnen. DOI im Originalimpressum bestätigt.",
+    "sha256": "28b9cb3f8b12bac1ccae84ef1b36b74dfa5c53a3594e8634905c60e6f7ba1821",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "ENISA (2025a)",
+    "file": "enisa2025a.pdf",
+    "assessment": "Version 1.2 Januar 2026; S. 8: breite 60-%-Kategorie einschließlich Vishing/Malspam/Malvertising; S. 11: Phishing-as-a-Service. Aussage nicht auf Webseiten beschränkt.",
+    "sha256": "379cba3629efda98bdfa429940b2ec22bacf367511f327c021aa5460b413f137",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "ENISA (2025b)",
+    "file": "enisa2025b.pdf",
+    "assessment": "S. 3: 488 Vorfälle, 46 % Kreditinstitute; S. 13: Social Engineering und 36 % imitierte Kreditinstitute. Unterschiedliche Nenner erhalten.",
+    "sha256": "c97d386eb3a3e24f8d378603753e95827e222777f0e35ee476e21f183bf51d08",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Gao et al. (2021)",
+    "file": "gao2021.pdf",
+    "assessment": "S. 6895: positive/negative Paare, Kosinus und Temperatur. URL–HTML-Paare sind eigene Übertragung, keine SimCSE-Originalarchitektur.",
+    "sha256": "b6bb8b5d1356095a02aae8e5e41265fde03f8f02101972e338bad0b7715f12fc",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Gui et al. (2024)",
+    "file": "gui2024.pdf",
+    "assessment": "Paginierte Autorenfassung S. 1: Motivationsgrund Annotation. Falsche gedruckte Fundstelle 9052 ersetzt.",
+    "sha256": "e782ff6263a10238269417ae46c7acfc4744098aae72ed24a2169efa4b8c2505",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Gururangan et al. (2020)",
+    "file": "gururangan2020.pdf",
+    "assessment": "S. 8342–8343 DAPT/MLM; S. 8346–8347 TAPT und Ergebnisse. Zusätzliche Anpassung ist kein universelles Verbesserungsversprechen.",
+    "sha256": "0b6eefb84456ba7ee0b5280ca8bf11be431dd6dc40329bb95fb419a153da214d",
+    "citations": 9,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Holm (1979)",
+    "file": "holm1979.pdf",
+    "assessment": "S. 66–67: schrittweise Testprozedur und Kontrolle der Familienfehlerwahrscheinlichkeit.",
+    "sha256": "4317a0d1555dad949dc1760605d925ba20037402827741fdf99cd8ea37e80c46",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Holt und Sullivan (2023)",
+    "file": "holt2023.pdf",
+    "assessment": "S. 787–788: Paardifferenzen, Mittelwert, Vorzeichenpermutationen, Symmetrieannahme. Exaktheit nicht mit Voraussetzungslosigkeit gleichgesetzt.",
+    "sha256": "d47a81a7608de15fa2fb1d622a8e6a8dabc6d8497d57238b4488f22a5a120835",
+    "citations": 6,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Kipf und Welling (2017)",
+    "file": "kipf2017.pdf",
+    "assessment": "S. 1–3: Knotenmerkmale, Adjazenz und lokale GCN-Aggregation. DOM-Übertragung separat durch Yoon gedeckt.",
+    "sha256": "a654f884db04a317b0f2414a83f2ba32a9f8442d29bcf1cb5f73f7af78a98070",
+    "citations": 5,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Koh et al. (2021)",
+    "file": "koh2021.pdf",
+    "assessment": "PDF-S. 1–3: reale Verteilungsverschiebungen, zeitliche und domänenbezogene Bedingungen; physische Zählung ersetzt ungedruckte Proceedingszahlen.",
+    "sha256": "ce963a0ae9567d43ce852c014b2f7f2860cfc5e86ad497ef8d4f1ffe42cb3677",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "LeCun et al. (2015)",
+    "file": "lecun2015.pdf",
+    "assessment": "S. 436: mehrschichtige Repräsentationsbildung.",
+    "sha256": "18b910be375cd8c9358eb8868a65ff4c9cdcea643d62cefdc3d202c133ca5fc2",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Li et al. (2025)",
+    "file": "li2025.pdf",
+    "assessment": "Autorenfassung arXiv 2402.11495v2, S. 1–2 und 12: urlBERT, mehrere Milliarden URLs und reduzierte Trainingsmengen. Publikationsfassung bibliografisch unterschieden.",
+    "sha256": "088eccc97f265df3e2de5661cb120d28120d8b5869bd6015f95276bf49b2247a",
+    "citations": 6,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Liu et al. (2021)",
+    "file": "liu2021_web_review.json",
+    "assessment": "Verlagsabstract extern eingesehen: mehrstufiges CASE-Modell, kürzere Ausführungszeit und bessere Detektion. Nicht belegte konkrete Stufen entfernt; keine erfundene PDF-Seite.",
+    "sha256": "5539032c8d125972cd83a55e2e116620cf534acbd7dfd7382cfe0b2d8a95b876",
+    "citations": 3,
+    "scope": "Originalabstract, kein Volltext"
+  },
+  {
+    "key": "Liu et al. (2019)",
+    "file": "liu2019.pdf",
+    "assessment": "S. 1: Änderungen an BERT-Vortraining einschließlich dynamischer Maskierung und Weglassen von NSP.",
+    "sha256": "76a3872d244793563a5b000b818cbaf0ca8972ab1145d32be474c05b2a8f3070",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Maneriker et al. (2021)",
+    "file": "maneriker2021.pdf",
+    "assessment": "PDF-S. 1–2: URL-Vortraining und direkte Feinabstimmung öffentlicher Encoder als zwei Ansätze; Low-FPR. Früherer Anspruch zusätzlichen TAPTs für alle Modelle korrigiert.",
+    "sha256": "bc59ed8e05f48df2e4e4c051bb6ab3b1fc225a97379774425721732a03184617",
+    "citations": 5,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Manning et al. (2008)",
+    "file": "manning2008.pdf",
+    "assessment": "Gedruckte S. 118–119 TF-IDF; 120–121 Vektorraummodell.",
+    "sha256": "ab67ad67d89309a3d03de219173cfdea471e856a5083c83e49b11be8c01581ea",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Mikolov et al. (2013)",
+    "file": "mikolov2013.pdf",
+    "assessment": "PDF-interne S. 1: syntaktische/semantische Beziehungen. Frühere Proceedings-Seitenzahl 3111 ersetzt.",
+    "sha256": "9ee42f08c5e6325861ea22f3ef1174345a75fb696d1b27e659301aa88c996744",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Opara et al. (2024)",
+    "file": "opara2024.pdf",
+    "assessment": "S. 2: gemeinsame Nutzung von URL und HTML im neuronalen Verfahren.",
+    "sha256": "2d6a785e624c6332d41955f6ddc9a920057d7646a65af5b60be14c62fd86ca8b",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Purwanto et al. (2022)",
+    "file": "purwanto2022.pdf",
+    "assessment": "S. 1498: Veränderlichkeit/Drift; S. 1506: Bedeutung niedriger FPR.",
+    "sha256": "c651c105812711e738e8e3ac6c4489c64ad9bee733557ec44ef056e59f7bf39a",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Putra (2023)",
+    "file": "putra2023.html",
+    "assessment": "Original-Zenodo-Datensatz DOI 10.5281/zenodo.8041387, Version 1 vom 02.07.2023. Eigene Zeitteilung/Counts aus CSVs und Parquets, keine Publikationsbehauptung.",
+    "sha256": "fc99882ce46d84abfb1b3f92f202480b620f62a32fefbff5f9e89d5c2f7049ec",
+    "citations": 0,
+    "scope": "Original-Datensatzseite"
+  },
+  {
+    "key": "Raschka (2018)",
+    "file": "raschka2018.pdf",
+    "assessment": "S. 16 und 18: Bootstrap und Percentile-Intervalle; ursprüngliche falsche Seiten 15/17 berichtigt.",
+    "sha256": "559922699317afe7327199fe4311ecf2b1cbf3c4b3ccb0be11e36043ef261ff2",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Rashid et al. (2024)",
+    "file": "rashid2024_web_review.json",
+    "assessment": "Verlagsabstract extern eingesehen: geringe Übertragbarkeit zwischen Datensätzen und UDA. Nur qualitative Abstract-Aussage beibehalten; keine ungeprüfte Seitenzahl.",
+    "sha256": "a5c49f0eb411eba4fb0e76bf6a0c91e782f1c3bb10de152a54db8520bdf44e0d",
+    "citations": 2,
+    "scope": "Originalabstract, kein Volltext"
+  },
+  {
+    "key": "Reddi et al. (2020)",
+    "file": "reddi2020.pdf",
+    "assessment": "Autorenfassung S. 5–6: Szenarien, Latenzperzentile und Durchsatz; S. 11: Vergleich. Kein Anspruch eigener MLPerf-Konformität.",
+    "sha256": "ab71faac2c06fa5c317f559e3e96c7baa24a7d15bcf757efcee085ee1a3a1efd",
+    "citations": 6,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Reimers und Gurevych (2017)",
+    "file": "reimers2017.pdf",
+    "assessment": "S. 338: Bewertung stochastischer Modelle über Ergebnisverteilungen statt Einzelwerte.",
+    "sha256": "c9fd25eda759ad0165b680ae6efde9cceef369798894035ae5a5d6b3ce6c3845",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Roh et al. (2021)",
+    "file": "roh2021.pdf",
+    "assessment": "Autorenfassung S. 1: Datensammlung/Annotation als Engpass. Publikationsjahr 2021 von Autorenfassungsdatum unterschieden.",
+    "sha256": "60ffb6fa8bd063600c90dcbf4fdc42601b7c4614b8ca0aeca1bb31aa91e55612",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Rumelhart et al. (1986)",
+    "file": "rumelhart1986.pdf",
+    "assessment": "S. 533: Gewichte, verborgene Einheiten und gelernte Repräsentationen.",
+    "sha256": "1f7b0339d34bb6dac27d6433a7b271e161251c641d1ca67242284f0a5d6ac19e",
+    "citations": 3,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Saito und Rehmsmeier (2015)",
+    "file": "saito2015.pdf",
+    "assessment": "S. 3–4: Verwechslungsmatrix und Metriken; S. 5, 7: Prävalenzabhängigkeit. Eigene AP- und P>=90-Definition zusätzlich am Code präzisiert.",
+    "sha256": "8ae56333b46ffae705ec463b6a3dd1d81bc4fe5934e5e13a635e4bbf401d1a97",
+    "citations": 6,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Turney und Pantel (2010)",
+    "file": "turney2010.pdf",
+    "assessment": "S. 141, 148: Vektorraummodelle und distributionelle Hypothese; Begriff auf S. 148 im Original verifiziert.",
+    "sha256": "7b856901473bcca85ae4b29b54ac3b05a5f7d5be0906b269dd27b9bed5dd69fb",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Vaswani et al. (2017)",
+    "file": "vaswani2017.pdf",
+    "assessment": "PDF-interne S. 2–6: Encoder, Attentionformel, Q/K/V, Residualverbindungen, Feed-Forward, Positionsinformation. Falsche Proceedingszahlen ersetzt.",
+    "sha256": "d87d482d5ae7960e2e43d7dd6d21377e60e73e8fce1bf2a01aff7aca8a08c537",
+    "citations": 9,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Viola und Jones (2004)",
+    "file": "viola2004.pdf",
+    "assessment": "S. 144–145: Kaskadenprinzip. Eigene zweischwellige URL-Route als Übertragung beschrieben.",
+    "sha256": "8f247f5321bd19a3e5f4282b575ef02fda698071ec85f382b2d59045b507233f",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Wang et al. (2023)",
+    "file": "wang2023_web_review.json",
+    "assessment": "IEEE-Originalabstract: PhishBERT auf mehr als 3 Milliarden ungelabelten URLs, anschließende Feinabstimmung. Konferenzpaper-DOI von Video-/Abstract-DOI unterschieden.",
+    "sha256": "832ca3af6d53be8c13ca7a7c62b17a65d84e497f067fa77f80c9ee5be285ea80",
+    "citations": 3,
+    "scope": "Originalabstract, kein Volltext"
+  },
+  {
+    "key": "Yoon et al. (2024)",
+    "file": "yoon2024.pdf",
+    "assessment": "S. 2, 6–7, 9, 13, 15: URL-Zeichen/Wörter, DOM-Graph, Strukturablation. Kein Beleg für eigene Architekturparameter erforderlich.",
+    "sha256": "95072d28fa7ff3e7f7abbecde2d0254b4ee45a65a0b20550926cb3063996b5e5",
+    "citations": 8,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Zhang et al. (2007)",
+    "file": "zhang2007.pdf",
+    "assessment": "Unpaginierte Autorenfassung PDF-S. 1, 3: Webseitenimitation und CANTINA. Frühere Proceedingszahlen ersetzt.",
+    "sha256": "433e019f158a84c9f18dcd4b5a24b5671715d0b27f2dcd94dc49c1d646de5f10",
+    "citations": 1,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
+    "key": "Zhou et al. (2019)",
+    "file": "zhou2019.pdf",
+    "assessment": "PDF-S. 1–2: Softmax-Modalitätsgewichte und gewichtete Summe. Eigene zusätzliche Konkatenation nicht fremder Quelle zugeschrieben.",
+    "sha256": "878db3b779308c18f42c2ee27b0745bc497ea569b7839ef062bfb5019b9c2994",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  }
+]

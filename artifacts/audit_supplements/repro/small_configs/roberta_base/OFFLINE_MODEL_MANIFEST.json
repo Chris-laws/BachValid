@@ -1,0 +1,146 @@
+{
+  "source_repo": "FacebookAI/roberta-base",
+  "downloaded_at_utc": "2026-08-08T09:35:21.965344+00:00",
+  "files": [
+    {
+      "relative_path": ".cache/huggingface/.gitignore",
+      "bytes": 1,
+      "sha256": "684888c0ebb17f374298b65ee2807526c066094c701bcc7ebbe1c1095f494fc1"
+    },
+    {
+      "relative_path": ".cache/huggingface/CACHEDIR.TAG",
+      "bytes": 191,
+      "sha256": "f6572428f6d5e1575e73a1502895a8731f10757dfbb634909c6e154b849af91d"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/.gitattributes.metadata",
+      "bytes": 101,
+      "sha256": "07ed309c8bf00e82da56965b1539f9f81f696a1c4ae9516328364b3b783f3c3f"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/README.md.metadata",
+      "bytes": 100,
+      "sha256": "4fecb35d7ced3d97d59ba82ac98f1d78167e71df1d5afd1ab5435d8916e92b55"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/config.json.metadata",
+      "bytes": 101,
+      "sha256": "f5cfe37b1cb62ec29a06f14eaf8ffcc30d8ebc39c876d53c61e09f95ab1fe08b"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/dict.txt.metadata",
+      "bytes": 100,
+      "sha256": "ace8076ffddf635ddc5f8471247eb6da21c6a485c895e673372ed4ab9586286a"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/flax_model.msgpack.metadata",
+      "bytes": 125,
+      "sha256": "92ce2db210492e41c83640fad71681793827a7f5ec785e9ac41a39dc22f01a9f"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/merges.txt.metadata",
+      "bytes": 101,
+      "sha256": "106931e15be2720544440e9629d197f9a7e473725568768cedb5463c22aa8af7"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/model.safetensors.metadata",
+      "bytes": 125,
+      "sha256": "60edcef83397b543bac4d9002200db8e2a36644b15b5a66ac98f114475c3afd3"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/pytorch_model.bin.metadata",
+      "bytes": 124,
+      "sha256": "b70e09d1036a95662bdf665f1f436744d913dc5d063a425a523653bd3e990901"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/rust_model.ot.metadata",
+      "bytes": 125,
+      "sha256": "85c5a656979f7918a5d85aa51c2f5813bc638e6e7d6426a5fbbd8dd6cce9e58a"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/tf_model.h5.metadata",
+      "bytes": 125,
+      "sha256": "ace04892e571499e9608fa3af631e856d784f785052864e3674cee950889bc00"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/tokenizer.json.metadata",
+      "bytes": 101,
+      "sha256": "c56bb6dbd093633b1b17af01c9f1dd3af8f3fc70919da6e3ad5cfadb68dafd16"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/tokenizer_config.json.metadata",
+      "bytes": 101,
+      "sha256": "843437fda16e1eaa1df9a9ef4e2fb942fc05f99d6d9d49cb47e425f08e0533a6"
+    },
+    {
+      "relative_path": ".cache/huggingface/download/vocab.json.metadata",
+      "bytes": 101,
+      "sha256": "0a36b1623b659ddb58c69c8304e600d66176f896c3a5cc506194949addba4297"
+    },
+    {
+      "relative_path": ".gitattributes",
+      "bytes": 445,
+      "sha256": "98c91dabef4df27b2fc7c8454d220aba47476f73593cbd034d961fe4927304c1"
+    },
+    {
+      "relative_path": "README.md",
+      "bytes": 9079,
+      "sha256": "139c5c5c8d734a8841928308cf7f083018aa5cc49f903c5199e3f1563b3ded51"
+    },
+    {
+      "relative_path": "config.json",
+      "bytes": 481,
+      "sha256": "ef0185e2aae6e06c5f105a285006952c340e20c7dbf43c86ec82601b13fc45e9"
+    },
+    {
+      "relative_path": "dict.txt",
+      "bytes": 603290,
+      "sha256": "2c31c5b236661067fe8626775eb995ef5fe808ac87d2ad4a6ddbef68550f5cc6"
+    },
+    {
+      "relative_path": "flax_model.msgpack",
+      "bytes": 498796983,
+      "sha256": "7647e7df15dfddb7d5c07fcbed7a21e3881ccfea085791cf09917aa05947bba3"
+    },
+    {
+      "relative_path": "merges.txt",
+      "bytes": 456318,
+      "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5"
+    },
+    {
+      "relative_path": "model.safetensors",
+      "bytes": 498818054,
+      "sha256": "5bde1d28afb363d0103324efeb5afc8b2b397fe5e04beabb9b1ef355255ade81"
+    },
+    {
+      "relative_path": "pytorch_model.bin",
+      "bytes": 501200538,
+      "sha256": "278b7a95739c4392fae9b818bb5343dde20be1b89318f37a6d939e1e1b9e461b"
+    },
+    {
+      "relative_path": "rust_model.ot",
+      "bytes": 655617312,
+      "sha256": "9eab94d556cd9151ba760802bc2151c7ac51675bb81e017b25de41c1ebd6c3a0"
+    },
+    {
+      "relative_path": "tf_model.h5",
+      "bytes": 657434796,
+      "sha256": "8ad49e51cdfa998f1d26f24d6966e1a00c3df44c6e334995fdb4d622ce1e4e10"
+    },
+    {
+      "relative_path": "tokenizer.json",
+      "bytes": 1355863,
+      "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e"
+    },
+    {
+      "relative_path": "tokenizer_config.json",
+      "bytes": 25,
+      "sha256": "994f46754c5bf4014f1aa92d34b1374319c3a6b3f702105cd5b742beaecd18ce"
+    },
+    {
+      "relative_path": "vocab.json",
+      "bytes": 898823,
+      "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "status": "COMPLETE",
+  "version": "FINAL_SSL_CROSS_PARADIGM_LABEL_BENCHMARK_N10_v1_FULL_GRID_XGB200K",
+  "rut_runs": 10,
+  "rut_budgets": [
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000,
+    200000
+  ],
+  "xgb_n10_seeds": [
+    1042,
+    1062,
+    1082,
+    1102,
+    1122,
+    1342,
+    1362,
+    1382,
+    1402,
+    1422
+  ],
+  "scenario_counts": {
+    "OFFICIAL_TEST": 168060,
+    "DOMAIN_OOD_EXACT": 115917,
+    "TEMPLATE_OOD_EXACT": 161223,
+    "DOMAIN_TEMPLATE_OOD_EXACT": 110095,
+    "LATE_TEST_Q4": 46784
+  },
+  "all_required_outputs_present": true,
+  "completed_utc": "2026-09-02T14:16:33.822511+00:00"
+}

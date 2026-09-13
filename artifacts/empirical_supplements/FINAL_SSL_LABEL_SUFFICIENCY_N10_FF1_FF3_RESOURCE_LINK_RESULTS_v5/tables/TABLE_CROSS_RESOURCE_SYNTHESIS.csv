@@ -1,0 +1,2 @@
+label_sufficiency_available,minimal_statistically_sufficient_budget,reference_labels,label_reduction_factor,label_reduction_pct,quality_tolerance_tpr_pp,ff4_h1_table,ff4_frontier_table,ff4_operational_table
+True,50000,200000,4.0,75.0,1.0,,,

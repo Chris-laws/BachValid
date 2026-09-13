@@ -1,0 +1,119 @@
+PyTorch version: 2.10.0+cu128
+Is debug build: False
+CUDA used to build PyTorch: 12.8
+ROCM used to build PyTorch: N/A
+
+OS: Ubuntu 22.04.5 LTS (x86_64)
+GCC version: (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+Clang version: Could not collect
+CMake version: version 3.31.10
+Libc version: glibc-2.35
+
+Python version: 3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0] (64-bit runtime)
+Python platform: Linux-6.12.90+-x86_64-with-glibc2.35
+Is CUDA available: True
+CUDA runtime version: 12.8.93
+CUDA_MODULE_LOADING set to: 
+GPU models and configuration: 
+GPU 0: Tesla T4
+GPU 1: Tesla T4
+
+Nvidia driver version: 580.159.04
+cuDNN version: Probably one of the following:
+/usr/lib/x86_64-linux-gnu/libcudnn.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_adv.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_cnn.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_engines_precompiled.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_engines_runtime_compiled.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_graph.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_heuristic.so.9.8.0
+/usr/lib/x86_64-linux-gnu/libcudnn_ops.so.9.8.0
+Is XPU available: False
+HIP runtime version: N/A
+MIOpen runtime version: N/A
+Is XNNPACK available: True
+Caching allocator config: N/A
+
+CPU:
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           46 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  4
+On-line CPU(s) list:                     0-3
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Xeon(R) CPU @ 2.00GHz
+CPU family:                              6
+Model:                                   85
+Thread(s) per core:                      2
+Core(s) per socket:                      2
+Socket(s):                               1
+Stepping:                                3
+BogoMIPS:                                4000.38
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm mpx avx512f avx512dq rdseed adx smap clflushopt clwb avx512cd avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves arat md_clear arch_capabilities
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               64 KiB (2 instances)
+L1i cache:                               64 KiB (2 instances)
+L2 cache:                                2 MiB (2 instances)
+L3 cache:                                38.5 MiB (1 instance)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0-3
+Vulnerability Gather data sampling:      Not affected
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Mitigation; PTE Inversion
+Vulnerability Mds:                       Mitigation; Clear CPU buffers; SMT Host state unknown
+Vulnerability Meltdown:                  Mitigation; PTI
+Vulnerability Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; IBRS; IBPB conditional; STIBP conditional; RSB filling; PBRSB-eIBRS Not affected; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                     Not affected
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Mitigation; Clear CPU buffers; SMT Host state unknown
+Vulnerability Vmscape:                   Not affected
+
+Versions of relevant libraries:
+[pip3] intel-cmplr-lib-ur==2025.3.3
+[pip3] intel-openmp==2025.3.3
+[pip3] mkl==2025.3.1
+[pip3] mypy_extensions==1.1.0
+[pip3] numpy==2.0.2
+[pip3] nvidia-cublas-cu12==12.8.4.1
+[pip3] nvidia-cuda-cupti-cu12==12.8.90
+[pip3] nvidia-cuda-nvrtc-cu12==12.8.93
+[pip3] nvidia-cuda-runtime-cu12==12.8.90
+[pip3] nvidia-cudnn-cu12==9.10.2.21
+[pip3] nvidia-cufft-cu12==11.3.3.83
+[pip3] nvidia-curand-cu12==10.3.9.90
+[pip3] nvidia-cusolver-cu12==11.7.3.90
+[pip3] nvidia-cusparse-cu12==12.5.8.93
+[pip3] nvidia-cusparselt-cu12==0.7.1
+[pip3] nvidia-nccl-cu12==2.27.5
+[pip3] nvidia-nvjitlink-cu12==12.8.93
+[pip3] nvidia-nvtx-cu12==12.8.90
+[pip3] nvtx==0.2.15
+[pip3] onemkl-license==2025.3.1
+[pip3] onnx==1.22.0
+[pip3] optree==0.19.0
+[pip3] pytorch-ignite==0.5.4
+[pip3] pytorch-lightning==2.6.5
+[pip3] tbb==2022.3.1
+[pip3] tcmlib==1.4.1
+[pip3] torch==2.10.0+cu128
+[pip3] torchao==0.10.0
+[pip3] torchaudio==2.10.0+cu128
+[pip3] torchcodec==0.10.0+cu128
+[pip3] torchdata==0.11.0
+[pip3] torchinfo==1.8.0
+[pip3] torchmetrics==1.9.0
+[pip3] torchsummary==1.5.1
+[pip3] torchtune==0.6.1
+[pip3] torchvision==0.25.0+cu128
+[pip3] triton==3.6.0
+[pip3] umf==1.0.3
+[conda] Could not collect

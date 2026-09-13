@@ -1,0 +1,22 @@
+# Local build products and external input archives
+__pycache__/
+*.pyc
+.venv/
+revised/*.aux
+revised/*.log
+revised/*.toc
+revised/*.lof
+revised/*.lot
+revised/*.lol
+revised/*.out
+revised/*.xdv
+revised/main.pdf
+artifacts/raw_recovery/
+originals/
+tools/
+review/pdf_visual/
+review/sources/*.pdf
+Abgabe/Reproduktion.zip
+Abgabe/Quellenarchiv.zip
+.env
+.env.*

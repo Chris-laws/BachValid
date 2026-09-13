@@ -1,0 +1,121 @@
+{
+  "status": "PASS",
+  "all_pass": true,
+  "rows": [
+    {
+      "block": "FF1_modality_2x2",
+      "coverage": "R0/RU/RT/RUT; N5; Linear+MLP",
+      "pass": true
+    },
+    {
+      "block": "FF1_contrastive",
+      "coverage": "historical R2C/R3C retained unchanged",
+      "pass": true
+    },
+    {
+      "block": "FF2_label_budgets",
+      "coverage": "2k,5k,10k,20k,50k,100k,200k",
+      "pass": true
+    },
+    {
+      "block": "FF2_representations",
+      "coverage": "R0,RU,RT,RUT",
+      "pass": true
+    },
+    {
+      "block": "FF2_probes",
+      "coverage": "Linear, MLP",
+      "pass": true
+    },
+    {
+      "block": "FF2_B95",
+      "coverage": "DEV B95 for all four reps/probes",
+      "pass": true
+    },
+    {
+      "block": "FF2_marginal_label_utility",
+      "coverage": "all four reps/probes",
+      "pass": true
+    },
+    {
+      "block": "FF2_deep_N3",
+      "coverage": "20k and 200k; RUT + historical R0/RT",
+      "pass": true
+    },
+    {
+      "block": "XGB_all_budgets",
+      "coverage": "historical independent TF-IDF/XGB system reference",
+      "pass": true
+    },
+    {
+      "block": "XGB_vs_Deep_updated",
+      "coverage": "includes new Deep RUT at 20k/200k",
+      "pass": true
+    },
+    {
+      "block": "FF3_scenarios",
+      "coverage": "OFFICIAL, Domain, Template, Domain+Template, Late",
+      "pass": true
+    },
+    {
+      "block": "FF3_N10",
+      "coverage": "historical R0/RT + new RU/RUT; same 10 pairings",
+      "pass": true
+    },
+    {
+      "block": "FPR_grid",
+      "coverage": "0.01%,0.05%,0.1%,0.25%,0.5%,1%,2%",
+      "pass": true
+    },
+    {
+      "block": "FF4_DUAL_TRI_budgets",
+      "coverage": "20k and 200k",
+      "pass": true
+    },
+    {
+      "block": "FF4_branch_modes",
+      "coverage": "URL,Text,Equal,Gated plus DOM for TRI",
+      "pass": true
+    },
+    {
+      "block": "FF4_gate_means",
+      "coverage": "URL/Text/DOM mean fusion weights on DEV",
+      "pass": true
+    },
+    {
+      "block": "FF4_DOM_gate",
+      "coverage": "same historical rule reapplied on DEV",
+      "pass": true
+    },
+    {
+      "block": "FF4_cascade_definition",
+      "coverage": "single historical URL-first policy re-frozen on DEV",
+      "pass": true
+    },
+    {
+      "block": "FF4_cascade_final",
+      "coverage": "selected 200k architecture; all FPRs and 5 scenarios",
+      "pass": true
+    },
+    {
+      "block": "Operational_full_metrics",
+      "coverage": "latency,p95,throughput,VRAM,GPU telemetry,model bytes,escalation",
+      "pass": true
+    },
+    {
+      "block": "Operational_XGB_reference",
+      "coverage": "historical unchanged",
+      "pass": true
+    },
+    {
+      "block": "Operational_1M_illustration",
+      "coverage": "if cascade selected",
+      "pass": true
+    },
+    {
+      "block": "Bootstrap",
+      "coverage": "1000 reps AP/P@R90",
+      "pass": true
+    }
+  ]
+}

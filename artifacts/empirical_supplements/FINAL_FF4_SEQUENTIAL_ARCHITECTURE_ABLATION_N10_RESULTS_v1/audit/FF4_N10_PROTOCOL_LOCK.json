@@ -1,0 +1,132 @@
+{
+  "version": "FINAL_FF4_SEQUENTIAL_ARCHITECTURE_ABLATION_N10_v1",
+  "scientific_status": "POST_HOC_FF4_CLOSURE; PLAN_AND_SEEDS_FIXED_BEFORE_EXECUTION",
+  "historical_final_known": true,
+  "used_for_retroactive_model_selection": false,
+  "no_optional_stopping": true,
+  "all_40_planned_fits_must_be_reported": true,
+  "representation": "RUT = URL_DAPT + TEXT_DAPT; fixed SSL checkpoints",
+  "dom_ssl_checkpoint_fixed": true,
+  "transformer_ssl_retraining": false,
+  "budget": 20000,
+  "model_seeds": [
+    442,
+    462,
+    482,
+    502,
+    522,
+    542,
+    562,
+    582,
+    602,
+    622
+  ],
+  "label_rank_seeds": [
+    9401,
+    9402,
+    9403,
+    9404,
+    9405,
+    9406,
+    9407,
+    9408,
+    9409,
+    9410
+  ],
+  "paired_same_labelset_within_replicate": true,
+  "variants": {
+    "P0_URL": {
+      "modalities": [
+        "url"
+      ],
+      "fusion": "none",
+      "use_text": false,
+      "use_dom": false,
+      "head_input_dim": 256
+    },
+    "P1_DUAL_EQUAL": {
+      "modalities": [
+        "url",
+        "text"
+      ],
+      "fusion": "equal",
+      "use_text": true,
+      "use_dom": false,
+      "head_input_dim": 768
+    },
+    "P2_TRI_EQUAL": {
+      "modalities": [
+        "url",
+        "text",
+        "dom"
+      ],
+      "fusion": "equal",
+      "use_text": true,
+      "use_dom": true,
+      "head_input_dim": 1024
+    },
+    "P3_TRI_GATED": {
+      "modalities": [
+        "url",
+        "text",
+        "dom"
+      ],
+      "fusion": "gated",
+      "use_text": true,
+      "use_dom": true,
+      "head_input_dim": 1024
+    }
+  },
+  "primary_contrasts": [
+    {
+      "name": "TEXT_ADD",
+      "baseline": "P0_URL",
+      "candidate": "P1_DUAL_EQUAL"
+    },
+    {
+      "name": "DOM_ADD",
+      "baseline": "P1_DUAL_EQUAL",
+      "candidate": "P2_TRI_EQUAL"
+    },
+    {
+      "name": "GATING_ADD",
+      "baseline": "P2_TRI_EQUAL",
+      "candidate": "P3_TRI_GATED"
+    }
+  ],
+  "primary_endpoint": {
+    "dataset": "DEV / ENG_META",
+    "metric": "TPR",
+    "threshold_source": "disjoint DEV / ENG_TUNE benign subset",
+    "target_fpr": 0.005,
+    "test": "two-sided exact paired sign-flip permutation test",
+    "multiplicity": "Holm across exactly 3 adjacent architecture contrasts"
+  },
+  "secondary_metrics": [
+    "FPR",
+    "AP",
+    "AUC",
+    "P_at_R90",
+    "FPR_at_TPR90"
+  ],
+  "deep_hyperparameters": {
+    "last_trainable_transformer_layers": 4,
+    "epochs": 1,
+    "encoder_lr": 1e-05,
+    "head_lr": 0.0002,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.05,
+    "aux_total_weight": 0.3,
+    "gradient_clip": 1.0,
+    "ablation_batch_fixed_all_variants": 8
+  },
+  "access_policy": {
+    "readable_roles": [
+      "SSL",
+      "DEV"
+    ],
+    "CAL": "FORBIDDEN",
+    "FINAL": "FORBIDDEN"
+  },
+  "cascade": "NOT_RECOMPUTED; existing frozen Full-TRI vs Cascade evidence remains separate"
+}

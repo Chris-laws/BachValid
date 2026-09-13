@@ -1,0 +1,62 @@
+[
+  {
+    "role": "CAL",
+    "n": 50000,
+    "negative": 50000,
+    "positive": 0,
+    "duplicate_sha": 0
+  },
+  {
+    "role": "DEV",
+    "n": 20000,
+    "negative": 10000,
+    "positive": 10000,
+    "duplicate_sha": 0
+  },
+  {
+    "role": "FINAL",
+    "n": 168060,
+    "negative": 91260,
+    "positive": 76800,
+    "duplicate_sha": 0
+  },
+  {
+    "role": "SSL",
+    "n": 200000,
+    "negative": 101578,
+    "positive": 98422,
+    "duplicate_sha": 0
+  },
+  {
+    "pair": "CAL / DEV",
+    "overlap": 0
+  },
+  {
+    "pair": "CAL / FINAL",
+    "overlap": 0
+  },
+  {
+    "pair": "CAL / SSL",
+    "overlap": 0
+  },
+  {
+    "pair": "DEV / FINAL",
+    "overlap": 0
+  },
+  {
+    "pair": "DEV / SSL",
+    "overlap": 0
+  },
+  {
+    "pair": "FINAL / SSL",
+    "overlap": 0
+  },
+  {
+    "role": "FINAL temporal",
+    "first": "2025-09-08 00:00:00+00:00",
+    "last": "2025-12-16 00:00:00+00:00",
+    "cut_q75": "2025-10-28 00:00:00+00:00",
+    "late_n": 46784,
+    "ties_at_cut": 9554
+  }
+]

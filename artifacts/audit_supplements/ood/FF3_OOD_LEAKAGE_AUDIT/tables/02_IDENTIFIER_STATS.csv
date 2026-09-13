@@ -1,0 +1,5 @@
+role,rows,domain_nonempty,domain_unique,domain_missing_pct,template_nonempty,template_unique,template_missing_pct
+SSL,200000,198556,124604,0.722,200000,142256,0.0
+DEV,20000,19848,15098,0.76,20000,16258,0.0
+CAL,50000,49193,27958,1.614,50000,48917,0.0
+FINAL,168060,166508,108905,0.923479709627514,168060,112195,0.0

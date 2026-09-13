@@ -1,0 +1,2 @@
+full_latency_ms,cascade_latency_ms,latency_reduction_pct,full_pages_s,cascade_pages_s,speedup,raw_timing_samples_available
+30.182580000655435,11.953472999266523,60.39611922172675,183.17648292130403,447.0193117009599,2.4403750119659606,False

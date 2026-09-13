@@ -1,0 +1,365 @@
+check,passed,max_abs_error
+FF1 tpr from integer counts,True,0.0
+FF1 fpr from integer counts,True,0.0
+FF1 precision from integer counts,True,1.1102230246251565e-16
+FF1 f1 from integer counts,True,2.220446049250313e-16
+FF1 Clopper Pearson lower,True,7.37257477290143e-17
+FF1 Clopper Pearson upper,True,1.8735013540549517e-16
+FF2 DEV tpr from integer counts,True,0.0
+FF2 DEV fpr from integer counts,True,0.0
+FF2 DEV precision from integer counts,True,1.1102230246251565e-16
+FF2 DEV f1 from integer counts,True,2.220446049250313e-16
+FF2 DEV Clopper Pearson lower,True,9.8879238130678e-17
+FF2 DEV Clopper Pearson upper,True,1.8735013540549517e-16
+FF2 FINAL tpr from integer counts,True,1.1102230246251565e-16
+FF2 FINAL fpr from integer counts,True,9.974659986866641e-17
+FF2 FINAL precision from integer counts,True,1.1102230246251565e-16
+FF2 FINAL f1 from integer counts,True,3.3306690738754696e-16
+FF2 FINAL Clopper Pearson lower,True,9.996344030316351e-17
+FF2 FINAL Clopper Pearson upper,True,2.0209528495129803e-16
+N10 matched tpr from integer counts,True,0.0
+N10 matched fpr from integer counts,True,9.8879238130678e-17
+N10 matched precision from integer counts,True,1.1102230246251565e-16
+N10 matched f1 from integer counts,True,2.220446049250313e-16
+N10 matched Clopper Pearson lower,True,9.974659986866641e-17
+N10 matched Clopper Pearson upper,True,9.8879238130678e-17
+FF3 linear tpr from integer counts,True,0.0
+FF3 linear fpr from integer counts,True,9.8879238130678e-17
+FF3 linear precision from integer counts,True,1.1102230246251565e-16
+FF3 linear f1 from integer counts,True,2.220446049250313e-16
+FF3 linear Clopper Pearson lower,True,9.8879238130678e-17
+FF3 linear Clopper Pearson upper,True,9.8879238130678e-17
+FF3 XGB tpr from integer counts,True,0.0
+FF3 XGB fpr from integer counts,True,9.194034422677078e-17
+FF3 XGB precision from integer counts,True,1.1102230246251565e-16
+FF3 XGB f1 from integer counts,True,1.1102230246251565e-16
+FF3 XGB Clopper Pearson lower,True,9.8879238130678e-17
+FF3 XGB Clopper Pearson upper,True,9.367506770274758e-17
+paired runs B2000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 LATE_TEST_Q4,True,0.0
+paired runs B2000 OFFICIAL_TEST,True,0.0
+paired runs B2000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 LATE_TEST_Q4,True,0.0
+paired runs B5000 OFFICIAL_TEST,True,0.0
+paired runs B5000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 LATE_TEST_Q4,True,0.0
+paired runs B10000 OFFICIAL_TEST,True,0.0
+paired runs B10000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 LATE_TEST_Q4,True,0.0
+paired runs B20000 OFFICIAL_TEST,True,0.0
+paired runs B20000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 LATE_TEST_Q4,True,0.0
+paired runs B50000 OFFICIAL_TEST,True,0.0
+paired runs B50000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 LATE_TEST_Q4,True,0.0
+paired runs B100000 OFFICIAL_TEST,True,0.0
+paired runs B100000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 LATE_TEST_Q4,True,0.0
+paired runs B200000 OFFICIAL_TEST,True,0.0
+paired runs B200000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 LATE_TEST_Q4,True,0.0
+paired runs B2000 OFFICIAL_TEST,True,0.0
+paired runs B2000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 LATE_TEST_Q4,True,0.0
+paired runs B5000 OFFICIAL_TEST,True,0.0
+paired runs B5000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 LATE_TEST_Q4,True,0.0
+paired runs B10000 OFFICIAL_TEST,True,0.0
+paired runs B10000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 LATE_TEST_Q4,True,0.0
+paired runs B20000 OFFICIAL_TEST,True,0.0
+paired runs B20000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 LATE_TEST_Q4,True,0.0
+paired runs B50000 OFFICIAL_TEST,True,0.0
+paired runs B50000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 LATE_TEST_Q4,True,0.0
+paired runs B100000 OFFICIAL_TEST,True,0.0
+paired runs B100000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 LATE_TEST_Q4,True,0.0
+paired runs B200000 OFFICIAL_TEST,True,0.0
+paired runs B200000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 LATE_TEST_Q4,True,0.0
+paired runs B2000 OFFICIAL_TEST,True,0.0
+paired runs B2000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 LATE_TEST_Q4,True,0.0
+paired runs B5000 OFFICIAL_TEST,True,0.0
+paired runs B5000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 LATE_TEST_Q4,True,0.0
+paired runs B10000 OFFICIAL_TEST,True,0.0
+paired runs B10000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 LATE_TEST_Q4,True,0.0
+paired runs B20000 OFFICIAL_TEST,True,0.0
+paired runs B20000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 LATE_TEST_Q4,True,0.0
+paired runs B50000 OFFICIAL_TEST,True,0.0
+paired runs B50000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 LATE_TEST_Q4,True,0.0
+paired runs B100000 OFFICIAL_TEST,True,0.0
+paired runs B100000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 LATE_TEST_Q4,True,0.0
+paired runs B200000 OFFICIAL_TEST,True,0.0
+paired runs B200000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B2000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B2000 LATE_TEST_Q4,True,0.0
+paired runs B2000 OFFICIAL_TEST,True,0.0
+paired runs B2000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B5000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B5000 LATE_TEST_Q4,True,0.0
+paired runs B5000 OFFICIAL_TEST,True,0.0
+paired runs B5000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B10000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B10000 LATE_TEST_Q4,True,0.0
+paired runs B10000 OFFICIAL_TEST,True,0.0
+paired runs B10000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B20000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B20000 LATE_TEST_Q4,True,0.0
+paired runs B20000 OFFICIAL_TEST,True,0.0
+paired runs B20000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B50000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B50000 LATE_TEST_Q4,True,0.0
+paired runs B50000 OFFICIAL_TEST,True,0.0
+paired runs B50000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B100000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B100000 LATE_TEST_Q4,True,0.0
+paired runs B100000 OFFICIAL_TEST,True,0.0
+paired runs B100000 TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_OOD_EXACT,True,0.0
+paired runs B200000 DOMAIN_TEMPLATE_OOD_EXACT,True,0.0
+paired runs B200000 LATE_TEST_Q4,True,0.0
+paired runs B200000 OFFICIAL_TEST,True,0.0
+paired runs B200000 TEMPLATE_OOD_EXACT,True,0.0
+putra_direct paired rows run=0 B=200,True,0.0
+putra_direct paired selection hash run=0 B=200,True,
+putra_direct paired rows run=0 B=500,True,0.0
+putra_direct paired selection hash run=0 B=500,True,
+putra_direct paired rows run=0 B=1000,True,0.0
+putra_direct paired selection hash run=0 B=1000,True,
+putra_direct paired rows run=0 B=2000,True,0.0
+putra_direct paired selection hash run=0 B=2000,True,
+putra_direct paired rows run=1 B=200,True,0.0
+putra_direct paired selection hash run=1 B=200,True,
+putra_direct paired rows run=1 B=500,True,0.0
+putra_direct paired selection hash run=1 B=500,True,
+putra_direct paired rows run=1 B=1000,True,0.0
+putra_direct paired selection hash run=1 B=1000,True,
+putra_direct paired rows run=1 B=2000,True,0.0
+putra_direct paired selection hash run=1 B=2000,True,
+putra_direct paired rows run=2 B=200,True,0.0
+putra_direct paired selection hash run=2 B=200,True,
+putra_direct paired rows run=2 B=500,True,0.0
+putra_direct paired selection hash run=2 B=500,True,
+putra_direct paired rows run=2 B=1000,True,0.0
+putra_direct paired selection hash run=2 B=1000,True,
+putra_direct paired rows run=2 B=2000,True,0.0
+putra_direct paired selection hash run=2 B=2000,True,
+putra_direct paired rows run=3 B=200,True,0.0
+putra_direct paired selection hash run=3 B=200,True,
+putra_direct paired rows run=3 B=500,True,0.0
+putra_direct paired selection hash run=3 B=500,True,
+putra_direct paired rows run=3 B=1000,True,0.0
+putra_direct paired selection hash run=3 B=1000,True,
+putra_direct paired rows run=3 B=2000,True,0.0
+putra_direct paired selection hash run=3 B=2000,True,
+putra_direct paired rows run=4 B=200,True,0.0
+putra_direct paired selection hash run=4 B=200,True,
+putra_direct paired rows run=4 B=500,True,0.0
+putra_direct paired selection hash run=4 B=500,True,
+putra_direct paired rows run=4 B=1000,True,0.0
+putra_direct paired selection hash run=4 B=1000,True,
+putra_direct paired rows run=4 B=2000,True,0.0
+putra_direct paired selection hash run=4 B=2000,True,
+putra_direct paired rows run=5 B=200,True,0.0
+putra_direct paired selection hash run=5 B=200,True,
+putra_direct paired rows run=5 B=500,True,0.0
+putra_direct paired selection hash run=5 B=500,True,
+putra_direct paired rows run=5 B=1000,True,0.0
+putra_direct paired selection hash run=5 B=1000,True,
+putra_direct paired rows run=5 B=2000,True,0.0
+putra_direct paired selection hash run=5 B=2000,True,
+putra_direct paired rows run=6 B=200,True,0.0
+putra_direct paired selection hash run=6 B=200,True,
+putra_direct paired rows run=6 B=500,True,0.0
+putra_direct paired selection hash run=6 B=500,True,
+putra_direct paired rows run=6 B=1000,True,0.0
+putra_direct paired selection hash run=6 B=1000,True,
+putra_direct paired rows run=6 B=2000,True,0.0
+putra_direct paired selection hash run=6 B=2000,True,
+putra_direct paired rows run=7 B=200,True,0.0
+putra_direct paired selection hash run=7 B=200,True,
+putra_direct paired rows run=7 B=500,True,0.0
+putra_direct paired selection hash run=7 B=500,True,
+putra_direct paired rows run=7 B=1000,True,0.0
+putra_direct paired selection hash run=7 B=1000,True,
+putra_direct paired rows run=7 B=2000,True,0.0
+putra_direct paired selection hash run=7 B=2000,True,
+putra_direct paired rows run=8 B=200,True,0.0
+putra_direct paired selection hash run=8 B=200,True,
+putra_direct paired rows run=8 B=500,True,0.0
+putra_direct paired selection hash run=8 B=500,True,
+putra_direct paired rows run=8 B=1000,True,0.0
+putra_direct paired selection hash run=8 B=1000,True,
+putra_direct paired rows run=8 B=2000,True,0.0
+putra_direct paired selection hash run=8 B=2000,True,
+putra_direct paired rows run=9 B=200,True,0.0
+putra_direct paired selection hash run=9 B=200,True,
+putra_direct paired rows run=9 B=500,True,0.0
+putra_direct paired selection hash run=9 B=500,True,
+putra_direct paired rows run=9 B=1000,True,0.0
+putra_direct paired selection hash run=9 B=1000,True,
+putra_direct paired rows run=9 B=2000,True,0.0
+putra_direct paired selection hash run=9 B=2000,True,
+putra_target paired rows run=0 B=200,True,0.0
+putra_target paired selection hash run=0 B=200,True,
+putra_target paired rows run=0 B=500,True,0.0
+putra_target paired selection hash run=0 B=500,True,
+putra_target paired rows run=0 B=1000,True,0.0
+putra_target paired selection hash run=0 B=1000,True,
+putra_target paired rows run=0 B=2000,True,0.0
+putra_target paired selection hash run=0 B=2000,True,
+putra_target paired rows run=1 B=200,True,0.0
+putra_target paired selection hash run=1 B=200,True,
+putra_target paired rows run=1 B=500,True,0.0
+putra_target paired selection hash run=1 B=500,True,
+putra_target paired rows run=1 B=1000,True,0.0
+putra_target paired selection hash run=1 B=1000,True,
+putra_target paired rows run=1 B=2000,True,0.0
+putra_target paired selection hash run=1 B=2000,True,
+putra_target paired rows run=2 B=200,True,0.0
+putra_target paired selection hash run=2 B=200,True,
+putra_target paired rows run=2 B=500,True,0.0
+putra_target paired selection hash run=2 B=500,True,
+putra_target paired rows run=2 B=1000,True,0.0
+putra_target paired selection hash run=2 B=1000,True,
+putra_target paired rows run=2 B=2000,True,0.0
+putra_target paired selection hash run=2 B=2000,True,
+putra_target paired rows run=3 B=200,True,0.0
+putra_target paired selection hash run=3 B=200,True,
+putra_target paired rows run=3 B=500,True,0.0
+putra_target paired selection hash run=3 B=500,True,
+putra_target paired rows run=3 B=1000,True,0.0
+putra_target paired selection hash run=3 B=1000,True,
+putra_target paired rows run=3 B=2000,True,0.0
+putra_target paired selection hash run=3 B=2000,True,
+putra_target paired rows run=4 B=200,True,0.0
+putra_target paired selection hash run=4 B=200,True,
+putra_target paired rows run=4 B=500,True,0.0
+putra_target paired selection hash run=4 B=500,True,
+putra_target paired rows run=4 B=1000,True,0.0
+putra_target paired selection hash run=4 B=1000,True,
+putra_target paired rows run=4 B=2000,True,0.0
+putra_target paired selection hash run=4 B=2000,True,
+putra_target paired rows run=5 B=200,True,0.0
+putra_target paired selection hash run=5 B=200,True,
+putra_target paired rows run=5 B=500,True,0.0
+putra_target paired selection hash run=5 B=500,True,
+putra_target paired rows run=5 B=1000,True,0.0
+putra_target paired selection hash run=5 B=1000,True,
+putra_target paired rows run=5 B=2000,True,0.0
+putra_target paired selection hash run=5 B=2000,True,
+putra_target paired rows run=6 B=200,True,0.0
+putra_target paired selection hash run=6 B=200,True,
+putra_target paired rows run=6 B=500,True,0.0
+putra_target paired selection hash run=6 B=500,True,
+putra_target paired rows run=6 B=1000,True,0.0
+putra_target paired selection hash run=6 B=1000,True,
+putra_target paired rows run=6 B=2000,True,0.0
+putra_target paired selection hash run=6 B=2000,True,
+putra_target paired rows run=7 B=200,True,0.0
+putra_target paired selection hash run=7 B=200,True,
+putra_target paired rows run=7 B=500,True,0.0
+putra_target paired selection hash run=7 B=500,True,
+putra_target paired rows run=7 B=1000,True,0.0
+putra_target paired selection hash run=7 B=1000,True,
+putra_target paired rows run=7 B=2000,True,0.0
+putra_target paired selection hash run=7 B=2000,True,
+putra_target paired rows run=8 B=200,True,0.0
+putra_target paired selection hash run=8 B=200,True,
+putra_target paired rows run=8 B=500,True,0.0
+putra_target paired selection hash run=8 B=500,True,
+putra_target paired rows run=8 B=1000,True,0.0
+putra_target paired selection hash run=8 B=1000,True,
+putra_target paired rows run=8 B=2000,True,0.0
+putra_target paired selection hash run=8 B=2000,True,
+putra_target paired rows run=9 B=200,True,0.0
+putra_target paired selection hash run=9 B=200,True,
+putra_target paired rows run=9 B=500,True,0.0
+putra_target paired selection hash run=9 B=500,True,
+putra_target paired rows run=9 B=1000,True,0.0
+putra_target paired selection hash run=9 B=1000,True,
+putra_target paired rows run=9 B=2000,True,0.0
+putra_target paired selection hash run=9 B=2000,True,
+FF4 sequential tpr from integer counts,True,0.0
+FF4 sequential fpr from integer counts,True,0.0
+FF4 sequential precision from integer counts,True,1.1102230246251565e-16
+FF4 sequential f1 from integer counts,True,2.220446049250313e-16
+FF4 sequential Clopper Pearson lower,True,9.020562075079397e-17
+FF4 sequential Clopper Pearson upper,True,1.700029006457271e-16
+FF4 paired selection hash 0,True,
+FF4 paired selection hash 1,True,
+FF4 paired selection hash 2,True,
+FF4 paired selection hash 3,True,
+FF4 paired selection hash 4,True,
+FF4 paired selection hash 5,True,
+FF4 paired selection hash 6,True,
+FF4 paired selection hash 7,True,
+FF4 paired selection hash 8,True,
+FF4 paired selection hash 9,True,
+FF4 frontend tpr from integer counts,True,1.1102230246251565e-16
+FF4 frontend fpr from integer counts,True,9.8879238130678e-17
+FF4 frontend precision from integer counts,True,1.1102230246251565e-16
+FF4 frontend f1 from integer counts,True,3.3306690738754696e-16
+FF4 full per-run tpr from integer counts,True,1.1102230246251565e-16
+FF4 full per-run fpr from integer counts,True,9.974659986866641e-17
+FF4 full per-run precision from integer counts,True,1.1102230246251565e-16
+FF4 full per-run f1 from integer counts,True,2.220446049250313e-16
+FF4 full per-run Clopper Pearson lower,True,9.974659986866641e-17
+FF4 full per-run Clopper Pearson upper,True,1.4051260155412137e-16
+CAL threshold gated,True,0.0
+CAL threshold cascade,True,0.0

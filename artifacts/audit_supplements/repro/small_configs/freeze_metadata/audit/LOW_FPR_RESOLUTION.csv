@@ -1,0 +1,4 @@
+set,n_neg,n_pos,one_fp_fpr,expected_fp_at_0.0001,supports_10fp_0.0001,supports_50fp_0.0001,expected_fp_at_0.001,supports_10fp_0.001,supports_50fp_0.001,expected_fp_at_0.0025,supports_10fp_0.0025,supports_50fp_0.0025,expected_fp_at_0.005,supports_10fp_0.005,supports_50fp_0.005,expected_fp_at_0.01,supports_10fp_0.01,supports_50fp_0.01,expected_fp_at_0.02,supports_10fp_0.02,supports_50fp_0.02
+FPR_CALIBRATION_BENIGN,50000,0,2e-05,5.0,False,False,50.0,True,True,125.0,True,True,250.0,True,True,500.0,True,True,1000.0,True,True
+DEVELOPMENT,10000,10000,0.0001,1.0,False,False,10.0,True,False,25.0,True,False,50.0,True,True,100.0,True,True,200.0,True,True
+FINAL_TEST,91260,76800,1.0957703265395573e-05,9.126000000000001,False,False,91.26,True,True,228.15,True,True,456.3,True,True,912.6,True,True,1825.2,True,True

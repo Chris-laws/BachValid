@@ -1,0 +1,19 @@
+{
+  "status": "COMPLETE",
+  "spec": {
+    "run": 5,
+    "model_seed": 342,
+    "label_rank_seed": 9301,
+    "rep": "RUT",
+    "budget": 10000,
+    "probe": "LINEAR",
+    "solver": "liblinear",
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "primary_fpr": 0.005,
+    "feature_dim": 1536
+  },
+  "elapsed_seconds": 13.978066682815552,
+  "completed_utc": "2026-09-02T09:09:52.370866+00:00"
+}

@@ -1,0 +1,33 @@
+{
+  "data_root": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+  "meta_root": "/kaggle/input/datasets/cristinakaufalt/freezeresume",
+  "old_root": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX",
+  "counts": {
+    "SUP": 4000,
+    "DEV": 20000,
+    "CAL": 50000,
+    "SSL": 200000,
+    "FINAL": 168060
+  },
+  "url_base_src": "bert-base-uncased",
+  "text_base_src": "/kaggle/input/datasets/cristinakaufalt/carmengeiss/roberta-base",
+  "text_dapt_src": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT",
+  "dom_encoder": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/DOM_MASKED_SSL/encoder.pt",
+  "dom_vocab": "/kaggle/input/datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/audit/DOM_VOCAB.json",
+  "marker_candidates": [
+    {
+      "path": "/kaggle/input/datasets/cristinakaufalt/freezeresume/FINAL_DATA_FREEZE_COMPLETE.json",
+      "score": 170,
+      "reasons": [
+        "freezeresume",
+        "private_manifest",
+        "ood_flags"
+      ]
+    },
+    {
+      "path": "/kaggle/input/datasets/cristinakaufalt/audit-zip/audit/repro_audit_capture_v1/small_configs/freeze_metadata/FINAL_DATA_FREEZE_COMPLETE.json",
+      "score": 0,
+      "reasons": []
+    }
+  ]
+}

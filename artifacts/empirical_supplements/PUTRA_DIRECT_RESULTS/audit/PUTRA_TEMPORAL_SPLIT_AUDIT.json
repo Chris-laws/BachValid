@@ -1,0 +1,39 @@
+{
+  "putra_doi": "10.5281/zenodo.8041387",
+  "complete_rows": 10391,
+  "cutoff_utc": "2023-04-07 03:33:03.372000+00:00",
+  "early_rows": 7793,
+  "late_rows_before_overlap_filter": 2598,
+  "late_rows_after_overlap_filter": 2598,
+  "late_exact_url_overlaps_removed": 0,
+  "early_date_range": [
+    "2018-12-08 00:22:51.482000+00:00",
+    "2023-04-07 03:33:03.372000+00:00"
+  ],
+  "late_date_range": [
+    "2023-04-07 03:51:02.445000+00:00",
+    "2023-05-08 08:06:20.214000+00:00"
+  ],
+  "early_class_counts": {
+    "0": 3554,
+    "1": 4239
+  },
+  "late_class_counts": {
+    "0": 1686,
+    "1": 912
+  },
+  "features_text_used": true,
+  "features_html_used_as_raw_html": false,
+  "inputs": {
+    "phishing.csv": {
+      "path": "/kaggle/working/putra_r0_vs_rut_label_efficiency/data/phishing.csv",
+      "rows": 5151,
+      "md5": "513962464c413fc30b2030547a12868a"
+    },
+    "not-phishing.csv": {
+      "path": "/kaggle/working/putra_r0_vs_rut_label_efficiency/data/not-phishing.csv",
+      "rows": 5244,
+      "md5": "f5d218eb67f5d7bd0571e8089a8fc392"
+    }
+  }
+}

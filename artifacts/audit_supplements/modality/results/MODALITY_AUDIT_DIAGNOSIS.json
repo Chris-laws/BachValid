@@ -1,0 +1,24 @@
+{
+  "dev_url_rut_tpr": 0.8492,
+  "dev_text_rut_tpr": 0.6162,
+  "dev_url_text_rut_tpr": 0.9107,
+  "dev_text_increment_given_url_pp": 6.15,
+  "final_audit_url_rut_tpr": 0.7582,
+  "final_audit_text_rut_tpr": 0.2345,
+  "final_audit_url_text_rut_tpr": 0.7697,
+  "text_truncation_pct": 67.97,
+  "url_truncation_pct": 1.52,
+  "raw_text_AP_dev": 0.9875211640916757,
+  "raw_html_struct_AP_dev": 0.9768157250761835,
+  "flags": [
+    "TEXT_RUT_MUCH_WEAKER_THAN_URL",
+    "TEXT_HEAVILY_TRUNCATED"
+  ],
+  "interpretation_rule": {
+    "TEXT_RUT_MUCH_WEAKER_THAN_URL": "Standalone RUT text representation is materially weaker.",
+    "TEXT_ADDS_LITTLE_GIVEN_URL": "Text contributes little incremental linear information beyond URL.",
+    "TEXT_HEAVILY_TRUNCATED": "256-token input likely discards a large fraction of available text.",
+    "RAW_TEXT_STRONG_BUT_RUT_TEXT_WEAK": "Likely representation/truncation bottleneck rather than absence of textual signal.",
+    "HTML_STRUCT_CONTAINS_SUBSTANTIAL_ADDITIONAL_SIGNAL": "Current visible-text stream discards useful HTML-structural evidence."
+  }
+}

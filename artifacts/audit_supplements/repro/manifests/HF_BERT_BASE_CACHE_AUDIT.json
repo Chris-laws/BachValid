@@ -1,0 +1,7 @@
+{
+  "requested_url_model_id": "bert-base-uncased",
+  "local_input_url_src": "bert-base-uncased",
+  "cache_scan_available": false,
+  "matching_repos": [],
+  "error": "CacheNotFound('Cache directory not found: /root/.cache/huggingface/hub. Please use `cache_dir` argument or set `HF_HUB_CACHE` environment variable.')"
+}

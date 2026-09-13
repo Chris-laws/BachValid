@@ -1,0 +1,42 @@
+[
+  {
+    "file": "Gutachtenformular_PA-BA_09.01.2023.dotx",
+    "bytes": 67942,
+    "sha256": "d073a2dfe703f5d42d678315b70a8ecec76e441580f7f84a12be712ce3873ca9"
+  },
+  {
+    "file": "Gliederung (1).tex",
+    "bytes": 195270,
+    "sha256": "4080e4efc9f8282506c7d6ae1533f1939bb2d76845b3887c9f68dd3376c02c5f"
+  },
+  {
+    "file": "Phishing_Detektion__Copy_ (42).pdf",
+    "bytes": 12527072,
+    "sha256": "e03f8da7cee62151808d8ab8ae3a6c65c10768f572616d565c61db004123213c"
+  },
+  {
+    "file": "CH6_ANALYSIS_FULL.zip",
+    "bytes": 21098276,
+    "sha256": "2b73582ec6982c13f09baaa35aed368547eb7a39f3755806e068374b81592ae8"
+  },
+  {
+    "file": "PUTRA_TARGET_ADAPTATION_RESULTS_SMALL.zip",
+    "bytes": 171741,
+    "sha256": "693999aee55f4e7eff356762f002070e3c408d8b651af194eb5979df739340cb"
+  },
+  {
+    "file": "PhreshPhish_Methodik_Konzeption_KANONISCH_7_Notebooks.zip",
+    "bytes": 255635,
+    "sha256": "7a9865aa1c89bb498592231f69e6d5f784366530f1024cf6f77dc83aa7c1874e"
+  },
+  {
+    "file": "Unterlagen_Bachelorarbeit_WI23 (1).zip",
+    "bytes": 1310343,
+    "sha256": "dcbf67a497c0ea51a9fc0e93c9d770bfb0375b9c60fb870b8a21f37f1832779d"
+  },
+  {
+    "file": "2026-02-11 - DHBW MOS - SG W-WI - Arbeiten - Hinweise und Richtlinien - 2S.pdf",
+    "bytes": 1869642,
+    "sha256": "cd1d1a8d4882da3d9f460f6df87efd9d5be26d6611adbf5b8e2fa85009ead8ef"
+  }
+]

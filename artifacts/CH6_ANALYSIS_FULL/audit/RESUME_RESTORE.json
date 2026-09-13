@@ -1,0 +1,27 @@
+{
+  "status": "RESTORED",
+  "runtime_patch": "v2.2_FINAL_CONTINUATION",
+  "research_version": "FINAL_URL_SSL_INTEGRATED_RESEARCH_ALL_IN_ONE_v2_COMPLETE_COVERAGE",
+  "source": "/kaggle/input/datasets/cristinakaufalt/newdataset/final_url_ssl_integrated_v2",
+  "target": "/kaggle/working/final_url_ssl_integrated_v2",
+  "selection_basis": "technical completeness markers only; no metric values",
+  "selected_progress": {
+    "path": "/kaggle/input/datasets/cristinakaufalt/newdataset/final_url_ssl_integrated_v2",
+    "score": 141310,
+    "n10_markers": 20,
+    "ff4_done": 1,
+    "deep_done": 29,
+    "table_count": 20,
+    "result_count": 12,
+    "file_count": 1100,
+    "bytes": 13599608547,
+    "final_complete": false,
+    "operational": false,
+    "bootstrap": false,
+    "ff4_table": false,
+    "n10_table": true
+  },
+  "files": 1100,
+  "bytes": 13599608547,
+  "elapsed_seconds": 205.9477460384369
+}

@@ -1,0 +1,3 @@
+stream,n_b1,latency_b1_median_ms,latency_b1_p95_ms,n_throughput,batch_throughput,throughput_pages_s,hardware,scope
+URL_BASE,300,10.494070999811811,11.79106155025238,3000,32,844.0336978462415,Tesla T4,URL tokenizer + transformer forward + mean pooling + linear head; excludes disk/network/browser
+URL_DAPT,300,10.603471000194986,11.133955249988503,3000,32,705.041176773674,Tesla T4,URL tokenizer + transformer forward + mean pooling + linear head; excludes disk/network/browser

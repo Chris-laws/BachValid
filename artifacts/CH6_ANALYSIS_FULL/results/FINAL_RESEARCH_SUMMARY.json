@@ -1,0 +1,99 @@
+{
+  "status": "COMPLETE",
+  "version": "FINAL_URL_SSL_INTEGRATED_RESEARCH_ALL_IN_ONE_v2_COMPLETE_COVERAGE",
+  "scientific_status": "post-hoc modality-specific integration; fixed before this complete execution",
+  "url_dapt": {
+    "status": "COMPLETE",
+    "fresh_from_base": true,
+    "source": "bert-base-uncased",
+    "rows": 200000,
+    "epochs": 1,
+    "batch": 16,
+    "lr": 5e-05,
+    "mlm_probability": 0.15,
+    "mean_train_loss": 2.287497024502754,
+    "last100_train_loss": 2.1528899842500686,
+    "wall_minutes": 24.46210649808248,
+    "uses_labels": false
+  },
+  "selected_representation_dev": "RUT",
+  "selected_architecture_dev": "TRI",
+  "use_dom": true,
+  "use_cascade": true,
+  "cascade_dev": {
+    "use": true,
+    "url_low": -3.283203363418579,
+    "url_high": 6.445312500000001,
+    "dev_meta_escalation_rate": 0.1602,
+    "dev_meta_full_reduction": 0.8398,
+    "tpr_loss_pp": 0.47999999999999154,
+    "full_meta": {
+      "tpr": 0.9892,
+      "fpr": 0.0036,
+      "precision": 0.9963738920225624,
+      "f1": 0.992773986350863,
+      "tp": 2473,
+      "fp": 9,
+      "tn": 2491,
+      "fn": 27,
+      "fp_per_1000": 3.6,
+      "fpr_ci_lo": 0.0016474300387530022,
+      "fpr_ci_hi": 0.006822873977770355
+    },
+    "cascade_meta": {
+      "tpr": 0.9844,
+      "fpr": 0.0036,
+      "precision": 0.9963562753036437,
+      "f1": 0.9903420523138832,
+      "tp": 2461,
+      "fp": 9,
+      "tn": 2491,
+      "fn": 39,
+      "fp_per_1000": 3.6,
+      "fpr_ci_lo": 0.0016474300387530022,
+      "fpr_ci_hi": 0.006822873977770355
+    }
+  },
+  "ff1": {
+    "modality_table": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF1_MODALITY_DAPT_DEV_N5.csv",
+    "paired_stats": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF1_MODALITY_PAIRED_STATS.csv",
+    "contrastive_historical_table": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF1_CONTRASTIVE_HISTORICAL_PRIMARY.csv"
+  },
+  "ff2": {
+    "label_efficiency": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF2_LABEL_EFFICIENCY_FINAL.csv",
+    "b95_dev": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF2_B95_DEV.csv",
+    "paired_label_deltas": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF2_LABEL_EFFICIENCY_PAIRED_DELTAS.csv",
+    "deep_n3": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF2_DEEP_N3_20K_200K.csv",
+    "deep_n3_rut_paired": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF2_DEEP_N3_RUT_PAIRED.csv"
+  },
+  "ff3": {
+    "n10_4rep_agg": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF3_N10_4REP_AGG.csv",
+    "n10_all_contrasts": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF3_N10_PAIRED_CONTRASTS.csv",
+    "primary_extension": "RUT-RT OFFICIAL_TEST",
+    "primary_table": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF3_PRIMARY_RUT_MINUS_RT_OFFICIAL.csv",
+    "ood_holm_table": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF3_OOD_HOLM_RUT_MINUS_RT.csv",
+    "historical_RT_R0_retained": true
+  },
+  "ff4": {
+    "dom_dev": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF4_DOM_DUAL_TRI_DEV.csv",
+    "final_all": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF4_DOM_FUSION_CASCADE_FINAL.csv",
+    "primary": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF4_PRIMARY_OFFICIAL_0p5FPR.csv",
+    "operational": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_OPERATIONAL_BENCHMARK.csv",
+    "bootstrap": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FINAL_BOOTSTRAP_AP_P90.csv",
+    "xgb_reference": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_SYSTEM_REFERENCE_XGB_VS_DEEP_UPDATED.csv",
+    "marginal_label_utility": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_FF2_MARGINAL_LABEL_UTILITY_DEV.csv",
+    "coverage_audit": "/kaggle/working/final_url_ssl_integrated_v2/thesis_tables/TABLE_COMPLETE_COVERAGE_AUDIT.csv"
+  },
+  "access_integrity": {
+    "cal_final_unlocked_only_after_architecture_freeze": true,
+    "ssl_physical_no_labels": true,
+    "historical_final_known_before_extension": true
+  },
+  "interpretation_rules": [
+    "R0/RU/RT/RUT quantify modality-specific DAPT; contrastive historical results remain a separate SSL-objective comparison.",
+    "The primary new FF3 extension test is RUT-RT, not a retroactive replacement of the historical RT-R0 N10 result.",
+    "N10 varies downstream label samples/training seeds with fixed SSL checkpoints; it does not estimate SSL-pretraining randomness.",
+    "DOM and cascade remain engineering components and are not mixed into the scientific representation ablation.",
+    "Operational timings cover the in-memory model path only."
+  ]
+}

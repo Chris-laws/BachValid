@@ -1,0 +1,5 @@
+budget,reference_budget,label_reduction_pct,reference_to_candidate_factor,all_5_scenarios_exact_NI_alpha_0_05,all_5_scenario_means_within_1pp,worst_scenario_mean_delta_tpr_pp,worst_scenario_one_sided_lower_ci_pp,largest_mean_fpr_increase_pp,smallest_component_NI_p,largest_component_NI_p,component_tests_rejected,component_tests_total
+10000,200000,95.0,20.0,False,False,-5.2532204933179765,-6.295414590156681,-0.11122068814376998,1.0,1.0,0,5
+20000,200000,90.0,10.0,False,False,-1.3738986046760715,-2.385689420928725,-0.09587990357221698,0.0341796875,0.73828125,1,5
+50000,200000,75.0,4.0,True,True,3.237548661556365,2.363162734241596,-0.07900504054350597,0.0009765625,0.0009765625,5,5
+100000,200000,50.0,2.0,True,True,5.9667429198271575,5.499909268221254,-0.07440280517204097,0.0009765625,0.0009765625,5,5

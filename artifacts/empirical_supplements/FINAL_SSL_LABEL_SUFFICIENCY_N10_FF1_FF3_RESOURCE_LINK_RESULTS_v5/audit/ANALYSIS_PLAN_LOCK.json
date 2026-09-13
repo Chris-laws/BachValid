@@ -1,0 +1,73 @@
+{
+  "version": "FINAL_SSL_LABEL_SUFFICIENCY_N10_FF1_FF3_RESOURCE_LINK_v5_DIRECT_CACHE_RESOLVER",
+  "scientific_status": "N5_TO_N10_EXTENSION_WITH_PRE_SPECIFIED_SUFFICIENCY_MARGIN_DIRECT_CACHE_RESOLVER_V5",
+  "written_before_new_fits": true,
+  "primary_target_fpr": 0.005,
+  "equal_budget_confirmation": {
+    "contrast": "RUT_20k - R0_20k",
+    "primary_scenario": "OFFICIAL_TEST",
+    "test": "paired exact two-sided sign-flip",
+    "secondary_scenarios": [
+      "DOMAIN_OOD_EXACT",
+      "TEMPLATE_OOD_EXACT",
+      "DOMAIN_TEMPLATE_OOD_EXACT",
+      "LATE_TEST_Q4"
+    ],
+    "secondary_adjustment": "Holm across four shift/Late scenarios"
+  },
+  "label_sufficiency": {
+    "reference": "R0_200k",
+    "candidates": [
+      "RUT_10000",
+      "RUT_20000",
+      "RUT_50000",
+      "RUT_100000"
+    ],
+    "margin_tpr_pp": 1.0,
+    "component_test": "paired exact one-sided sign-flip on d + 0.01",
+    "alpha": 0.05,
+    "global_decision": "intersection-union: all five scenario component tests must reject",
+    "fpr_role": "reported secondary operational guardrail; not part of primary NI decision"
+  },
+  "n10_construction": {
+    "historical_n": 5,
+    "new_n": 5,
+    "historical_model_seeds": [
+      42,
+      62,
+      82,
+      102,
+      122
+    ],
+    "historical_label_rank_seeds": [
+      20260813,
+      20260823,
+      20260833,
+      20260843,
+      20260853
+    ],
+    "new_model_seeds": [
+      342,
+      362,
+      382,
+      402,
+      422
+    ],
+    "new_label_rank_seeds": [
+      9301,
+      9302,
+      9303,
+      9304,
+      9305
+    ],
+    "independent_external_replication": false,
+    "first_n5_observed_before_current_sufficiency_plan": true
+  },
+  "method_lock": {
+    "representation": "canonical integrated R0/RUT URL+text pooled embeddings",
+    "probe": "sklearn LogisticRegression C=1 max_iter=2000 solver=liblinear class_weight=balanced",
+    "threshold": "CAL benign-only threshold at target FPR 0.5%",
+    "transformers_retrained": false,
+    "missing_embedding_policy": "FAIL_FAST"
+  }
+}

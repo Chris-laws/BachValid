@@ -1,0 +1,104 @@
+{
+  "version": "FINAL_URL_SSL_INTEGRATED_RESEARCH_ALL_IN_ONE_v2_COMPLETE_COVERAGE",
+  "scientific_status": "POST_HOC_MODALITY_SPECIFIC_INTEGRATION_AFTER_HISTORICAL_FINAL_KNOWN",
+  "historical_final_known": true,
+  "no_optional_stopping": true,
+  "all_planned_blocks_must_be_reported": true,
+  "representations": {
+    "R0": "URL_BASE + TEXT_BASE",
+    "RU": "URL_DAPT + TEXT_BASE",
+    "RT": "URL_BASE + TEXT_DAPT",
+    "RUT": "URL_DAPT + TEXT_DAPT"
+  },
+  "ff1": {
+    "design": "2x2 URL-DAPT x HTML-DAPT, N5, DEV-only",
+    "budget": 20000,
+    "model_seeds": [
+      202,
+      212,
+      222,
+      232,
+      242
+    ],
+    "label_rank_seeds": [
+      9201,
+      9202,
+      9203,
+      9204,
+      9205
+    ],
+    "contrastive_evidence": "historical v7.2 evidence retained unchanged"
+  },
+  "ff2": {
+    "budgets": [
+      2000,
+      5000,
+      10000,
+      20000,
+      50000,
+      100000,
+      200000
+    ],
+    "reps": [
+      "R0",
+      "RU",
+      "RT",
+      "RUT"
+    ],
+    "probes": [
+      "LINEAR",
+      "MLP"
+    ],
+    "deep_n3_new_rep": "RUT",
+    "deep_n3_historical_refs": [
+      "R0",
+      "RT"
+    ]
+  },
+  "ff3": {
+    "n10_new_reps": [
+      "RU",
+      "RUT"
+    ],
+    "n10_historical_refs": [
+      "R0",
+      "RT"
+    ],
+    "model_seeds": [
+      142,
+      162,
+      182,
+      202,
+      222,
+      242,
+      262,
+      282,
+      302,
+      322
+    ],
+    "label_rank_seeds": [
+      9101,
+      9102,
+      9103,
+      9104,
+      9105,
+      9106,
+      9107,
+      9108,
+      9109,
+      9110
+    ],
+    "primary_extension_contrast": "RUT-RT on OFFICIAL_TEST",
+    "secondary_extension_family": "RUT-RT across exactly four OOD/Late scenarios with Holm correction"
+  },
+  "ff4": {
+    "representation_selection": "DEV-only N5 linear-probe mean TPR at 0.5% FPR; P@R90/AP tie-breaks",
+    "dom_gate": "+0.5pp TPR@0.5% FPR OR TRI FPR@TPR90 <= 90% of DUAL",
+    "cascade_gate": {
+      "max_tpr_loss_pp": 1.0,
+      "min_full_reduction": 0.3,
+      "max_fpr_increase": 0.001
+    }
+  },
+  "access_order": "SSL/DEV -> ARCHITECTURE_FREEZE -> CAL/FINAL"
+}

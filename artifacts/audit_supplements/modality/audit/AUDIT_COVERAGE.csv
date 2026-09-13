@@ -1,0 +1,7 @@
+check,pass
+exact_20k_anchor,True
+full_CAL,True
+full_DEV,True
+fixed_final_20k_balanced,True
+three_identical_rut_probes,True
+token_audit_complete,True

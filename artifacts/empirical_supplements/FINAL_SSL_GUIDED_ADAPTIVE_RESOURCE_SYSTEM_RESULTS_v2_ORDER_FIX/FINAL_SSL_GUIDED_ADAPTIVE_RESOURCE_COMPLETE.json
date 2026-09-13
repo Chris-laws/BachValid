@@ -1,0 +1,48 @@
+{
+  "status": "COMPLETE",
+  "version": "FINAL_SSL_GUIDED_ADAPTIVE_RESOURCE_SYSTEM_N5_v2_ORDER_FIX",
+  "completed_utc": "2026-09-01T10:48:54.829187+00:00",
+  "all_blocks_reported": true,
+  "high_upside_pattern": true,
+  "headline": {
+    "version": "FINAL_SSL_GUIDED_ADAPTIVE_RESOURCE_SYSTEM_N5_v2_ORDER_FIX",
+    "status": "COMPLETE",
+    "scientific_status": "POST_HOC_SSL_GUIDED_ADAPTIVE_RESOURCE_ALLOCATION",
+    "compute": {
+      "primary_allowed_tpr_loss_pp": 1.0,
+      "mean_URL_DAPT_minus_URL_BASE_escalation_pp_across_scenarios": -12.396819460469535,
+      "scenarios_with_at_least_10pp_reduction": 5,
+      "success_rule_pass": true
+    },
+    "labels": {
+      "reference": "95% of RUT_RANDOM_20k mean DEV TPR",
+      "RUT_ACTIVE_B95": 2000,
+      "R0_ACTIVE_B95": null,
+      "label_factor_vs_20k_reference": 10.0,
+      "success_rule_pass": true
+    },
+    "review": {
+      "primary_nominal_review_rate_dev": 0.02,
+      "scenarios_RUT_enrichment_at_least_2x": 5,
+      "mean_RUT_enrichment_across_scenarios": 2.8575608061317044,
+      "success_rule_pass": true,
+      "classification_by_neighbors": false
+    },
+    "integrated": {
+      "successful_blocks": 3,
+      "high_upside_pattern": true,
+      "closed_loop_variant_available": true,
+      "closed_loop_label_budget": 2000,
+      "closed_loop_primary_cascade_escalation_mean": 0.2810978390836536,
+      "derived_serial_model_time_proxy_available": false
+    },
+    "interpretation_boundaries": [
+      "The experiment is post-hoc and does not replace the confirmatory FF1-FF4 evidence.",
+      "The compute contrast isolates URL-level TAPT in an identical URL-only linear frontend with the same frozen TRI fallback.",
+      "The active-learning simulation uses source-pool labels only after an instance has been selected; selection itself never sees hidden labels.",
+      "Representation-space support is used only for review prioritization, not as a retrieval classifier.",
+      "Oracle-review metrics are explicitly upper/lower bounds assuming reviewed cases are corrected perfectly.",
+      "The five FF3 conditions are treated as distinct distribution conditions, not as an ordinal difficulty scale."
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-08-29T09:58:32.868134+00:00",
+  "flag_file": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests/final_test_exact_ood_flags_SEALED.parquet",
+  "domain_column": "domain",
+  "template_column": "template_hash",
+  "sha_final_accessible_overlap": 0,
+  "verdict": [
+    {
+      "severity": "PASS",
+      "check": "SHA_LEAKAGE",
+      "message": "Keine SHA-\u00dcberlappung von FINAL zu SSL/DEV/CAL."
+    },
+    {
+      "severity": "PASS",
+      "check": "OOD_EXPOSURE_DOMAIN_OOD_EXACT",
+      "message": "Kein versiegelter Fall hat denselben Identifier im SSL-Pool."
+    },
+    {
+      "severity": "PASS",
+      "check": "OOD_EXPOSURE_TEMPLATE_OOD_EXACT",
+      "message": "Kein versiegelter Fall hat denselben Identifier im SSL-Pool."
+    },
+    {
+      "severity": "WARNING",
+      "check": "FLAG_RECON_domain_ood_exact",
+      "message": "Bester Match: ALL_ACCESSIBLE, 99.02773%."
+    },
+    {
+      "severity": "WARNING",
+      "check": "FLAG_RECON_domain_template_ood_exact",
+      "message": "Bester Match: ALL_ACCESSIBLE, 99.04498%."
+    },
+    {
+      "severity": "PASS",
+      "check": "FLAG_RECON_template_ood_exact",
+      "message": "Bester Match: ALL_ACCESSIBLE, 99.99940%."
+    },
+    {
+      "severity": "INFO",
+      "check": "SUBSET_SIZE_DOMAIN_OOD_EXACT",
+      "message": "68.97% von FINAL liegen in diesem OOD-Subset; das ist kein automatisch h\u00e4rterer Stress-Holdout."
+    },
+    {
+      "severity": "INFO",
+      "check": "SUBSET_SIZE_TEMPLATE_OOD_EXACT",
+      "message": "95.93% von FINAL liegen in diesem OOD-Subset; das ist kein automatisch h\u00e4rterer Stress-Holdout."
+    },
+    {
+      "severity": "INFO",
+      "check": "SUBSET_SIZE_DOMAIN_TEMPLATE_OOD_EXACT",
+      "message": "65.51% von FINAL liegen in diesem OOD-Subset; das ist kein automatisch h\u00e4rterer Stress-Holdout."
+    }
+  ]
+}

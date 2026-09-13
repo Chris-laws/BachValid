@@ -1,0 +1,379 @@
+{
+  "pdf_pages": 79,
+  "body_pages_including_figures": 54,
+  "body_start_pdf": 12,
+  "bibliography_start_pdf": 66,
+  "toc": [
+    [
+      1,
+      "Abkürzungsverzeichnis",
+      8
+    ],
+    [
+      1,
+      "Abbildungsverzeichnis",
+      9
+    ],
+    [
+      1,
+      "Tabellenverzeichnis",
+      10
+    ],
+    [
+      1,
+      "Quellcodeverzeichnis",
+      11
+    ],
+    [
+      1,
+      "1 Einleitung",
+      12
+    ],
+    [
+      2,
+      "1.1 Problemstellung und Motivation",
+      12
+    ],
+    [
+      2,
+      "1.2 Zielsetzung und Forschungsfragen",
+      13
+    ],
+    [
+      2,
+      "1.3 Vorgehensweise und Methodik der Arbeit",
+      14
+    ],
+    [
+      1,
+      "2 Theoretische Grundlagen",
+      15
+    ],
+    [
+      2,
+      "2.1 Phishing-Webseiten als Anwendungsdomäne",
+      15
+    ],
+    [
+      3,
+      "2.1.1 Phishing und Social Engineering",
+      15
+    ],
+    [
+      3,
+      "2.1.2 URL-, HTML-Text- und DOM-Daten als Informationsgrundlage",
+      15
+    ],
+    [
+      3,
+      "2.1.3 Herausforderungen der automatisierten Erkennung",
+      16
+    ],
+    [
+      2,
+      "2.2 Lernbasierte Repräsentationen und Klassifikation",
+      16
+    ],
+    [
+      3,
+      "2.2.1 Numerische Repräsentation textueller Eingaben",
+      16
+    ],
+    [
+      3,
+      "2.2.2 Neuronale und graphbasierte Repräsentationsmodelle",
+      18
+    ],
+    [
+      3,
+      "2.2.3 Transformerbasierte Repräsentationsmodelle",
+      19
+    ],
+    [
+      3,
+      "2.2.4 Downstream-Klassifikation und multimodale Verarbeitung",
+      21
+    ],
+    [
+      2,
+      "2.3 Self-Supervised Representation Learning",
+      21
+    ],
+    [
+      3,
+      "2.3.1 Maskierte selbstüberwachte Lernziele",
+      22
+    ],
+    [
+      3,
+      "2.3.2 Kontrastives Repräsentationslernen",
+      23
+    ],
+    [
+      3,
+      "2.3.3 Task-Adaptive Pretraining",
+      23
+    ],
+    [
+      2,
+      "2.4 Evaluationsrahmen und Bewertungsmetriken",
+      24
+    ],
+    [
+      3,
+      "2.4.1 Klassifikations- und Betriebspunktmetriken",
+      24
+    ],
+    [
+      3,
+      "2.4.2 Generalisierung unter Distribution Shift",
+      25
+    ],
+    [
+      3,
+      "2.4.3 Statistische Auswertungsverfahren",
+      26
+    ],
+    [
+      3,
+      "2.4.4 Effizienz- und Betriebsmetriken",
+      27
+    ],
+    [
+      1,
+      "3 Stand der Forschung und Forschungslücke",
+      28
+    ],
+    [
+      2,
+      "3.1 Task-adaptive Repräsentationen und Label-Effizienz",
+      28
+    ],
+    [
+      2,
+      "3.2 Informationsgrundlage und Systemarchitektur",
+      28
+    ],
+    [
+      2,
+      "3.3 Generalisierung und betriebliche Evaluationsbedingungen",
+      29
+    ],
+    [
+      2,
+      "3.4 Forschungslücke und Einordnung der Arbeit",
+      30
+    ],
+    [
+      1,
+      "4 Methodisches Vorgehen und Systemkonzeption",
+      31
+    ],
+    [
+      2,
+      "4.1 Forschungsdesign und Untersuchungslogik",
+      31
+    ],
+    [
+      2,
+      "4.2 Datengrundlage und Datenprotokoll",
+      32
+    ],
+    [
+      3,
+      "4.2.1 Rollenpartitionierung und Leakage-Prävention",
+      32
+    ],
+    [
+      3,
+      "4.2.2 Aufbereitung der Informationsmodalitäten",
+      33
+    ],
+    [
+      2,
+      "4.3 Repräsentations- und Versuchsdesign",
+      33
+    ],
+    [
+      3,
+      "4.3.1 Task-adaptive Repräsentationen R0, RU, RT und RUT",
+      33
+    ],
+    [
+      3,
+      "4.3.2 Downstream-Probes, Labelbudgets und Referenzverfahren",
+      34
+    ],
+    [
+      2,
+      "4.4 Evaluations- und Statistikdesign",
+      35
+    ],
+    [
+      3,
+      "4.4.1 Kalibration und Evaluationsbedingungen",
+      35
+    ],
+    [
+      3,
+      "4.4.2 Statistische Entscheidungsregeln",
+      36
+    ],
+    [
+      2,
+      "4.5 Konzeption des prototypischen Klassifikationssystems",
+      37
+    ],
+    [
+      3,
+      "4.5.1 Zielbild und Gesamtarchitektur",
+      37
+    ],
+    [
+      3,
+      "4.5.2 Sequenzielle Komponentenablation",
+      38
+    ],
+    [
+      3,
+      "4.5.3 URL-first-Kaskade und Frontend-Vergleich",
+      39
+    ],
+    [
+      2,
+      "4.6 Freeze, Reproduzierbarkeit und Grenzen des Untersuchungsdesigns",
+      40
+    ],
+    [
+      1,
+      "5 Implementierung",
+      41
+    ],
+    [
+      2,
+      "5.1 Entwicklungs- und Ausführungsumgebung",
+      41
+    ],
+    [
+      2,
+      "5.2 Implementierung der Datenverarbeitung",
+      41
+    ],
+    [
+      2,
+      "5.3 Implementierung der Self-Supervised Repräsentationen",
+      42
+    ],
+    [
+      2,
+      "5.4 Implementierung des multimodalen Deep-Systems",
+      45
+    ],
+    [
+      3,
+      "5.4.1 Sequenzielle Komponentenablation",
+      47
+    ],
+    [
+      2,
+      "5.5 Implementierung der Kaskade und Messinstrumentierung",
+      47
+    ],
+    [
+      2,
+      "5.6 Artefaktbereitstellung und Reproduzierbarkeit",
+      49
+    ],
+    [
+      1,
+      "6 Empirische Evaluation",
+      50
+    ],
+    [
+      2,
+      "6.1 Versuchsrahmen",
+      50
+    ],
+    [
+      2,
+      "6.2 FF1: Task-adaptive Repräsentationsanpassung",
+      50
+    ],
+    [
+      2,
+      "6.3 FF2: Einfluss der Labelverfügbarkeit",
+      52
+    ],
+    [
+      2,
+      "6.4 FF3: Erreichen des 200k-Referenzniveaus",
+      54
+    ],
+    [
+      2,
+      "6.5 FF4: Inkrementeller Systembeitrag und URL-first-Verarbeitung",
+      56
+    ],
+    [
+      2,
+      "6.6 Ergänzende Unsicherheits- und Prävalenzeinordnung",
+      58
+    ],
+    [
+      1,
+      "7 Diskussion und Schlussbetrachtung",
+      59
+    ],
+    [
+      2,
+      "7.1 Interpretation und Beantwortung der Forschungsfragen",
+      59
+    ],
+    [
+      2,
+      "7.2 Limitationen und Aussagegrenzen",
+      62
+    ],
+    [
+      2,
+      "7.3 Betriebliche Einordnung und Handlungsempfehlung",
+      63
+    ],
+    [
+      2,
+      "7.4 Fazit und Ausblick",
+      65
+    ],
+    [
+      1,
+      "Literaturverzeichnis",
+      66
+    ],
+    [
+      1,
+      "A Ergänzende Implementierungs- und Prüfdetails",
+      74
+    ],
+    [
+      2,
+      "A.1 Implementierungsauszüge",
+      74
+    ],
+    [
+      2,
+      "A.2 Reproduktionsumfang",
+      79
+    ]
+  ],
+  "margin_candidates": [],
+  "low_fill_candidates": [
+    4,
+    9,
+    10,
+    11,
+    40,
+    72,
+    73
+  ],
+  "status": "Rendering und automatische Vorprüfung; visuelle Abnahme wird gesondert protokolliert."
+}

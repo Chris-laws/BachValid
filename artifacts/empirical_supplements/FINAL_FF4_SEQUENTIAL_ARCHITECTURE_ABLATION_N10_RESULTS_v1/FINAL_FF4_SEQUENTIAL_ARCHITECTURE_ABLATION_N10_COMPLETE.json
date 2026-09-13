@@ -1,0 +1,85 @@
+{
+  "status": "COMPLETE",
+  "version": "FINAL_FF4_SEQUENTIAL_ARCHITECTURE_ABLATION_N10_v1",
+  "completed_utc": "2026-09-02T23:16:00.839047+00:00",
+  "scientific_status": "POST_HOC_FF4_CLOSURE; PLAN_AND_SEEDS_FIXED_BEFORE_EXECUTION",
+  "historical_final_known": true,
+  "used_for_retroactive_model_selection": false,
+  "planned_fits": 40,
+  "completed_fits": 40,
+  "n_replicates": 10,
+  "budget_per_fit": 20000,
+  "representation": "RUT",
+  "variants": [
+    "P0_URL",
+    "P1_DUAL_EQUAL",
+    "P2_TRI_EQUAL",
+    "P3_TRI_GATED"
+  ],
+  "primary_contrasts": {
+    "TEXT_ADD": {
+      "baseline": "P0_URL",
+      "candidate": "P1_DUAL_EQUAL",
+      "mean_delta_tpr_pp": 5.183999999999998,
+      "ci95_pp": [
+        4.323539325743928,
+        6.044460674256069
+      ],
+      "positive_pairs": 10,
+      "exact_two_sided_p": 0.001953125,
+      "holm_p": 0.005859375,
+      "holm_significant_0p05": true,
+      "mean_delta_fpr_pp": 0.088
+    },
+    "DOM_ADD": {
+      "baseline": "P1_DUAL_EQUAL",
+      "candidate": "P2_TRI_EQUAL",
+      "mean_delta_tpr_pp": 0.7279999999999998,
+      "ci95_pp": [
+        0.30534304247046073,
+        1.1506569575295387
+      ],
+      "positive_pairs": 10,
+      "exact_two_sided_p": 0.001953125,
+      "holm_p": 0.005859375,
+      "holm_significant_0p05": true,
+      "mean_delta_fpr_pp": 0.08
+    },
+    "GATING_ADD": {
+      "baseline": "P2_TRI_EQUAL",
+      "candidate": "P3_TRI_GATED",
+      "mean_delta_tpr_pp": 0.5759999999999998,
+      "ci95_pp": [
+        0.22575585602895265,
+        0.926244143971047
+      ],
+      "positive_pairs": 9,
+      "exact_two_sided_p": 0.00390625,
+      "holm_p": 0.005859375,
+      "holm_significant_0p05": true,
+      "mean_delta_fpr_pp": 0.047999999999999994
+    }
+  },
+  "all_three_adjacent_steps_confirmed": true,
+  "gate_weight_means": {
+    "url_mean": 0.33372580707073213,
+    "text_mean": 0.3310947477817535,
+    "dom_mean": 0.3351794421672821
+  },
+  "total_training_gpu_minutes_sum": 204.68715590635935,
+  "cal_accessed": false,
+  "final_accessed": false,
+  "cascade_recomputed": false,
+  "outputs": {
+    "runs": "results/FF4_N10_ALL_RUNS.csv",
+    "paired_detail": "results/FF4_N10_PAIRED_CONTRAST_DETAIL.csv",
+    "variant_aggregates": "tables/TABLE_FF4_N10_VARIANT_AGG.csv",
+    "primary_contrasts": "tables/TABLE_FF4_N10_ADJACENT_PRIMARY_CONTRASTS.csv",
+    "component_decisions": "tables/TABLE_FF4_N10_COMPONENT_DECISIONS.csv",
+    "gate_weights": "tables/TABLE_FF4_N10_GATE_WEIGHTS.csv",
+    "protocol": "audit/FF4_N10_PROTOCOL_LOCK.json",
+    "input_resolution": "audit/INPUT_RESOLUTION.json",
+    "replicate_plan": "audit/FF4_N10_REPLICATE_PLAN.csv",
+    "label_overlap": "audit/FF4_N10_LABEL_SAMPLE_OVERLAP.csv"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "version": "PUTRA_TARGET_ADAPTATION_LABEL_EFFICIENCY_N10_v1",
+  "status": "POST_HOC_EXTERNAL_TARGET_ADAPTATION_ANALYSIS",
+  "prior_direct_putra_screen_seen": true,
+  "no_optional_stopping": true,
+  "all_planned_replicates_reported": true,
+  "temporal_design": "global scan_date cutoff; early <= empirical 0.75 quantile, late > cutoff",
+  "variants": {
+    "E0_SOURCE_RUT": "existing PhreshPhish RUT URL+Text encoders, frozen",
+    "E1_TARGET_RUT": "same RUT encoders plus one MLM epoch on unlabeled early Putra target pool"
+  },
+  "target_ssl": {
+    "epochs": 1,
+    "batch_candidates": [
+      16,
+      8,
+      4
+    ],
+    "lr": 5e-05,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.06,
+    "mlm_probability": 0.15,
+    "labels_used": false
+  },
+  "label_budgets": [
+    200,
+    500,
+    1000,
+    2000
+  ],
+  "model_seeds": [
+    142,
+    162,
+    182,
+    202,
+    222,
+    242,
+    262,
+    282,
+    302,
+    322
+  ],
+  "label_rank_seeds": [
+    9101,
+    9102,
+    9103,
+    9104,
+    9105,
+    9106,
+    9107,
+    9108,
+    9109,
+    9110
+  ],
+  "paired_same_labeled_rows_E0_E1": true,
+  "nested_budgets_within_seed": true,
+  "primary_endpoint": "normalized area under AP learning curve over log10(label budget)",
+  "primary_test": "two-sided exact paired sign-flip test over N10 AULC differences",
+  "secondary_AP_family": "four paired AP tests, Holm-corrected across label budgets",
+  "test_used_for_training_or_adaptation": false
+}

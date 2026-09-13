@@ -1,0 +1,11 @@
+{
+  "statistically_sufficient_budget_all_5_scenarios": 50000,
+  "descriptively_within_margin_budget_all_5_scenarios": 50000,
+  "reference_budget": 200000,
+  "margin_tpr_pp": 1.0,
+  "decision_rule": "all five exact one-sided margin-shifted sign-flip component tests p<0.05",
+  "intersection_union": true,
+  "independent_external_replication": false,
+  "label_reduction_pct": 75.0,
+  "label_reduction_factor": 4.0
+}

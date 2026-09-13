@@ -1,0 +1,12 @@
+{
+  "parser": "lxml.html.HTMLParser",
+  "recover": true,
+  "remove_comments": true,
+  "lxml_version": "6.1.0.0",
+  "order": "preorder",
+  "max_nodes": 4096,
+  "dom_tag_storage": "normalized string",
+  "browser_rendered": false,
+  "integrity_schema": "ParquetFile.schema_arrow.names",
+  "integrity_content_check": "deterministic sample up to 32 rows per parquet file"
+}

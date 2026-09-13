@@ -1,0 +1,22 @@
+{
+  "data_root": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+  "freeze_resolution_reason": "KNOWN_CANONICAL_PATH",
+  "freeze_counts": {
+    "SSL": 200000,
+    "CAL": 50000,
+    "FINAL": 168060
+  },
+  "private_manifest": "/kaggle/input/datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3/manifests/train_role_manifest_PRIVATE_WITH_LABELS.parquet",
+  "ood_flags": "/kaggle/input/datasets/cristinakaufalt/freezeresume/manifests/final_test_exact_ood_flags_SEALED.parquet",
+  "ood_flag_resolution_reason": "KNOWN_PATH",
+  "integrated_root": "/kaggle/input/newdataset/final_url_ssl_integrated_v2",
+  "integrated_resolution_reason": "KNOWN_CANONICAL_ARRAY_ROOT",
+  "integrated_marker_status": "ABSENT_BUT_NOT_REQUIRED",
+  "embedding_root": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/embeddings",
+  "historical_curve": "/kaggle/input/newdataset/final_url_ssl_integrated_v2/results/FF2_LABEL_CURVE_FINAL_ALL.csv",
+  "historical_curve_resolution_reason": "KNOWN_FILENAME:FF2_LABEL_CURVE_FINAL_ALL.csv",
+  "hidden_dim": 768,
+  "feature_dim": 1536,
+  "embedding_cache_complete": true,
+  "transformer_recompute_allowed": false
+}

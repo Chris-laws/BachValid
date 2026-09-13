@@ -1,0 +1,11 @@
+{
+  "label_sufficiency_available": true,
+  "minimal_statistically_sufficient_budget": 50000,
+  "reference_labels": 200000,
+  "label_reduction_factor": 4.0,
+  "label_reduction_pct": 75.0,
+  "quality_tolerance_tpr_pp": 1.0,
+  "ff4_h1_table": null,
+  "ff4_frontier_table": null,
+  "ff4_operational_table": null
+}

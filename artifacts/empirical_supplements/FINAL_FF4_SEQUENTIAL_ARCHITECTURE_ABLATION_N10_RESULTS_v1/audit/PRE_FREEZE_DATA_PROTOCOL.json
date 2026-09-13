@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "physical_ssl_rows": 200000,
+  "physical_ssl_contains_label": false,
+  "private_labels_joined_by_sha": true,
+  "ssl_dev_sha_disjoint": true,
+  "dev_rows": 20000,
+  "eng_tune_rows": 5000,
+  "eng_meta_rows": 5000,
+  "eng_tune_class_counts": {
+    "benign": 2500,
+    "phish": 2500
+  },
+  "eng_meta_class_counts": {
+    "benign": 2500,
+    "phish": 2500
+  },
+  "cal_content_accessed": false,
+  "final_content_accessed": false
+}

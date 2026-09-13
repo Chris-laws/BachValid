@@ -1,0 +1,45 @@
+{
+  "status": "COMPLETE",
+  "version": "FINAL_SSL_LABEL_SUFFICIENCY_N10_FF1_FF3_RESOURCE_LINK_v5_DIRECT_CACHE_RESOLVER",
+  "scientific_status": "N5_TO_N10_EXTENSION_WITH_PRE_SPECIFIED_SUFFICIENCY_MARGIN_DIRECT_CACHE_RESOLVER_V5",
+  "equal_budget_20k": {
+    "RUT_minus_R0_OFFICIAL_delta_tpr_pp": 6.0837239583333345,
+    "ci95_pp": [
+      5.380999309596069,
+      6.786448607070601
+    ],
+    "exact_signflip_p_two_sided": 0.001953125,
+    "positive_pairs": 10,
+    "n_pairs": 10
+  },
+  "label_sufficiency": {
+    "statistically_sufficient_budget_all_5_scenarios": 50000,
+    "descriptively_within_margin_budget_all_5_scenarios": 50000,
+    "reference_budget": 200000,
+    "margin_tpr_pp": 1.0,
+    "decision_rule": "all five exact one-sided margin-shifted sign-flip component tests p<0.05",
+    "intersection_union": true,
+    "independent_external_replication": false,
+    "label_reduction_pct": 75.0,
+    "label_reduction_factor": 4.0
+  },
+  "resource_synthesis": {
+    "label_sufficiency_available": true,
+    "minimal_statistically_sufficient_budget": 50000,
+    "reference_labels": 200000,
+    "label_reduction_factor": 4.0,
+    "label_reduction_pct": 75.0,
+    "quality_tolerance_tpr_pp": 1.0,
+    "ff4_h1_table": null,
+    "ff4_frontier_table": null,
+    "ff4_operational_table": null
+  },
+  "claim_boundaries": [
+    "The N10 combines five previously observed canonical runs with five new runs generated after the current analysis-plan lock.",
+    "This is not an independent external replication.",
+    "The 1 pp TPR margin is an analytical sufficiency tolerance shared with the thesis' primary cascade resource policy; it is not a universal business threshold.",
+    "A statistically sufficient label budget is declared only if all five scenario-specific one-sided exact non-inferiority tests reject at alpha 0.05.",
+    "Realized FINAL FPR differences are reported separately and must be discussed alongside TPR sufficiency.",
+    "No transformer representation or architecture is retrained in this notebook."
+  ]
+}

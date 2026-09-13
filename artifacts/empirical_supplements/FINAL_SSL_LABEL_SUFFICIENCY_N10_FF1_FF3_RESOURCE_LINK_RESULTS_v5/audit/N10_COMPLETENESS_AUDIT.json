@@ -1,0 +1,22 @@
+{
+  "n_runs": 10,
+  "historical_runs": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "new_runs": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "conditions_per_run": 6,
+  "scenarios_per_condition": 5,
+  "expected_rows": 300,
+  "observed_rows": 300,
+  "complete": true
+}

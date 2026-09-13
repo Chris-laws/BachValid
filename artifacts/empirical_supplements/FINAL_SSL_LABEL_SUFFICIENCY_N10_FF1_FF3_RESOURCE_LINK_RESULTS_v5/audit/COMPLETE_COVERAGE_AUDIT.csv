@@ -1,0 +1,13 @@
+check,pass
+analysis plan written before new fits,True
+canonical frozen embeddings reused,True
+historical N5 preserved unchanged,True
+five new runs completed,True
+N10 paired runs complete,True
+six planned conditions per run,True
+five frozen evaluation scenarios,True
+equal-budget N10 table,True
+four candidate budgets x five NI scenarios,True
+intersection-union budget table,True
+no transformer retraining,True
+no external benchmark dependency,True

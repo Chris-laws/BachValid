@@ -1,0 +1,103 @@
+{
+  "version": "FINAL_SSL_CROSS_PARADIGM_LABEL_BENCHMARK_N10_v1_FULL_GRID_XGB200K",
+  "scientific_status": "POST_HOC_CROSS_PARADIGM_EXTENSION_WITH_FULL_PREDEFINED_BUDGET_GRID",
+  "prior_rut_r0_results_already_observed": true,
+  "prior_50k_sufficiency_result_already_observed": true,
+  "claim": "post-hoc cross-paradigm benchmark extension; not independent prospective replication",
+  "budget_grid": [
+    2000,
+    5000,
+    10000,
+    20000,
+    50000,
+    100000,
+    200000
+  ],
+  "budget_preselection": null,
+  "primary_target_fpr": 0.005,
+  "scenarios": [
+    "OFFICIAL_TEST",
+    "DOMAIN_OOD_EXACT",
+    "TEMPLATE_OOD_EXACT",
+    "DOMAIN_TEMPLATE_OOD_EXACT",
+    "LATE_TEST_Q4"
+  ],
+  "references": {
+    "internal_mechanistic": "R0_200k_LINEAR",
+    "cross_paradigm_system": "TFIDF_XGB_200k"
+  },
+  "primary_reporting": "complete RUT budget-performance curve against both 200k references",
+  "internal_reference_inference": {
+    "design": "paired by canonical run",
+    "margin_tpr_pp": 1.0,
+    "component_test": "exact one-sided sign-flip on (RUT_B - R0_200k + margin)",
+    "global_within_budget": "intersection-union over all five scenarios",
+    "budget_family_correction": "Holm over seven global budget p-values"
+  },
+  "cross_paradigm_inference": {
+    "design": "independent N10 run distributions; no artificial seed pairing",
+    "role": "secondary/supportive system benchmark only",
+    "margin_tpr_pp": 1.0,
+    "component_test": "one-sided Welch non-inferiority screen",
+    "global_within_budget": "intersection-union over all five scenarios",
+    "budget_family_correction": "Holm over seven global budget p-values",
+    "causal_ssl_attribution_allowed": false
+  },
+  "cross_paradigm_primary_descriptive_rule": {
+    "rule": "all-scenario mean dominance is reported if mean TPR_RUT >= mean TPR_XGB and mean FPR_RUT <= mean FPR_XGB in every scenario",
+    "formal_test": false
+  },
+  "xgb_protocol": {
+    "tfidf_fit": "SSL 200k inputs only; labels unused",
+    "url": {
+      "analyzer": "char",
+      "ngram_range": [
+        3,
+        5
+      ],
+      "min_df": 2,
+      "max_features": 25000,
+      "sublinear_tf": true,
+      "norm": "l2"
+    },
+    "text": {
+      "analyzer": "word",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "min_df": 3,
+      "max_df": 0.995,
+      "max_features": 50000,
+      "sublinear_tf": true,
+      "strip_accents": "unicode",
+      "norm": "l2"
+    },
+    "xgb": {
+      "n_estimators": 400,
+      "max_depth": 6,
+      "learning_rate": 0.08,
+      "min_child_weight": 2,
+      "subsample": 0.9,
+      "colsample_bytree": 0.65,
+      "reg_lambda": 2.0,
+      "max_bin": 128,
+      "tree_method": "hist"
+    },
+    "n10_seeds": [
+      1042,
+      1062,
+      1082,
+      1102,
+      1122,
+      1342,
+      1362,
+      1382,
+      1402,
+      1422
+    ],
+    "retrain_all_xgb_models_in_current_runtime": true,
+    "reason": "avoid mixing historical and newly fitted XGB models across library/runtime versions"
+  },
+  "resource_interpretation_boundary": "label demand only; TAPT pretraining compute is not included in the label-budget comparison"
+}

@@ -1,0 +1,242 @@
+[
+  {
+    "run": 0,
+    "budget": 200,
+    "sample_hash": "c45ef0713c054ecbac4a52c4dd0013f637b9a179a7ee93052100495fbb479953",
+    "rows": 200
+  },
+  {
+    "run": 0,
+    "budget": 500,
+    "sample_hash": "2a10fe631824a937300deb2d1c48036edbfe567b8b50e53e88eb31c2d757832c",
+    "rows": 500
+  },
+  {
+    "run": 0,
+    "budget": 1000,
+    "sample_hash": "b3f21c980dcf37d24c0685ebff1541e3bb4b5a88e1fadd721e5988301bb4c2be",
+    "rows": 1000
+  },
+  {
+    "run": 0,
+    "budget": 2000,
+    "sample_hash": "2e7a682bcff1412fa83839d9e6cb13aa108293251bdc87d2351d32bb91a15c17",
+    "rows": 2000
+  },
+  {
+    "run": 1,
+    "budget": 200,
+    "sample_hash": "6cd2c8e7a22e182367360b2404950f6a8ffd05553b65ce64be5c3be907540e87",
+    "rows": 200
+  },
+  {
+    "run": 1,
+    "budget": 500,
+    "sample_hash": "f88ae3b7041e608212541ae0758b47506b6dd9228464885eb92dc2382b38e483",
+    "rows": 500
+  },
+  {
+    "run": 1,
+    "budget": 1000,
+    "sample_hash": "4a212f63b16e6436ee619c696adebceccf7292450a5852bc58d13a900802b533",
+    "rows": 1000
+  },
+  {
+    "run": 1,
+    "budget": 2000,
+    "sample_hash": "8a3d890259eadd13fdab86b458ea6912735d7fca420f354ee41790b3a22bb13a",
+    "rows": 2000
+  },
+  {
+    "run": 2,
+    "budget": 200,
+    "sample_hash": "b1e55aed74163e9433e350d663def9c5092b33b3b49358cc9bf34b363c4d733f",
+    "rows": 200
+  },
+  {
+    "run": 2,
+    "budget": 500,
+    "sample_hash": "c3067b910c6532080ed25f592eb0a2deade4e358a0473ac23c60ffc25eee7000",
+    "rows": 500
+  },
+  {
+    "run": 2,
+    "budget": 1000,
+    "sample_hash": "decac508df772d7f3fd2d0b4de5455f84a39539bc886e5dbc4c3f780c97aa100",
+    "rows": 1000
+  },
+  {
+    "run": 2,
+    "budget": 2000,
+    "sample_hash": "ab864699048ef26b5cf57a5b5a45af195ce471f28e46fd356e930b62869a3c7b",
+    "rows": 2000
+  },
+  {
+    "run": 3,
+    "budget": 200,
+    "sample_hash": "3c479b7bb3b9c3283c1477871fc64ddc4beabe8ff8f788e9dae64898c7e20589",
+    "rows": 200
+  },
+  {
+    "run": 3,
+    "budget": 500,
+    "sample_hash": "e01d236d078a081c8237d043adc372cedeedef4d18b267411a0b3cd40a192d15",
+    "rows": 500
+  },
+  {
+    "run": 3,
+    "budget": 1000,
+    "sample_hash": "1961fbf3c821cc587df939b653e680ca2858d8b9e64b0044b73425694758cea6",
+    "rows": 1000
+  },
+  {
+    "run": 3,
+    "budget": 2000,
+    "sample_hash": "04da94645634e864a78972e1754693c12c3bc1dffee9139fc7a1573051485b7a",
+    "rows": 2000
+  },
+  {
+    "run": 4,
+    "budget": 200,
+    "sample_hash": "bbc7fef7586f3ee0b0e79292e9347ad42e878a73626e8237071ee9182dfe2056",
+    "rows": 200
+  },
+  {
+    "run": 4,
+    "budget": 500,
+    "sample_hash": "32047453f92f87486bdadf37d96d0097c2af0afd4a5a22a2bc540a454f3fe4cb",
+    "rows": 500
+  },
+  {
+    "run": 4,
+    "budget": 1000,
+    "sample_hash": "cacaa48a365f706d2b84a54d583e6d0ad9962de58e3ba0186ecf174a0ecdb4e8",
+    "rows": 1000
+  },
+  {
+    "run": 4,
+    "budget": 2000,
+    "sample_hash": "89a433132e55f8a2b5385c79f7979441a16faa017f3e65be906a53e91233b0ff",
+    "rows": 2000
+  },
+  {
+    "run": 5,
+    "budget": 200,
+    "sample_hash": "5053673bbf43198f1c3247ffc227f9e797033e081d857ad0b1b9b7d3dd8e5ef7",
+    "rows": 200
+  },
+  {
+    "run": 5,
+    "budget": 500,
+    "sample_hash": "ca55fd09bebbbb8807b4e60b26d9ba7a124e82d552e50df49daa870f739ebf57",
+    "rows": 500
+  },
+  {
+    "run": 5,
+    "budget": 1000,
+    "sample_hash": "989c180e55267d7b108246005c1de9467ce996a22def1a7105cdc561c5323247",
+    "rows": 1000
+  },
+  {
+    "run": 5,
+    "budget": 2000,
+    "sample_hash": "d2ea9f234b2faddd57f204648d8c650723cb3cb9fe6a3f350e7742f5b500f076",
+    "rows": 2000
+  },
+  {
+    "run": 6,
+    "budget": 200,
+    "sample_hash": "4d30b7970cf7733f73f943df0f3fc71f1b7bf256f4842bde775054103906a4ff",
+    "rows": 200
+  },
+  {
+    "run": 6,
+    "budget": 500,
+    "sample_hash": "c6443a5e5449796350cafac042e7f0448f147eacc769f46ed9abecf9555ac729",
+    "rows": 500
+  },
+  {
+    "run": 6,
+    "budget": 1000,
+    "sample_hash": "7027d22a7addd565bcbff6bf00db516f7fa175ab1ede25435fafa10520da98f3",
+    "rows": 1000
+  },
+  {
+    "run": 6,
+    "budget": 2000,
+    "sample_hash": "07c50aca027d8371f65a012e20eaab0dd74ac2ecc10f1069e8c72d58bc269fbc",
+    "rows": 2000
+  },
+  {
+    "run": 7,
+    "budget": 200,
+    "sample_hash": "2abd410c6354ec69ac63fcb1b92017a70ad0aa200d08604c99053e5091273c36",
+    "rows": 200
+  },
+  {
+    "run": 7,
+    "budget": 500,
+    "sample_hash": "6282dbcd2590168f933a0f6f4c963f4b18a5820cda64e43ca98ca57750b0336f",
+    "rows": 500
+  },
+  {
+    "run": 7,
+    "budget": 1000,
+    "sample_hash": "76b85203681cd59b31e8529310e6a86ba6cb477081d16f684b7834e4cec9c81e",
+    "rows": 1000
+  },
+  {
+    "run": 7,
+    "budget": 2000,
+    "sample_hash": "1347791770d9753485ae7f7347b0158e11a4ada637709203d13eff313901ed59",
+    "rows": 2000
+  },
+  {
+    "run": 8,
+    "budget": 200,
+    "sample_hash": "9400bab87eb6f5c4e5e161e6b9e5d5d72d74d82ce88679291bf005d1a7569a43",
+    "rows": 200
+  },
+  {
+    "run": 8,
+    "budget": 500,
+    "sample_hash": "68631ed302e6ebbaef92c30de8abde010b3cdee0c140bf88025e9a0adecafa2f",
+    "rows": 500
+  },
+  {
+    "run": 8,
+    "budget": 1000,
+    "sample_hash": "df9bf5bdbb54b5b10f96dd13d938ba0806d1768988a7c5390e6471ac1c42e63d",
+    "rows": 1000
+  },
+  {
+    "run": 8,
+    "budget": 2000,
+    "sample_hash": "48b718245fc1b11c03753dbe84015790313c42a4d4e97d10a0b0a98aed781f8a",
+    "rows": 2000
+  },
+  {
+    "run": 9,
+    "budget": 200,
+    "sample_hash": "159868345d8f559162b786b939535ceb4c7b1ba13a5d0093357870687915d80c",
+    "rows": 200
+  },
+  {
+    "run": 9,
+    "budget": 500,
+    "sample_hash": "ac79144a8ab58d2068376492477f94b232ff08ee1cbcf883a783d84b4538cc74",
+    "rows": 500
+  },
+  {
+    "run": 9,
+    "budget": 1000,
+    "sample_hash": "c34d4c19c5682b30fb5dd577f35117823f871aa03c3aa2c2c559b65f7244cc5e",
+    "rows": 1000
+  },
+  {
+    "run": 9,
+    "budget": 2000,
+    "sample_hash": "59481667b61e39dbfb3e9cb8f5f2dc37727b29a66465d03a3c3e07bd0f429cba",
+    "rows": 2000
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "status": "COMPLETE",
+  "freeze_id": "PHRESHPHISH_FINAL_DATA_FREEZE_v3_HF_SHARDED_DOM",
+  "revision": "eabec4b7a66324b79cc8a0ad856d1731dc26fe1a",
+  "hf_authenticated": true,
+  "network_design": "one raw download per official shard; local processing; raw shard deleted",
+  "legacy_anchor": {
+    "available": true,
+    "path": "/kaggle/input/datasets/cristinakaufalt/dataset/split_roles_and_holdout_cache_v2_ram_safe.pkl",
+    "used": true,
+    "found": 4000,
+    "label_mismatch": 0
+  },
+  "ssl_export_contains_label": false,
+  "final_test_used_for_model_selection": false,
+  "static_dom": true,
+  "browser_rendered_dom": false,
+  "near_duplicate_ood": "not yet frozen",
+  "roles": {
+    "supervised": "roles/supervised_pool",
+    "development": "roles/development",
+    "calibration": "roles/fpr_calibration_benign",
+    "ssl": "roles/ssl_pool_200k",
+    "final_test": "roles/final_test"
+  }
+}

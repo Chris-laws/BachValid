@@ -1,0 +1,27 @@
+{
+  "DATA_ROOT": {
+    "prefix": "datasets/cristinakaufalt/finaldatafreeze/phreshphish_FINAL_DATA_FREEZE_v3",
+    "file_count": 1063,
+    "total_bytes": 2753298047,
+    "root_digest_sha256": "77f6c6ecd947047f1b59399936399a984a798c7ee42d2c2f663804095acbb515"
+  },
+  "META_ROOT": {
+    "prefix": "datasets/cristinakaufalt/freezeresume",
+    "file_count": 48,
+    "total_bytes": 94958793,
+    "root_digest_sha256": "2fac946d6eeab6cd05def31491d4cccc0e50aa529e9e9988124082c042ff241f"
+  },
+  "R1_DAPT_TEXT": {
+    "prefix": "datasets/cristinakaufalt/bigresults/phreshphish_FINAL_DEEP_TRIMODAL_SSL_v4_3_LABELSET_ALIGNMENT_FIX/checkpoints/R1_DAPT_TEXT",
+    "file_count": 5,
+    "total_bytes": 499802406,
+    "root_digest_sha256": "59477b25a218f6887ba973fe3269b613b85067307681ad2946c98702f3471549"
+  },
+  "ROBERTA_BASE": {
+    "prefix": "datasets/cristinakaufalt/carmengeiss/roberta-base",
+    "file_count": 29,
+    "total_bytes": 2815198683,
+    "root_digest_sha256": "e182b6d30a0c7693c11facafd51381eae6be675cfbc81fdab7d971dedad7b9e9"
+  },
+  "BERT_BASE_LOCAL": null
+}
