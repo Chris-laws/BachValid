@@ -123,15 +123,13 @@ Zunächst werden allgemein vortrainierte Basisencoder mit Varianten verglichen, 
 URL-Repräsentation, die HTML-Text-Repräsentation oder beide Informationszweige mittels TAPT
 auf ungelabelten Webseitendaten weiter angepasst werden. Ihre Downstream-Nutzbarkeit wird mit
 logistischer Regression und einem kleinen Mehrschicht-Perzeptron über sieben Labelbudgets
-untersucht. Kontrastives Repräsentationslernen wird ergänzend anhand eines vorgelagerten
-explorativen Versuchs eingeordnet.
+untersucht.
 
 FF3 vergleicht RUT über das gesamte Budgetraster mit R0@200k und TF-IDF/XGBoost@200k.
 Für diese N10-Vergleiche werden Konfidenzintervalle, exakte Tests und korrigierte
 Nichtunterlegenheitsentscheidungen berichtet. Modell- und Systementwicklung nutzen DEV,
-die Schwellenbestimmung CAL und die Leistungsbewertung FINAL. Nachträglich ergänzte
-Analysen werden gesondert gekennzeichnet. Eine externe Putra-Auswertung ergänzt die
-Labelbudgetanalyse.
+die Schwellenbestimmung CAL und die Leistungsbewertung FINAL. Ergänzende Analysen werden
+gesondert gekennzeichnet. Eine externe Putra-Auswertung ergänzt die Labelbudgetanalyse.
 
 Anschließend wird die RUT-Basis schrittweise um HTML-Text, DOM und Gating erweitert.
 Eine sequenzielle Komponentenablation prüft deren inkrementellen Beitrag. Das TRI-System
