@@ -48,8 +48,6 @@ bezeichnet. Dadurch entstehen für die unterschiedlichen Auswahlstufen getrennte
 Ausführung jedoch identische Rangfolgen. Listing~\ref{lst:stable_rank} im Anhang zeigt die hierfür
 verwendete Funktion.
 
-
-
 SUP und DEV werden auf dieser Grundlage jeweils klassenweise gebildet. CAL wird
 anschließend ausschließlich aus noch nicht zugeordneten benignen Instanzen bestimmt, bevor
 der SSL-Pool aus dem verbleibenden Bestand abgeleitet wird. Die Implementierung prüft
@@ -68,8 +66,6 @@ später für die Template-basierten OOD-Szenarien benötigt wird.
 Listing~\ref{lst:process_row} im Anhang fasst die für Text-, Template- und DOM-Ableitung maßgeblichen
 Verarbeitungsschritte zusammen.
 
-
-
 Der Ausschnitt zeigt nur die für die beschriebenen Ableitungen relevanten Teile der Funktion;
 die vollständige Implementierung verbleibt in den digitalen Artefakten. Die DOM-Struktur wird
 aus dem gespeicherten HTML statisch rekonstruiert. Für jeden berücksichtigten Knoten werden
@@ -83,8 +79,6 @@ Eine zentrale technische Trennung betrifft den SSL-Pool. Entsprechend dem in Abs
 beschriebenen Prinzip des selbstüberwachten Lernens werden dessen physische Parquet-Dateien
 ohne Downstream-Label gespeichert. Die Spalte \texttt{label} wird bereits während der
 Rollenmaterialisierung explizit entfernt, wie Listing~\ref{lst:remove_label} im Anhang zeigt.
-
-
 
 Die finale Pipeline kontrolliert zusätzlich über das Parquet-Schema, dass die physischen
 SSL-Dateien weiterhin keine Labelspalte enthalten. Die Klasseninformationen verbleiben
@@ -130,8 +124,6 @@ Trainingsbudget zu verstehen.
 Für das URL-TAPT werden 15\,\% MLM-Maskierung, AdamW, eine Lernrate von
 $5\cdot 10^{-5}$, Weight Decay 0,01 und 6\,\% Warmup verwendet.
 Listing~\ref{lst:url_tapt} im Anhang zeigt die dafür maßgebliche Trainingskonfiguration.
-
-
 
 Der TAPT-Pfad liest ausschließlich URLs aus dem physischen SSL-Pool; als Batch-Fallback
 sind 16 und 8 hinterlegt. Für den HTML-Text-Zweig wird derselbe MLM-Mechanismus mit
@@ -179,19 +171,6 @@ werden über fünf gepaarte Wiederholungen erzeugt. Für das zentrale Budget von
 wird zusätzlich der in Abschnitt 4.3.2 beschriebene N10-Lauf durchgeführt; die konkrete
 Seedsteuerung und Reproduzierbarkeitslogik wird in Abschnitt 5.6 zusammengeführt.
 
-Ergänzend wurde in einem vorgelagerten Entwicklungsversuch ein kontrastiver SSL-Pfad
-implementiert. R2C und R3C kombinieren modalitätsinterne Ansichten mit
-URL--HTML-Positivpaaren; CSAME verwendet ausschließlich Same-Modality-Paare. Für den
-historischen Vergleich wurde eine Temperatur von 0,10 verwendet. Um eng verwandte
-Webseiten nicht als reguläre Negativbeispiele zu behandeln, werden Kandidaten mit identischer
-nichtleerer Domain oder identischem nichtleerem Template-Hash aus der jeweiligen
-Negativmenge ausgeschlossen.
-
-Der kontrastive Pfad stammt aus einem eigenständigen früheren Versuchsblock und wird nicht
-mit der finalen R0/RU/RT/RUT-Ablation vermischt. Seine Ergebnisse werden in Kapitel 6
-deskriptiv als explorativer Objective-Vergleich dokumentiert; die finalen TAPT- und
-Systementscheidungen werden daraus nicht abgeleitet.
-
 \paragraph{Labelbudgetvergleich und klassische Referenz.}
 Für den statistischen Labelbudgetvergleich werden die bereits extrahierten R0- und
 RUT-Repräsentationen wiederverwendet; ein erneutes Transformertraining findet in diesem
@@ -228,16 +207,12 @@ TRI ergänzt die strukturelle DOM-Repräsentation.
 Im Deep-System werden die obersten vier Transformerlayer für das überwachte Training
 freigegeben. Listing~\ref{lst:freeze_last} im Anhang zeigt die entsprechende Parameterselektion.
 
-
-
 Alle übrigen Transformerparameter bleiben eingefroren; ein vorhandener Pooler wird ebenfalls
 trainierbar gehalten. Die über \texttt{rep} gewählten Basis- oder TAPT-Encoder werden nach
 dem Masked Mean Pooling jeweils auf 256 Dimensionen projiziert und L2-normalisiert. Der
 DOM-Zweig verarbeitet die im Data Freeze gespeicherten Knotenmerkmale und
 Eltern-Kind-Beziehungen; pro Webseite werden maximal 512 Knoten in das Deep-System
 übernommen. Listing~\ref{lst:dom_encoder} im Anhang zeigt den Kern der GCN-basierten Knotenkodierung.
-
-
 
 Tag, Tiefe, Attribut- und Kindanzahl werden mit 96, 16, 8 und 8 Dimensionen eingebettet
 und zu 128-dimensionalen Knotenvektoren kombiniert. Nach drei GCN-Schichten werden die
@@ -246,8 +221,6 @@ auf 256 Dimensionen projiziert und L2-normalisiert.
 
 Vor dem überwachten TRI-Training wird der DOM-Encoder über die Rekonstruktion maskierter
 DOM-Tags selbstüberwacht vorangepasst.
-
-
 
 Maskiert werden 30\,\% der Tags; trainiert wird über eine Epoche mit Batchgröße 64 und
 $2\cdot10^{-3}$ Lernrate. Der Verlust wird ausschließlich auf den tatsächlich maskierten
@@ -258,8 +231,6 @@ bleibt dabei vom tokenbasierten MLM der Transformerzweige getrennt.
 Die aktiven Modalitätsrepräsentationen werden in \texttt{DeepFusion} zusammengeführt.
 Listing~\ref{lst:deep_fusion} im Anhang zeigt den für Gating, Fusion und Main Head relevanten
 Architekturausschnitt.
-
-
 
 Das in Abschnitt 4.5.1 konzipierte Gating wird damit unmittelbar auf den normalisierten
 Modalitätsvektoren umgesetzt. Für jede Modalität berechnet ein zweischichtiges Netz der Form
@@ -349,15 +320,14 @@ drei Modalitäten mit lernbarem Gating.
 
 Die initialen RUT-URL- und Textcheckpoints sowie der DOM-SSL-Encoder sind über die
 Replikationen identisch; die im Deep-Training freigegebenen Parameter werden weiterhin
-überwacht optimiert. Pro Replikation
-erhalten alle vier Varianten dieselbe balancierte Stichprobe aus 20.000 Labels; zehn Modell-
-und zehn korrespondierende Ranking-Seeds bilden die gepaarten N10-Läufe. Jede Variante wird
-eine Epoche mit festem Batch acht trainiert, sodass kein zusätzlicher Unterschied durch
-OOM-Fallbacks entsteht. Die Schwelle für 0,5\,\% Ziel-FPR wird ausschließlich auf den
-benignen Beispielen von ENG\_TUNE bestimmt, die primäre TPR auf dem disjunkten
-ENG\_META. CAL und FINAL werden nicht aufgerufen. Protokolliert werden die drei
-angrenzenden TPR-Kontraste Text, DOM und Gating; Gate-Gewichte dienen nur der ergänzenden
-Diagnose.
+überwacht optimiert. Pro Replikation erhalten alle vier Varianten dieselbe balancierte
+Stichprobe aus 20.000 Labels; zehn Modell- und zehn korrespondierende Ranking-Seeds bilden
+die gepaarten N10-Läufe. Jede Variante wird eine Epoche mit festem Batch acht trainiert,
+sodass kein zusätzlicher Unterschied durch OOM-Fallbacks entsteht. Die Schwelle für
+0,5\,\% Ziel-FPR wird ausschließlich auf den benignen Beispielen von ENG\_TUNE bestimmt,
+die primäre TPR auf dem disjunkten ENG\_META. CAL und FINAL werden nicht aufgerufen.
+Protokolliert werden die drei angrenzenden TPR-Kontraste Text, DOM und Gating;
+Gate-Gewichte dienen nur der ergänzenden Diagnose.
 
 \section{Implementierung der Kaskade und Messinstrumentierung}
 
@@ -371,8 +341,6 @@ eskaliert.
 
 Die beiden Routinggrenzen werden ausschließlich auf Development-Daten festgelegt.
 Listing~\ref{lst:cascade_thresholds} im Anhang zeigt deren Berechnung.
-
-
 
 Die obere Grenze $t_{\mathrm{high}}$ wird anhand der benignen URL-Scores so bestimmt, dass
 sie einem FPR-Ziel von 0,1\,\% auf Development entspricht. Scores oberhalb dieser Grenze
@@ -405,8 +373,6 @@ bestimmten 0,5-\%-Betriebspunkt des finalen Klassifikators zu unterscheiden.
 
 Listing~\ref{lst:cascade_route} im Anhang zeigt die entsprechende Routinglogik.
 
-
-
 Die Kaskade setzt damit nicht voraus, dass der URL-Zweig über den gesamten Datenbestand
 dieselbe Klassifikationsleistung wie das multimodale Vollsystem erreicht. Der URL-Score wird
 nur für die auf Development abgegrenzten äußeren Scorebereiche als direkte
@@ -422,8 +388,8 @@ Head wie im vollständigen Deep-System. Die Kaskade verändert damit weder die z
 liegenden Repräsentationen noch die Fusionslogik, sondern ausschließlich den für eine Instanz
 tatsächlich ausgeführten Berechnungspfad.
 
-Bei der Reproduktion sind Datentyp und Grenzwertbehandlung Teil des Protokolls:
-die gespeicherten Kaskadenscores beruhen auf Float32-Logits und der damaligen
+Bei der Reproduktion sind Datentyp und Grenzwertbehandlung Teil des Protokolls: die
+gespeicherten Kaskadenscores beruhen auf Float32-Logits und der damaligen
 NumPy-Skalarumwandlung. Eine nachträgliche Umstellung des Routingvergleichs auf Float64
 ändert bei gebundenen Scores die Eskalationsmenge. Das digitale Prüfskript setzt die
 Routinggrenzen deshalb explizit auf Float32, während der abschließende
@@ -466,5 +432,3 @@ Anschließende Coverage-Audits prüfen, ob die erwarteten Ergebnisdateien für a
 Varianten und Wiederholungen vorliegen. Bei fehlenden Ergebnissen wird die Auswertung
 abgebrochen. Dadurch lassen sich die in Kapitel 6 berichteten Ergebnisse ihren jeweiligen
 Konfigurationen und Versuchsständen eindeutig zuordnen.
-
-
