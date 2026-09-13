@@ -18,18 +18,19 @@ Die Evaluation verwendet den in Abschnitt 4.2 definierten Data Freeze mit insges
 auf den für TAPT und die nachgelagerte Labelbudgetanalyse verwendeten SSL-Pool, 50.000
 ausschließlich legitime Instanzen auf CAL sowie 168.060 Instanzen auf FINAL. Die
 ursprüngliche Repräsentations- und Systementwicklung wurde vor dem Zugriff auf CAL und
-FINAL abgeschlossen. Die später ergänzten Labelbudget-, Komponenten- und
-Sensitivitätsanalysen werden entsprechend der in Abschnitt 4.6 beschriebenen zeitlichen
-Reihenfolge getrennt ausgewiesen.
+FINAL abgeschlossen. Ergänzende Labelbudget-, Komponenten- und Sensitivitätsanalysen werden
+entsprechend ihrer Funktion getrennt ausgewiesen.
 
 Für FINAL wird die TPR bei einer auf CAL für 0,5\,\% FPR bestimmten Schwelle
 berichtet. Die DEV-Auswertungen von FF1 und FF2 verwenden dagegen die interne
-Teilung REP\_CAL/REP\_EVAL; die FF4-Komponentenablation nutzt ENG\_TUNE/ENG\_META. Die Schwelle wird für die FINAL-Auswertung nicht erneut
-angepasst. Neben \nolinkurl{OFFICIAL_TEST} werden \nolinkurl{DOMAIN_OOD_EXACT},
+Teilung REP\_CAL/REP\_EVAL; die FF4-Komponentenablation nutzt ENG\_TUNE/ENG\_META.
+Die Schwelle wird für die FINAL-Auswertung nicht erneut angepasst. Neben
+\nolinkurl{OFFICIAL_TEST} werden \nolinkurl{DOMAIN_OOD_EXACT},
 \nolinkurl{TEMPLATE_OOD_EXACT}, \nolinkurl{DOMAIN_TEMPLATE_OOD_EXACT} und
 \nolinkurl{LATE_TEST_Q4} ausgewertet. Die jeweiligen Umfänge betragen 168.060, 115.917,
 161.223, 110.095 und 46.784 Webseiten. Die vier Teilmengen prüfen unterschiedliche
-Eigenschaften der Testdaten; aus ihrer Reihenfolge wird keine Schwierigkeitsskala abgeleitet. FF1 und die ursprünglichen Lernkurven von FF2 beruhen auf fünf gepaarten Wiederholungen.
+Eigenschaften der Testdaten; aus ihrer Reihenfolge wird keine Schwierigkeitsskala abgeleitet.
+FF1 und die ursprünglichen Lernkurven von FF2 beruhen auf fünf gepaarten Wiederholungen.
 Für den zentralen Equal-Budget-Vergleich und die Labelbudgetanalyse werden fünf weitere
 Wiederholungen ergänzt. N10 variiert damit Labelauswahl und Downstream-Training bei
 unveränderten TAPT-Checkpoints. Die sequenzielle FF4-Komponentenablation verwendet zehn
@@ -78,14 +79,13 @@ MLP & RUT & 91,17\,\% & 0,49\,\% & 0,412\,\% \\
 
 Auch aus der umgekehrten Betriebspunktperspektive ergibt sich dasselbe Bild. Wird die TPR
 auf mindestens 90\,\% angehoben, gibt FPR@TPR90 die False-Positive-Rate am
-ersten entsprechenden ROC-Punkt an; niedrigere
-Werte sind entsprechend günstiger. RUT erreicht mit 0,408\,\% beziehungsweise 0,412\,\%
-die niedrigste mittlere FPR beider Probes. Die Repräsentationsauswahl wird damit durch zwei
-komplementäre Low-FPR-Perspektiven gestützt. Bei fünf Beobachtungspaaren beträgt der
-kleinste mögliche zweiseitige p-Wert des exakten Sign-Flip-Tests 0,0625. Die inferenzstatistische
-Prüfung des zentralen RUT--R0-Vergleichs erfolgt mit zehn Beobachtungspaaren
-auf FINAL in Abschnitt 6.4. Wegen der anderen Evaluationspopulation ist dies keine
-inferenzstatistische Nachprüfung desselben DEV-Effekts.
+ersten entsprechenden ROC-Punkt an; niedrigere Werte sind entsprechend günstiger. RUT erreicht
+mit 0,408\,\% beziehungsweise 0,412\,\% die niedrigste mittlere FPR beider Probes. Die
+Repräsentationsauswahl wird damit durch zwei komplementäre Low-FPR-Perspektiven gestützt.
+Bei fünf Beobachtungspaaren beträgt der kleinste mögliche zweiseitige p-Wert des exakten
+Sign-Flip-Tests 0,0625. Die inferenzstatistische Prüfung des zentralen RUT--R0-Vergleichs
+erfolgt mit zehn Beobachtungspaaren auf FINAL in Abschnitt 6.4. Wegen der anderen
+Evaluationspopulation ist dies keine inferenzstatistische Nachprüfung desselben DEV-Effekts.
 
 \begin{figure}[!ht]
 \centering
@@ -153,21 +153,23 @@ Labels & R0 & RT & RU & RUT \\
 \end{table}
 
 Der Vorteil der task-adaptierten Repräsentation bleibt damit bei beiden
-Downstream-Klassifikatoren über sämtliche untersuchten Labelbudgets bestehen. Auf DEV erreicht RUT als
-ergänzende Sättigungsperspektive mit der linearen Probe 95\,\% des eigenen
-200k-Niveaus bereits bei 10.000 Labels, während R0 hierfür 50.000 Labels benötigt.
-Beim MLP liegen die entsprechenden B95-Punkte bei 50.000 beziehungsweise 100.000
-Labels. Auf FINAL liegt B95 dagegen für R0 und RUT jeweils bei 50.000 Labels
-mit der linearen Probe und bei 100.000 Labels mit dem MLP. Die frühere relative
-Sättigung von RUT auf DEV überträgt sich somit nicht auf diese FINAL-Kennzahl.
-Da B95 jeweils auf das eigene Endniveau einer Variante bezogen ist, wird die
-absolute Performance-Suffizienz gegenüber vollständig trainierten Referenzen erst in FF3
-geprüft. Zur zusätzlichen Prüfung der Label-Effizienz außerhalb des PhreshPhish-Datenbestands werden
+Downstream-Klassifikatoren über sämtliche untersuchten Labelbudgets bestehen. Auf DEV erreicht
+RUT als ergänzende Sättigungsperspektive mit der linearen Probe 95\,\% des eigenen
+200k-Niveaus bereits bei 10.000 Labels, während R0 hierfür 50.000 Labels benötigt. Beim MLP
+liegen die entsprechenden B95-Punkte bei 50.000 beziehungsweise 100.000 Labels. Auf FINAL
+liegt B95 dagegen für R0 und RUT jeweils bei 50.000 Labels mit der linearen Probe und bei
+100.000 Labels mit dem MLP. Die frühere relative Sättigung von RUT auf DEV überträgt sich
+somit nicht auf diese FINAL-Kennzahl. Da B95 jeweils auf das eigene Endniveau einer Variante
+bezogen ist, wird die absolute Performance-Suffizienz gegenüber vollständig trainierten
+Referenzen erst in FF3 geprüft.
+
+Zur zusätzlichen Prüfung der Label-Effizienz außerhalb des PhreshPhish-Datenbestands werden
 R0 und RUT auf dem unabhängig erhobenen Phishing Website Dataset von Putra (2023)
 verglichen. Auf dem zeitlich früheren Datenbestand werden identische, verschachtelte
 Stichproben von 200, 500, 1.000 und 2.000 gelabelten Webseiten für zehn gepaarte
-Linear-Probes verwendet und auf dem zeitlich späteren Bestand ausgewertet. Über die gesamte externe Lernkurve erreicht RUT eine mittlere AP-AULC von 91,98\,\%
-gegenüber 89,45\,\% für R0. Die gepaarte Differenz beträgt +2,54 Prozentpunkte
+Linear-Probes verwendet und auf dem zeitlich späteren Bestand ausgewertet. Über die gesamte
+externe Lernkurve erreicht RUT eine mittlere AP-AULC von 91,98\,\% gegenüber 89,45\,\%
+für R0. Die gepaarte Differenz beträgt +2,54 Prozentpunkte
 (95\,\%-KI [2,16; 2,91], 10/10 positive Paare, $p=0{,}001953$).
 
 \begin{table}[H]
@@ -188,24 +190,14 @@ Labels & R0 AP & RUT AP & $\Delta$ AP & 95\,\%-KI \\
 \end{tabular}
 \end{table}
 
-Die zusätzliche Zielanpassung von Quell-RUT auf dem frühen Putra-Pool verbessert
-dieses Ergebnis nicht. Ihre mittlere AP-AULC fällt von 91,98\,\% auf 90,84\,\%;
-die gepaarte Differenz beträgt $-1{,}14$ Prozentpunkte
-(95-\%-KI [$-1{,}50$; $-0{,}78$], zehn negative Paare, $p=0{,}001953125$).
-Die budgetweisen AP-Differenzen betragen bei 200, 500, 1.000 und 2.000 Labels
-$-2{,}28$, $-1{,}31$, $-0{,}49$ und $-0{,}51$ Prozentpunkte.
-Auch diese vier Unterschiede bleiben nach Holm-Korrektur signifikant
-($p_{\mathrm{Holm}}\leq0{,}01171875$). Der Vorteil von Quell-RUT gegenüber R0
-und die Verschlechterung durch eine weitere Zielanpassung betreffen verschiedene
-Interventionen; der zweite Befund begrenzt eine pauschale Empfehlung wiederholten TAPT.
-
-RUT erreicht damit an allen vier externen Labelbudgets eine höhere mittlere AP.
-Sämtliche budgetweisen Vergleiche bleiben nach Holm-Korrektur signifikant
-($p_{\mathrm{Holm}}=0{,}007812$). Der innerhalb von PhreshPhish beobachtete Vorteil
-der task-adaptierten Repräsentation bleibt somit auch unter begrenzter gelabelter
-Supervision auf dem unabhängig erhobenen Webseitenbestand bestehen. Abbildung~\ref{fig:ff2_curves} fasst abschließend die internen Lernkurven der vier
-Repräsentationsvarianten zusammen. Die externe Putra-Auswertung wird aufgrund des
-abweichenden Budgetrasters separat in Tabelle~\ref{tab:ff2_putra} ausgewiesen.
+RUT erreicht damit an allen vier externen Labelbudgets eine höhere mittlere AP. Sämtliche
+budgetweisen Vergleiche bleiben nach Holm-Korrektur signifikant
+($p_{\mathrm{Holm}}=0{,}007812$). Der innerhalb von PhreshPhish beobachtete Vorteil der
+task-adaptierten Repräsentation bleibt somit auch unter begrenzter gelabelter Supervision auf
+dem unabhängig erhobenen Webseitenbestand bestehen. Abbildung~\ref{fig:ff2_curves} fasst
+abschließend die internen Lernkurven der vier Repräsentationsvarianten zusammen. Die externe
+Putra-Auswertung wird aufgrund des abweichenden Budgetrasters separat in
+Tabelle~\ref{tab:ff2_putra} ausgewiesen.
 
 \begin{figure}[H]
 \centering
@@ -236,11 +228,11 @@ jeweils mit 200.000 Labels trainiert wurden. Gegen R0@200k bleiben Repräsentati
 Linear Probe identisch. Ein RUT-Budget wird nur dann als ausreichend bewertet, wenn die
 festgelegte Nichtunterlegenheitsbedingung von einem Prozentpunkt in allen fünf
 Evaluationsbedingungen erfüllt wird und die anschließende Holm-Korrektur über die sieben
-Budgetentscheidungen bestehen bleibt. Abbildung~\ref{fig:ff3_heatmap} zeigt die absoluten mittleren TPR-Werte der
-RUT-Repräsentation über die fünf Evaluationsbedingungen und ausgewählte Trainingsbudgets.
-Die Werte steigen in allen Bedingungen mit wachsendem Labelbudget. Die Darstellung allein
-legt jedoch noch keine ausreichende Budgetstufe fest; hierfür ist der statistische Vergleich mit
-den beiden 200k-Referenzen maßgeblich.
+Budgetentscheidungen bestehen bleibt. Abbildung~\ref{fig:ff3_heatmap} zeigt die absoluten
+mittleren TPR-Werte der RUT-Repräsentation über die fünf Evaluationsbedingungen und
+ausgewählte Trainingsbudgets. Die Werte steigen in allen Bedingungen mit wachsendem
+Labelbudget. Die Darstellung allein legt jedoch noch keine ausreichende Budgetstufe fest; hierfür
+ist der statistische Vergleich mit den beiden 200k-Referenzen maßgeblich.
 
 \begin{figure}[!ht]
 \centering
@@ -256,15 +248,17 @@ Prozentpunkte. Mit 50.000 Labels wird die Nichtunterlegenheitsbedingung dagegen 
 Bedingungen erfüllt; die korrigierte Entscheidung bleibt nach Holm signifikant
 ($p_{\mathrm{Holm}}=0{,}006836$). Die mittlere TPR von RUT50k liegt dabei in allen fünf
 Bedingungen um +3,24 bis +3,62 Prozentpunkte über R0@200k. Gleichzeitig fällt die mittlere
-realisierte FPR um 0,079 bis 0,180 Prozentpunkte niedriger aus. Als zweite Referenz dient die unabhängig trainierte TF-IDF/XGBoost-Pipeline mit 200.000
+realisierte FPR um 0,079 bis 0,180 Prozentpunkte niedriger aus.
+
+Als zweite Referenz dient die unabhängig trainierte TF-IDF/XGBoost-Pipeline mit 200.000
 Labels. Tabelle~\ref{tab:ff3_xgb} zeigt die Ergebnisse für die beiden RUT-Budgets von 20.000
 und 50.000 Labels. Bereits RUT20k erreicht in allen fünf Bedingungen mindestens die mittlere
-XGBoost-TPR und zugleich eine niedrigere mittlere FPR. Der kleinste TPR-Vorsprung beträgt
-auf Late Q4 allerdings nur +0,09 Prozentpunkte.
+XGBoost-TPR und zugleich eine niedrigere mittlere FPR. Der kleinste TPR-Vorsprung beträgt auf
+Late Q4 allerdings nur +0,09 Prozentpunkte.
 
-Die fünf einzelnen Nichtunterlegenheitstests für RUT20k erfüllen jeweils die
-1-pp-Bedingung, die gemeinsame Budgetentscheidung erreicht nach der Holm-Korrektur über
-alle sieben getesteten Budgets jedoch nicht das festgelegte Signifikanzniveau
+Die fünf einzelnen Nichtunterlegenheitstests für RUT20k erfüllen jeweils die 1-pp-Bedingung,
+die gemeinsame Budgetentscheidung erreicht nach der Holm-Korrektur über alle sieben getesteten
+Budgets jedoch nicht das festgelegte Signifikanzniveau
 ($p_{\mathrm{Holm}}=0{,}173233$). RUT20k übertrifft XGBoost@200k damit deskriptiv in allen
 fünf betrachteten Bedingungen, reicht für die strengere statistische Budgetentscheidung jedoch
 nicht aus.
@@ -355,7 +349,9 @@ hinzugefügten Bestandteile im festgelegten Vergleich einen positiven zusätzlic
 Passend dazu erreicht die bereits eingefrorene Gated-TRI-Konfiguration auch auf FINAL in allen
 fünf Bedingungen eine höhere TPR als die gleichgewichtete Fusion. Auf
 \nolinkurl{OFFICIAL_TEST} steigt die TPR von 95,65\,\% auf 96,12\,\%; in den vier
-zusätzlichen Bedingungen beträgt der Unterschied 0,38 bis 0,54 Prozentpunkte. Für die Systemperspektive wird anschließend das eingefrorene TRI-Vollsystem mit der bereits vor
+zusätzlichen Bedingungen beträgt der Unterschied 0,38 bis 0,54 Prozentpunkte.
+
+Für die Systemperspektive wird anschließend das eingefrorene TRI-Vollsystem mit der bereits vor
 dem FINAL-Zugriff festgelegten URL-first-Kaskade verglichen. Auf \nolinkurl{OFFICIAL_TEST}
 erreicht TRI Full 96,12\,\% TPR bei 0,666\,\% FPR, die Kaskade 95,77\,\% TPR bei
 0,680\,\% FPR. Die eingefrorene Routingkonfiguration eskaliert 14,93\,\% der Webseiten;
@@ -408,16 +404,16 @@ vier untersuchten TPR-Toleranzen.
 \end{figure}
 
 Bei der primären Toleranz von einem Prozentpunkt sinkt der ungewichtete
-Szenariomittelwert der Eskalationsrate mit dem task-adaptierten URL-Frontend
-von 41,125\,\% auf 28,728\,\%. Die fünf Szenarien überlappen; dieser Makromittelwert
-beschreibt deshalb keine disjunkte Gesamtpopulation. Der Unterschied beträgt
-12,397 Prozentpunkte. Der entsprechende Makromittelwert des Anteils früher URL-Entscheidungen beträgt
-71,272\,\%. Die niedrigere Eskalationsrate von \nolinkurl{URL_TAPT} zeigt sich
-in allen fünf Evaluationsbedingungen und liegt dort zwischen 10,810 und 13,438 Prozentpunkten
-unter \nolinkurl{URL_BASE}. Die mittlere TPR-Abweichung vom Vollsystem beträgt
-$-0{,}791$ Prozentpunkte, die mittlere FPR-Differenz $-0{,}014$ Prozentpunkte. Unter
-derselben auf Development festgelegten TPR-Toleranz benötigt das task-adaptierte
-URL-Frontend damit seltener die nachgelagerte vollständige multimodale Verarbeitung.
+Szenariomittelwert der Eskalationsrate mit dem task-adaptierten URL-Frontend von
+41,125\,\% auf 28,728\,\%. Die fünf Szenarien überlappen; dieser Makromittelwert beschreibt
+deshalb keine disjunkte Gesamtpopulation. Der Unterschied beträgt 12,397 Prozentpunkte. Der
+entsprechende Makromittelwert des Anteils früher URL-Entscheidungen beträgt 71,272\,\%.
+Die niedrigere Eskalationsrate von \nolinkurl{URL_TAPT} zeigt sich in allen fünf
+Evaluationsbedingungen und liegt dort zwischen 10,810 und 13,438 Prozentpunkten unter
+\nolinkurl{URL_BASE}. Die mittlere TPR-Abweichung vom Vollsystem beträgt $-0{,}791$
+Prozentpunkte, die mittlere FPR-Differenz $-0{,}014$ Prozentpunkte. Unter derselben auf
+Development festgelegten TPR-Toleranz benötigt das task-adaptierte URL-Frontend damit
+seltener die nachgelagerte vollständige multimodale Verarbeitung.
 
 Auf dem vollständigen \nolinkurl{OFFICIAL_TEST} beträgt die mittlere Eskalationsrate
 35,746\,\% für URL\_BASE und 23,514\,\% für URL\_TAPT
@@ -436,26 +432,27 @@ TRI Full erreicht eine AP von 99,679\,\% mit einem 95-\%-Percentile-Intervall vo
 [99,673; 99,753]\,\%. Die Kaskade erreicht eine AP von 98,539\,\%
 [98,476; 98,602]\,\% und ein $P_{\geq 90}$ von 99,776\,\%
 [99,742; 99,815]\,\%. Die engen Intervalle zeigen eine geringe Stichprobenunsicherheit
-dieser Rankingmetriken auf dem festen Testbestand. Für die absolute Höhe precision-basierter Kennzahlen ist zusätzlich die Klassenprävalenz
+dieser Rankingmetriken auf dem festen Testbestand.
+
+Für die absolute Höhe precision-basierter Kennzahlen ist zusätzlich die Klassenprävalenz
 relevant, also der Anteil phishingbezogener Webseiten innerhalb der Evaluationsmenge. Der
 \nolinkurl{OFFICIAL_TEST} enthält 76.800 Phishing- und 91.260 Benign-Instanzen und weist
 damit einen Phishing-Anteil von 45,70\,\% auf. Dies entspricht nahezu der für den regulären
 PhreshPhish-Testbestand berichteten Base Rate von 46\,\%
 (vgl. [Dalton et al. (2026), S. 6--7]). Zur Einordnung wird deshalb eine reine
-Base-Rate-Sensitivität von $P_{\geq 90}$ berechnet. Für die ausgewählte Schwelle
-werden die klassenspezifischen Scoreverteilungen konstant gehalten und ausschließlich
-die angenommene Prävalenz verändert. Mit der beobachteten Precision $P_0$ und
-der Testprävalenz $\pi_0=76.800/168.060$ gilt
+Base-Rate-Sensitivität von $P_{\geq 90}$ berechnet. Für die ausgewählte Schwelle werden die
+klassenspezifischen Scoreverteilungen konstant gehalten und ausschließlich die angenommene
+Prävalenz verändert. Mit der beobachteten Precision $P_0$ und der Testprävalenz
+$\pi_0=76.800/168.060$ gilt
 \[
 \lambda=\frac{1-P_0}{P_0}\frac{\pi_0}{1-\pi_0}
        =\frac{\mathrm{FPR}_*}{\mathrm{TPR}_*},
 \qquad
 \mathrm{Precision}_{\pi}=\frac{\pi}{\pi+(1-\pi)\lambda}.
 \]
-Hierbei kennzeichnet $*$ die für $P_{\geq 90}$ ausgewählte empirische Schwelle.
-Die Umrechnung benötigt keinen Recall von exakt 90\,\%. Sie bildet einen reinen
-Prior-Shift ab; Veränderungen des klassenspezifischen Fehlerverhaltens sind darin
-nicht enthalten.
+Hierbei kennzeichnet $*$ die für $P_{\geq 90}$ ausgewählte empirische Schwelle. Die
+Umrechnung benötigt keinen Recall von exakt 90\,\%. Sie bildet einen reinen Prior-Shift ab;
+Veränderungen des klassenspezifischen Fehlerverhaltens sind darin nicht enthalten.
 
 \begin{table}[htbp]
 \centering
