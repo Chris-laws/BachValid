@@ -1,0 +1,5 @@
+{
+  "checks": 63,
+  "passed": 63,
+  "input_mode": "raw FINAL labels and scores; all three confusion matrices checked"
+}

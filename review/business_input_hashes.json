@@ -1,0 +1,8 @@
+{
+  "artifacts/CH6_ANALYSIS_FULL/thesis_tables/TABLE_FF4_DOM_FUSION_CASCADE_FINAL.csv": "0ffb13ae473d53a1a00c6eace3a1335a08a66e421f3bc872806e1a3af0ae589b",
+  "artifacts/CH6_ANALYSIS_FULL/audit/ARCHITECTURE_FREEZE.json": "f4f59b934ad1112b4c33cec4ee1868873d93cbee3059fe918db8f78a657a92d2",
+  "artifacts/CH6_ANALYSIS_FULL/thesis_tables/TABLE_OPERATIONAL_BENCHMARK.csv": "e4c0721c9756caf73e5307dfa3abab10511b8646d81e0918a366608eac3e6584",
+  "artifacts/raw_recovery/role_meta/FINAL.parquet": "ce73a543b1554aae8c106c4d5ecf515cb42f6ee15331739a090e70d9ac369c78",
+  "artifacts/CH6_ANALYSIS_FULL/scores/ff4/TRI_RUT_200000/FINAL_url.npy": "aa60ad9a1d515a3621c4d72d4ddce450844c0cbff4405e9b9e665f5f83f134ba",
+  "artifacts/CH6_ANALYSIS_FULL/scores/ff4/TRI_RUT_200000/FINAL_gated.npy": "64eea02071334a06ffea09e5ec6aafaa18b728192d1d8426dc098b9bd646b5a8"
+}

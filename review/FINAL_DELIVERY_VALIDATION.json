@@ -152,11 +152,79 @@
     "passed": true
   },
   {
-    "check": "PDF 79 pages",
+    "check": "LaTeX operating scenario FULL 0.001",
     "passed": true
   },
   {
-    "check": "54 main-text pages",
+    "check": "LaTeX operating scenario CASCADE 0.001",
+    "passed": true
+  },
+  {
+    "check": "LaTeX operating scenario FULL 0.01",
+    "passed": true
+  },
+  {
+    "check": "LaTeX operating scenario CASCADE 0.01",
+    "passed": true
+  },
+  {
+    "check": "LaTeX operating scenario FULL 0.05",
+    "passed": true
+  },
+  {
+    "check": "LaTeX operating scenario CASCADE 0.05",
+    "passed": true
+  },
+  {
+    "check": "LaTeX model choice URL",
+    "passed": true
+  },
+  {
+    "check": "LaTeX model throughput URL",
+    "passed": true
+  },
+  {
+    "check": "LaTeX model choice FULL",
+    "passed": true
+  },
+  {
+    "check": "LaTeX model throughput FULL",
+    "passed": true
+  },
+  {
+    "check": "LaTeX model choice CASCADE",
+    "passed": true
+  },
+  {
+    "check": "LaTeX model throughput CASCADE",
+    "passed": true
+  },
+  {
+    "check": "Business calculation checks passed",
+    "passed": true
+  },
+  {
+    "check": "Source register 51 entries",
+    "passed": true
+  },
+  {
+    "check": "Source register 158 citations",
+    "passed": true
+  },
+  {
+    "check": "Visual audit belongs to final PDF",
+    "passed": true
+  },
+  {
+    "check": "PDF page count matches final layout audit",
+    "passed": true
+  },
+  {
+    "check": "Main-text page count matches PDF",
+    "passed": true
+  },
+  {
+    "check": "DHBW main-text length 40 to 60 pages",
     "passed": true
   },
   {
@@ -268,6 +336,10 @@
     "passed": true
   },
   {
+    "check": "LaTeX ZIP final fig_betriebsprozess.tex",
+    "passed": true
+  },
+  {
     "check": "LaTeX ZIP final fig_mlm.tex",
     "passed": true
   },
@@ -313,6 +385,30 @@
   },
   {
     "check": "Reproduction ZIP final core_report.py",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final business_analysis.py",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final business_calculator.html",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final business_scenarios.csv",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final business_routing_counts.csv",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final business_inputs.json",
+    "passed": true
+  },
+  {
+    "check": "Reproduction ZIP final BETRIEBSKONZEPT_PRUEFUNG.md",
     "passed": true
   },
   {

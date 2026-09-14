@@ -437,6 +437,14 @@ vollständig neu ausgeführter selbstüberwachter Vortrainingsläufe. Aussagen z
 Labelmenge beziehen sich ausschließlich auf die gelabelte Downstream-Supervision.
 
 
+Die betriebliche Szenarioanalyse wird nach Abschluss der Modellauswertung ergänzt. Sie
+verwendet die eingefrorenen FINAL-Konfusionsmatrizen und klassenspezifischen Routinganteile,
+ohne Schwellen neu auszuwählen. Referenzvolumen und Phishinganteile sind ausdrücklich
+angenommene Größen. Die Umrechnung setzt unverändertes Fehler- und Routingverhalten
+innerhalb beider Klassen voraus; ihre Werte sind bedingte Erwartungswerte ohne zusätzliche
+Unsicherheitsintervalle. Der gemessene In-Memory-Durchsatz bleibt eine separate technische
+Referenz. Ein betrieblicher Pilot oder ein neuer Verteilungstest wird dadurch nicht ersetzt.
+
 \lstset{
   basicstyle=\ttfamily\small,
   numbers=left,

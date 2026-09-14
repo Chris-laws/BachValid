@@ -1,18 +1,28 @@
 [
   {
     "file": "Aenderungsprotokoll.md",
-    "bytes": 2853,
-    "sha256": "5e5dabc54cd41c052de76233a994c6411a093ef2f1172951965fa7c8dbdf6b95"
+    "bytes": 3421,
+    "sha256": "4872ca7c00fe2c905cc2c1f5501dc859ed420cb387c15728e7c259fbf3d42e1d"
   },
   {
     "file": "Bachelorarbeit_Kaufmann.pdf",
-    "bytes": 6747764,
-    "sha256": "57807004f59616669405a391d3eb14ba76732c674dc8ebc23b86ee274d5567f3"
+    "bytes": 6759419,
+    "sha256": "16a3b69cd094331f6fb7f25774fbe2569069c24d1609433b435e6682662c2f45"
   },
   {
     "file": "Bachelorarbeit_LaTeX.zip",
-    "bytes": 13195755,
-    "sha256": "36d409525b0499ca3dc91ff5f57b84254199d2439363107aa65e0bcbc58daea5"
+    "bytes": 13211240,
+    "sha256": "558aaef9acaf34762a89f35f30bdcb446909db32219ee8886a8853ba28150d39"
+  },
+  {
+    "file": "Betriebskonzept.md",
+    "bytes": 3650,
+    "sha256": "dca3f1dd5ba0534d11301206b5f2875c7996a16bc16fc3759a59a65756ff5a93"
+  },
+  {
+    "file": "Betriebsrechner.html",
+    "bytes": 10929,
+    "sha256": "a38353880293436c2df0a9147cc8afe695aeabe009ff9bb7347d88a124a0b75b"
   },
   {
     "file": "Kernpruefung.md",
@@ -21,22 +31,22 @@
   },
   {
     "file": "Pruefbericht.md",
-    "bytes": 11543,
-    "sha256": "974e6181988bb93db0a700727914b65bcfbfd0c8100bbe928380ef967d0ce3c4"
+    "bytes": 13544,
+    "sha256": "1f654964b3c107db7d347cc1aceb64f551f6aa31554e5fb570e9aa3bfbea2286"
   },
   {
     "file": "Quellenarchiv.zip",
-    "bytes": 82243254,
-    "sha256": "3de6e02bcde01374d8fbfb83f1fd8959f0121dd0b598200d33231d77825be81b"
+    "bytes": 83209041,
+    "sha256": "46fb1a29776f40aea3e96addc75e719ea83835144512124a97de22abe7aa9191"
   },
   {
     "file": "README.md",
-    "bytes": 2429,
-    "sha256": "6f390b316d04520ba7dc0c4a11a0c77096d522e01eec086caec852446573d722"
+    "bytes": 2790,
+    "sha256": "33e30555f5b3d4f820b719d66cc274bfe678825841db0cd267fddae1593b744a"
   },
   {
     "file": "Reproduktion.zip",
-    "bytes": 378473504,
-    "sha256": "b2dc1a163062cb2dfcd1d6da349335ec124599d298ed7d3e7ad753abbb66ac8a"
+    "bytes": 378492540,
+    "sha256": "a7d6663059eb6ebdb785f23e6dfd4fac5c8e111a10cafd4f51785f681af649e4"
   }
 ]

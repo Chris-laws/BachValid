@@ -1,0 +1,64 @@
+check,actual,expected,passed
+Full system training budget,200000.0,200000.0,True
+FINAL labels binary,1.0,1.0,True
+URL score count,168060.0,168060.0,True
+Gated score count,168060.0,168060.0,True
+URL scores finite,1.0,1.0,True
+Full scores finite,1.0,1.0,True
+URL raw tp,71544.0,71544.0,True
+URL raw fp,622.0,622.0,True
+URL raw tn,90638.0,90638.0,True
+URL raw fn,5256.0,5256.0,True
+FULL raw tp,73819.0,73819.0,True
+FULL raw fp,608.0,608.0,True
+FULL raw tn,90652.0,90652.0,True
+FULL raw fn,2981.0,2981.0,True
+CASCADE raw tp,73551.0,73551.0,True
+CASCADE raw fp,621.0,621.0,True
+CASCADE raw tn,90639.0,90639.0,True
+CASCADE raw fn,3249.0,3249.0,True
+Benign population,91260.0,91260.0,True
+Phishing population,76800.0,76800.0,True
+Routing class-weighted reconstruction,0.14933357134356776,0.14933357134356778,True
+URL saved TPR,0.9315625,0.9315625,True
+URL saved FPR,0.006815691431076047,0.006815691431076,True
+URL prior=0.001 population conservation,10000.0,10000.0,True
+URL prior=0.001 positive conservation,10.0,10.0,True
+URL prior=0.001 weighted precision,0.12035009790902068,0.12035009790902071,True
+URL prior=0.01 population conservation,10000.0,10000.0,True
+URL prior=0.01 positive conservation,100.0,100.0,True
+URL prior=0.01 weighted precision,0.5799372776119908,0.5799372776119908,True
+URL prior=0.05 population conservation,9999.999999999998,10000.0,True
+URL prior=0.05 positive conservation,500.0,500.0,True
+URL prior=0.05 weighted precision,0.8779540653460299,0.8779540653460299,True
+URL prior=0.45698 population conservation,10000.0,10000.0,True
+URL prior=0.45698 positive conservation,4569.796501249554,4569.796501249554,True
+URL prior=0.45698 weighted precision,0.9913809827342517,0.9913809827342517,True
+FULL saved TPR,0.9611848958333333,0.9611848958333332,True
+FULL saved FPR,0.006662283585360508,0.0066622835853605,True
+FULL prior=0.001 population conservation,10000.0,10000.0,True
+FULL prior=0.001 positive conservation,10.0,10.0,True
+FULL prior=0.001 weighted precision,0.12619264175779155,0.12619264175779155,True
+FULL prior=0.01 population conservation,10000.0,10000.0,True
+FULL prior=0.01 positive conservation,100.0,100.0,True
+FULL prior=0.01 weighted precision,0.5930490946233207,0.5930490946233207,True
+FULL prior=0.05 population conservation,10000.0,10000.0,True
+FULL prior=0.05 positive conservation,500.0,500.0,True
+FULL prior=0.05 weighted precision,0.883630190373279,0.883630190373279,True
+FULL prior=0.45698 population conservation,10000.0,10000.0,True
+FULL prior=0.45698 positive conservation,4569.796501249554,4569.796501249554,True
+FULL prior=0.45698 weighted precision,0.99183092157416,0.99183092157416,True
+CASCADE saved TPR,0.9576953125,0.9576953125,True
+CASCADE saved FPR,0.006804733727810651,0.0068047337278106,True
+CASCADE prior=0.001 population conservation,10000.0,10000.0,True
+CASCADE prior=0.001 positive conservation,10.0,10.0,True
+CASCADE prior=0.001 weighted precision,0.12348397429296887,0.12348397429296885,True
+CASCADE prior=0.01 population conservation,10000.0,10000.0,True
+CASCADE prior=0.01 positive conservation,100.0,100.0,True
+CASCADE prior=0.01 weighted precision,0.587051903156349,0.587051903156349,True
+CASCADE prior=0.05 population conservation,10000.0,10000.0,True
+CASCADE prior=0.05 positive conservation,500.0,500.0,True
+CASCADE prior=0.05 weighted precision,0.8810563984814787,0.8810563984814787,True
+CASCADE prior=0.45698 population conservation,10000.0,10000.0,True
+CASCADE prior=0.45698 positive conservation,4569.796501249554,4569.796501249554,True
+CASCADE prior=0.45698 weighted precision,0.9916275683546352,0.9916275683546352,True

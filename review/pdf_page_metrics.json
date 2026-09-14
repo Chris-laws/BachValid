@@ -25,7 +25,7 @@
   },
   {
     "page": 5,
-    "chars": 2006,
+    "chars": 2022,
     "body_bottom": 668.7299194335938,
     "margin_candidates": []
   },
@@ -37,8 +37,8 @@
   },
   {
     "page": 7,
-    "chars": 3768,
-    "body_bottom": 747.0629272460938,
+    "chars": 3866,
+    "body_bottom": 763.4981079101562,
     "margin_candidates": []
   },
   {
@@ -49,14 +49,14 @@
   },
   {
     "page": 9,
-    "chars": 1952,
-    "body_bottom": 470.97979736328125,
+    "chars": 2139,
+    "body_bottom": 513.812744140625,
     "margin_candidates": []
   },
   {
     "page": 10,
-    "chars": 1501,
-    "body_bottom": 398.7667541503906,
+    "chars": 1781,
+    "body_bottom": 448.0721740722656,
     "margin_candidates": []
   },
   {
@@ -73,14 +73,14 @@
   },
   {
     "page": 13,
-    "chars": 3315,
-    "body_bottom": 753.8223266601562,
+    "chars": 3283,
+    "body_bottom": 734.3518676757812,
     "margin_candidates": []
   },
   {
     "page": 14,
-    "chars": 2992,
-    "body_bottom": 741.32568359375,
+    "chars": 3013,
+    "body_bottom": 760.7496337890625,
     "margin_candidates": []
   },
   {
@@ -235,8 +235,8 @@
   },
   {
     "page": 40,
-    "chars": 2349,
-    "body_bottom": 473.64776611328125,
+    "chars": 2979,
+    "body_bottom": 596.9112548828125,
     "margin_candidates": []
   },
   {
@@ -337,8 +337,8 @@
   },
   {
     "page": 57,
-    "chars": 2502,
-    "body_bottom": 766.3071899414062,
+    "chars": 2523,
+    "body_bottom": 773.6160888671875,
     "margin_candidates": []
   },
   {
@@ -349,126 +349,144 @@
   },
   {
     "page": 59,
-    "chars": 3197,
-    "body_bottom": 747.6334228515625,
+    "chars": 2953,
+    "body_bottom": 758.472900390625,
     "margin_candidates": []
   },
   {
     "page": 60,
-    "chars": 3686,
-    "body_bottom": 766.475341796875,
+    "chars": 2946,
+    "body_bottom": 714.76318359375,
     "margin_candidates": []
   },
   {
     "page": 61,
-    "chars": 4110,
-    "body_bottom": 750.0401611328125,
+    "chars": 3728,
+    "body_bottom": 766.475341796875,
     "margin_candidates": []
   },
   {
     "page": 62,
-    "chars": 3731,
-    "body_bottom": 767.2219848632812,
+    "chars": 4115,
+    "body_bottom": 750.0401611328125,
     "margin_candidates": []
   },
   {
     "page": 63,
-    "chars": 2669,
-    "body_bottom": 619.3059692382812,
+    "chars": 3602,
+    "body_bottom": 750.786865234375,
     "margin_candidates": []
   },
   {
     "page": 64,
-    "chars": 2428,
-    "body_bottom": 599.0201416015625,
+    "chars": 2840,
+    "body_bottom": 660.3937377929688,
     "margin_candidates": []
   },
   {
     "page": 65,
-    "chars": 3036,
-    "body_bottom": 770.0828247070312,
+    "chars": 2348,
+    "body_bottom": 753.585693359375,
     "margin_candidates": []
   },
   {
     "page": 66,
+    "chars": 3107,
+    "body_bottom": 643.2119140625,
+    "margin_candidates": []
+  },
+  {
+    "page": 67,
+    "chars": 1776,
+    "body_bottom": 411.50091552734375,
+    "margin_candidates": []
+  },
+  {
+    "page": 68,
+    "chars": 2195,
+    "body_bottom": 514.7356567382812,
+    "margin_candidates": []
+  },
+  {
+    "page": 69,
     "chars": 2839,
     "body_bottom": 770.7972412109375,
     "margin_candidates": []
   },
   {
-    "page": 67,
+    "page": 70,
     "chars": 3198,
     "body_bottom": 765.7332153320312,
     "margin_candidates": []
   },
   {
-    "page": 68,
+    "page": 71,
     "chars": 2743,
     "body_bottom": 655.9160766601562,
     "margin_candidates": []
   },
   {
-    "page": 69,
+    "page": 72,
     "chars": 3398,
     "body_bottom": 754.52685546875,
     "margin_candidates": []
   },
   {
-    "page": 70,
-    "chars": 3044,
-    "body_bottom": 694.01513671875,
+    "page": 73,
+    "chars": 3413,
+    "body_bottom": 770.9620361328125,
     "margin_candidates": []
   },
   {
-    "page": 71,
+    "page": 74,
     "chars": 2865,
     "body_bottom": 688.7863159179688,
     "margin_candidates": []
   },
   {
-    "page": 72,
+    "page": 75,
     "chars": 1050,
     "body_bottom": 259.9752502441406,
     "margin_candidates": []
   },
   {
-    "page": 73,
+    "page": 76,
     "chars": 970,
     "body_bottom": 449.1458740234375,
     "margin_candidates": []
   },
   {
-    "page": 74,
+    "page": 77,
     "chars": 1200,
     "body_bottom": 668.1829833984375,
     "margin_candidates": []
   },
   {
-    "page": 75,
+    "page": 78,
     "chars": 1023,
     "body_bottom": 669.8192749023438,
     "margin_candidates": []
   },
   {
-    "page": 76,
+    "page": 79,
     "chars": 1103,
     "body_bottom": 552.7085571289062,
     "margin_candidates": []
   },
   {
-    "page": 77,
+    "page": 80,
     "chars": 1271,
     "body_bottom": 764.5516967773438,
     "margin_candidates": []
   },
   {
-    "page": 78,
+    "page": 81,
     "chars": 1259,
     "body_bottom": 677.542236328125,
     "margin_candidates": []
   },
   {
-    "page": 79,
+    "page": 82,
     "chars": 1902,
     "body_bottom": 773.5541381835938,
     "margin_candidates": []

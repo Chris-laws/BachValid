@@ -1,8 +1,9 @@
 {
-  "pdf_pages": 79,
-  "body_pages_including_figures": 54,
+  "pdf_sha256": "16a3b69cd094331f6fb7f25774fbe2569069c24d1609433b435e6682662c2f45",
+  "pdf_pages": 82,
+  "body_pages_including_figures": 57,
   "body_start_pdf": 12,
-  "bibliography_start_pdf": 66,
+  "bibliography_start_pdf": 69,
   "toc": [
     [
       1,
@@ -320,60 +321,64 @@
       58
     ],
     [
+      2,
+      "6.7 Szenarioanalyse am eingefrorenen Betriebspunkt",
+      59
+    ],
+    [
       1,
       "7 Diskussion und Schlussbetrachtung",
-      59
+      60
     ],
     [
       2,
       "7.1 Interpretation und Beantwortung der Forschungsfragen",
-      59
+      60
     ],
     [
       2,
       "7.2 Limitationen und Aussagegrenzen",
-      62
-    ],
-    [
-      2,
-      "7.3 Betriebliche Einordnung und Handlungsempfehlung",
       63
     ],
     [
       2,
+      "7.3 Betriebliches Einsatzkonzept und Handlungsempfehlung",
+      64
+    ],
+    [
+      2,
       "7.4 Fazit und Ausblick",
-      65
+      68
     ],
     [
       1,
       "Literaturverzeichnis",
-      66
+      69
     ],
     [
       1,
       "A Ergänzende Implementierungs- und Prüfdetails",
-      74
+      77
     ],
     [
       2,
       "A.1 Implementierungsauszüge",
-      74
+      77
     ],
     [
       2,
       "A.2 Reproduktionsumfang",
-      79
+      82
     ]
   ],
   "margin_candidates": [],
   "low_fill_candidates": [
     4,
-    9,
     10,
     11,
-    40,
-    72,
-    73
+    67,
+    75,
+    76
   ],
   "status": "Rendering und automatische Vorprüfung; visuelle Abnahme wird gesondert protokolliert."
 }

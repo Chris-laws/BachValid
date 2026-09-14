@@ -1,0 +1,23 @@
+% Eigene betriebliche Konzeption; KI-unterstuetzt. Keine implementierte Prozessmessung.
+\begin{tikzpicture}[
+  box/.style={draw=black!55,rounded corners=2pt,align=center,font=\small,
+    text width=11.6cm,inner sep=6pt,minimum height=.7cm},
+  flow/.style={-{Stealth[length=2mm]},thick},node distance=5mm]
+\node[box] (in) {\textbf{Eingang und Aufbereitung}\par
+Meldung mit URL und Fallkontext; isolierte Erfassung von HTML/DOM};
+\node[box,below=of in,fill=black!7] (model) {\textbf{Gemessener Modellpfad}\par
+TRI Full oder URL-first-Kaskade; eingefrorene Modell- und Schwellenversion};
+\node[box,below=of model] (review) {\textbf{Prüfsteuerung}\par
+Modellalarme und relevante Kontextfälle; Stichprobe modellnegativer Fälle;\par
+nicht auswertbare Eingaben separat zur Prüfung};
+\node[box,below=of review] (human) {\textbf{Fachliche Entscheidung}\par
+Sicherheitseinheit bestätigt Befund und entscheidet über Folgemaßnahmen};
+\node[box,below=of human] (learn) {\textbf{Dokumentation und Verbesserung}\par
+Geprüfte Labels, Prüfzeit und Fehlerarten; getrennte Entwicklung und Kalibration};
+\draw[flow] (in)--node[right,font=\scriptsize]{auswertbar}(model);
+\draw[flow] (in.west) -- ++(-.7,0) |- (review.west);
+\node[font=\scriptsize,rotate=90] at ($(in.west)!0.5!(review.west)+(-.95,0)$) {nicht auswertbar};
+\draw[flow] (model)--(review);
+\draw[flow] (review)--(human);
+\draw[flow] (human)--(learn);
+\end{tikzpicture}

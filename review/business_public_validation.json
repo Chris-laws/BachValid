@@ -1,0 +1,6 @@
+{
+  "checks": 46,
+  "passed": 46,
+  "input_mode": "cached audited class-conditional routing counts; raw labels unavailable",
+  "scenario_csv_byte_identical_to_raw_audit": true
+}

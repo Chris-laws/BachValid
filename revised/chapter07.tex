@@ -1,12 +1,7 @@
 \chapter{Diskussion und Schlussbetrachtung}
 
-Die Ergebnisse werden im Folgenden entlang der vier Forschungsfragen interpretiert. Im
-Mittelpunkt stehen der zusätzliche Nutzen der task-adaptiven Repräsentationsanpassung, dessen
-Verhalten bei unterschiedlicher gelabelter Supervision sowie die Überführung der ausgewählten
-Repräsentationsbasis in das multimodale Gesamtsystem. Ergänzend wird eingeordnet, inwieweit
-sich die beobachtete Label-Effizienz auf einen unabhängig erhobenen Webseitenbestand
-übertragen lässt. Anschließend werden die Aussagegrenzen der Untersuchung und die daraus
-ableitbare betriebliche Einordnung diskutiert.
+Das Kapitel beantwortet die vier Forschungsfragen, grenzt die Aussagekraft der internen und
+externen Ergebnisse ein und leitet daraus ein betriebliches Einsatz- und Pilotkonzept ab.
 
 
 \section{Interpretation und Beantwortung der Forschungsfragen}
@@ -147,14 +142,9 @@ häufiger eine Entscheidung in der ersten Verarbeitungsstufe. Der Repräsentatio
 sich folglich nicht nur auf die Klassifikationsleistung eines einzelnen Modells, sondern auch
 auf die Verarbeitungstiefe des Gesamtsystems aus.
 
-Zusammenfassend beantwortet die Arbeit die zentrale Forschungsfrage auf drei
-aufeinander aufbauenden Ebenen. Die task-adaptive Anpassung verbessert zunächst die
-Downstream-Nutzbarkeit der bereits vortrainierten URL- und HTML-Text-Repräsentationen.
-Dieser Vorteil bleibt bei reduzierter gelabelter Supervision bestehen und zeigt sich ergänzend
-auch auf einem unabhängig erhobenen Webseitenbestand. Im internen Suffizienzprotokoll wird
-das 200k-Referenzniveau mit 50.000 Labels erreicht. Die ausgewählte Repräsentationsbasis
-lässt sich anschließend in ein multimodales Vollsystem überführen, dessen Verarbeitungstiefe
-über die URL-first-Kaskade instanzabhängig gesteuert werden kann.
+Die zentrale Forschungsfrage wird damit auf drei Ebenen beantwortet: zusätzlicher
+Repräsentationsnutzen durch TAPT, geringerer gelabelter Trainingsbedarf im Probe-Protokoll
+und eine steuerbare Verarbeitungstiefe des darauf aufbauenden multimodalen Systems.
 
 
 \section{Limitationen und Aussagegrenzen}
@@ -216,131 +206,140 @@ Peak-VRAM-Werte gelten ausschließlich für den In-Memory-Modellpfad ohne Netzwe
 Rendering, Datenträger-I/O und vorgelagertes HTML-Parsing.
 
 
-\section{Betriebliche Einordnung und Handlungsempfehlung}
+\section{Betriebliches Einsatzkonzept und Handlungsempfehlung}
+\label{sec:betriebskonzept}
 
-Für einen betrieblichen Einsatz lassen sich die Ergebnisse entlang dreier
-Entscheidungsdimensionen einordnen: verfügbare gelabelte Trainingsdaten, angestrebte
-Detektionsleistung und zulässiger Inferenzaufwand.
+\textbf{Einsatzaufgabe und Verantwortlichkeit.}
+Konzipiert wird die Vorprüfung verdächtiger Webseiten für die Sicherheitseinheit eines
+Kreditinstituts oder dessen IT-Dienstleister. Aus URL, gesichertem HTML und Meldekontext
+entsteht ein Klassifikationshinweis mit Modellversion und Schwellenentscheidung für die
+fachliche Bearbeitung. Tatsächliche Abläufe, Meldevolumina und Ressourcen der Volksbank
+wurden nicht erhoben; der folgende Prozess ist eine eigene Konzeption.
 
-Bei begrenzter gelabelter Downstream-Supervision ist das Verhältnis zwischen ungelabelten
-Adaptationsdaten und gelabeltem Klassifikationstraining relevant. Im internen
-Suffizienzprotokoll sind 50.000 Labels die kleinste RUT-Stufe, die das festgelegte
-Vergleichsniveau gegenüber beiden 200k-Referenzen über alle fünf Evaluationsbedingungen
-erreicht. Die externe Putra-Evaluation ergänzt diesen Befund: Auch bei lediglich 200 bis
-2.000 neu gelabelten Zielinstanzen erzielt RUT über die gesamte Lernkurve eine höhere AP
-als R0. Eine task-adaptierte Repräsentationsbasis kann damit insbesondere dann relevant sein,
-wenn für eine neue Zielumgebung zunächst nur ein begrenzter gelabelter Datenbestand
-vorliegt.
+Die technische Vorfilterung großer Ereignismengen für die anschließende menschliche Analyse
+wird auch in NIST SP 800-61r3 empfohlen (vgl. [Nelson et al. (2025), S. 25]).
+Für die Priorisierung und Validierung sind dort zudem Auswirkungen, Dringlichkeit und
+weiterer Fallkontext maßgeblich (vgl. [Nelson et al. (2025), S. 26--27]).
+Für den vorliegenden Entwurf folgt daraus eine unterstützende Rolle des Klassifikators:
+Die Sicherheitseinheit verantwortet die Fallbewertung und Folgemaßnahmen. Ein hoher
+Modellscore allein beschreibt weder den betrieblichen Schaden noch eine kalibrierte
+Phishingwahrscheinlichkeit. Automatische Sperrungen sind deshalb kein Bestandteil dieses Konzepts.
 
+Isolierte Erfassung, Netzwerkabruf, Ticketschnittstelle und Prüfoberfläche sind erforderliche
+Erweiterungen des Prototyps. Die Eingaben müssen den untersuchten URL-/HTML-/DOM-Daten
+entsprechen. Nicht auswertbare Seiten werden gesondert fachlich geklärt. Modellnegative
+Seiten erhalten keine Freigabe als sicher. Relevanter Kontext, etwa eine berichtete
+Zugangsdatenpreisgabe, kann unabhängig vom Modell eine sofortige Prüfung erfordern.
+
+\begin{figure}[H]
+\centering
+\input{fig_betriebsprozess}
+\caption{Konzipierte Einbettung der Webseitenklassifikation in die fachliche Fallprüfung. Nur der grau hinterlegte Modellpfad wurde experimentell untersucht.}
+\label{fig:betriebsprozess}
+{\footnotesize Eigene Darstellung; KI-unterstützt.}
+\end{figure}
+
+\textbf{Modellwahl nach tatsächlichem Engpass.}
+Tabelle~\ref{tab:business_model_choice} vergleicht das mit 200.000 Labels trainierte
+TRI-System, seine Kaskade und seinen separat gemessenen URL-Zweig.
 
 \begin{table}[H]
 \centering
-\caption{Betriebliche Einordnung zentraler Leistungs- und Ressourcendimensionen.}
-\label{tab:business_summary}
+\caption{Gemessene Alternativen und daraus abgeleitete Einsatzentscheidung. TPR/FPR: FINAL; Durchsatz: DEV-In-Memory-Benchmark auf Tesla T4.}
+\label{tab:business_model_choice}
 \small
-\begin{tabular}{>{\raggedright\arraybackslash}p{3.0cm}>{\raggedright\arraybackslash}p{4.2cm}>{\raggedright\arraybackslash}p{6.0cm}}
+\begin{tabular}{lrrrp{5.0cm}}
 \toprule
-Dimension & Ergebnisbasis & Einordnung \\
+Variante & TPR & FPR & Seiten/s & Konzeptionelle Einordnung \\
 \midrule
-Gelabelte Supervision
-& RUT50k vs. R0@200k und XGBoost@200k
-& 50.000 statt 200.000 gelabelter Downstream-Instanzen im internen
-Suffizienzprotokoll; TAPT nutzt weiterhin den vollständigen ungelabelten SSL-Pool. \\
-
-Externe Label-Effizienz
-& RUT vs. R0 auf Putra
-& +2,54 pp AP-AULC über 200 bis 2.000 Ziel-Labels; alle vier
-budgetweisen AP-Vergleiche bleiben nach Holm-Korrektur signifikant. \\
-
-Detektionsleistung
-& TRI Full
-& 96,12\,\% TPR bei 0,666\,\% FPR auf \nolinkurl{OFFICIAL_TEST};
-vollständiger multimodaler Pfad. \\
-
-Gestufte Verarbeitung
-& TRI-Kaskade
-& 95,77\,\% TPR; 11,95\,ms Median-Latenz, 447,0 Seiten/s und
-14,93\,\% Eskalation. \\
-
-URL-Frontend
-& URL\_TAPT vs. URL\_BASE
-& 23,514\,\% statt 35,746\,\% mittlere Eskalation auf Official bei
-derselben Development-basierten 1-pp-Toleranz; $-0{,}940$ pp TPR gegenüber Vollsystem. \\
+URL-Pfad & 93,16\,\% & 0,682\,\% & 865,9 & Höchster Durchsatz; mehr übersehene Phishingfälle. \\
+TRI Full & 96,12\,\% & 0,666\,\% & 183,2 & Startpunkt bei Qualitätsvorrang und ausreichender Rechenkapazität. \\
+TRI-Kaskade & 95,77\,\% & 0,680\,\% & 447,0 & Option bei nachgewiesenem Rechenengpass und akzeptiertem Qualitätsverlust. \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Liegen nicht annotierte URL- und Webseitendaten bereits vor, können diese für die
-task-adaptive Repräsentationsanpassung genutzt werden, während der kuratierte Labelbestand
-auf das nachgelagerte überwachte Training konzentriert wird. Die wirtschaftliche Wirkung
-dieses Vorgehens wurde nicht monetär bewertet. Datenerhebung, Speicherung, Aufbereitung
-und zusätzlicher TAPT-Rechenaufwand bleiben neben der Annotation als eigene
-Aufwandspositionen bestehen. Steht die maximale Erkennungsleistung im Vordergrund, bildet TRI Full mit 96,12\,\% TPR
-bei 0,666\,\% FPR die leistungsstärkste Betriebsform des Prototyps. Die
-URL-first-Kaskade ergänzt dieses System um eine bedarfsgerechte Verarbeitungstiefe.
-Eindeutigere Instanzen können auf der URL-Stufe abgeschlossen werden, während unsichere
-Fälle weiterhin die vollständige multimodale Verarbeitung durchlaufen.
+Bei begrenztem Pilotumfang sprechen höhere TPR und niedrigere FPR für TRI Full.
+Die Kaskade erhöht den gemessenen Durchsatz um den Faktor 2,44, erzeugt aber zusätzliche
+Fehlalarme und übersehene Phishingfälle. Als Größenordnung entsprechen 10.000 Seiten
+beim gemessenen mittleren Durchsatz 54,59 Sekunden für TRI Full und 22,37 Sekunden für
+die Kaskade: 32,22 Sekunden Differenz. Diese DEV-Benchmark-Referenz umfasst weder
+die gesamte Bearbeitungskette noch eine auf andere Prävalenzen angepasste Laufzeit.
+Der Geschwindigkeitsvorteil ist deshalb mit tatsächlichem Eingang, Hardware und Wartezeiten abzuwägen.
 
+\textbf{Prüfmenge und Qualitätsfolgen.}
+Die Szenarien aus Abschnitt~\ref{sec:betriebspunkt_szenarien} machen die nachgelagerte
+Aufgabe greifbar. Bei 10.000 auswertbaren Seiten und angenommenen 1\,\% Phishing liefert
+TRI Full rund 162 Modellalarme: etwa 96 erkannte Phishingfälle und 66 Fehlalarme;
+rund vier Phishingfälle bleiben modellnegativ. Die Kaskade erzeugt rechnerisch 1,41
+zusätzliche Fehlalarme und 0,35 zusätzliche übersehene Phishingfälle je 10.000 Seiten.
+Der schnellere URL-Pfad übersieht bei derselben Annahme 6,84 statt 3,88 Phishingfälle.
+Eine kleinere Alarmmenge kann somit auch durch schlechtere Erkennung entstehen.
 
-Zur Einordnung der Größenordnung werden die gemessenen Betriebsraten linear auf
-Referenzvolumina übertragen. Die ungerundete Eskalationsrate entspricht rund
-14.933 vollständigen TRI-Pfaden je 100.000 Webseiten. Aus den gemessenen
-In-Memory-Durchsätzen ergeben sich für 100.000 Seiten rund 9,10 Minuten für TRI Full
-und 3,73 Minuten für die Kaskade. Bei unveränderten Official-Raten entsprächen die
-FPR-Werte 666 gegenüber 680 Fehlalarmen je 100.000 benignen Seiten und die TPR-Werte
-96.118 gegenüber 95.770 erkannten Fällen je 100.000 Phishing-Seiten.
+Werden alle Modellalarme geprüft, beschreibt $A_{\pi}$ zunächst nur diesen Teil der
+menschlichen Prüfmenge. Bei einer im Pilot zu messenden mittleren Bearbeitungszeit
+$t_A$ in Minuten beträgt der entsprechende Aufwand $A_{\pi}t_A/60$ Stunden.
+Kontextfälle, nicht auswertbare Seiten, Negativstichproben und Folgemaßnahmen kommen hinzu.
+Eine Personal- oder Kosteneinsparung wurde nicht gemessen. Ebenso wenig sind die rund
+660 zusätzlichen Modellpfade der Kaskade im 1-\%-Szenario 660 menschliche Prüffälle.
+Der beiliegende Betriebsrechner trennt diese Größen und erlaubt eigene, kenntlich
+gemachte Volumen-, Prävalenz- und Zeitannahmen.
+
+\textbf{Datenstrategie bei begrenzter Annotation.}
+Die Label-Effizienz liefert eine zweite, von der Laufzeit getrennte Handlungsempfehlung:
+Eine vorhandene RUT-Repräsentation ist ein begründeter Ausgangspunkt für begrenztes
+gelabeltes Nachtraining. Intern erreicht RUT50k das festgelegte Referenzniveau der
+200k-Verfahren; extern erzielt RUT auf Putra über 200 bis 2.000 Ziel-Labels einen
+AP-AULC-Vorteil von 2,54 Prozentpunkten. Der interne 50k-Nachweis gilt allerdings für
+lineare Probes auf eingefrorenen Repräsentationen. Die in diesem Einsatzkonzept
+verwendeten Full-/Kaskadenwerte stammen aus einem mit 200k Labels trainierten System.
+Eine Kombination von 50k Trainingslabels mit dessen 96,12\,\% TPR wurde nicht nachgewiesen.
+
+Die 75\,\% Reduktion betrifft zudem ausschließlich Downstream-Trainingslabels;
+Entwicklung, Kalibration, Evaluation, Datenerhebung und TAPT bleiben eigene
+Aufwandspositionen. Für einen neuen Betrieb sollte zunächst eine Lernkurve mit geprüftem
+Zielmaterial erhoben werden. Zusätzliche Ziel-TAPT wäre eine separat zu bewertende Option,
+da sie im ergänzenden Putra-Versuch die AP-AULC um 1,14 Prozentpunkte verschlechterte.
+Geprüfte Fälle dürfen erst nach Dokumentation und Rollentrennung für spätere Modellstände
+genutzt werden. Derselbe Fall darf nicht zugleich Nachtraining und dessen Erfolgskontrolle dienen.
+
+\textbf{Pilotierung und messbare Freigabeentscheidung.}
+Als nächster Entwicklungsschritt wird ein Parallelbetrieb vorgeschlagen, bei dem der
+bestehende fachliche Prüfprozess die Fallentscheidung weiterhin trifft. TRI Full und
+Kaskade bewerten dieselben neu eingehenden auswertbaren Fälle. Modellstand, Schwellen,
+Routing und die Erfolgskriterien werden vor der Pilotbewertung festgelegt.
+Kalibration auf neuem Zielmaterial und anschließende zeitlich getrennte Bewertung
+ermöglichen eine Überprüfung des tatsächlichen Betriebspunkts. Die fachlichen Labels
+sollten möglichst ohne Kenntnis der Modellentscheidung vergeben werden.
 
 \begin{table}[H]
 \centering
-\caption{Lineare Hochrechnung aus ungerundeten Kennzahlen; Fallzahlen und Differenzen jeweils separat gerundet.}
-\label{tab:business_projection}
+\caption{Vorgeschlagene Prüfkriterien für die betriebliche Weiterentwicklung; noch keine gemessene Freigabe.}
+\label{tab:business_pilot}
 \small
-\begin{tabular}{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{3.8cm}>{\raggedright\arraybackslash}p{3.2cm}}
+\begin{tabular}{p{3.0cm}p{10.9cm}}
 \toprule
-Bezugsgröße & Ausgangspunkt & Variante & Differenz \\
+Prüfdimension & Zu erfassender Nachweis und Entscheidung \\
 \midrule
-100.000 verarbeitete Seiten
-& TRI Full: 100.000 Vollpfade
-& Kaskade: ca. 14.933 Vollpfade
-& ca. 85.067 weniger Vollpfade \\
-
-100.000 Seiten, In-Memory
-& TRI Full: 9,10 min
-& Kaskade: 3,73 min
-& 5,37 min geringer \\
-
-100.000 benigne Seiten
-& TRI Full: 666 FP
-& Kaskade: 680 FP
-& +14 FP \\
-
-100.000 Phishing-Seiten
-& TRI Full: ca. 96.118 erkannt
-& Kaskade: 95.770 erkannt
-& ca. $-349$ erkannt \\
-
-100.000 Seiten, 1-pp-Toleranz
-& URL\_BASE: ca. 35.746 Eskalationen
-& URL\_TAPT: ca. 23.514 Eskalationen
-& ca. 12.232 weniger Eskalationen \\
-
-Gelabeltes Training
-& 200.000 Labels
-& RUT: 50.000 Labels
-& 150.000 Labels weniger \\
+Datenabdeckung & Anteil auswertbarer Fälle und Ursachen fehlender Eingaben; gesonderte Bearbeitung der Ausfälle muss möglich sein. \\
+Detektionsqualität & TPR, FPR und Precision mit Unsicherheit auf unabhängig geprüften Fällen; die Sicherheitseinheit legt akzeptable Grenzen vor Auswertung fest. Die CAL-Ziel-FPR von 0,5\,\% ist keine bereits bestätigte Betriebsgrenze. \\
+Prüfkapazität & Alarme, Kontextfälle, Negativstichprobe, mittlere Prüfzeit und Rückstand; tatsächlicher Aufwand muss in die vereinbarte Kapazität passen. \\
+Verarbeitung & Gesamtlatenz einschließlich Erfassung, Durchsatz und Modellrouting; Kaskade nur bei relevantem Ressourcenvorteil und vertretbaren zusätzlichen Fehlern. \\
+Änderungskontrolle & Bei Qualitätsverschlechterung zuerst Datenabdeckung und Betriebspunkt prüfen; Rekalibration und Nachtraining getrennt bewerten und an zeitlich späteren Fällen erneut prüfen. \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Für eine produktionsnahe Weiterentwicklung sollten Betriebspunkt, Datenverteilung und
-Eskalationsrate überwacht werden. Veränderungen der realisierten Fehlalarmrate können eine
-erneute Kalibration erforderlich machen. Bei neu verfügbaren Webseitenbeständen kann
-davon getrennt geprüft werden, ob eine erneute Repräsentationsanpassung oder eine begrenzte
-Nachannotation für das Downstream-Training erforderlich ist. Kalibration,
-Repräsentationsanpassung und gelabelte Nachanpassung adressieren dabei unterschiedliche
-Ebenen des Systems.
+Werden nur Modellalarme gelabelt, bleiben übersehene Phishingfälle unbekannt. Der Pilot
+benötigt daher entweder eine vollständige fachliche Referenzbewertung oder zusätzlich
+eine Zufallsstichprobe modellnegativer Fälle mit dokumentierten Auswahlwahrscheinlichkeiten.
+Bei ungleichen Prüfanteilen müssen Prävalenz und Fehlerraten entsprechend gewichtet werden.
+Das Konzept verbindet damit die vorhandenen Ergebnisse mit einer überprüfbaren
+Einführungsentscheidung: Qualitätsvorrang im ersten Pilot, Kaskade bei nachgewiesenem
+Ressourcenbedarf und gezielte Labelverwendung für spätere Modellanpassungen.
 
 
+\clearpage
 \section{Fazit und Ausblick}
 
 Die zusätzliche task-adaptive Anpassung bereits vortrainierter URL- und HTML-Text-Encoder
@@ -351,16 +350,23 @@ Die Adaptationseffekte überlagern sich teilweise.
 50.000 Labels bilden die kleinste geprüfte RUT-Stufe, welche die festgelegte
 Nichtunterlegenheitsentscheidung gegenüber R0@200k und TF-IDF/XGBoost@200k in allen fünf
 Evaluationsbedingungen erfüllt. Die Reduktion um 75\,\% betrifft ausschließlich die gelabelte
-Downstream-Trainingsmenge. Auf dem externen Putra-Bestand verbessert Quell-RUT die AP-AULC
+Downstream-Trainingsmenge des Linear-Probe-Protokolls; die anschließenden
+Full-/Kaskadenwerte beruhen auf 200.000 Trainingslabels. Auf dem externen Putra-Bestand verbessert Quell-RUT die AP-AULC
 gegenüber R0 um 2,54 Prozentpunkte; die zusätzliche Putra-Anpassung verschlechtert sie
 hingegen um 1,14 Prozentpunkte. Weitere selbstüberwachte Anpassung ist damit kein
 allgemeines Verbesserungsversprechen.
 
 HTML-Text, DOM und Gating liefern im sequenziellen DEV-Vergleich jeweils einen zusätzlichen
 Beitrag. TRI Full erreicht auf FINAL 96,12\,\% TPR bei 0,666\,\% FPR. Die URL-first-Kaskade
-eskaliert 14,93\,\% der Fälle und erreicht 95,77\,\% TPR. Im DEV-In-Memory-Benchmark sinkt
-die Median-Latenz von 30,18 auf 11,95\,ms, während der Durchsatz von 183,2 auf 447,0 Seiten/s
-steigt. Diese Messung umfasst nicht die vollständige betriebliche Verarbeitungskette.
+eskaliert 14,93\,\% der Fälle und erreicht 95,77\,\% TPR. Ihr DEV-In-Memory-Durchsatz
+ist 2,44-mal so hoch wie der des Vollsystems; die Messung umfasst nicht die gesamte Verarbeitungskette.
+
+
+Das betriebliche Einsatzkonzept sieht TRI Full zur unterstützenden Webseitenvorprüfung
+vor; die Kaskade ist bei nachgewiesenem Rechenengpass zu prüfen. Bei angenommenen
+1\,\% Phishing erzeugt TRI Full je 10.000 Seiten rund 162 Modellalarme, darunter 66
+Fehlalarme. Modellrouting, Alarmmenge und menschliche Prüfung bleiben getrennte Größen,
+deren Übertragung der vorgeschlagene Pilot überprüfen soll.
 
 Feste TAPT-Checkpoints, nachträgliche Analysen und der retrospektive externe Test begrenzen
 die Verallgemeinerung. Ausstehend sind unabhängige Vortrainingswiederholungen, zukünftige

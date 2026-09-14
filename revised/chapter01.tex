@@ -66,6 +66,10 @@ lernbasierten Klassifikationssystems zur Erkennung von Phishing-Webseiten anhand
 und HTML-Daten. Neben der Klassifikationsleistung werden dabei der Umfang gelabelter
 Downstream-Supervision und die Verarbeitungstiefe des resultierenden Systems betrachtet.
 
+Kapitel 7 konkretisiert die unterstützende Vorprüfung verdächtiger Webseiten für eine
+Sicherheitseinheit oder einen IT-Dienstleister. Das Einsatzkonzept überträgt die Modellwerte
+auf angenommene Prüfvolumina; betriebliche Abläufe und Kosten wurden nicht erhoben.
+
 Zunächst wird untersucht, welchen zusätzlichen Beitrag eine task-adaptive selbstüberwachte
 Anpassung gegenüber bereits allgemein vortrainierten Encodern leistet und wie sich dieser
 Beitrag mit der verfügbaren gelabelten Supervision verändert. Darauf aufbauend wird geprüft,
@@ -103,8 +107,8 @@ unterschiedlicher Verfügbarkeit gelabelter Trainingsdaten und unterschiedlichen
 Downstream-Klassifikationsmechanismen?
 
 \item[FF3:] Ab welchem reduzierten Labelbudget erreicht die task-adaptive RUT-Repräsentation
-über die untersuchten Evaluationsbedingungen hinweg ein mindestens gleichwertiges
-Leistungsniveau wie vollständig mit 200.000 Labels trainierte Referenzverfahren?
+über die untersuchten Evaluationsbedingungen hinweg ein nach den festgelegten Margen
+nicht unterlegenes Leistungsniveau gegenüber mit 200.000 Labels trainierten Referenzverfahren?
 
 \item[FF4:] Wie verändern eine strukturelle DOM-Repräsentation, multimodale Fusion und eine
 kaskadierte URL-first-Verarbeitung die Erkennungsleistung und den Inferenzaufwand des
@@ -133,12 +137,7 @@ die Schwellenbestimmung CAL und die Leistungsbewertung FINAL. Nachträglich erg�
 Analysen werden gesondert gekennzeichnet. Eine externe Putra-Auswertung ergänzt die
 Labelbudgetanalyse.
 
-Anschließend wird die RUT-Basis schrittweise um HTML-Text, DOM und Gating erweitert.
-Eine sequenzielle Komponentenablation prüft deren inkrementellen Beitrag. Das TRI-System
-wird durch eine URL-first-Kaskade ergänzt, die nur unsichere Fälle vollständig multimodal
-verarbeitet. Ein Frontend-Vergleich variiert die URL-Repräsentation zwischen Basis und TAPT.
-Neben Klassifikationsmetriken werden Latenz, Durchsatz, GPU-Speicherbedarf und
-Eskalationsrate erfasst.
-
-Kapitel 2 und 3 begründen den Untersuchungsansatz; Kapitel 4 und 5 erläutern Methodik und
-Umsetzung, Kapitel 6 die Ergebnisse und Kapitel 7 deren Einordnung.
+Komponentenablation und Frontend-Vergleich untersuchen anschließend das TRI-System und
+seine Kaskade anhand von Klassifikationsleistung, Latenz, Durchsatz, Speicherbedarf und
+Eskalation. Kapitel 2 und 3 begründen den Ansatz, Kapitel 4 und 5 erläutern die Umsetzung,
+Kapitel 6 und 7 präsentieren und diskutieren die Ergebnisse.

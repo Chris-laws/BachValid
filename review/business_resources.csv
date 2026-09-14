@@ -1,0 +1,4 @@
+system,median_ms,p95_ms,pages_s,reference_seconds_10000,hardware,scope
+URL,11.190037499545724,12.328482350312695,865.8598478834014,11.54921321787244,Tesla T4,in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing
+FULL,30.182580000655435,47.40234944983965,183.17648292130403,54.59216074312434,Tesla T4,in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing
+CASCADE,11.953472999266523,32.136477500171154,447.0193117009599,22.37039818693481,Tesla T4,in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing

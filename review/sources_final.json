@@ -264,6 +264,14 @@
     "scope": "Original-PDF/Fundstellen"
   },
   {
+    "key": "Nelson et al. (2025)",
+    "file": "nist2025ir.pdf",
+    "assessment": "NIST-Original April 2025 und DOI geprüft. Gedruckte S. 25 (PDF 33): technische Filterung für menschliche Analyse; S. 26–27 (PDF 34–35): Auswirkungen, Risikopriorisierung und Validierung von Meldungen. Eigener Modell-/Pilotentwurf klar getrennt.",
+    "sha256": "e5593d6bb85daecec7e8d9549400c7b3473bcc3f06e469c82218073afa7fba2d",
+    "citations": 2,
+    "scope": "Original-PDF/Fundstellen"
+  },
+  {
     "key": "Opara et al. (2024)",
     "file": "opara2024.pdf",
     "assessment": "S. 2: gemeinsame Nutzung von URL und HTML im neuronalen Verfahren.",

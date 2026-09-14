@@ -2,7 +2,7 @@
 
 Die heruntergeladenen Literaturvolltexte bleiben im lokalen Quellenarchiv. Original-URLs und DOI stehen im [Literaturverzeichnis](../revised/bibliography.tex). Die verlinkten Abstract-Prüfnotizen sind eigene Dokumentation.
 
-50 Literatur-/Datensatzquellen; 156 einzeln erfasste Quellenverweise der Schlussfassung. Dazu kommen narrative Datensatznennungen von Putra.
+51 Literatur-/Datensatzquellen; 158 einzeln erfasste Quellenverweise der Schlussfassung. Dazu kommen narrative Datensatznennungen von Putra.
 
 Die semantische Bewertung stammt aus der manuellen Prüfung der Originalfundstellen. Das Register-Skript inventarisiert diese Entscheidungen; es validiert wissenschaftliche Aussagen nicht automatisch. Ausgangspunkt waren 110 zitierte Absätze der ursprünglichen Fassung. Original- und Schlussfassungsregister liegen getrennt vor.
 
@@ -43,6 +43,7 @@ Für Liu (2021), Rashid (2024) und Wang (2023) wurde der zugängliche Originalab
 | Maneriker et al. (2021) | `maneriker2021.pdf` (lokales Quellenarchiv) | PDF-S. 1–2: URL-Vortraining und direkte Feinabstimmung öffentlicher Encoder als zwei Ansätze; Low-FPR. Früherer Anspruch zusätzlichen TAPTs für alle Modelle korrigiert. |
 | Manning et al. (2008) | `manning2008.pdf` (lokales Quellenarchiv) | Gedruckte S. 118–119 TF-IDF; 120–121 Vektorraummodell. |
 | Mikolov et al. (2013) | `mikolov2013.pdf` (lokales Quellenarchiv) | PDF-interne S. 1: syntaktische/semantische Beziehungen. Frühere Proceedings-Seitenzahl 3111 ersetzt. |
+| Nelson et al. (2025) | `nist2025ir.pdf` (lokales Quellenarchiv) | NIST-Original April 2025 und DOI geprüft. Gedruckte S. 25 (PDF 33): technische Filterung für menschliche Analyse; S. 26–27 (PDF 34–35): Auswirkungen, Risikopriorisierung und Validierung von Meldungen. Eigener Modell-/Pilotentwurf klar getrennt. |
 | Opara et al. (2024) | `opara2024.pdf` (lokales Quellenarchiv) | S. 2: gemeinsame Nutzung von URL und HTML im neuronalen Verfahren. |
 | Purwanto et al. (2022) | `purwanto2022.pdf` (lokales Quellenarchiv) | S. 1498: Veränderlichkeit/Drift; S. 1506: Bedeutung niedriger FPR. |
 | Putra (2023) | [putra2023.html](sources/putra2023.html) | Original-Zenodo-Datensatz DOI 10.5281/zenodo.8041387, Version 1 vom 02.07.2023. Eigene Zeitteilung/Counts aus CSVs und Parquets, keine Publikationsbehauptung. |

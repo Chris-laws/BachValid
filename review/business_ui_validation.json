@@ -1,0 +1,294 @@
+{
+  "checks": [
+    {
+      "check": "URL 0.001 tp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.001 fp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.001 fn",
+      "passed": true
+    },
+    {
+      "check": "URL 0.001 positive",
+      "passed": true
+    },
+    {
+      "check": "URL 0.001 precision",
+      "passed": true
+    },
+    {
+      "check": "URL 0.01 tp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.01 fp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.01 fn",
+      "passed": true
+    },
+    {
+      "check": "URL 0.01 positive",
+      "passed": true
+    },
+    {
+      "check": "URL 0.01 precision",
+      "passed": true
+    },
+    {
+      "check": "URL 0.05 tp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.05 fp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.05 fn",
+      "passed": true
+    },
+    {
+      "check": "URL 0.05 positive",
+      "passed": true
+    },
+    {
+      "check": "URL 0.05 precision",
+      "passed": true
+    },
+    {
+      "check": "URL 0.4569796501249554 tp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.4569796501249554 fp",
+      "passed": true
+    },
+    {
+      "check": "URL 0.4569796501249554 fn",
+      "passed": true
+    },
+    {
+      "check": "URL 0.4569796501249554 positive",
+      "passed": true
+    },
+    {
+      "check": "URL 0.4569796501249554 precision",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.001 tp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.001 fp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.001 fn",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.001 positive",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.001 precision",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.01 tp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.01 fp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.01 fn",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.01 positive",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.01 precision",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.05 tp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.05 fp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.05 fn",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.05 positive",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.05 precision",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.4569796501249554 tp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.4569796501249554 fp",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.4569796501249554 fn",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.4569796501249554 positive",
+      "passed": true
+    },
+    {
+      "check": "FULL 0.4569796501249554 precision",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.001 tp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.001 fp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.001 fn",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.001 positive",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.001 precision",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.01 tp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.01 fp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.01 fn",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.01 positive",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.01 precision",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.05 tp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.05 fp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.05 fn",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.05 positive",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.05 precision",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.4569796501249554 tp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.4569796501249554 fp",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.4569796501249554 fn",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.4569796501249554 positive",
+      "passed": true
+    },
+    {
+      "check": "CASCADE 0.4569796501249554 precision",
+      "passed": true
+    },
+    {
+      "check": "Default displayed values",
+      "passed": true
+    },
+    {
+      "check": "Boundary prior 0",
+      "passed": true
+    },
+    {
+      "check": "Boundary prior 100",
+      "passed": true
+    },
+    {
+      "check": "Invalid prior -1",
+      "passed": true
+    },
+    {
+      "check": "Invalid prior 101",
+      "passed": true
+    },
+    {
+      "check": "Invalid volume 0",
+      "passed": true
+    },
+    {
+      "check": "Invalid volume 1.5",
+      "passed": true
+    },
+    {
+      "check": "Invalid minutes -1",
+      "passed": true
+    },
+    {
+      "check": "Optional time assumption labelled",
+      "passed": true
+    },
+    {
+      "check": "Optional time arithmetic",
+      "passed": true
+    },
+    {
+      "check": "Mobile has no page overflow",
+      "passed": true
+    },
+    {
+      "check": "No browser script errors",
+      "passed": true
+    }
+  ],
+  "passed": 72,
+  "browser": "Chromium / Playwright"
+}

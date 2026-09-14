@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Phishing-Prüfung · Betriebsszenarien</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#162b3b;background:#f4f6f8}body{max-width:1120px;margin:0 auto;padding:32px 22px}h1{font-size:clamp(1.7rem,4vw,2.5rem);margin:.3em 0}h2{font-size:1.25rem}p{line-height:1.6;max-width:92ch}.eyebrow{font-weight:700;color:#356d7d;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}.panel{background:white;border:1px solid #dbe3e8;border-radius:12px;padding:22px;margin:22px 0}.inputs{display:flex;flex-wrap:wrap;gap:22px}label{font-weight:600;flex:1;min-width:180px}input{display:block;box-sizing:border-box;width:100%;font:inherit;padding:10px;margin-top:8px;border:1px solid #8395a5;border-radius:6px}small,.muted{color:#506775;font-weight:400}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;white-space:nowrap}th,td{text-align:right;padding:13px 12px;border-bottom:1px solid #e1e7eb}th:first-child,td:first-child{text-align:left}th{font-size:.85rem;color:#506775}.selected{background:#eef7f7}.note{border-left:4px solid #358591;padding-left:16px}.error{color:#a12222}details{line-height:1.6}summary{cursor:pointer;font-weight:650}code{background:#eef1f3;padding:2px 4px}footer{font-size:.8rem;color:#506775;margin:24px 0}@media print{body{padding:0}.panel{break-inside:avoid}input{border:0}}
+</style>
+<header><span class="eyebrow">Bachelorarbeit · Nachgerechnete Szenarien</span><h1>Was bedeuten die Modellwerte im Betrieb?</h1>
+<p>Vergleich für die Vorprüfung verdächtiger Webseiten. Die Fehlerquoten stammen aus dem eingefrorenen 200k-System. Fallzahl und Phishinganteil sind frei wählbare Annahmen. Dieses Werkzeug klassifiziert keine Webseiten.</p></header>
+<section class="panel"><div class="inputs">
+<label>Auswertbare Webseiten<input id="volume" type="number" min="1" max="1000000000" step="1" value="10000"></label>
+<label>Angenommener Phishinganteil (%)<input id="prior" type="number" min="0" max="100" step="0.1" value="1"></label>
+<label>Minuten je Modellalarm (optional)<input id="minutes" type="number" min="0" max="1440" step="0.5" placeholder="Keine Zeitannahme"></label>
+</div><p class="muted">Kein gemessenes Bankvolumen und keine gemessene Bearbeitungszeit. Vergleich nur unter der Annahme unveränderter Fehler- und Routingraten innerhalb beider Klassen.</p><p id="error" class="error" role="alert"></p></section>
+<section class="panel"><h2>Erkennung und modellseitige Prüfmenge</h2><div class="scroll"><table>
+<thead><tr><th>Betriebsart</th><th>Erkannte Phishingfälle</th><th>Fehlalarme</th><th>Übersehene Fälle</th><th>Modellalarme gesamt</th><th>Precision</th></tr></thead><tbody id="results" aria-live="polite"></tbody></table></div>
+<p id="interpretation" class="note"></p><p id="hours"></p>
+<small>Erwartungswerte, separat gerundet; Rundungsdifferenzen sind möglich. „Übersehen“ bezeichnet das Modellergebnis. Menschliche Zusatzprüfung kann Fälle noch entdecken, wurde hier aber nicht gemessen.</small></section>
+<section class="panel"><h2>Zusätzliche Modellverarbeitung</h2><p id="routing"></p>
+<p>Weiterleitung in der Kaskade bedeutet zusätzliche HTML-/DOM-Modellverarbeitung. Sie ist weder ein Modellalarm noch eine Übergabe an einen Menschen. TRI Full verarbeitet jede auswertbare Seite multimodal.</p></section>
+<section class="panel"><h2>Gemessene technische Referenz</h2><div class="scroll"><table><thead><tr><th>Betriebsart</th><th>Median, Batch 1</th><th>p95, Batch 1</th><th>Durchsatz, Batch 32</th></tr></thead><tbody id="benchmark"></tbody></table></div>
+<p class="muted">Tesla T4; 500 Einzelinstanzen, 5.000 Instanzen für Durchsatz, drei Durchläufe. URL/Text/gespeicherter DOM liegen im Speicher. Netzwerk, Browser, Roh-HTML-Parsing, Tickets und menschliche Bearbeitung fehlen. Diese gemessenen Zeiten werden beim Ändern der Szenarioprävalenz nicht hochgerechnet.</p></section>
+<section class="panel"><h2>Praktische Entscheidung</h2><p>TRI Full ist der begründete Startpunkt für einen Pilotversuch mit Qualitätsvorrang: Es erzielt hier höhere Erkennung und weniger Fehlalarme. Die Kaskade wird interessant, wenn die Rechenkapazität tatsächlich begrenzt ist. Der schnellste URL-Pfad übersieht mehr Phishingfälle. Ein negatives Modellurteil ist keine Freigabe als sichere Webseite.</p>
+<p>Die Sicherheitseinheit prüft Modellalarme mit Fallkontext; eine dokumentierte Stichprobe modellnegativer Fälle dient der Qualitätskontrolle. Nicht auswertbare Webseiten werden gesondert behandelt. Ein Pilot muss den gesamten Ablauf und die tatsächliche Prüfzeit erfassen.</p>
+<details><summary>Berechnung und Herkunft</summary><p>TP = N · π · TPR; FP = N · (1−π) · FPR; FN = N · π · (1−TPR). Modellalarme = TP + FP. Precision = TP / (TP + FP). Kaskadenrouting e(π) = (1−π) · e₀ + π · e₁.</p>
+<p>Optionaler Zeitwert = Modellalarme · eingegebene Minuten / 60. Er setzt gleiche Bearbeitungszeit je Alarm und Prüfung aller Modellalarme voraus. Zusatzfälle, Negativstichproben und Folgemaßnahmen sind nicht enthalten; keine Personalbedarfsrechnung.</p>
+<p>Die P≥90-Auswertung der Arbeit verwendet eine andere Schwelle. Ihre Precision darf hier nicht eingesetzt werden. Der 50k-Labelnachweis gilt für lineare Probes; diese Systemmessungen beruhen auf 200k Labels.</p>
+<p>Inputs: <code>TABLE_FF4_DOM_FUSION_CASCADE_FINAL.csv</code>, <code>TABLE_OPERATIONAL_BENCHMARK.csv</code>, eingefrorene Routinggrenzen und FINAL-Rohscores/-Labels. Reproduktion: <code>scripts/business_analysis.py</code>. <span id="provenance"></span></p></details></section>
+<footer>Eigene Konzeption; KI-unterstützt. Alle Berechnungen laufen lokal im Browser. Stand: 14.09.2026. Keine Unternehmensmessung, keine neue Modellvalidierung.</footer>
+<script>
+'use strict';
+const audited = {"input_mode": "raw FINAL labels and scores; all three confusion matrices checked", "reference_prevalence": 0.4569796501249554, "routing": {"benign_rate": 0.0640916063992987, "phishing_rate": 0.250625, "benign_count": 91260, "phishing_count": 76800, "benign_escalated": 5849, "phishing_escalated": 19248}, "operating_points": [{"system": "URL", "training_labels": 200000, "threshold": 2.2929687500000004, "tp": 71544, "fp": 622, "tn": 90638, "fn": 5256, "tpr": 0.9315625, "fpr": 0.006815691431076047}, {"system": "FULL", "training_labels": 200000, "threshold": 1.4550781250000002, "tp": 73819, "fp": 608, "tn": 90652, "fn": 2981, "tpr": 0.9611848958333333, "fpr": 0.006662283585360508}, {"system": "CASCADE", "training_labels": 200000, "threshold": 1.1298828125000002, "tp": 73551, "fp": 621, "tn": 90639, "fn": 3249, "tpr": 0.9576953125, "fpr": 0.006804733727810651}], "resources": [{"system": "URL", "median_ms": 11.190037499545724, "p95_ms": 12.328482350312695, "pages_s": 865.8598478834014, "reference_seconds_10000": 11.54921321787244, "hardware": "Tesla T4", "scope": "in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing"}, {"system": "FULL", "median_ms": 30.182580000655435, "p95_ms": 47.40234944983965, "pages_s": 183.17648292130403, "reference_seconds_10000": 54.59216074312434, "hardware": "Tesla T4", "scope": "in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing"}, {"system": "CASCADE", "median_ms": 11.953472999266523, "p95_ms": 32.136477500171154, "pages_s": 447.0193117009599, "reference_seconds_10000": 22.37039818693481, "hardware": "Tesla T4", "scope": "in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing"}], "assumptions": "Prior shift only; fixed class-conditional error and routing distributions. Volumes and priors are illustrative. Benchmark time is not end-to-end or reweighted timing."};
+const names = {URL:'URL-Pfad', FULL:'TRI Full', CASCADE:'TRI-Kaskade'};
+const nf = new Intl.NumberFormat('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmt = x => x === null ? '—' : nf.format(x);
+function scenario(n,p,r) {
+  const tp=n*p*r.tpr,fp=n*(1-p)*r.fpr,fn=n*p*(1-r.tpr),positive=tp+fp;
+  return {tp,fp,fn,positive,precision:positive>0?tp/positive:null};
+}
+function update(){
+  const n=Number(document.getElementById('volume').value),pct=Number(document.getElementById('prior').value);
+  const mt=document.getElementById('minutes').value,m=mt===''?null:Number(mt);
+  const invalid=!Number.isInteger(n)||n<1||n>1e9||document.getElementById('prior').value===''||!Number.isFinite(pct)||pct<0||pct>100||(m!==null&&(!Number.isFinite(m)||m<0||m>1440));
+  document.getElementById('error').textContent=invalid?'Bitte eine ganze Fallzahl von 1 bis 1 Milliarde, einen Phishinganteil von 0 bis 100 % und gegebenenfalls 0 bis 1.440 Minuten eingeben.':'';
+  if(invalid){for(const id of ['results','interpretation','hours','routing'])document.getElementById(id).textContent='';return;}
+  const p=pct/100,rows=audited.operating_points.map(r=>({name:r.system,...scenario(n,p,r)}));
+  document.getElementById('results').innerHTML=rows.map(r=>`<tr class="${r.name==='FULL'?'selected':''}"><td>${names[r.name]}</td><td>${fmt(r.tp)}</td><td>${fmt(r.fp)}</td><td>${fmt(r.fn)}</td><td>${fmt(r.positive)}</td><td>${r.precision===null?'—':fmt(100*r.precision)+' %'}</td></tr>`).join('');
+  const f=rows.find(r=>r.name==='FULL'),c=rows.find(r=>r.name==='CASCADE');
+  document.getElementById('interpretation').textContent=`TRI Full: ${fmt(f.positive)} Modellalarme, darunter ${fmt(f.fp)} Fehlalarme. Die Kaskade erzeugt rechnerisch ${fmt(c.fp-f.fp)} zusätzliche Fehlalarme und übersieht ${fmt(c.fn-f.fn)} zusätzliche Phishingfälle.`;
+  document.getElementById('hours').textContent=m===null?'Für eine Arbeitszeitrechnung oben eine eigene Zeitannahme ergänzen.':`Nur bei vollständiger Prüfung aller Modellalarme und angenommenen ${fmt(m)} Minuten je Alarm: `+rows.map(r=>names[r.name]+' '+fmt(r.positive*m/60)+' Stunden').join('; ')+'. Weitere Prüffälle und Folgemaßnahmen kommen hinzu.';
+  const e=(1-p)*audited.routing.benign_rate+p*audited.routing.phishing_rate;
+  document.getElementById('routing').textContent=`Bei der gewählten Prävalenz leitet die Kaskade rechnerisch ${fmt(100*e)} % (${fmt(n*e)} Seiten) in den vollständigen Modellpfad weiter. Die ursprünglichen 14,93 % gelten für den Testbestand mit ${fmt(100*audited.reference_prevalence)} % Phishing.`;
+}
+document.getElementById('benchmark').innerHTML=audited.resources.map(r=>`<tr><td>${names[r.system]}</td><td>${fmt(r.median_ms)} ms</td><td>${fmt(r.p95_ms)} ms</td><td>${fmt(r.pages_s)} Seiten/s</td></tr>`).join('');
+document.getElementById('provenance').textContent='Erzeugungsmodus: '+audited.input_mode+'.';
+for(const id of ['volume','prior','minutes'])document.getElementById(id).addEventListener('input',update);
+update();
+</script></html>

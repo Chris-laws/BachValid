@@ -1,0 +1,77 @@
+{
+  "input_mode": "raw FINAL labels and scores; all three confusion matrices checked",
+  "reference_prevalence": 0.4569796501249554,
+  "routing": {
+    "benign_rate": 0.0640916063992987,
+    "phishing_rate": 0.250625,
+    "benign_count": 91260,
+    "phishing_count": 76800,
+    "benign_escalated": 5849,
+    "phishing_escalated": 19248
+  },
+  "operating_points": [
+    {
+      "system": "URL",
+      "training_labels": 200000,
+      "threshold": 2.2929687500000004,
+      "tp": 71544,
+      "fp": 622,
+      "tn": 90638,
+      "fn": 5256,
+      "tpr": 0.9315625,
+      "fpr": 0.006815691431076047
+    },
+    {
+      "system": "FULL",
+      "training_labels": 200000,
+      "threshold": 1.4550781250000002,
+      "tp": 73819,
+      "fp": 608,
+      "tn": 90652,
+      "fn": 2981,
+      "tpr": 0.9611848958333333,
+      "fpr": 0.006662283585360508
+    },
+    {
+      "system": "CASCADE",
+      "training_labels": 200000,
+      "threshold": 1.1298828125000002,
+      "tp": 73551,
+      "fp": 621,
+      "tn": 90639,
+      "fn": 3249,
+      "tpr": 0.9576953125,
+      "fpr": 0.006804733727810651
+    }
+  ],
+  "resources": [
+    {
+      "system": "URL",
+      "median_ms": 11.190037499545724,
+      "p95_ms": 12.328482350312695,
+      "pages_s": 865.8598478834014,
+      "reference_seconds_10000": 11.54921321787244,
+      "hardware": "Tesla T4",
+      "scope": "in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing"
+    },
+    {
+      "system": "FULL",
+      "median_ms": 30.182580000655435,
+      "p95_ms": 47.40234944983965,
+      "pages_s": 183.17648292130403,
+      "reference_seconds_10000": 54.59216074312434,
+      "hardware": "Tesla T4",
+      "scope": "in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing"
+    },
+    {
+      "system": "CASCADE",
+      "median_ms": 11.953472999266523,
+      "p95_ms": 32.136477500171154,
+      "pages_s": 447.0193117009599,
+      "reference_seconds_10000": 22.37039818693481,
+      "hardware": "Tesla T4",
+      "scope": "in-memory URL/text/stored-DOM -> model forward; excludes disk/network/browser/raw HTML parsing"
+    }
+  ],
+  "assumptions": "Prior shift only; fixed class-conditional error and routing distributions. Volumes and priors are illustrative. Benchmark time is not end-to-end or reweighted timing."
+}

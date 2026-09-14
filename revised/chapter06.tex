@@ -365,7 +365,7 @@ steigt von 183,2 auf 447,0 Seiten/s, entsprechend dem 2,44-Fachen.
 
 \begin{table}[htbp]
 \centering
-\caption{FF4: In-Memory-Benchmark des vollständigen Systems und der eingefrorenen URL-first-Kaskade.}
+\caption{FF4: In-Memory-Benchmark des mit 200k Labels trainierten Vollsystems und seiner eingefrorenen URL-first-Kaskade.}
 \label{tab:ff4_runtime}
 \small
 \begin{tabular}{lrr}
@@ -479,3 +479,67 @@ mit dieser Prävalenz. Ein direkter Vergleich mit separat konstruierten
 PhreshPhish-Benchmarks wäre wegen unterschiedlicher Testzusammensetzung und nicht
 abgeglichener Metrikimplementierung nicht belastbar. Die primäre Systembewertung
 stützt sich weiterhin auf TPR und FPR am festgelegten Betriebspunkt.
+
+\section{Szenarioanalyse am eingefrorenen Betriebspunkt}
+\label{sec:betriebspunkt_szenarien}
+
+Für die betriebliche Prüfmenge ist die Precision an der tatsächlich auf CAL festgelegten
+Schwelle maßgeblich. Die für $P_{\geq 90}$ ausgewählte Schwelle aus Abschnitt 6.6 ist davon
+zu unterscheiden. Aus den FINAL-Rohscores und Labels ergeben sich für TRI Full
+73.819 TP, 608 FP und 2.981 FN sowie für die Kaskade 73.551 TP, 621 FP und 3.249 FN.
+Bei 76.800 Phishing- und 91.260 benignen Seiten entsprechen diese Counts den in FF4
+berichteten Betriebsraten. Für ein angenommenes Volumen $N$ auswertbarer Webseiten und
+einen Phishinganteil $\pi$ werden daraus folgende Erwartungswerte berechnet:
+\[
+\mathrm{TP}_{\pi}=N\pi\,\mathrm{TPR},\quad
+\mathrm{FP}_{\pi}=N(1-\pi)\,\mathrm{FPR},\quad
+\mathrm{FN}_{\pi}=N\pi(1-\mathrm{TPR}).
+\]
+Die modellseitige Alarmmenge beträgt $A_{\pi}=\mathrm{TP}_{\pi}+\mathrm{FP}_{\pi}$ und ihre
+Precision $\mathrm{TP}_{\pi}/A_{\pi}$. Tabelle~\ref{tab:business_operating_scenarios}
+verwendet ausschließlich ungerundete Ausgangsraten. Die gewählten Prävalenzen und
+10.000 Seiten sind Vergleichsszenarien und keine Messwerte eines Unternehmens.
+
+\begin{table}[htbp]
+\centering
+\caption{Erwartete Fallzahlen je 10.000 auswertbaren Webseiten am eingefrorenen Betriebspunkt bei reinem Prior-Shift.}
+\label{tab:business_operating_scenarios}
+\small
+\begin{tabular}{llrrrrr}
+\toprule
+Phishinganteil & System & TP & FP & FN & Alarme & Precision \\
+\midrule
+0,1\,\% & TRI Full & 9,61 & 66,56 & 0,39 & 76,17 & 12,62\,\% \\
+         & Kaskade & 9,58 & 67,98 & 0,42 & 77,56 & 12,35\,\% \\
+\addlinespace
+1\,\% & TRI Full & 96,12 & 65,96 & 3,88 & 162,08 & 59,30\,\% \\
+       & Kaskade & 95,77 & 67,37 & 4,23 & 163,14 & 58,71\,\% \\
+\addlinespace
+5\,\% & TRI Full & 480,59 & 63,29 & 19,41 & 543,88 & 88,36\,\% \\
+       & Kaskade & 478,85 & 64,64 & 21,15 & 543,49 & 88,11\,\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Bei 1\,\% Phishing beträgt die operative Precision somit 59,30\,\% beziehungsweise
+58,71\,\%. Die höheren umgerechneten $P_{\geq 90}$-Werte von 80,74\,\% und 84,27\,\%
+beschreiben einen anderen Schwellenpunkt. Sie dürfen nicht mit den hier verwendeten
+TPR-/FPR-Werten kombiniert werden. Bei 0,1\,\% Phishing sind selbst mit TRI Full nur
+12,62\,\% der Modellalarme tatsächliche Phishingfälle. Ein Einsatz auf einem weniger
+angereicherten Bestand kann damit trotz kleiner FPR einen hohen Fehlalarmanteil erzeugen.
+Auch ein vorgefilterter Eingang garantiert keine bestimmte Prävalenz oder Modellgüte.
+
+Ebenso hängt die Kaskadeneskalation von der Klassenmischung ab. Die Rückrechnung mit den
+eingefrorenen Float32-Routinggrenzen ergibt 5.849 Eskalationen unter 91.260 benignen
+Seiten ($e_0=6{,}409\,\%$) und 19.248 unter 76.800 Phishingseiten
+($e_1=25{,}06\,\%$). Für reine Prävalenzänderungen gilt
+\[
+e_{\pi}=(1-\pi)e_0+\pi e_1.
+\]
+Bei 1\,\% Phishing ergeben sich daher 6,596\,\% beziehungsweise rund 660 zusätzliche
+multimodale Pfade je 10.000 Seiten. Die gemessenen 14,933\,\% gelten für die ursprüngliche
+Testmischung mit 45,70\,\% Phishing. Beide Größen bezeichnen Modellverarbeitung,
+keine menschliche Eskalation. Aus dem veränderten Routinganteil wird keine neue Laufzeit
+abgeleitet, da klassenspezifische Zeitmessungen fehlen. Die Szenariorechnung und ihre
+Rohscoreprüfung sind im Begleitmaterial als \nolinkurl{scripts/business_analysis.py}
+reproduzierbar; der lokale Betriebsrechner erlaubt weitere ausdrücklich angenommene Volumina.
